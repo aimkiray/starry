@@ -23,7 +23,7 @@
 <configuration>
 
     <typeAliases>
-        <package name="com.sinitial.entity"/>
+        <package name="com.sinitial.entity_old"/>
     </typeAliases>
 
     <environments default="development">

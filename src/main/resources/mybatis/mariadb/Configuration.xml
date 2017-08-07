@@ -41,7 +41,7 @@
     </settings>
 
     <typeAliases>
-        <package name="com.sinitial.entity"/>
+        <package name="com.sinitial.domain"/>
     </typeAliases>
 
     <environments default="development">
@@ -59,9 +59,9 @@
     </environments>
 
     <mappers>
-        <mapper resource="mybatis/mariadb/User.xml"/>
-        <mapper resource="mybatis/mariadb/Author.xml"/>
-        <mapper resource="mybatis/mariadb/Post.xml"/>
+        <mapper resource="mybatis/mariadb/AuthorMapper.xml"/>
+        <mapper resource="mybatis/mariadb/PostMapper.xml"/>
+        <mapper resource="mybatis/mariadb/UserMapper.xml"/>
     </mappers>
 
 </configuration>
