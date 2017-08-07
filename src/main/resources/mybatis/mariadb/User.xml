@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+       Copyright 2009-2016 the original author or authors.
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
+-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="User">
+
+    <!--数据库和实体类的映射-->
+    <resultMap type="User" id="UserResult">
+      <id column="user_id" property="userId"/>
+      <result column="user_name" property="userName"/>
+      <result column="user_password" property="userPassword"/>
+      <result column="real_name" property="realName"/>
+      <result column="gender" property="gender"/>
+      <result column="sign_date" property="signDate"/>
+      <result column="email" property="email"/>
+    </resultMap>
+
+    <!--获取全部的用户-->
+    <select id="findAllUser" resultMap="UserResult">
+        SELECT * FROM sl_user
+    </select>
+
+    <!--根据id获得用户,sql语句中的参数可以随意-->
+    <select id="findUserById" parameterType="int" resultMap="UserResult">
+        SELECT * FROM sl_user WHERE user_id = #{userId}
+    </select>
+
+    <!--根据用户名获得用户,sql语句中的参数可以随意，参数可小写，是mybatis中已定义的别名-->
+    <select id="findUserByName" parameterType="string" resultMap="UserResult">
+        SELECT * FROM sl_user WHERE user_name = #{userName}
+    </select>
+
+    <!--根据名字获得用户,sql语句中的参数可以随意，参数可小写，是mybatis中已定义的别名-->
+    <select id="findUserByRealName" parameterType="string" resultMap="UserResult">
+        SELECT * FROM sl_user WHERE real_name = #{userName}
+    </select>
+
+    <!--根据id删除用户-->
+    <delete id="deleteUserById" parameterType="int">
+      DELETE FROM sl_user WHERE user_id = #{userId}
+    </delete>
+
+    <!--增加用户-->
+    <insert id="insertUser" parameterType="User">
+      INSERT INTO sl_user
+      (USER_NAME,
+      USER_PASSWORD,
+      REAL_NAME,
+      EMAIL,
+      GENDER,
+      SIGN_DATE)
+      VALUES
+      (#{userName},
+      #{userPassword},
+      #{realName},
+      #{email},
+      #{gender},
+      #{signDate})
+    </insert>
+
+    <!--修改用户信息-->
+    <update id="updateUserId" parameterType="User">
+      UPDATE sl_user SET
+      USER_NAME = #{userName},
+      USER_PASSWORD = #{userPassword},
+      REAL_NAME = #{realName},
+      EMAIL = #{email},
+      GENDER = #{gender},
+      SIGN_DATE = #{signDate}
+      WHERE
+      USER_ID = #{userId}
+    </update>
+</mapper>

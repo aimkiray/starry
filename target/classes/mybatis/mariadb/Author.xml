@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+       Copyright 2009-2016 the original author or authors.
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
+-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Author">
+
+    <!--数据库和实体类的映射-->
+    <resultMap type="Author" id="AuthorResult">
+        <id column="author_id" property="authorId"/>
+        <result column="author_name" property="authorName"/>
+        <result column="author_password" property="authorPassword"/>
+        <result column="author_info" property="authorInfo"/>
+        <result column="author_date" property="authorDate"/>
+        <!--ofType:集合中元素的类型-->
+        <collection property="posts" ofType="Post">
+            <id column="post_id" property="postId"/>
+            <result column="post_title" property="postTitle"/>
+            <result column="post_status" property="postStatus"/>
+            <result column="post_type" property="postType"/>
+            <result column="post_content" property="postContent"/>
+            <result column="post_mime_type" property="postMimeType"/>
+        </collection>
+    </resultMap>
+
+    <!--获取全部的作者-->
+    <select id="findAllAuthor" resultMap="AuthorResult">
+        SELECT * FROM sl_author
+    </select>
+
+    <!--根据作者id获得该作者的全部文章-->
+    <select id="findAuthorAndPostById" parameterType="int" resultMap="AuthorResult">
+        SELECT * FROM sinitial.sl_author LEFT JOIN sinitial.sl_post ON author_id = post_author WHERE author_id = #{authorId}
+    </select>
+
+    <!--根据id获得作者,sql语句中的参数可以随意-->
+    <select id="findAuthorById" parameterType="int" resultMap="AuthorResult">
+        SELECT * FROM sl_author WHERE author_id = #{authorId}
+    </select>
+
+    <!--根据作者名获得作者,sql语句中的参数可以随意，参数可小写，是mybatis中已定义的别名-->
+    <select id="findAuthorByName" parameterType="string" resultMap="AuthorResult">
+        SELECT * FROM sl_author WHERE author_name = #{authorName}
+    </select>
+
+    <!--根据id删除作者-->
+    <delete id="deleteAuthorById" parameterType="int">
+      DELETE FROM sl_author WHERE author_id = #{authorId}
+    </delete>
+
+    <!--增加作者-->
+    <insert id="insertAuthor" parameterType="Author">
+      INSERT INTO sl_author
+      (author_name,
+      author_password,
+      author_date,
+      author_info)
+      VALUES
+      (#{authorName},
+      #{authorPassword},
+      #{authorDate},
+      #{authorInfo})
+    </insert>
+
+    <!--修改作者信息-->
+    <update id="updateAuthorId" parameterType="Author">
+      UPDATE sl_author SET
+      author_name = #{authorName},
+      author_password = #{authorPassword},
+      author_date = #{authorDate},
+      author_info = #{authorInfo}
+      WHERE
+      author_id = #{authorId}
+    </update>
+</mapper>

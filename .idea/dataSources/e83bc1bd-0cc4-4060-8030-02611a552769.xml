@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@Oracle">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="SYSTEM">
+      <ObjectId>5</ObjectId>
+      <IntrospectionTimestamp>2017-08-05.16:28:35</IntrospectionTimestamp>
+      <CreatedTimestamp>2014-05-29.13:10:48</CreatedTimestamp>
+      <ModifiedTimestamp>2014-05-29.13:17:50</ModifiedTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="PUBLIC">
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="4" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </schema>
+    <schema id="5" parent="1" name="OUTLN">
+      <ObjectId>9</ObjectId>
+    </schema>
+    <schema id="6" parent="1" name="DIP">
+      <ObjectId>14</ObjectId>
+    </schema>
+    <schema id="7" parent="1" name="ORACLE_OCM">
+      <ObjectId>21</ObjectId>
+    </schema>
+    <schema id="8" parent="1" name="DBSNMP">
+      <ObjectId>29</ObjectId>
+    </schema>
+    <schema id="9" parent="1" name="APPQOSSYS">
+      <ObjectId>30</ObjectId>
+    </schema>
+    <schema id="10" parent="1" name="CTXSYS">
+      <ObjectId>32</ObjectId>
+    </schema>
+    <schema id="11" parent="1" name="XDB">
+      <ObjectId>34</ObjectId>
+    </schema>
+    <schema id="12" parent="1" name="ANONYMOUS">
+      <ObjectId>35</ObjectId>
+    </schema>
+    <schema id="13" parent="1" name="MDSYS">
+      <ObjectId>42</ObjectId>
+    </schema>
+    <schema id="14" parent="1" name="HR">
+      <ObjectId>43</ObjectId>
+    </schema>
+    <schema id="15" parent="1" name="FLOWS_FILES">
+      <ObjectId>44</ObjectId>
+    </schema>
+    <schema id="16" parent="1" name="APEX_PUBLIC_USER">
+      <ObjectId>45</ObjectId>
+    </schema>
+    <schema id="17" parent="1" name="APEX_040000">
+      <ObjectId>47</ObjectId>
+    </schema>
+    <schema id="18" parent="1" name="AKARI">
+      <ObjectId>50</ObjectId>
+      <IntrospectionTimestamp>2017-08-03.16:44:38</IntrospectionTimestamp>
+      <CreatedTimestamp>2017-08-02.14:10:48</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-02.20:46:34</ModifiedTimestamp>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="19" parent="1" name="SINITIAL">
+      <ObjectId>51</ObjectId>
+      <IntrospectionTimestamp>2017-08-05.16:28:35</IntrospectionTimestamp>
+      <CreatedTimestamp>2017-08-03.14:38:00</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-05.16:28:34</ModifiedTimestamp>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="20" parent="1" name="XS$NULL">
+      <ObjectId>2147483638</ObjectId>
+    </schema>
+    <sequence id="21" parent="18" name="SEQ_USER">
+      <ObjectId>20078</ObjectId>
+      <CreatedTimestamp>2017-08-02.20:46:34</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-02.20:46:34</ModifiedTimestamp>
+      <SequenceIdentity>2000..9999999999</SequenceIdentity>
+    </sequence>
+    <table id="22" parent="18" name="USER_INFO">
+      <ObjectId>20073</ObjectId>
+      <CreatedTimestamp>2017-08-02.14:10:48</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-02.15:24:51</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <sequence id="23" parent="19" name="SEQ_AUTHOR">
+      <ObjectId>20163</ObjectId>
+      <CreatedTimestamp>2017-08-03.15:15:12</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-03.15:15:12</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="24" parent="19" name="SEQ_POST">
+      <ObjectId>20162</ObjectId>
+      <CreatedTimestamp>2017-08-03.15:14:42</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-03.15:14:42</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <table id="25" parent="19" name="SL_AUTHOR">
+      <ObjectId>20159</ObjectId>
+      <CreatedTimestamp>2017-08-03.14:40:05</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-03.14:56:57</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="26" parent="19" name="SL_POST">
+      <ObjectId>20158</ObjectId>
+      <CreatedTimestamp>2017-08-03.14:38:00</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-05.16:28:34</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="27" parent="19" name="SL_USER">
+      <ObjectId>20164</ObjectId>
+      <CreatedTimestamp>2017-08-03.19:43:19</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-03.19:49:05</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <column id="28" parent="22" name="USER_ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="22" name="USER_NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(100)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="30" parent="22" name="USER_PASSWORD">
+      <Position>3</Position>
+      <DataType>VARCHAR2(100)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="31" parent="22" name="REAL_NAME">
+      <Position>4</Position>
+      <DataType>VARCHAR2(100)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="32" parent="22" name="EMAIL">
+      <Position>5</Position>
+      <DataType>VARCHAR2(100)|0</DataType>
+    </column>
+    <column id="33" parent="22" name="GENDER">
+      <Position>6</Position>
+      <DataType>NUMBER(*)|0</DataType>
+    </column>
+    <column id="34" parent="22" name="SIGN_DATE">
+      <Position>7</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <index id="35" parent="22" name="USER_INFO_USERID_UINDEX">
+      <ObjectId>20074</ObjectId>
+      <CreatedTimestamp>2017-08-02.14:12:17</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-02.14:12:17</ModifiedTimestamp>
+      <TablespaceName>SGROUP</TablespaceName>
+      <ColNames>USER_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="36" parent="22" name="USER_INFO_USERID_PK">
+      <ModifiedTimestamp>2017-08-02.14:12:17</ModifiedTimestamp>
+      <ColNames>USER_ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>USER_INFO_USERID_UINDEX</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="37" parent="25" name="AUTHOR_ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="25" name="AUTHOR_NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+    </column>
+    <column id="39" parent="25" name="AUTHOR_DATE">
+      <Position>3</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="40" parent="25" name="AUTHOR_INFO">
+      <Position>4</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+    </column>
+    <index id="41" parent="25" name="SYS_C007001">
+      <ObjectId>20160</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-08-03.14:40:05</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-03.14:40:05</ModifiedTimestamp>
+      <TablespaceName>SINITIAL</TablespaceName>
+      <ColNames>AUTHOR_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="42" parent="25" name="SYS_C007001">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-08-03.14:40:05</ModifiedTimestamp>
+      <ColNames>AUTHOR_ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007001</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="43" parent="26" name="POST_TITLE">
+      <Position>1</Position>
+      <DataType>VARCHAR2(200)|0</DataType>
+    </column>
+    <column id="44" parent="26" name="POST_STATUS">
+      <Position>2</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+    </column>
+    <column id="45" parent="26" name="POST_TYPE">
+      <Position>3</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+    </column>
+    <column id="46" parent="26" name="POST_AUTHOR">
+      <Position>4</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <column id="47" parent="26" name="POST_ID">
+      <Position>5</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="26" name="POST_CONTENT">
+      <Position>6</Position>
+      <DataType>LONG|0</DataType>
+    </column>
+    <column id="49" parent="26" name="POST_MIME_TYPE">
+      <Position>7</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+    </column>
+    <column id="50" parent="26" name="POST_DATE">
+      <Position>8</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <index id="51" parent="26" name="SL_POST_POST_ID_UINDEX">
+      <ObjectId>20161</ObjectId>
+      <CreatedTimestamp>2017-08-03.14:43:14</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-03.14:43:14</ModifiedTimestamp>
+      <TablespaceName>SINITIAL</TablespaceName>
+      <ColNames>POST_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="52" parent="26" name="SL_POST_POST_ID_PK">
+      <ModifiedTimestamp>2017-08-03.14:43:14</ModifiedTimestamp>
+      <ColNames>POST_ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SL_POST_POST_ID_UINDEX</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="26" name="SL_POST_SL_AUTHOR_AUTHOR_ID_FK">
+      <ModifiedTimestamp>2017-08-03.14:54:21</ModifiedTimestamp>
+      <ColNames>POST_AUTHOR</ColNames>
+      <RefSchemaName>SINITIAL</RefSchemaName>
+      <RefTableName>SL_AUTHOR</RefTableName>
+      <RefKeyName>SYS_C007001</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="54" parent="27" name="USER_ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="27" name="USER_NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(100)|0</DataType>
+    </column>
+    <column id="56" parent="27" name="USER_PASSWORD">
+      <Position>3</Position>
+      <DataType>VARCHAR2(100)|0</DataType>
+    </column>
+    <column id="57" parent="27" name="REAL_NAME">
+      <Position>4</Position>
+      <DataType>VARCHAR2(100)|0</DataType>
+    </column>
+    <column id="58" parent="27" name="EMAIL">
+      <Position>5</Position>
+      <DataType>VARCHAR2(100)|0</DataType>
+    </column>
+    <column id="59" parent="27" name="GENDER">
+      <Position>6</Position>
+      <DataType>NUMBER(*)|0</DataType>
+    </column>
+    <column id="60" parent="27" name="SIGN_DATE">
+      <Position>7</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <index id="61" parent="27" name="USER_INFO_USERID_UINDEX">
+      <ObjectId>20165</ObjectId>
+      <CreatedTimestamp>2017-08-03.19:43:19</CreatedTimestamp>
+      <ModifiedTimestamp>2017-08-03.19:43:19</ModifiedTimestamp>
+      <TablespaceName>SGROUP</TablespaceName>
+      <ColNames>USER_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="62" parent="27" name="USER_INFO_USERID_PK">
+      <ModifiedTimestamp>2017-08-03.19:43:19</ModifiedTimestamp>
+      <ColNames>USER_ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>USER_INFO_USERID_UINDEX</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
