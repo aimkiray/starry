@@ -8,7 +8,25 @@
     <name>sinitial blog system</name>
     <url>http://meowwoo.com</url>
 
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/libs-milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.0.0.RC3</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.mybatis.generator</groupId>
@@ -47,7 +65,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.34</version>
+            <version>1.2.35</version>
         </dependency>
 
         <dependency>
@@ -87,6 +105,7 @@
     </dependencies>
 
     <properties>
+
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>

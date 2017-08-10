@@ -2,7 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/AuthorservicesImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/AuthorservicesImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_0_RC3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_0_RC3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_0_RC3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_0_RC3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_0_RC3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_0_RC3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/entity_old/Author.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/entity_old/Post.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/entity_old/User.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/service/AuthorService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/service/Implement/AuthorServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/service/Implement/NewSqlSessionFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/service/Implement/UserService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/service/UserService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/services_bak/AuthorServices.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/services_bak/UserServices.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/services_bak/implement/AuthorServicesImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/services_bak/implement/NewSqlSessionFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/services_bak/implement/PostServicesImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/services_bak/implement/UserServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/test/CompactDisc.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/test/OneCd.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/test_old/AuthorDaoImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/test_old/PostDaoImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/test_old/UserDaoImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/dao_bak/AuthorDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/entity/Author.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/entity/Post.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/entity/User.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/services/AuthorServices.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/services/UserServices.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/AuthorservicesImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/NewSqlSessionFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/PostServicesImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/UserServiceImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/sinitial/dao_bak/AuthorDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/sinitial/entity/Author.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/sinitial/entity/Post.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/sinitial/entity/User.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/sinitial/services/AuthorServices.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/sinitial/services/UserServices.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/sinitial/services/implement/AuthorservicesImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/sinitial/services/implement/NewSqlSessionFactory$SingleSessionHolder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/sinitial/services/implement/NewSqlSessionFactory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/sinitial/services/implement/PostServicesImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/sinitial/services/implement/UserServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/sinitial/test/AuthorDaoImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/sinitial/test/PostDaoImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/sinitial/test/UserDaoImpl.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_34.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_35.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/sinitial_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/sinitial_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sinitial.iml" afterPath="$PROJECT_DIR$/sinitial.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/demoConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/demoConfig.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mybatis/mariadb/Configuration.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis/mariadb/Configuration.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mybatis/oracle/Configuration.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis/oracle/Configuration.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,18 +93,6 @@
       </path>
       <path>
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="@Mariadb" type="e3449647:DbNodeDescriptor" />
-        <item name="sinitial" type="e3449647:DbNodeDescriptor" />
-        <item name="sl_author" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="@Mariadb" type="e3449647:DbNodeDescriptor" />
-        <item name="sinitial" type="e3449647:DbNodeDescriptor" />
-        <item name="sl_post" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="@Oracle" type="e3449647:DbNodeDescriptor" />
       </path>
       <path>
@@ -72,109 +120,58 @@
     <favorites_list name="sinitial" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AuthorservicesImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/AuthorservicesImpl.java">
+    <leaf>
+      <file leaf-file-name="AuthorServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/test/AuthorServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state relative-caret-position="188">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
-                <element signature="method#findAuthorByName#1;class#AuthorservicesImpl#0" expanded="false" />
-                <element signature="method#deleteAuthor#1;class#AuthorservicesImpl#0" expanded="false" />
-                <element signature="method#insertAuthor#1;class#AuthorservicesImpl#0" expanded="false" />
-                <element signature="method#updateAuthor#1;class#AuthorservicesImpl#0" expanded="false" />
+                <element signature="e#993#994#0" expanded="true" />
+                <element signature="e#1069#1070#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Author.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Author.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="49" column="124" lean-forward="true" selection-start-line="49" selection-start-column="124" selection-end-line="49" selection-end-column="124" />
-              <folding>
-                <marker date="1502068667060" expanded="true" signature="1811:1834" ph="SELECT * FRO... sl_author" />
-                <marker date="1502068667060" expanded="true" signature="1971:2087" ph="SELECT * FRO... sl_author" />
-                <marker date="1502068667060" expanded="true" signature="2223:2276" ph="SELECT * FRO... sl_author" />
-                <marker date="1502068667060" expanded="true" signature="2440:2497" ph="SELECT * FRO... sl_author" />
-                <marker date="1502068667060" expanded="true" signature="2594:2645" ph="DELETE FROM " />
-                <marker date="1502068667060" expanded="true" signature="2737:2941" ph="INSERT INTO sl_author... " />
-                <marker date="1502068667060" expanded="true" signature="3037:3246" ph="UPDATE sl_au... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostServicesImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/PostServicesImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="37" column="13" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-              <folding>
-                <element signature="e#528#529#0" expanded="true" />
-                <element signature="e#1571#1572#0" expanded="true" />
-                <element signature="e#1598#1599#0" expanded="true" />
-                <element signature="e#1713#1714#0" expanded="true" />
-                <element signature="e#1737#1738#0" expanded="true" />
-                <element signature="e#1849#1850#0" expanded="true" />
-                <element signature="e#1873#1874#0" expanded="true" />
-                <element signature="e#1985#1986#0" expanded="true" />
-                <element signature="e#2009#2010#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserServices.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services/UserServices.java">
+      <file leaf-file-name="AuthorMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/dao/AuthorMapper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewSqlSessionFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/NewSqlSessionFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="demoConfig.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/demoConfig.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="32" column="56" lean-forward="false" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
+              <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthorServices.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services/AuthorServices.java">
+      <file leaf-file-name="CompactDisc.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/test/CompactDisc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+            <state relative-caret-position="38">
+              <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OneCd.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/test/OneCd.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+              <folding>
+                <element signature="e#228#229#0" expanded="true" />
+                <element signature="e#264#265#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -185,8 +182,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -202,6 +199,7 @@
       <find>author</find>
       <find>用户</find>
       <find>再根据</find>
+      <find>AuthorDao</find>
     </findStrings>
     <replaceStrings>
       <replace>Author</replace>
@@ -218,9 +216,16 @@
       <replace>post</replace>
       <replace>文章</replace>
       <replace>根据</replace>
+      <replace>authorMapper</replace>
+      <replace>AuthorMapper</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="nekuata &lt;nekuata@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -231,17 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/dao/TestMyBatis.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis/OracleConfiguration.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/dao/implement/TestMyBatis.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/dao/implement/UserDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mariadb/User.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis/oracle/Author.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/entity/Post.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4b188587-fe54-43f9-a0e8-e5f1c4020b7d/console.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Post.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e83bc1bd-0cc4-4060-8030-02611a552769/console.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/oracle/Configuration.xml" />
@@ -251,14 +245,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/dao/AuthorDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/entity/Author.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/dao/implement/AuthorDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Configuration.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Author.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/dao/PostDao.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/demoConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/dao/implement/AuthorDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/dao/implement_bak/AuthorDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/dao_bak/AuthorDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/dao_bak/implement_bak/AuthorDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/service/newSqlSessionFactory.java" />
@@ -267,9 +257,36 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/service/implement/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/services/UserServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/NewSqlSessionFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/NewSqlSessionFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/services/MybatisGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/test/MybatisGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/AuthorservicesImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/AuthorServicesImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mariadb/AuthorMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/services_bak/implement/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/service/AuthorService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/service/Implement/AuthorServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/domain/AuthorExample.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/test_old/PostDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/domain/PostExample.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Configuration.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/domain/Author.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/domain/Post.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/domain/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/test/PostServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mariadb/PostMapper.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/test/MessageService.java" />
+        <option value="$PROJECT_DIR$/src/main/test/sinitial/test/MessageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/test/com/sinitial/test/AuthorServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/test/AuthorServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/domain/CompactDisc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/test/CompactDisc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sinitial/test/OneCd.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/demoConfig.xml" />
       </list>
     </option>
   </component>
@@ -301,7 +318,13 @@
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="sinitial blog system" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="sinitial blog system" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="mybatis-generator" type="36feed69:MavenProjectsStructure$PluginNode" />
         </path>
       </expand>
       <select />
@@ -311,10 +334,10 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="585" />
-    <option name="y" value="52" />
+    <option name="x" value="116" />
+    <option name="y" value="129" />
     <option name="width" value="1320" />
-    <option name="height" value="784" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -359,7 +382,9 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -375,9 +400,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -418,7 +443,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sinitial" type="462c0819:PsiDirectoryNode" />
-              <item name="dao_bak" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sinitial" type="b2602c69:ProjectViewProjectNode" />
@@ -427,7 +452,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sinitial" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sinitial" type="b2602c69:ProjectViewProjectNode" />
@@ -436,7 +461,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sinitial" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sinitial" type="b2602c69:ProjectViewProjectNode" />
@@ -445,8 +470,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sinitial" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="implement" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sinitial" type="b2602c69:ProjectViewProjectNode" />
@@ -458,43 +482,7 @@
             <path>
               <item name="sinitial" type="b2602c69:ProjectViewProjectNode" />
               <item name="sinitial" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sinitial" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sinitial" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="mariadb" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sinitial" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sinitial" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="oracle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sinitial" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sinitial" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sinitial" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sinitial" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -504,34 +492,39 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sinitial_ini" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL&#10;Oracle" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Akari/Dropbox/GitHub/sinitial/src/main/java/com/sinitial/entity/Post.java" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.sinitial.dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Akari\Dropbox\GitHub\sinitial\src\main\test" />
       <recent name="C:\Users\Akari\Dropbox\GitHub\sinitial\src\main\java\com\sinitial\test" />
+      <recent name="C:\Users\Akari\Dropbox\GitHub\sinitial\src\main\java\com\sinitial\service\Implement" />
+      <recent name="C:\Users\Akari\Dropbox\GitHub\sinitial\src\main\java\com\sinitial\services" />
       <recent name="C:\Users\Akari\Dropbox\GitHub\sinitial\src\main\resources\mybatis\oracle" />
-      <recent name="C:\Users\Akari\Dropbox\GitHub\sinitial\src\main\resources\log4j" />
-      <recent name="C:\Users\Akari\Dropbox\GitHub\sinitial\src\main\resources\mybatis\mariadb" />
-      <recent name="C:\Users\Akari\Dropbox\GitHub\sinitial\src\main\resources\mybatis" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.sinitial.test" />
+      <recent name="com.sinitial.service" />
+      <recent name="com.sinitial.service.Implement" />
       <recent name="com.sinitial.services" />
       <recent name="com.sinitial.dao.implement" />
-      <recent name="com.sinitial.dao" />
-      <recent name="com.sinitial.entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Akari\Dropbox\GitHub\sinitial\src\main\java\com\sinitial\test" />
       <recent name="C:\Users\Akari\Dropbox\GitHub\sinitial\src\main\resources" />
       <recent name="C:\Users\Akari\Dropbox\GitHub\sinitial\src\main\resources\mybatis\oracle" />
       <recent name="C:\Users\Akari\Dropbox\GitHub\sinitial\src\main\resources\mybatis\mariadb" />
@@ -549,19 +542,44 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceImpl.deleteUser">
-    <configuration name="AuthorservicesImpl.findAuthorAndPostById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PostServiceImpl.findAllPost">
+    <configuration name="AuthorServiceImpl.findAuthorByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.sinitial.dao_bak.*" />
+          <option name="PATTERN" value="com.sinitial.service.Implement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="sinitial" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.sinitial.services.implement" />
-      <option name="MAIN_CLASS_NAME" value="com.sinitial.services.implement.AuthorservicesImpl" />
+      <option name="PACKAGE_NAME" value="com.sinitial.service.Implement" />
+      <option name="MAIN_CLASS_NAME" value="com.sinitial.service.Implement.AuthorServiceImpl" />
+      <option name="METHOD_NAME" value="findAuthorByName" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="AuthorServicesImpl.findAuthorAndPostById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.sinitial.dao_old.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="sinitial" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.sinitial.services_bak.implement" />
+      <option name="MAIN_CLASS_NAME" value="com.sinitial.services_bak.implement.AuthorServicesImpl" />
       <option name="METHOD_NAME" value="findAuthorAndPostById" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -575,19 +593,19 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="PostServicesImpl.findPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AuthorServicesImpl.findAuthorByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.sinitial.dao_bak.*" />
+          <option name="PATTERN" value="com.sinitial.services_bak.implement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="sinitial" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.sinitial.services.implement" />
-      <option name="MAIN_CLASS_NAME" value="com.sinitial.services.implement.PostServicesImpl" />
-      <option name="METHOD_NAME" value="findPost" />
+      <option name="PACKAGE_NAME" value="com.sinitial.services_bak.implement" />
+      <option name="MAIN_CLASS_NAME" value="com.sinitial.services_bak.implement.AuthorServicesImpl" />
+      <option name="METHOD_NAME" value="findAuthorByName" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -600,19 +618,19 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="UserServiceImpl.deleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PostServiceImpl.findAllPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.sinitial.services.implement.*" />
+          <option name="PATTERN" value="com.sinitial.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="sinitial" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.sinitial.services.implement" />
-      <option name="MAIN_CLASS_NAME" value="com.sinitial.services.implement.UserServiceImpl" />
-      <option name="METHOD_NAME" value="deleteUser" />
+      <option name="PACKAGE_NAME" value="com.sinitial.test" />
+      <option name="MAIN_CLASS_NAME" value="com.sinitial.test.PostServiceImpl" />
+      <option name="METHOD_NAME" value="findAllPost" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -628,41 +646,16 @@
     <configuration name="UserServiceImpl.findUserByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.sinitial.services.implement.*" />
+          <option name="PATTERN" value="com.sinitial.services_bak.implement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="sinitial" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.sinitial.services.implement" />
-      <option name="MAIN_CLASS_NAME" value="com.sinitial.services.implement.UserServiceImpl" />
+      <option name="PACKAGE_NAME" value="com.sinitial.services_bak.implement" />
+      <option name="MAIN_CLASS_NAME" value="com.sinitial.services_bak.implement.UserServiceImpl" />
       <option name="METHOD_NAME" value="findUserByName" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="UserServiceImpl.findUserByRealName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.sinitial.services.implement.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="sinitial" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.sinitial.services.implement" />
-      <option name="MAIN_CLASS_NAME" value="com.sinitial.services.implement.UserServiceImpl" />
-      <option name="METHOD_NAME" value="findUserByRealName" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -768,24 +761,27 @@
       <envs />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.PostServicesImpl.findPost" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.AuthorservicesImpl.findAuthorAndPostById" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.UserServiceImpl.findUserByRealName" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.UserServiceImpl.findUserByName" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.UserServiceImpl.deleteUser" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.AuthorServicesImpl.findAuthorAndPostById" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.UserServiceImpl.findUserByName" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.AuthorServicesImpl.findAuthorByName" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.AuthorServiceImpl.findAuthorByName" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.PostServiceImpl.findAllPost" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.UserServiceImpl.deleteUser" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.UserServiceImpl.findUserByRealName" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.UserServiceImpl.findUserByName" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.AuthorservicesImpl.findAuthorAndPostById" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.PostServicesImpl.findPost" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.PostServiceImpl.findAllPost" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.AuthorServiceImpl.findAuthorByName" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.AuthorServicesImpl.findAuthorByName" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.AuthorServicesImpl.findAuthorAndPostById" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.UserServiceImpl.findUserByName" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -805,34 +801,52 @@
       <workItem from="1501896593549" duration="8571000" />
       <workItem from="1501930082548" duration="1948000" />
       <workItem from="1501982275336" duration="5972000" />
-      <workItem from="1502066234984" duration="22733000" />
+      <workItem from="1502066234984" duration="30574000" />
+      <workItem from="1502151423090" duration="17536000" />
+      <workItem from="1502237248154" duration="2902000" />
+      <workItem from="1502277846143" duration="160000" />
+      <workItem from="1502278058947" duration="23000" />
+      <workItem from="1502279531419" duration="2222000" />
+      <workItem from="1502284164145" duration="2498000" />
+      <workItem from="1502326109052" duration="215000" />
+      <workItem from="1502326803955" duration="166000" />
+      <workItem from="1502327025623" duration="1449000" />
+      <workItem from="1502328591383" duration="6465000" />
     </task>
+    <task id="LOCAL-00001" summary="test git">
+      <created>1502287055815</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1502287055815</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AuthorDaoImpl_findAuthorAndPostById - 2017.08.07 at 09h 09m 36s.xml">
-      <configuration name="AuthorDaoImpl.findAuthorAndPostById" configurationId="JUnit" />
+    <history-entry file="PostServiceImpl_findAllPost - 2017.08.09 at 08h 31m 03s.xml">
+      <configuration name="PostServiceImpl.findAllPost" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AuthorDaoImpl_findAuthorAndPostById - 2017.08.07 at 09h 16m 29s.xml">
-      <configuration name="AuthorDaoImpl.findAuthorAndPostById" configurationId="JUnit" />
+    <history-entry file="PostServiceImpl_findAllPost - 2017.08.09 at 08h 32m 57s.xml">
+      <configuration name="PostServiceImpl.findAllPost" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AuthorDaoImpl_findAuthorAndPostById - 2017.08.07 at 09h 17m 57s.xml">
-      <configuration name="AuthorDaoImpl.findAuthorAndPostById" configurationId="JUnit" />
+    <history-entry file="PostServiceImpl_findAllPost - 2017.08.09 at 08h 35m 04s.xml">
+      <configuration name="PostServiceImpl.findAllPost" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceImpl_deleteUser - 2017.08.07 at 18h 41m 37s.xml">
-      <configuration name="UserServiceImpl.deleteUser" configurationId="JUnit" />
+    <history-entry file="PostServiceImpl_findAllPost - 2017.08.09 at 08h 44m 24s.xml">
+      <configuration name="PostServiceImpl.findAllPost" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceImpl_deleteUser - 2017.08.07 at 18h 42m 22s.xml">
-      <configuration name="UserServiceImpl.deleteUser" configurationId="JUnit" />
+    <history-entry file="PostServiceImpl_findAllPost - 2017.08.09 at 08h 44m 59s.xml">
+      <configuration name="PostServiceImpl.findAllPost" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceImpl_findUserByName - 2017.08.07 at 18h 40m 13s.xml">
-      <configuration name="UserServiceImpl.findUserByName" configurationId="JUnit" />
+    <history-entry file="PostServiceImpl_findAllPost - 2017.08.09 at 21h 26m 21s.xml">
+      <configuration name="PostServiceImpl.findAllPost" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PostServiceImpl_findAllPost - 2017.08.09 at 21h 33m 01s.xml">
+      <configuration name="PostServiceImpl.findAllPost" configurationId="JUnit" />
     </history-entry>
     <history-entry file="UserServiceImpl_findUserByName - 2017.08.07 at 18h 41m 17s.xml">
       <configuration name="UserServiceImpl.findUserByName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserServiceImpl_findUserByRealName - 2017.08.07 at 15h 49m 27s.xml">
-      <configuration name="UserServiceImpl.findUserByRealName" configurationId="JUnit" />
     </history-entry>
     <history-entry file="UserServiceImpl_findUserByRealName - 2017.08.07 at 15h 50m 28s.xml">
       <configuration name="UserServiceImpl.findUserByRealName" configurationId="JUnit" />
@@ -842,7 +856,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71274000" />
+    <option name="totallyTimeSpent" value="112753000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -858,65 +872,66 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2638889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33950618" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22698413" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18015873" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33848533" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26587301" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26275116" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18015873" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18015873" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2638889" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26275116" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33950618" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33848533" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22698413" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23412699" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -929,9 +944,13 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test git" />
+    <option name="LAST_COMMIT_MESSAGE" value="test git" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -940,193 +959,176 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/User.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/oracle/Post.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+        <state relative-caret-position="218">
+          <caret line="45" column="130" lean-forward="true" selection-start-line="45" selection-start-column="130" selection-end-line="45" selection-end-column="130" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Author.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/oracle/Configuration.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="560">
+          <caret line="32" column="33" lean-forward="false" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Post.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/entity_old/Author.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="85" column="25" lean-forward="false" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
-          <folding>
-            <marker date="1501900994248" expanded="true" signature="1815:1845" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="1815:1937" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2069:2217" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2377:2517" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2377:2550" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2660:2788" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2660:2806" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2901:2946" ph="DELETE FROM " />
-            <marker date="1501900994248" expanded="true" signature="3034:3359" ph="INSERT INTO sl_post... " />
-            <marker date="1501900994248" expanded="true" signature="3451:3688" ph="UPDATE sl_po... " />
-            <marker date="1501900994248" expanded="true" signature="3685:3688" ph="UPDATE AKARI... " />
-          </folding>
+        <state relative-caret-position="313">
+          <caret line="53" column="111" lean-forward="false" selection-start-line="53" selection-start-column="111" selection-end-line="53" selection-end-column="111" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/entity/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/AuthorservicesImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="47" column="38" lean-forward="false" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
-          <folding>
-            <element signature="method#findAuthorByName#1;class#AuthorservicesImpl#0" expanded="false" />
-            <element signature="method#deleteAuthor#1;class#AuthorservicesImpl#0" expanded="false" />
-            <element signature="method#insertAuthor#1;class#AuthorservicesImpl#0" expanded="false" />
-            <element signature="method#updateAuthor#1;class#AuthorservicesImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4b188587-fe54-43f9-a0e8-e5f1c4020b7d/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="77" lean-forward="false" selection-start-line="15" selection-start-column="77" selection-end-line="15" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e83bc1bd-0cc4-4060-8030-02611a552769/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Configuration.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="35" column="82" lean-forward="false" selection-start-line="35" selection-start-column="82" selection-end-line="35" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/User.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Post.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="85" column="25" lean-forward="false" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
-          <folding>
-            <marker date="1501900994248" expanded="true" signature="1815:1845" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="1815:1937" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2069:2217" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2377:2517" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2377:2550" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2660:2788" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2660:2806" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2901:2946" ph="DELETE FROM " />
-            <marker date="1501900994248" expanded="true" signature="3034:3359" ph="INSERT INTO sl_post... " />
-            <marker date="1501900994248" expanded="true" signature="3451:3688" ph="UPDATE sl_po... " />
-            <marker date="1501900994248" expanded="true" signature="3685:3688" ph="UPDATE AKARI... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/entity/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Author.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/oracle/User.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-342">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar!/META-INF/maven/log4j/log4j/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2850">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar!/META-INF/maven/log4j/log4j/pom.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://src:table:/b962e7c3/e83bc1bd-0cc4-4060-8030-02611a552769/SINITIAL.SL_AUTHOR">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/b962e7c3/4b188587-fe54-43f9-a0e8-e5f1c4020b7d/sinitial.user_info">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/dao/PostDao.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/dao_old/AuthorDao.java" />
+    <entry file="das://table:/b962e7c3/4b188587-fe54-43f9-a0e8-e5f1c4020b7d/sinitial.sl_user">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/b962e7c3/e83bc1bd-0cc4-4060-8030-02611a552769/SINITIAL.USER_INFO">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services_bak/implement/PostServicesImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services_bak/UserServices.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/dao_bak/AuthorMapper.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Author.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="49" column="124" lean-forward="false" selection-start-line="49" selection-start-column="124" selection-end-line="49" selection-end-column="124" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/oracle/Author.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services_bak/implement/NewSqlSessionFactory.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/test/MybatisGenerator.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.4/mybatis-3.4.4-sources.jar!/org/apache/ibatis/session/SqlSession.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        <state relative-caret-position="169">
+          <caret line="275" column="13" lean-forward="false" selection-start-line="275" selection-start-column="13" selection-end-line="275" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/entity/test.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/User.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services_bak/implement/AuthorServicesImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services_bak/AuthorServices.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services_bak/implement/UserServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/service/PostService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+        <state relative-caret-position="-1254">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1502154473164" expanded="true" signature="3695:3807" ph="select from sl_user" />
+            <marker date="1502154473164" expanded="true" signature="3893:3959" ph="delete from " />
+            <marker date="1502154473164" expanded="true" signature="4056:4075" ph="delete from " />
+            <marker date="1502154473164" expanded="true" signature="4248:4589" ph="insert into sl_user... " />
+            <marker date="1502154473164" expanded="true" signature="6004:6032" ph="select count... sl_user" />
+            <marker date="1502154473164" expanded="true" signature="7176:7570" ph="update sl_us... " />
+            <marker date="1502154473164" expanded="true" signature="7774:8435" ph="update sl_us... " />
+            <marker date="1502154473164" expanded="true" signature="8528:8876" ph="update sl_us... " />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/domain/UserExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        <state relative-caret-position="190">
+          <caret line="56" column="43" lean-forward="true" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/service/AuthorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="39" column="54" lean-forward="true" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/domain/AuthorExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#793#794#0" expanded="false" />
+            <element signature="e#835#836#0" expanded="false" />
+            <element signature="e#1704#1705#0" expanded="false" />
+            <element signature="e#1754#1755#0" expanded="false" />
+            <element signature="e#1805#1806#0" expanded="false" />
+            <element signature="e#1844#1845#0" expanded="false" />
+            <element signature="e#1892#1893#0" expanded="false" />
+            <element signature="e#1931#1932#0" expanded="false" />
+            <element signature="e#16368#16369#0" expanded="false" />
+            <element signature="e#16420#16421#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/test/PostService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/test_old/PostDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="68" column="30" lean-forward="false" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/test/NewSqlSessionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/domain/PostExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10830">
+          <caret line="598" column="9" lean-forward="false" selection-start-line="598" selection-start-column="9" selection-end-line="598" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/service/Implement/AuthorServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="173" column="42" lean-forward="false" selection-start-line="173" selection-start-column="42" selection-end-line="173" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/domain/Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="86" column="18" lean-forward="false" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="76" column="18" lean-forward="false" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1137,216 +1139,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4b188587-fe54-43f9-a0e8-e5f1c4020b7d/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="104" column="43" lean-forward="false" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/entity/Post.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1254">
-          <caret line="94" column="31" lean-forward="false" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
-          <folding>
-            <element signature="e#2354#2355#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e83bc1bd-0cc4-4060-8030-02611a552769/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3002">
-          <caret line="158" column="116" lean-forward="false" selection-start-line="158" selection-start-column="116" selection-end-line="158" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/b962e7c3/e83bc1bd-0cc4-4060-8030-02611a552769/SINITIAL.SL_AUTHOR">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/b962e7c3/e83bc1bd-0cc4-4060-8030-02611a552769/SINITIAL.SL_POST">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/notebook/blog搭建.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/oracle/Post.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="45" column="130" lean-forward="true" selection-start-line="45" selection-start-column="130" selection-end-line="45" selection-end-column="130" />
-          <folding>
-            <element signature="e#2761#2765#0" expanded="false" />
-            <element signature="e#2785#2789#0" expanded="false" />
-            <marker date="1501921682324" expanded="true" signature="1815:1937" ph="SELECT * FRO... sl_post" />
-            <marker date="1501921682324" expanded="true" signature="2069:2217" ph="SELECT * FRO... sl_post" />
-            <marker date="1501921682324" expanded="true" signature="2377:2550" ph="SELECT * FRO... sl_post" />
-            <marker date="1501921682324" expanded="true" signature="2660:2856" ph="SELECT * FRO... sl_post" />
-            <marker date="1501921682324" expanded="true" signature="2675:2682" ph="SELECT ROWNU... SL_POST" />
-            <marker date="1501921682324" expanded="true" signature="2675:2799" ph="SELECT * FRO... ROWNUM" />
-            <marker date="1501921682324" expanded="true" signature="2690:2774" ph="SELECT ROWNU... SL_POST" />
-            <marker date="1501921682324" expanded="true" signature="2951:2996" ph="DELETE FROM " />
-            <marker date="1501921682324" expanded="true" signature="3084:3457" ph="INSERT INTO sinitial.sl_post... " />
-            <marker date="1501921682324" expanded="true" signature="3549:3786" ph="UPDATE sl_po... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/oracle/Configuration.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="32" column="33" lean-forward="false" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/entity/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="53" column="111" lean-forward="false" selection-start-line="53" selection-start-column="111" selection-end-line="53" selection-end-column="111" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2599#2600#0" expanded="true" />
-            <element signature="e#2627#2628#0" expanded="true" />
-            <element signature="e#2673#2674#0" expanded="true" />
-            <element signature="e#2707#2708#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Post.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="31" selection-end-column="63" />
-          <folding>
-            <marker date="1501900994248" expanded="true" signature="1815:1845" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="1815:1937" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2069:2217" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2377:2517" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2377:2550" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2660:2788" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2660:2806" ph="SELECT * FRO... sl_post" />
-            <marker date="1501900994248" expanded="true" signature="2901:2946" ph="DELETE FROM " />
-            <marker date="1501900994248" expanded="true" signature="3034:3359" ph="INSERT INTO sl_post... " />
-            <marker date="1501900994248" expanded="true" signature="3451:3688" ph="UPDATE sl_po... " />
-            <marker date="1501900994248" expanded="true" signature="3685:3688" ph="UPDATE AKARI... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/dao/PostDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="101" column="18" lean-forward="true" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/dao_bak/AuthorDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="12" column="64" lean-forward="true" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Configuration.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="51" column="38" lean-forward="true" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Author.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="49" column="124" lean-forward="true" selection-start-line="49" selection-start-column="124" selection-end-line="49" selection-end-column="124" />
-          <folding>
-            <marker date="1502068667060" expanded="true" signature="1811:1834" ph="SELECT * FRO... sl_author" />
-            <marker date="1502068667060" expanded="true" signature="1971:2087" ph="SELECT * FRO... sl_author" />
-            <marker date="1502068667060" expanded="true" signature="2223:2276" ph="SELECT * FRO... sl_author" />
-            <marker date="1502068667060" expanded="true" signature="2440:2497" ph="SELECT * FRO... sl_author" />
-            <marker date="1502068667060" expanded="true" signature="2594:2645" ph="DELETE FROM " />
-            <marker date="1502068667060" expanded="true" signature="2737:2941" ph="INSERT INTO sl_author... " />
-            <marker date="1502068667060" expanded="true" signature="3037:3246" ph="UPDATE sl_au... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/PostServicesImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="37" column="13" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/demoConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="32" column="56" lean-forward="false" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services/UserServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/b962e7c3/4b188587-fe54-43f9-a0e8-e5f1c4020b7d/sinitial.sl_author">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1354,59 +1146,149 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services/AuthorServices.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/AuthorMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        <state relative-caret-position="76">
+          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="8" selection-end-column="84" />
+          <folding>
+            <marker date="1502159071057" expanded="true" signature="3584:3702" ph="select from sl_author" />
+            <marker date="1502159071057" expanded="true" signature="3788:3860" ph="delete from " />
+            <marker date="1502159071057" expanded="true" signature="3959:3980" ph="delete from " />
+            <marker date="1502159071057" expanded="true" signature="4155:4434" ph="insert into sl_author... " />
+            <marker date="1502159071057" expanded="true" signature="5615:5645" ph="select count... sl_author" />
+            <marker date="1502159071057" expanded="true" signature="6616:6934" ph="update sl_au... " />
+            <marker date="1502159071057" expanded="true" signature="7140:7654" ph="update sl_au... " />
+            <marker date="1502159071057" expanded="true" signature="7749:8035" ph="update sl_au... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/dao/PostMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/b962e7c3/4b188587-fe54-43f9-a0e8-e5f1c4020b7d/sinitial.sl_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/PostMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="136" column="38" lean-forward="true" selection-start-line="136" selection-start-column="38" selection-end-line="136" selection-end-column="38" />
+          <folding>
+            <marker date="1502285535488" expanded="true" signature="4446:4746" ph="select disti... sl_post" />
+            <marker date="1502285535488" expanded="true" signature="4446:4828" ph="select disti... sl_post" />
+            <marker date="1502285535488" expanded="true" signature="4945:5104" ph="select , fro... " />
+            <marker date="1502285535488" expanded="true" signature="5190:5256" ph="delete from " />
+            <marker date="1502285535488" expanded="true" signature="5353:5372" ph="delete from " />
+            <marker date="1502285535488" expanded="true" signature="5545:5960" ph="insert into sl_post... " />
+            <marker date="1502285535488" expanded="true" signature="7585:7613" ph="select count... sl_post" />
+            <marker date="1502285535488" expanded="true" signature="8923:9405" ph="update sl_po... " />
+            <marker date="1502285535488" expanded="true" signature="9576:9993" ph="update sl_po... " />
+            <marker date="1502285535488" expanded="true" signature="10197:11001" ph="update sl_po... " />
+            <marker date="1502285535488" expanded="true" signature="11103:11532" ph="update sl_po... " />
+            <marker date="1502285535488" expanded="true" signature="11625:11996" ph="update sl_po... " />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Post.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="45" column="35" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/domain/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/test/PostServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="50" column="28" lean-forward="false" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Configuration.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="47" column="18" lean-forward="false" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/test/MessageService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/test/sinitial/test/MessageService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/test/com/sinitial/test/AuthorServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/test/AuthorServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <element signature="e#528#529#0" expanded="true" />
-            <element signature="e#1571#1572#0" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="true" />
-            <element signature="e#1713#1714#0" expanded="true" />
-            <element signature="e#1737#1738#0" expanded="true" />
-            <element signature="e#1849#1850#0" expanded="true" />
-            <element signature="e#1873#1874#0" expanded="true" />
-            <element signature="e#1985#1986#0" expanded="true" />
-            <element signature="e#2009#2010#0" expanded="true" />
+            <element signature="e#993#994#0" expanded="true" />
+            <element signature="e#1069#1070#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/NewSqlSessionFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/dao/AuthorMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+        <state relative-caret-position="323">
+          <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/test/CompactDisc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/test/OneCd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#228#229#0" expanded="true" />
+            <element signature="e#264#265#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/services/implement/AuthorservicesImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/demoConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <element signature="method#findAuthorByName#1;class#AuthorservicesImpl#0" expanded="false" />
-            <element signature="method#deleteAuthor#1;class#AuthorservicesImpl#0" expanded="false" />
-            <element signature="method#insertAuthor#1;class#AuthorservicesImpl#0" expanded="false" />
-            <element signature="method#updateAuthor#1;class#AuthorservicesImpl#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="193">
+          <caret line="50" column="22" lean-forward="true" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1477,7 +1359,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: org.mariadb.jdbc:mariadb-java-client:2.1.0</last-edited>
+          <last-edited>Maven: com.alibaba:fastjson:1.2.35</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

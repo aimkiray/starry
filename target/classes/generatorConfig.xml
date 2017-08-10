@@ -16,9 +16,9 @@
 
         <!-- 数据库连接 -->
         <jdbcConnection driverClass="org.mariadb.jdbc.Driver"
-                        connectionURL="jdbc:mariadb://localhost:2233/sinitial"
-                        userId="sinitial"
-                        password="1234">
+                        connectionURL="jdbc:mariadb://localhost:2233"
+                        userId="root"
+                        password="1125">
         </jdbcConnection>
 
         <javaTypeResolver >
@@ -37,15 +37,15 @@
         </sqlMapGenerator>
 
         <!-- mybatis3中的mapper接口 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.sinitial.dao_bak" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.sinitial.dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
         <!-- 数据表进行生成操作 schema:相当于库名; tableName:表名; domainObjectName:对应的DO -->
-        <table schema="sinitial" tableName="sl_author" domainObjectName="Author"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
+        <table schema="sinitial" tableName="sl_post" domainObjectName="Post">
+            <!--enableCountByExample="false" enableUpdateByExample="false"
+            enableDeleteByExample="false" enableSelectByExample="false"
+            selectByExampleQueryId="false"-->
             <!-- 如果设置为true，生成的model类会直接使用column本身的名字，而不会再使用驼峰命名方法，比如BORN_DATE，生成的属性名字就是BORN_DATE,而不会是bornDate -->
             <property name="useActualColumnNames" value="false"/>
         </table>
