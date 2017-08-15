@@ -62,6 +62,7 @@
         <mapper resource="mybatis/mariadb/AuthorMapper.xml"/>
         <mapper resource="mybatis/mariadb/PostMapper.xml"/>
         <mapper resource="mybatis/mariadb/UserMapper.xml"/>
+        <mapper resource="mybatis/mariadb/AdminMapper.xml"/>
     </mappers>
 
 </configuration>

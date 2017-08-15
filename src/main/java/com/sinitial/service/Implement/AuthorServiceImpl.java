@@ -3,14 +3,16 @@ package com.sinitial.service.Implement;
 import com.sinitial.dao.AuthorMapper;
 import com.sinitial.domain.AuthorExample;
 import com.sinitial.domain.Author;
-import com.sinitial.domain.Post;
 import com.sinitial.service.AuthorService;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * ━━━━━━神兽出没━━━━━━
@@ -35,6 +37,7 @@ import java.util.List;
  * ━━━━━━感觉萌萌哒━━━━━━
  */
 
+@Service
 public class AuthorServiceImpl implements AuthorService {
 
     private SqlSessionFactory sqlSessionFactory = null;
@@ -46,6 +49,7 @@ public class AuthorServiceImpl implements AuthorService {
 
     /**
      * 获取全部的用户
+     *
      */
     @Override
     public List<Author> findAllAuthor() {
@@ -53,15 +57,64 @@ public class AuthorServiceImpl implements AuthorService {
         SqlSession sqlSession = sqlSessionFactory.openSession();
 //        List<Author> authors = sqlSession.selectList("Author.findAllAuthor");
         authorMapper = sqlSession.getMapper(AuthorMapper.class);
-        AuthorExample authorExample = new AuthorExample();
-        AuthorExample.Criteria criteria = authorExample.createCriteria();
-        List<Author> authors = authorMapper.selectByExample(authorExample);
+        List<Author> authors = authorMapper.selectByExample(null);
 
         if (sqlSession != null) {
             sqlSession.close();
         }
 
         return authors;
+    }
+
+    /**
+     * 根据条件搜索作者
+     *
+     * @param pageNumber  当前页
+     * @param pageSize  每页数量
+     * @param author 按条件搜索
+     * @return 符合条件的作者，不超过limit
+     */
+    @Override
+    public List<Author> searchAuthor(int pageNumber, int pageSize, Author author) {
+        Map<String,Object> map = new HashMap<>();
+//        根据sqlSessionFactory得到session
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        authorMapper = sqlSession.getMapper(AuthorMapper.class);
+        map.put("start",(pageNumber-1)*pageSize);
+        map.put("stop",(pageNumber-1)*pageSize + pageSize);
+        map.put("author",author);
+
+        List<Author> authors = authorMapper.searchAuthor(map);
+
+        if (sqlSession != null) {
+            sqlSession.close();
+        }
+
+        return authors;
+    }
+
+    /**
+     * 查询符合条件的记录数目
+     *
+     * @param author
+     * @return
+     */
+    @Override
+    public int queryAuthorNum(Author author) {
+//        根据sqlSessionFactory得到session
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        authorMapper = sqlSession.getMapper(AuthorMapper.class);
+        AuthorExample authorExample = new AuthorExample();
+        AuthorExample.Criteria criteria = authorExample.createCriteria();
+        if (author != null && author.getAuthorName() != null && !"".equals(author.getAuthorName())) {
+            criteria.andAuthorNameLike("%"+author.getAuthorName()+"%");
+        }
+        if (author != null && author.getNickName() != null && !"".equals(author.getNickName())) {
+            criteria.andNickNameLike("%"+author.getNickName()+"%");
+        }
+        System.out.println(authorMapper.countByExample(authorExample));
+        int count = (int)authorMapper.countByExample(authorExample);
+        return count;
     }
 
     /**
@@ -80,6 +133,32 @@ public class AuthorServiceImpl implements AuthorService {
         }
 
         return author;
+    }
+
+    /**
+     * 作者登录校验
+     *
+     * @param author
+     */
+    @Override
+    public boolean verifyAuthor(Author author) {
+        boolean result = false;
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        authorMapper = sqlSession.getMapper(AuthorMapper.class);
+        AuthorExample authorExample = new AuthorExample();
+        AuthorExample.Criteria criteria = authorExample.createCriteria();
+        criteria.andAuthorNameEqualTo(author.getAuthorName());
+        criteria.andAuthorPasswordEqualTo(author.getAuthorPassword());
+        List<Author> authors = authorMapper.selectByExample(authorExample);
+        if (authors != null && authors.size() > 0) {
+            result = true;
+        } else {
+            result = false;
+        }
+        if (sqlSession != null) {
+            sqlSession.close();
+        }
+        return result;
     }
 
     /**
@@ -127,17 +206,16 @@ public class AuthorServiceImpl implements AuthorService {
      */
     @Override
     public int insertAuthor(Author author) {
-        int result = 0;
 //        根据sqlSessionFactory得到session
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        result = sqlSession.insert("Author.insertAuthor", author);
-        if (result > 0) {
-            sqlSession.commit();
-        }
+//        List<Author> authors = sqlSession.selectList("Author.findAllAuthor");
+        authorMapper = sqlSession.getMapper(AuthorMapper.class);
+        int result = authorMapper.insert(author);
 
         if (sqlSession != null) {
             sqlSession.close();
         }
+
         return result;
     }
 

@@ -1,26 +1,76 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <display-name>Archetype Created Web Application</display-name>
+    
+    <welcome-file-list>
+        <welcome-file>/admin/login.do</welcome-file>
+    </welcome-file-list>
 
-  <!-- 加载log4j的配置文件log4j.properties -->
-  <context-param>
-    <param-name>log4jConfigLocation</param-name>
-    <param-value>log4j/log4j.properties</param-value>
-  </context-param>
+    <!-- 加载log4j的配置文件log4j.properties -->
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>log4j/log4j.properties</param-value>
+    </context-param>
 
-  <!-- 设定刷新日志配置文件的时间间隔，这里设置为10s -->
-  <context-param>
-    <param-name>log4jRefreshInterval</param-name>
-    <param-value>10000</param-value>
-  </context-param>
+    <!-- 设定刷新日志配置文件的时间间隔，这里设置为10s -->
+    <context-param>
+        <param-name>log4jRefreshInterval</param-name>
+        <param-value>10000</param-value>
+    </context-param>
 
-  <!-- 为避免项目间冲突，定义唯一的 webAppRootKey -->
-  <context-param>
-    <param-name>webAppRootKey</param-name>
-    <param-value>scheduleProject</param-value>
-  </context-param>
-  
+    <!-- 为避免项目间冲突，定义唯一的 webAppRootKey -->
+    <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>scheduleProject</param-value>
+    </context-param>
+
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/Service.xml</param-value>
+    </context-param>
+    <!-- 配置 Spring MVC DispatchcerServlet 前端控制器 -->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <!-- contextConfigLocation 是参数名称，该参数的值包含 Spring MVC 的配置文件路径 -->
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring/Controller.xml</param-value>
+        </init-param>
+        <!-- 在 Web 应用启动时立即加载 Servlet -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <!-- Servlet 映射声明 -->
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <!-- 监听当前域的所有请求 -->
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    <!-- 添加 login.jsp 为首页 -->
+    <!--<welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>
+

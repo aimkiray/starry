@@ -20,9 +20,29 @@ public interface AuthorService {
     public Author findAuthorAndPostById(int authorId);
 
     /**
+     * 根据条件搜索作者
+     * @param pageNumber 当前页
+     * @param pageSize 每页数量
+     * @param author 按条件搜索
+     * @return 符合条件的作者，不超过limit
+     */
+    public List<Author> searchAuthor(int pageNumber, int pageSize, Author author);
+
+    /**
+     * 查询符合条件的记录数目
+     * @return
+     */
+    public int queryAuthorNum(Author author);
+
+    /**
      * 通过名字查找作者
      */
     public Author findAuthorByName(String authorName);
+
+    /**
+     * 作者登录校验
+     */
+    public boolean verifyAuthor(Author author);
 
     /**
      * 根据id删除作者

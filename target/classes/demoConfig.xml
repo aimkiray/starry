@@ -48,7 +48,7 @@
         <property name="endingDelimiter" value="`"/>
 
         <!-- 必须要有的，使用这个配置链接数据库
-            @TODO:是否可以扩展
+            TODO是否可以扩展
          -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql:///pss" userId="root" password="admin">
             <!-- 这里面可以设置property属性，每一个property属性都设置到配置的Driver上 -->
