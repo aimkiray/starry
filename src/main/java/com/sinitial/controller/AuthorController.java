@@ -2,16 +2,18 @@ package com.sinitial.controller;
 
 import com.sinitial.domain.Author;
 import com.sinitial.service.AuthorService;
-import com.sinitial.utils.BootstrapTable;
 import com.sinitial.utils.DataTables;
+import com.sinitial.utils.DateTools;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -47,12 +49,11 @@ public class AuthorController {
 
     @RequestMapping("search")
     @ResponseBody
-    public DataTables authorList(int start, int length, String authorName, String nickName) {
+    public DataTables searchAuthor(int start, int length, String authorName, String nickName) {
         DataTables dataTables = new DataTables();
         /*int pageSize = start == null ? 10 : Integer.parseInt(start);
         int pageNumber = length == null ? 1 : Integer.parseInt(length);*/
         int pageSize = length;
-        // param.start = data.start;//开始的记录序号
         int pageNumber = (start / length) + 1;//当前页码
         Author author = new Author();
         if (authorName != null && !"".equals(authorName)) {
@@ -70,44 +71,18 @@ public class AuthorController {
         return dataTables;
     }
 
-    /*@RequestMapping("search")
-    @ResponseBody
-    public BootstrapTable authorList(String realNumber,String realSize,String authorName,String nickName) {
-        BootstrapTable bootstrapTable = new BootstrapTable();
-        int pageSize = realSize == null ? 10 : Integer.parseInt(realSize);
-        int pageNumber = realNumber == null ? 1 : Integer.parseInt(realNumber);
-        Author author = new Author();
-        if (authorName != null && !"".equals(authorName)) {
-            author.setAuthorName(authorName);
-        }
-        if (nickName != null && !"".equals(nickName)) {
-            author.setNickName(nickName);
-        }
-        if (pageNumber != 0 && pageSize != 0) {
-            bootstrapTable.setRows(authorService.searchAuthor(pageNumber,pageSize,author));
-        }
-        bootstrapTable.setTotal(authorService.queryAuthorNum(author));
-        return bootstrapTable;
-    }*/
-
-    @RequestMapping("authors")
-    @ResponseBody
-    public List<Author> getAllAuthor(HttpServletRequest req, HttpServletResponse resp, int start, int limit) {
-        List<Author> authors = authorService.searchAuthor(start, limit, null);
-        return authors;
-    }
-
     @RequestMapping("login")
-    public String authorLogin(HttpServletRequest req, HttpServletResponse resp) {
+    public String authorLogin() {
         return "author/login";
     }
 
     @RequestMapping("verify")
     public String verifyAuthor(HttpServletRequest req, HttpServletResponse resp, HttpSession httpSession, Author author) {
         boolean result = authorService.verifyAuthor(author);
-        req.setAttribute("authorName", author.getAuthorName());
         if (result) {
-            return "redirect:/index/index.do";
+//            req.setAttribute("authorName", author.getAuthorName());
+            httpSession.setAttribute("author", author);
+            return "redirect:/author/panel.do";
         } else {
             try {
                 resp.getWriter().print("<script>alert('false:-1,exist');history.go(-1);</script>");
@@ -124,9 +99,47 @@ public class AuthorController {
         return "author/register";
     }
 
+    @RequestMapping("delete")
+    public String deleteAuthor(HttpServletResponse resp, HttpServletRequest req, Integer authorId) {
+
+        int result = 0;
+        String msg = "false";
+
+        /**
+         * 先删除文件
+         */
+        String path = req.getSession().getServletContext().getRealPath("headimg");
+        Author author = authorService.findAuthorById(authorId);
+        String headImg = author.getHeadshot();
+        File imgPath = new File(path, headImg);
+        if (imgPath.delete()) {
+//            文件删除后再从数据库删除作者
+            result = authorService.deleteAuthor(authorId);
+        } else {
+            msg = "false";
+        }
+
+        if (result == 1) {
+            msg = "true";
+        } else if (result == -1) {
+            msg = "false";
+        } else {
+            msg = "false";
+        }
+        try {
+            resp.getWriter().print(msg);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     @RequestMapping("doregister")
     public String authorDoRegister(HttpServletRequest req, HttpServletResponse resp, Author author) {
-        int result = authorService.insertAuthor(author);
+        int result = 0;
+        if (author != null) {
+            result = authorService.insertAuthor(author);
+        }
         if (result == 1) {
             return "redirect:/author/authors.do";
         } else if (result == -1) {
@@ -147,6 +160,7 @@ public class AuthorController {
 
     }
 
+//    转到作者列表界面
     @RequestMapping("author_list")
     public String authorList(HttpServletRequest req) {
 //        List<Author> authors = authorService.findAllAuthor();
@@ -154,16 +168,158 @@ public class AuthorController {
         return "author/author_list";
     }
 
-    @RequestMapping("find")
-    public String findAuthor(HttpServletRequest req, String authorName) {
-        Author author = authorService.findAuthorByName(authorName);
-        req.setAttribute("author",author);
+//    转到修改界面
+    @RequestMapping("update")
+    public String showUpdateAuthor(HttpServletRequest req, int authorId) {
+        Author author = authorService.findAuthorById(authorId);
+        req.setAttribute("author", author);
         return "author/author_update";
     }
 
-    @RequestMapping("update")
-    public String updateAuthor(Author author) {
+//    执行修改操作
+    @RequestMapping(value = "doupdate", method = RequestMethod.POST)
+    public String updateAuthor(HttpServletResponse resp, HttpServletRequest req, @RequestParam(value = "uploadPic", required = false) MultipartFile file, Author author) {
 
+        String msg = "false";
+
+        /**
+         * 上传文件并保存到headimg目录下
+         */
+        String headImg = null; // 用户保存用户头像文件名
+        String realName = null;
+        if (file != null && !file.isEmpty()) {
+            realName = file.getOriginalFilename();
+//            获取上传的文件名称（new File用于去除可能存在的路径，在spring中有专门的方法）
+//            realName = new File(file.getName()).getName();
+//            获取文件后缀名
+            String ext = FilenameUtils.getExtension(realName);
+            headImg = DateTools.getFileName(ext);
+//            先删除文件，然后构建上传目录及文件对象，不存在则自动创建
+            String path = req.getSession().getServletContext().getRealPath("headimg");
+            String oldHeadImg = author.getHeadshot();
+            File oldImgPath = new File(path, oldHeadImg);
+//            如果图片删除失败，返回false，end.
+            if (!oldImgPath.delete()) {
+                try {
+                    resp.getWriter().print("false");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+            File imgPath = new File(path);
+            if (!imgPath.exists()) {
+                imgPath.mkdir();
+            }
+            File imgFile = new File(path, headImg);
+
+//            保存文件
+            try {
+                file.transferTo(imgFile);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        /**
+         * 修改作者信息
+         */
+        author.setHeadshot(headImg);
+        int result = 0;
+        if (author != null && author.getAuthorId() != null) {
+            result = authorService.updateAuthor(author);
+        }
+
+        if (result == 1) {
+            msg = "true";
+        } else if (result == -1) {
+            msg = "false";
+        } else {
+            msg = "false";
+        }
+        try {
+            resp.getWriter().print(msg);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return null;
+    }
+
+    /**
+     * 获取添加界面
+     * @return ModelAndView
+     */
+    @RequestMapping("add")
+    public String showAddAuthor() {
+        return "author/author_add";
+    }
+
+    /**
+     * 执行添加操作
+     * @param resp
+     * @param req
+     * @param file
+     * @param author
+     * @return
+     */
+    @RequestMapping(value = "doadd", method = RequestMethod.POST)
+    public String addAuthor(HttpServletResponse resp, HttpServletRequest req, @RequestParam(value = "uploadPic", required = false) MultipartFile file, Author author) {
+//        System.out.println(author);
+
+        String msg = "false";
+
+        /**
+         * 上传文件并保存到headimg目录下
+         */
+        String headImg = null; // 用户保存用户头像文件名
+        String realName = null;
+        if (file != null && !file.isEmpty()) {
+            realName = file.getOriginalFilename();
+//            获取文件后缀名
+            String ext = FilenameUtils.getExtension(realName);
+            headImg = DateTools.getFileName(ext);
+//            构建上传目录及文件对象，不存在则自动创建
+            String path = req.getSession().getServletContext().getRealPath("headimg");
+            File imgPath = new File(path);
+            if (!imgPath.exists()) {
+                imgPath.mkdir();
+            }
+            File imgFile = new File(path, headImg);
+
+//            保存文件
+            try {
+                file.transferTo(imgFile);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        /**
+         * 添加作者
+         */
+        author.setHeadshot(headImg);
+        int result = 0;
+        if (author != null && author.getAuthorId() != null) {
+            result = authorService.insertAuthor(author);
+        }
+
+        if (result == 1) {
+            msg = "true";
+        } else if (result == -1) {
+            msg = "false";
+        } else {
+            msg = "false";
+        }
+        try {
+            resp.getWriter().print(msg);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @RequestMapping("panel")
+    public String authorPanel() {
+        return "panel/author_panel";
     }
 }

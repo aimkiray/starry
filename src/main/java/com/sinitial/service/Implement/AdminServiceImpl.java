@@ -7,6 +7,7 @@ import com.sinitial.service.AdminService;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,26 +15,17 @@ import java.util.List;
 @Service
 public class AdminServiceImpl implements AdminService {
 
-    private AdminMapper adminMapper = null;
-    private SqlSessionFactory sqlSessionFactory = null;
-
-    public AdminServiceImpl() {
-        sqlSessionFactory = NewSqlSessionFactory.getSessionFactory();
-    }
+    @Autowired
+    private AdminMapper adminMapper;
 
     /**
      * 获取全部的管理员
      */
     @Override
     public List<Admin> findAllAdmin() {
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        adminMapper = sqlSession.getMapper(AdminMapper.class);
-//        AdminExample adminExample = new AdminExample();
-//        AdminExample.Criteria criteria = adminExample.createCriteria();
+
         List<Admin> admins = adminMapper.selectByExample(null);
-        if (sqlSession != null) {
-            sqlSession.close();
-        }
+
         return admins;
     }
 
@@ -65,8 +57,6 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public boolean verifyAdmin(Admin admin) {
         boolean result = false;
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        adminMapper = sqlSession.getMapper(AdminMapper.class);
         AdminExample adminExample = new AdminExample();
         AdminExample.Criteria criteria = adminExample.createCriteria();
         criteria.andAdminNameEqualTo(admin.getAdminName());
@@ -76,9 +66,6 @@ public class AdminServiceImpl implements AdminService {
             result = true;
         } else {
             result = false;
-        }
-        if (sqlSession != null) {
-            sqlSession.close();
         }
         return result;
     }
@@ -91,8 +78,6 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public int insertAdmin(Admin admin) {
         int result = 0;
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        adminMapper = sqlSession.getMapper(AdminMapper.class);
         AdminExample adminExample = new AdminExample();
         AdminExample.Criteria criteria = adminExample.createCriteria();
         criteria.andAdminNameEqualTo(admin.getAdminName());
@@ -101,12 +86,6 @@ public class AdminServiceImpl implements AdminService {
             result = -1;
         } else {
             result = adminMapper.insert(admin);
-        }
-        if (result == 1) {
-            sqlSession.commit();
-        }
-        if (sqlSession != null) {
-            sqlSession.close();
         }
         return result;
     }

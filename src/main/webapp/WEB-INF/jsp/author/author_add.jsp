@@ -9,21 +9,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>添加产品</title>
+    <title>新生</title>
 </head>
 <script>
     $(document).ready(function () {
         $("#btn_add_author").click(function () {
             $.ajax({
-                url: "/authorservlet.do?operate=addauthor&flag=ajax",
+                url: "/author/doadd.do",
                 cache: false, //禁用缓存
-                processData: false, //不对数据进行处理
-                contentType: false,
+                contentType : false,// 告诉jQuery不要去设置Content-Type请求头
+                processData : false,// 告诉jQuery不要去处理发送的数据
+                async: false,
                 type: "post",
-                data: new FormData($("#uploadForm")[0]),
+                data: new FormData($("#addUploadForm")[0]),
                 success: function (data) {
                     if (data == "true") {
-                        $("#tb_author").bootstrapTable('refresh');
+                        authorTable().Init.ajax.reload();
                         $(".bootbox-close-button").click();
                     } else {
                         alert("添加失败");
@@ -51,56 +52,35 @@
         });
 //        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii:ss'});
     });
-    /*function LoadType() {
-        $.ajax({
-            url: "/authorservlet.do?operate=queryProductType",
-            type: "post",
-            dataType: "json",
-            success: function (arrayType) {
-                var optionStr = "<option value='0'>请选择类别</option>";
-                for (var i = 0; i < arrayType.length; i++) {
-                    var jsonData = arrayType[i];
-                    optionStr += "<option value='" + jsonData.typeId + "'>" + jsonData.typeName + "</option>"
-                }
-                $("#typeId").html(optionStr);
-            },
-            error: function () {
-                alert("通信失败");
-            }
-        });
-    }*/
 </script>
 <body>
-<form id="uploadForm" enctype="multipart/form-data">
+
+<form id="addUploadForm" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="authorId" value="${author.authorId}">
     <div class="form-group">
         <label for="authorName">名称</label>
         <input type="text" class="form-control" id="authorName" name="authorName" placeholder="君の名は。">
     </div>
     <div class="form-group">
-        <label for="authorPrice">价格</label>
-        <input type="text" class="form-control" id="authorPrice" name="authorPrice" placeholder="价格">
+        <label for="nickName">昵称</label>
+        <input type="text" class="form-control" id="nickName" name="nickName" placeholder="昵称">
     </div>
     <div class="form-group">
-        <label for="number">库存</label>
-        <input type="text" class="form-control" id="number" name="number" placeholder="库存">
+        <label for="authorPassword">密码</label>
+        <input type="text" class="form-control" id="authorPassword" name="authorPassword" placeholder="密码">
     </div>
     <div class="form-group">
-        <label for="authorTime">日期</label>
-        <input id="authorTime" name="authorTime" type="text" value="" placeholder="日期" readonly class="form_datetime form-control">
+        <label for="authorInfo">简介</label>
+        <input type="text" class="form-control" id="authorInfo" name="authorInfo" placeholder="简介">
     </div>
     <div class="form-group">
-        <label for="typeId">类别：</label>
-        <select class="form-control" id="typeId" name="authorTypeId">
-            <option value="0">请选择类别</option>
-            <c:forEach items="${requestScope.authorTypes}" var="authorTypes">
-                <option value="${authorTypes.typeId}" <c:if test="${authorTypes.typeId == requestScope.author.authorType.typeId}">selected</c:if>>${authorTypes.typeName}</option>
-            </c:forEach>
-        </select>
+        <label for="authorDate">注册日期</label>
+        <input class="form_datetime form-control" id="authorDate" name="authorDate" type="text" placeholder="注册日期" readonly>
     </div>
     <div class="form-group">
         <label for="uploadPic">File input</label>
         <input type="file" id="uploadPic" name="uploadPic">
-        <p class="help-block">产品图片上传</p>
+        <p class="help-block">头像上传</p>
     </div>
 
     <button type="button" id="btn_add_author" class="btn btn-default">提交</button>

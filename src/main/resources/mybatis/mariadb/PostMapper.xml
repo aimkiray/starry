@@ -2,143 +2,84 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sinitial.dao.PostMapper">
   <resultMap id="BaseResultMap" type="com.sinitial.domain.Post">
-    <id column="post_id" jdbcType="INTEGER" property="postId" />
-    <result column="post_title" jdbcType="VARCHAR" property="postTitle" />
-    <result column="post_status" jdbcType="VARCHAR" property="postStatus" />
-    <result column="post_type" jdbcType="VARCHAR" property="postType" />
-    <result column="post_mime_type" jdbcType="VARCHAR" property="postMimeType" />
-    <result column="post_date" jdbcType="TIMESTAMP" property="postDate" />
-    <association property="author" javaType="Author">
-      <id column="post_author" jdbcType="INTEGER" property="authorId" />
-      <result column="author_name" jdbcType="VARCHAR" property="authorName" />
-      <result column="author_date" jdbcType="TIMESTAMP" property="authorDate" />
-      <result column="author_info" jdbcType="VARCHAR" property="authorInfo" />
-      <result column="author_password" jdbcType="VARCHAR" property="authorPassword" />
-    </association>
+    <id column="post_id" jdbcType="INTEGER" property="postId"/>
+    <result column="post_title" jdbcType="VARCHAR" property="postTitle"/>
+    <result column="post_status" jdbcType="VARCHAR" property="postStatus"/>
+    <result column="post_type" jdbcType="VARCHAR" property="postType"/>
+    <result column="post_mime_type" jdbcType="VARCHAR" property="postMimeType"/>
+    <result column="post_date" jdbcType="TIMESTAMP" property="postDate"/>
+    <association property="author" resultMap="AuthorResult"/>
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.sinitial.domain.Post">
-    <result column="post_content" jdbcType="LONGVARCHAR" property="postContent" />
+    <result column="post_content" jdbcType="LONGVARCHAR" property="postContent"/>
   </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
+  <resultMap id="AuthorResult" type="com.sinitial.domain.Author">
+    <id column="author_id" jdbcType="INTEGER" property="authorId"/>
+    <result column="author_name" jdbcType="VARCHAR" property="authorName"/>
+    <result column="author_date" jdbcType="TIMESTAMP" property="authorDate"/>
+    <result column="author_info" jdbcType="VARCHAR" property="authorInfo"/>
+    <result column="author_password" jdbcType="VARCHAR" property="authorPassword"/>
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName"/>
+    <result column="headshot" jdbcType="VARCHAR" property="headshot"/>
+  </resultMap>
   <sql id="Base_Column_List">
-    post_id, post_title, post_status, post_type, post_author, post_mime_type, post_date
+    post_id, post_title, post_status, post_type, post_mime_type, post_date, author_id, author_name, author_date, author_info, author_password, nick_name, headshot
   </sql>
   <sql id="Blob_Column_List">
     post_content
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.sinitial.domain.PostExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectBySearch" parameterType="map" resultMap="ResultMapWithBLOBs">
     select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
+    <include refid="Base_Column_List"/>
     ,
-    <include refid="Blob_Column_List" />
+    <include refid="Blob_Column_List"/>
     from sl_post
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
+    LEFT JOIN sinitial.sl_author
+    ON sinitial.sl_post.post_author = sinitial.sl_author.author_id
+    where 1=1
+    <if test="searchParam != null and searchParam != ''">
+      and (post_title like concat('%',#{searchParam},'%')
+      or post_content like concat('%',#{searchParam},'%'))
     </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
+    LIMIT #{start},#{limit}
   </select>
-  <select id="selectByExample" parameterType="com.sinitial.domain.PostExample" resultMap="BaseResultMap">
+  <!--<select id="selectBySearch" parameterType="map" resultMap="ResultMapWithBLOBs">
     select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
+    <include refid="Base_Column_List"/>
+    ,
+    <include refid="Blob_Column_List"/>
     from sl_post
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
+    LEFT JOIN sinitial.sl_author
+    ON sinitial.sl_post.post_author = sinitial.sl_author.author_id
+    where 1=1
+    <if test="post != null and post.postTitle != null">
+      and post_title like concat('%',#{post.postTitle},'%')
     </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
+    <if test="post != null and post.postContent != null">
+      and post_content like concat('%',#{post.postContent},'%')
     </if>
-    LEFT JOIN sinitial.sl_author ON sinitial.sl_post.post_author = sinitial.sl_author.author_id
-  </select>
+    LIMIT #{start},#{limit}
+  </select>-->
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    select 
-    <include refid="Base_Column_List" />
+    select
+    <include refid="Base_Column_List"/>
     ,
-    <include refid="Blob_Column_List" />
+    <include refid="Blob_Column_List"/>
     from sl_post
+    LEFT JOIN sinitial.sl_author ON sinitial.sl_post.post_author = sinitial.sl_author.author_id
     where post_id = #{postId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from sl_post
-    where post_id = #{postId,jdbcType=INTEGER}
-  </delete>
-  <delete id="deleteByExample" parameterType="com.sinitial.domain.PostExample">
-    delete from sl_post
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
+    DELETE FROM sl_post
+    WHERE post_id = #{postId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.sinitial.domain.Post">
-    insert into sl_post (post_id, post_title, post_status, 
-      post_type, post_author, post_mime_type, 
-      post_date, post_content)
-    values (#{postId,jdbcType=INTEGER}, #{postTitle,jdbcType=VARCHAR}, #{postStatus,jdbcType=VARCHAR}, 
-      #{postType,jdbcType=VARCHAR}, #{postAuthor,jdbcType=INTEGER}, #{postMimeType,jdbcType=VARCHAR}, 
-      #{postDate,jdbcType=TIMESTAMP}, #{postContent,jdbcType=LONGVARCHAR})
+    INSERT INTO sl_post (post_id, post_title, post_status,
+                         post_type, post_author, post_mime_type,
+                         post_date, post_content)
+    VALUES (#{postId,jdbcType=INTEGER}, #{postTitle,jdbcType=VARCHAR}, #{postStatus,jdbcType=VARCHAR},
+            #{postType,jdbcType=VARCHAR}, #{author.authorId,jdbcType=INTEGER}, #{postMimeType,jdbcType=VARCHAR},
+            #{postDate,jdbcType=TIMESTAMP}, #{postContent,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.sinitial.domain.Post">
     insert into sl_post
@@ -155,7 +96,7 @@
       <if test="postType != null">
         post_type,
       </if>
-      <if test="postAuthor != null">
+      <if test="author != null and author.authorId != null">
         post_author,
       </if>
       <if test="postMimeType != null">
@@ -181,8 +122,8 @@
       <if test="postType != null">
         #{postType,jdbcType=VARCHAR},
       </if>
-      <if test="postAuthor != null">
-        #{postAuthor,jdbcType=INTEGER},
+      <if test="author != null and author.authorId != null">
+        #{author.authorId,jdbcType=INTEGER},
       </if>
       <if test="postMimeType != null">
         #{postMimeType,jdbcType=VARCHAR},
@@ -195,71 +136,6 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.sinitial.domain.PostExample" resultType="java.lang.Long">
-    select count(*) from sl_post
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map">
-    update sl_post
-    <set>
-      <if test="record.postId != null">
-        post_id = #{record.postId,jdbcType=INTEGER},
-      </if>
-      <if test="record.postTitle != null">
-        post_title = #{record.postTitle,jdbcType=VARCHAR},
-      </if>
-      <if test="record.postStatus != null">
-        post_status = #{record.postStatus,jdbcType=VARCHAR},
-      </if>
-      <if test="record.postType != null">
-        post_type = #{record.postType,jdbcType=VARCHAR},
-      </if>
-      <if test="record.postAuthor != null">
-        post_author = #{record.postAuthor,jdbcType=INTEGER},
-      </if>
-      <if test="record.postMimeType != null">
-        post_mime_type = #{record.postMimeType,jdbcType=VARCHAR},
-      </if>
-      <if test="record.postDate != null">
-        post_date = #{record.postDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.postContent != null">
-        post_content = #{record.postContent,jdbcType=LONGVARCHAR},
-      </if>
-    </set>
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExampleWithBLOBs" parameterType="map">
-    update sl_post
-    set post_id = #{record.postId,jdbcType=INTEGER},
-      post_title = #{record.postTitle,jdbcType=VARCHAR},
-      post_status = #{record.postStatus,jdbcType=VARCHAR},
-      post_type = #{record.postType,jdbcType=VARCHAR},
-      post_author = #{record.postAuthor,jdbcType=INTEGER},
-      post_mime_type = #{record.postMimeType,jdbcType=VARCHAR},
-      post_date = #{record.postDate,jdbcType=TIMESTAMP},
-      post_content = #{record.postContent,jdbcType=LONGVARCHAR}
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map">
-    update sl_post
-    set post_id = #{record.postId,jdbcType=INTEGER},
-      post_title = #{record.postTitle,jdbcType=VARCHAR},
-      post_status = #{record.postStatus,jdbcType=VARCHAR},
-      post_type = #{record.postType,jdbcType=VARCHAR},
-      post_author = #{record.postAuthor,jdbcType=INTEGER},
-      post_mime_type = #{record.postMimeType,jdbcType=VARCHAR},
-      post_date = #{record.postDate,jdbcType=TIMESTAMP}
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.sinitial.domain.Post">
     update sl_post
     <set>
@@ -272,8 +148,8 @@
       <if test="postType != null">
         post_type = #{postType,jdbcType=VARCHAR},
       </if>
-      <if test="postAuthor != null">
-        post_author = #{postAuthor,jdbcType=INTEGER},
+      <if test="author != null and author.authorId != null">
+        post_author = #{author.authorId,jdbcType=INTEGER},
       </if>
       <if test="postMimeType != null">
         post_mime_type = #{postMimeType,jdbcType=VARCHAR},
@@ -288,24 +164,24 @@
     where post_id = #{postId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.sinitial.domain.Post">
-    update sl_post
-    set post_title = #{postTitle,jdbcType=VARCHAR},
-      post_status = #{postStatus,jdbcType=VARCHAR},
-      post_type = #{postType,jdbcType=VARCHAR},
-      post_author = #{postAuthor,jdbcType=INTEGER},
+    UPDATE sl_post
+    SET post_title   = #{postTitle,jdbcType=VARCHAR},
+      post_status    = #{postStatus,jdbcType=VARCHAR},
+      post_type      = #{postType,jdbcType=VARCHAR},
+      post_author    = #{author.authorId,jdbcType=INTEGER},
       post_mime_type = #{postMimeType,jdbcType=VARCHAR},
-      post_date = #{postDate,jdbcType=TIMESTAMP},
-      post_content = #{postContent,jdbcType=LONGVARCHAR}
-    where post_id = #{postId,jdbcType=INTEGER}
+      post_date      = #{postDate,jdbcType=TIMESTAMP},
+      post_content   = #{postContent,jdbcType=LONGVARCHAR}
+    WHERE post_id = #{postId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.sinitial.domain.Post">
-    update sl_post
-    set post_title = #{postTitle,jdbcType=VARCHAR},
-      post_status = #{postStatus,jdbcType=VARCHAR},
-      post_type = #{postType,jdbcType=VARCHAR},
-      post_author = #{postAuthor,jdbcType=INTEGER},
+    UPDATE sl_post
+    SET post_title   = #{postTitle,jdbcType=VARCHAR},
+      post_status    = #{postStatus,jdbcType=VARCHAR},
+      post_type      = #{postType,jdbcType=VARCHAR},
+      post_author    = #{author.authorId,jdbcType=INTEGER},
       post_mime_type = #{postMimeType,jdbcType=VARCHAR},
-      post_date = #{postDate,jdbcType=TIMESTAMP}
-    where post_id = #{postId,jdbcType=INTEGER}
+      post_date      = #{postDate,jdbcType=TIMESTAMP}
+    WHERE post_id = #{postId,jdbcType=INTEGER}
   </update>
 </mapper>

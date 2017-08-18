@@ -1,5 +1,8 @@
 package com.sinitial.domain;
 
+import org.springframework.stereotype.Component;
+
+@Component("admin")
 public class Admin {
     private Integer adminId;
 

@@ -1,12 +1,17 @@
 package com.sinitial.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component("author")
 public class Author {
     private Integer authorId;
 
     private String authorName;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date authorDate;
 
     private String authorInfo;
@@ -14,6 +19,8 @@ public class Author {
     private String authorPassword;
 
     private String nickName;
+
+    private String headshot;
 
     public Integer getAuthorId() {
         return authorId;
@@ -61,5 +68,26 @@ public class Author {
 
     public void setNickName(String nickName) {
         this.nickName = nickName == null ? null : nickName.trim();
+    }
+
+    public String getHeadshot() {
+        return headshot;
+    }
+
+    public void setHeadshot(String headshot) {
+        this.headshot = headshot == null ? null : headshot.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "authorId=" + authorId +
+                ", authorName='" + authorName + '\'' +
+                ", authorDate=" + authorDate +
+                ", authorInfo='" + authorInfo + '\'' +
+                ", authorPassword='" + authorPassword + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", headshot='" + headshot + '\'' +
+                '}';
     }
 }

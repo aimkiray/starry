@@ -1,24 +1,25 @@
 package com.sinitial.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.util.Date;
+
 @Component("post")
 public class Post {
     private Integer postId;
 
-    private String postTitle = "去找爱丽丝玩";
+    private String postTitle;
 
     private String postStatus;
 
     private String postType;
 
-    @Resource(name = "author")
     private Author author;
 
     private String postMimeType;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date postDate;
 
     private String postContent;
@@ -55,11 +56,11 @@ public class Post {
         this.postType = postType == null ? null : postType.trim();
     }
 
-    public Author getAuthor() {
+    public Author getPostAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setPostAuthor(Author author) {
         this.author = author;
     }
 
@@ -85,6 +86,14 @@ public class Post {
 
     public void setPostContent(String postContent) {
         this.postContent = postContent == null ? null : postContent.trim();
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     @Override

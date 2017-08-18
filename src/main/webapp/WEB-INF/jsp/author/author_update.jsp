@@ -10,21 +10,22 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>信息修改</title>
+    <title>进化</title>
 </head>
 <script>
     $(document).ready(function () {
         $("#btn_update_author").click(function () {
             $.ajax({
-                url: "/authorservlet.do?operate=updateauthor&flag=ajax",
+                url: "/author/doupdate.do",
                 cache: false, //禁用缓存
-                processData: false, //不对数据进行处理
-                contentType: false,
+                contentType : false,// 告诉jQuery不要去设置Content-Type请求头
+                processData : false,// 告诉jQuery不要去处理发送的数据
+                async: false,
                 type: "post",
                 data: new FormData($("#uploadForm")[0]),
                 success: function (data) {
                     if (data == "true") {
-                        $("#tb_author").bootstrapTable('refresh');
+                        authorTable().Init.ajax.reload();
                         $(".bootbox-close-button").click();
                     } else {
                         alert("修改失败");
@@ -54,38 +55,34 @@
 </script>
 <body>
 <c:set var="author" value="${requestScope.author}" />
-<fmt:formatDate value="${author.authorTime}" pattern="yyyy-MM-dd HH:mm:ss" var="authorTime"/>
-<form id="uploadForm" enctype="multipart/form-data">
+<fmt:formatDate value="${author.authorDate}" pattern="yyyy-MM-dd HH:mm:ss" var="authorDate"/>
+<form id="uploadForm" method="post" enctype="multipart/form-data">
     <input type="hidden" name="authorId" value="${author.authorId}">
+    <input type="hidden" name="headshot" value="${author.headshot}">
     <div class="form-group">
         <label for="authorName">名称</label>
         <input type="text" class="form-control" id="authorName" name="authorName" value="${author.authorName}" placeholder="君の名は。">
     </div>
     <div class="form-group">
-        <label for="authorPrice">价格</label>
-        <input type="text" class="form-control" id="authorPrice" name="authorPrice" value="${author.authorPrice}" placeholder="价格">
+        <label for="nickName">昵称</label>
+        <input type="text" class="form-control" id="nickName" name="nickName" value="${author.nickName}" placeholder="昵称">
     </div>
     <div class="form-group">
-        <label for="number">库存</label>
-        <input type="text" class="form-control" id="number" name="number" value="${author.number}" placeholder="库存">
+        <label for="authorPassword">密码</label>
+        <input type="text" class="form-control" id="authorPassword" name="authorPassword" value="${author.authorPassword}" placeholder="密码">
     </div>
     <div class="form-group">
-        <label for="authorTime">日期</label>
-        <input class="form_datetime form-control" id="authorTime" name="authorTime" type="text" value="${authorTime}" placeholder="日期" readonly>
+        <label for="authorInfo">简介</label>
+        <input type="text" class="form-control" id="authorInfo" name="authorInfo" value="${author.authorInfo}" placeholder="简介">
     </div>
     <div class="form-group">
-        <label for="typeId">类别：</label>
-        <select class="form-control" id="typeId" name="authorTypeId">
-            <option value="0">请选择类别</option>
-            <c:forEach items="${requestScope.authorTypes}" var="authorTypes">
-                <option value="${authorTypes.typeId}" <c:if test="${authorTypes.typeId == requestScope.author.authorType.typeId}">selected</c:if>>${authorTypes.typeName}</option>
-            </c:forEach>
-        </select>
+        <label for="authorDate">注册日期</label>
+        <input class="form_datetime form-control" id="authorDate" name="authorDate" type="text" value="${authorDate}" placeholder="注册日期" readonly>
     </div>
     <div class="form-group">
         <label for="uploadPic">File input</label>
         <input type="file" id="uploadPic" name="uploadPic">
-        <p class="help-block">产品图片上传</p>
+        <p class="help-block">头像上传</p>
     </div>
 
     <button type="button" id="btn_update_author" class="btn btn-default">提交</button>

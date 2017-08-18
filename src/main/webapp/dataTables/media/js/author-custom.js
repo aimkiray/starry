@@ -11,6 +11,9 @@ $(document).ready(function () {
     // 初始化Button的点击事件
     buttonInit();
 
+    // 丢掉datatables报错信息（官方的方案之一）
+    $.fn.dataTable.ext.errMode = 'throw';
+
 });
 
 //提示信息
@@ -40,16 +43,13 @@ var lang = {
     }
 };
 
-/*{
-    "targets": 'nosort',  //列的样式名
-    "orderable": false    //包含上样式名‘nosort’的禁止排序
-}*/
-
 //初始化表格
 var authorTable = function () {
     var tableParam = {};
     tableParam.Init = $("#author_list").dataTable({
         destroy: true, //创建表格前先删除旧表格
+        dom: '<"top"i>rt<"bottom"flp><"clear">',
+        lengthMenu: [5, 10, 25, 50],
         language: lang,  //提示信息
         autoWidth: false,  //禁用自动调整列宽
         stripeClasses: ["odd", "even"],  //为奇偶行加上样式，兼容不支持CSS伪类的场合
@@ -60,7 +60,10 @@ var authorTable = function () {
         order: [],  //取消默认排序查询,否则复选框一列会出现小箭头
         renderer: "bootstrap",  //渲染样式：Bootstrap和jquery-ui
         pagingType: "simple_numbers",  //分页样式：simple,simple_numbers,full,full_numbers
-        columnDefs: [],
+        columnDefs: [{
+            "targets": 'nosort',  //列的样式名
+            "orderable": false    //包含上样式名‘nosort’的禁止排序
+        }],
         ajax: {
             url: '/author/search.do',
             type: 'POST',
@@ -72,12 +75,21 @@ var authorTable = function () {
         },
         //列表表头字段
         columns: [
-            {"data": "authorId"},
-            {"data": "authorName"},
-            {"data": "nickName"},
-            {"data": "authorInfo"},
-            {"data": "authorDate"},
-            {"data": null}
+            {data : "name", "orderable": false, "width": "2%", "render": function(data,type,row,meta){ return '<input type="checkbox" name="'+data+'">'; } },
+            {data : "headshot", "orderable": false, "width": "12px", "render": function(data,type,row,meta){ return '<img style="width: 50px" src="/headimg/'+data+'"/>'; } },
+            {data : "authorId"},
+            {data : "authorName"},
+            {data : "nickName"},
+            {data : "authorInfo"},
+            {data : "authorDate"},
+            {
+                data : "authorId",
+                render: function (data, type, row) {
+                    return '<button class="btn btn-info btn-sm" onclick="updateAuthor('+data+')"><i class="fa fa-pencil"></i>修改</button>' +
+                        '&nbsp;&nbsp;' +
+                        '<button class="btn btn-danger btn-sm" onclick="delAuthor('+data+')"><i class="fa fa-trash-o"></i>删除</button>';
+                }
+            },
         ]
     }).api();
 //此处需调用api()方法,否则返回的是JQuery对象而不是DataTables的API对象
@@ -85,9 +97,9 @@ var authorTable = function () {
     return tableParam;
 }
 
-function updateAuthor(value) {
+function updateAuthor(authorId) {
     $.ajax({
-        url: "/author/update.do?authorId=" + arguments[0],
+        url: "/author/update.do?authorId=" + authorId,
         type: "post",
         dataType: "text",
         /*data: {
@@ -122,15 +134,16 @@ function delAuthor(authorId) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: "/authorservlet.do?operate=delauthor&authorId=" + authorId,
+                    url: "/author/delete.do?authorId=" + authorId,
                     type: "post",
                     dataType: "text",
                     success: function () {
+                        authorTable().Init.ajax.reload();
                         $(".bootbox-close-button").click();
                     },
                     error: function () {
                         alert("删除失败");
-                        // $(".bootbox-close-button").click();
+                        $(".bootbox-close-button").click();
                     }
                 });
             } else {
@@ -154,7 +167,7 @@ function buttonInit() {
 
     $("#btn_add").click(function () {
         $.ajax({
-            url: "/authorservlet.do?operate=getaddauthorjsp",
+            url: "/author/add.do",
             type: "post",
             dataType: "text",
             success: function (data) {

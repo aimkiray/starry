@@ -2,12 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sinitial.dao.AuthorMapper">
   <resultMap id="BaseResultMap" type="com.sinitial.domain.Author">
-    <id column="author_id" jdbcType="INTEGER" property="authorId" />
-    <result column="author_name" jdbcType="VARCHAR" property="authorName" />
-    <result column="author_date" jdbcType="TIMESTAMP" property="authorDate" />
-    <result column="author_info" jdbcType="VARCHAR" property="authorInfo" />
-    <result column="author_password" jdbcType="VARCHAR" property="authorPassword" />
-    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <id column="author_id" jdbcType="INTEGER" property="authorId"/>
+    <result column="author_name" jdbcType="VARCHAR" property="authorName"/>
+    <result column="author_date" jdbcType="TIMESTAMP" property="authorDate"/>
+    <result column="author_info" jdbcType="VARCHAR" property="authorInfo"/>
+    <result column="author_password" jdbcType="VARCHAR" property="authorPassword"/>
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName"/>
+    <result column="headshot" jdbcType="VARCHAR" property="headshot"/>
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -68,23 +69,19 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    author_id, author_name, author_date, author_info, author_password, nick_name
+    author_id, author_name, author_date, author_info, author_password, nick_name, headshot
   </sql>
 
   <!--直接自定义一个搜索功能-->
   <select id="searchAuthor" resultMap="BaseResultMap" parameterType="map">
     select * from sinitial.sl_author where 1=1
-    <if test="author != null">
-      <if test="author.authorName != null">
+    <if test="author != null and author.authorName != null">
         and author_name like concat('%',#{author.authorName},'%')
-      </if>
     </if>
-    <if test="author != null">
-      <if test="author.nickName != null">
+    <if test="author != null and author.nickName != null">
         and nick_name like concat('%',#{author.nickName},'%')
-      </if>
     </if>
-    limit #{start},#{stop}
+    limit #{start},#{limit}
   </select>
 
   <select id="selectByExample" parameterType="com.sinitial.domain.AuthorExample" resultMap="BaseResultMap">
@@ -92,38 +89,38 @@
     <if test="distinct">
       distinct
     </if>
-    <include refid="Base_Column_List" />
+    <include refid="Base_Column_List"/>
     from sl_author
     <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
+      <include refid="Example_Where_Clause"/>
     </if>
     <if test="orderByClause != null">
       order by ${orderByClause}
     </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
+    select
+    <include refid="Base_Column_List"/>
     from sl_author
     where author_id = #{authorId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from sl_author
+    delete from sinitial.sl_author
     where author_id = #{authorId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.sinitial.domain.AuthorExample">
-    delete from sl_author
+    delete from sinitial.sl_author
     <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
+      <include refid="Example_Where_Clause"/>
     </if>
   </delete>
   <insert id="insert" parameterType="com.sinitial.domain.Author">
     insert into sl_author (author_id, author_name, author_date, 
-      author_info, author_password, nick_name
-      )
+      author_info, author_password, nick_name, 
+      headshot)
     values (#{authorId,jdbcType=INTEGER}, #{authorName,jdbcType=VARCHAR}, #{authorDate,jdbcType=TIMESTAMP}, 
-      #{authorInfo,jdbcType=VARCHAR}, #{authorPassword,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}
-      )
+      #{authorInfo,jdbcType=VARCHAR}, #{authorPassword,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, 
+      #{headshot,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.sinitial.domain.Author">
     insert into sl_author
@@ -146,6 +143,9 @@
       <if test="nickName != null">
         nick_name,
       </if>
+      <if test="headshot != null">
+        headshot,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="authorId != null">
@@ -166,12 +166,15 @@
       <if test="nickName != null">
         #{nickName,jdbcType=VARCHAR},
       </if>
+      <if test="headshot != null">
+        #{headshot,jdbcType=VARCHAR},
+      </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.sinitial.domain.AuthorExample" resultType="java.lang.Long">
     select count(*) from sl_author
     <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
+      <include refid="Example_Where_Clause"/>
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
@@ -195,21 +198,25 @@
       <if test="record.nickName != null">
         nick_name = #{record.nickName,jdbcType=VARCHAR},
       </if>
+      <if test="record.headshot != null">
+        headshot = #{record.headshot,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
+      <include refid="Update_By_Example_Where_Clause"/>
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update sl_author
     set author_id = #{record.authorId,jdbcType=INTEGER},
-      author_name = #{record.authorName,jdbcType=VARCHAR},
-      author_date = #{record.authorDate,jdbcType=TIMESTAMP},
-      author_info = #{record.authorInfo,jdbcType=VARCHAR},
-      author_password = #{record.authorPassword,jdbcType=VARCHAR},
-      nick_name = #{record.nickName,jdbcType=VARCHAR}
+    author_name = #{record.authorName,jdbcType=VARCHAR},
+    author_date = #{record.authorDate,jdbcType=TIMESTAMP},
+    author_info = #{record.authorInfo,jdbcType=VARCHAR},
+    author_password = #{record.authorPassword,jdbcType=VARCHAR},
+    nick_name = #{record.nickName,jdbcType=VARCHAR},
+    headshot = #{record.headshot,jdbcType=VARCHAR}
     <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
+      <include refid="Update_By_Example_Where_Clause"/>
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.sinitial.domain.Author">
@@ -230,6 +237,9 @@
       <if test="nickName != null">
         nick_name = #{nickName,jdbcType=VARCHAR},
       </if>
+      <if test="headshot != null">
+        headshot = #{headshot,jdbcType=VARCHAR},
+      </if>
     </set>
     where author_id = #{authorId,jdbcType=INTEGER}
   </update>
@@ -239,7 +249,8 @@
       author_date = #{authorDate,jdbcType=TIMESTAMP},
       author_info = #{authorInfo,jdbcType=VARCHAR},
       author_password = #{authorPassword,jdbcType=VARCHAR},
-      nick_name = #{nickName,jdbcType=VARCHAR}
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      headshot = #{headshot,jdbcType=VARCHAR}
     where author_id = #{authorId,jdbcType=INTEGER}
   </update>
 </mapper>

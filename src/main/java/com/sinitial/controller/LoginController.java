@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class LoginController {
-    public ModelAndView springmvc(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+    public ModelAndView VerifyLogin(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("index/main");
         modelAndView.addObject("message","hello world");

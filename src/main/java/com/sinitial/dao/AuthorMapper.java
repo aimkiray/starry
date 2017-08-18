@@ -8,6 +8,7 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Param;
 
 public interface AuthorMapper {
+
     /**
      * 根据条件搜索作者
      *

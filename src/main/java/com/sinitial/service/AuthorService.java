@@ -40,6 +40,13 @@ public interface AuthorService {
     public Author findAuthorByName(String authorName);
 
     /**
+     * 通过Id查找作者
+     *
+     * @param authorId
+     */
+    public Author findAuthorById(int authorId);
+
+    /**
      * 作者登录校验
      */
     public boolean verifyAuthor(Author author);

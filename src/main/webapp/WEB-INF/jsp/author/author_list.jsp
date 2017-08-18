@@ -14,7 +14,6 @@
     <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap.css">
     <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">
     <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-datetimepicker.min.css">
-    <%--<link type="text/css" rel="stylesheet" href="${root}/dataTables/media/css/jquery.dataTables.min.css">--%>
     <link type="text/css" rel="stylesheet" href="${root}/dataTables/media/css/dataTables.bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="${root}/dataTables/media/css/author-custom.css">
 
@@ -65,6 +64,8 @@
     <table id="author_list" class="table table-striped table-bordered">
         <thead>
         <tr>
+            <th><input type="checkbox"></th>
+            <th>头像</th>
             <th>编号</th>
             <th>用户名</th>
             <th>昵称</th>

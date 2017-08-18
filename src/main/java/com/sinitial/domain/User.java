@@ -1,7 +1,10 @@
 package com.sinitial.domain;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component("user")
 public class User {
     private Integer userId;
 

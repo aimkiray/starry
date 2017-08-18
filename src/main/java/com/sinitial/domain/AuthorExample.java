@@ -504,6 +504,76 @@ public class AuthorExample {
             addCriterion("nick_name not between", value1, value2, "nickName");
             return (Criteria) this;
         }
+
+        public Criteria andHeadshotIsNull() {
+            addCriterion("headshot is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadshotIsNotNull() {
+            addCriterion("headshot is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadshotEqualTo(String value) {
+            addCriterion("headshot =", value, "headshot");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadshotNotEqualTo(String value) {
+            addCriterion("headshot <>", value, "headshot");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadshotGreaterThan(String value) {
+            addCriterion("headshot >", value, "headshot");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadshotGreaterThanOrEqualTo(String value) {
+            addCriterion("headshot >=", value, "headshot");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadshotLessThan(String value) {
+            addCriterion("headshot <", value, "headshot");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadshotLessThanOrEqualTo(String value) {
+            addCriterion("headshot <=", value, "headshot");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadshotLike(String value) {
+            addCriterion("headshot like", value, "headshot");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadshotNotLike(String value) {
+            addCriterion("headshot not like", value, "headshot");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadshotIn(List<String> values) {
+            addCriterion("headshot in", values, "headshot");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadshotNotIn(List<String> values) {
+            addCriterion("headshot not in", values, "headshot");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadshotBetween(String value1, String value2) {
+            addCriterion("headshot between", value1, value2, "headshot");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadshotNotBetween(String value1, String value2) {
+            addCriterion("headshot not between", value1, value2, "headshot");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

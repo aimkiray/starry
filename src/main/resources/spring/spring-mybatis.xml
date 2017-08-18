@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+  <context:component-scan base-package="com.sinitial.service"></context:component-scan>
+
+  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations">
+      <list>
+        <value>classpath:spring/druid.properties</value>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+        init-method="init" destroy-method="close">
+    <!-- 数据库基本信息配置 -->
+    <property name="driverClassName" value="${jdbc_driverClassName}"/>
+    <property name="url" value="${jdbc_url}"/>
+    <property name="username" value="${jdbc_username}"/>
+    <property name="password" value="${jdbc_password}"/>
+    <property name="connectionProperties" value="config.decrypt=true;config.decrypt.key=${jdbc_publicKey}" />
+    <!-- 初始化连接数量 -->
+    <property name="initialSize" value="${initialSize}"/>
+    <!-- 最大并发连接数 -->
+    <property name="maxActive" value="${maxActive}"/>
+    <!-- 最小空闲连接数 -->
+    <property name="minIdle" value="${minIdle}"/>
+    <!-- 配置获取连接等待超时的时间 -->
+    <property name="maxWait" value="${maxWait}"/>
+    <!-- 超过时间限制是否回收 -->
+    <property name="removeAbandoned" value="${removeAbandoned}"/>
+    <!-- 超过时间限制多长； -->
+    <property name="removeAbandonedTimeout" value="${removeAbandonedTimeout}"/>
+    <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+    <property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}"/>
+    <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+    <property name="minEvictableIdleTimeMillis" value="${minEvictableIdleTimeMillis}"/>
+    <!-- 用来检测连接是否有效的sql，要求是一个查询语句-->
+    <property name="validationQuery" value="${validationQuery}"/>
+    <!-- 申请连接的时候检测 -->
+    <property name="testWhileIdle" value="${testWhileIdle}" />
+    <!-- 申请连接时执行validationQuery检测连接是否有效，配置为true会降低性能 -->
+    <property name="testOnBorrow" value="${testOnBorrow}"/>
+    <!-- 归还连接时执行validationQuery检测连接是否有效，配置为true会降低性能  -->
+    <property name="testOnReturn" value="${testOnReturn}"/>
+    <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+    <property name="poolPreparedStatements" value="${poolPreparedStatements}"/>
+    <property name="maxPoolPreparedStatementPerConnectionSize" value="${maxPoolPreparedStatementPerConnectionSize}"/>
+    <!--属性类型是字符串，通过别名的方式配置扩展插件，常用的插件有：
+        监控统计用的filter:stat
+        日志用的filter:log4j
+         防御SQL注入的filter:wall -->
+    <property name="filters" value="${filters}"/>
+  </bean>
+
+  <!--<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+    &lt;!&ndash; 基本属性 url、user、password &ndash;&gt;
+    <property name="driver" value="${jdbc_driver}"/>
+    <property name="url" value="${jdbc_url}" />
+    <property name="username" value="${jdbc_user}" />
+    <property name="password" value="${jdbc_password}" />
+  </bean>-->
+  <!--<bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource">
+    <property name="driver" value="org.mariadb.jdbc.Driver"/>
+    <property name="url" value="jdbc:mariadb://localhost:2233/sinitial"/>
+    <property name="username" value="sinitial"/>
+    <property name="password" value="1234"/>
+  </bean>-->
+  <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSource"/>
+    <!-- 配置MyBaties全局配置文件:mybatis-config.xml -->
+    <property name="configLocation" value="classpath:mybatis/mariadb/mybatis-config.xml" />
+    <property name="mapperLocations" value="classpath:mybatis/mariadb/*Mapper.xml"/>
+  </bean>
+
+  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="com.sinitial.dao"/>
+    <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+  </bean>
+
+  <!-- 配置事务管理器 -->
+  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <!-- 注入数据库连接池 -->
+    <property name="dataSource" ref="dataSource"/>
+  </bean>
+
+  <!-- 配置声明式事务 -->
+  <tx:advice id="serviceAdvice" transaction-manager="transactionManager">
+    <tx:attributes>
+      <tx:method name="insert*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+      <tx:method name="delete*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+      <tx:method name="update*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+      <tx:method name="find*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+      <tx:method name="verify*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+      <tx:method name="search*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+      <tx:method name="query*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+    </tx:attributes>
+  </tx:advice>
+
+  <!-- 配置日志 -->
+  <bean id="logAspect" class="com.sinitial.aop.LogAspect"/>
+
+  <!-- 哪些类那些方法使用事务 -->
+  <aop:config>
+    <!-- 只对业务逻辑层实施事务 -->
+    <aop:pointcut id="ServiceMangerMethod" expression="execution(* com.sinitial.service..*(..))"/>
+    <aop:advisor advice-ref="serviceAdvice" pointcut-ref="ServiceMangerMethod"/>
+    <aop:aspect ref="logAspect">
+      <aop:before method="before" pointcut-ref="ServiceMangerMethod"/>
+      <aop:after method="after" pointcut-ref="ServiceMangerMethod"/>
+      <aop:after-returning method="afterReturn" returning="value" pointcut-ref="ServiceMangerMethod"/>
+    </aop:aspect>
+  </aop:config>
+</beans>
