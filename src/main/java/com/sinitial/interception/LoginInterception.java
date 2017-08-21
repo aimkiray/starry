@@ -37,7 +37,7 @@ public class LoginInterception implements HandlerInterceptor {
         }
 
 //        如果用户已经登录 放行
-        if (httpServletRequest.getSession().getAttribute("author") != null) {
+        if (httpServletRequest.getSession().getAttribute("authorName") != null) {
 //            更好的实现方式的使用cookie
             return true;
         }

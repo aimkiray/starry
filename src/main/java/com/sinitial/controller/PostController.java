@@ -68,6 +68,6 @@ public class PostController {
     @RequestMapping("write")
     public String writePost(HttpServletRequest request, @PathVariable String authorName) {
         request.setAttribute("authorName",authorName);
-        return "post/write_post";
+        return "panel/write_post";
     }
 }

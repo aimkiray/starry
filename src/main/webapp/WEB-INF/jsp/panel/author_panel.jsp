@@ -12,59 +12,64 @@
 <head>
     <title>Title</title>
     <c:set var="root" value="${pageContext.request.contextPath}"/>
-    <link rel="stylesheet" href="${root}/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="${root}/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <%--<link rel="stylesheet" href="${root}/bootstrap/css/bootstrap.css">--%>
+    <%--<link rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">--%>
+    <link rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="${root}/dataTables/media/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="${root}/panel/css/panel-custom.css">
 
     <script src="${root}/dataTables/media/js/jquery.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="${root}/js/bootbox.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap-3.3.7-dist/js/bootbox.min.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
     <script src="${root}/panel/js/panel-custom.js" type="text/javascript"></script>
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row clearfix">
+<div class="container">
+
+    <div class="row">
+
+        <div class="row clearfix">
         <div class="col-md-12 column">
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">Brand</a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">SINITIAL系统控制中心</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active">
-                            <a href="#">Link</a>
+                            <a href="#">文章</a>
                         </li>
                         <li>
-                            <a href="#">Link</a>
+                            <a href="#">个人信息</a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多功能<strong class="caret"></strong></a>
                             <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#">Action</a>
+                                <li class="disabled">
+                                    <a href="#">一键删库</a>
                                 </li>
-                                <li>
-                                    <a href="#">Another action</a>
+                                <li class="disabled">
+                                    <a href="#">一键格盘</a>
                                 </li>
-                                <li>
-                                    <a href="#">Something else here</a>
+                                <li class="disabled">
+                                    <a href="#">一键自毁</a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li class="disabled">
+                                    <a href="#">一键以上全部</a>
                                 </li>
                                 <li class="divider">
                                 </li>
                                 <li>
-                                    <a href="#">Separated link</a>
-                                </li>
-                                <li class="divider">
-                                </li>
-                                <li>
-                                    <a href="#">One more separated link</a>
+                                    <a href="#">拖出去续了</a>
                                 </li>
                             </ul>
                         </li>
@@ -76,126 +81,41 @@
                     </form>--%>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">Link</a>
+                            <a href="#">${sessionScope.authorName}</a>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#">Action</a>
-                                </li>
-                                <li>
-                                    <a href="#">Another action</a>
-                                </li>
-                                <li>
-                                    <a href="#">Something else here</a>
-                                </li>
-                                <li class="divider">
-                                </li>
-                                <li>
-                                    <a href="#">Separated link</a>
-                                </li>
-                            </ul>
+                        <li>
+                            <a href="#">安全退出</a>
                         </li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
                     </ul>
                 </div>
 
             </nav>
         </div>
-    </div>
-    <div class="row-fluid">
-        <div class="span2">
+        </div>
+        <nav class="navbar"></nav>
+        <div class="row clearfix">
+        <div class="col-md-2">
             <ul class="nav nav-stacked nav-pills">
                 <li class="active">
-                    <a href="#">首页</a>
+                    <a href="#">写文章</a>
                 </li>
                 <li>
-                    <a href="#">简介</a>
+                    <%--datatables表格插件--%>
+                    <a href="#">文章管理</a>
                 </li>
                 <li class="disabled">
-                    <a href="#">信息</a>
-                </li>
-                <li class="dropdown pull-right">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">下拉<strong class="caret"></strong></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#">操作</a>
-                        </li>
-                        <li>
-                            <a href="#">设置栏目</a>
-                        </li>
-                        <li>
-                            <a href="#">更多设置</a>
-                        </li>
-                        <li class="divider">
-                        </li>
-                        <li>
-                            <a href="#">分割线</a>
-                        </li>
-                    </ul>
+                    <a href="#">文件管理</a>
                 </li>
             </ul>
         </div>
-        <div class="span10">
-            <ul class="breadcrumb">
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">Library</a>
-                </li>
-                <li class="active">
-                    Data
-                </li>
-            </ul>
-            <div class="carousel slide" id="carousel-412814">
-                <ol class="carousel-indicators">
-                    <li class="active" data-slide-to="0" data-target="#carousel-412814">
-                    </li>
-                    <li data-slide-to="1" data-target="#carousel-412814">
-                    </li>
-                    <li data-slide-to="2" data-target="#carousel-412814">
-                    </li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img alt="" src="http://ibootstrap-file.b0.upaiyun.com/lorempixel.com/1600/500/sports/1/default.jpg" />
-                        <div class="carousel-caption">
-                            <h4>
-                                First Thumbnail label
-                            </h4>
-                            <p>
-                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img alt="" src="http://ibootstrap-file.b0.upaiyun.com/lorempixel.com/1600/500/sports/2/default.jpg" />
-                        <div class="carousel-caption">
-                            <h4>
-                                Second Thumbnail label
-                            </h4>
-                            <p>
-                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img alt="" src="http://ibootstrap-file.b0.upaiyun.com/lorempixel.com/1600/500/sports/3/default.jpg" />
-                        <div class="carousel-caption">
-                            <h4>
-                                Third Thumbnail label
-                            </h4>
-                            <p>
-                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                            </p>
-                        </div>
-                    </div>
-                </div> <a class="left carousel-control" href="#carousel-412814" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-412814" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
+        <div class="col-md-10">
+
+            <jsp:include page="write_post.jsp"/>
+
         </div>
     </div>
+    </div>
 </div>
-
 </body>
 </html>

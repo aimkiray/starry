@@ -15,7 +15,7 @@
     <c:set var="root" value="${pageContext.request.contextPath}"/>
     <link rel="stylesheet" href="${root}/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="${root}/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="${root}/dataTables/media/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="${root}/css/font-awesome.min.css">
     <link rel="stylesheet" href="${root}/post/css/style.css" media="screen" type="text/css">
@@ -23,8 +23,8 @@
     <script src="${root}/dataTables/media/js/jquery.js" type="text/javascript"></script>
     <script src="${root}/bootstrap/js/bootstrap.js" type="text/javascript"></script>
     <script src="${root}/js/bootbox.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
 

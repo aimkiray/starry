@@ -81,7 +81,7 @@ public class AuthorController {
         boolean result = authorService.verifyAuthor(author);
         if (result) {
 //            req.setAttribute("authorName", author.getAuthorName());
-            httpSession.setAttribute("author", author);
+            httpSession.setAttribute("authorName", author.getAuthorName());
             return "redirect:/author/panel.do";
         } else {
             try {
@@ -318,8 +318,14 @@ public class AuthorController {
         return null;
     }
 
+    /**
+     * 转到用户面板
+     * @return
+     */
     @RequestMapping("panel")
-    public String authorPanel() {
+    public String authorPanel(HttpServletRequest req) {
+//        Author author = (Author) req.getAttribute("authorName");
+//        System.out.println(author);
         return "panel/author_panel";
     }
 }
