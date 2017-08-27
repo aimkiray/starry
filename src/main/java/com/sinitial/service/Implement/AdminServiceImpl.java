@@ -4,9 +4,6 @@ import com.sinitial.dao.AdminMapper;
 import com.sinitial.domain.Admin;
 import com.sinitial.domain.AdminExample;
 import com.sinitial.service.AdminService;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

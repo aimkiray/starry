@@ -48,7 +48,7 @@
     <init-param>
       <!-- contextConfigLocation 是参数名称，该参数的值包含 Spring MVC 的配置文件路径 -->
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:spring/spring-*.xml</param-value>
+      <param-value>classpath:spring/applicationContext.xml,classpath*:spring/spring-*.xml</param-value>
     </init-param>
     <!-- 在 Web 应用启动时立即加载 Servlet -->
     <load-on-startup>1</load-on-startup>

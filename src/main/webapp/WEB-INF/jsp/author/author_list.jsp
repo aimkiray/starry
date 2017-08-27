@@ -11,20 +11,20 @@
 <head>
     <title>作者管理</title>
     <c:set var="root" value="${pageContext.request.contextPath}"/>
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap.css">
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">
+    <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
     <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css">
     <link type="text/css" rel="stylesheet" href="${root}/dataTables/media/css/dataTables.bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="${root}/dataTables/media/css/author-custom.css">
+    <link type="text/css" rel="stylesheet" href="${root}/panel/css/author-custom.css">
 
     <script src="${root}/dataTables/media/js/jquery.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript"></script>
     <script src="${root}/js/bootbox.min.js" type="text/javascript"></script>
     <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
     <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-    <script src="${root}/dataTables/media/js/author-custom.js" type="text/javascript"></script>
+    <script src="${root}/panel/js/author-custom.js" type="text/javascript"></script>
 </head>
 
 <body>

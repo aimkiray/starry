@@ -14,8 +14,6 @@
     <c:set var="root" value="${pageContext.request.contextPath}"/>
     <link rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
-    <%--<link rel="stylesheet" href="${root}/bootstrap/css/bootstrap.css">--%>
-    <%--<link rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">--%>
     <link rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="${root}/dataTables/media/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="${root}/panel/css/panel-custom.css">
@@ -93,12 +91,13 @@
             </nav>
         </div>
         </div>
+        <%--用来占位--%>
         <nav class="navbar"></nav>
         <div class="row clearfix">
         <div class="col-md-2">
             <ul class="nav nav-stacked nav-pills">
                 <li class="active">
-                    <a href="#">写文章</a>
+                    <a href="/panel/write_post.do" target="author_main">写文章</a>
                 </li>
                 <li>
                     <%--datatables表格插件--%>
@@ -109,11 +108,13 @@
                 </li>
             </ul>
         </div>
-        <div class="col-md-10">
 
-            <jsp:include page="write_post.jsp"/>
-
+        <div class="col-md-10" id="mainScope">
+            <div class="iframe-container">
+                <iframe src="${pageContext.request.contextPath}/panel/write_post.do" name="author_main" width="650" height="400" frameborder="no" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+            </div>
         </div>
+
     </div>
     </div>
 </div>

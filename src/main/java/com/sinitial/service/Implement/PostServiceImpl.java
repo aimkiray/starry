@@ -10,6 +10,29 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * ━━━━━━神兽出没━━━━━━
+ *      ┏┓   ┏┓
+ *     ┏┛┻━━━┛┻┓
+ *     ┃       ┃
+ *     ┃   ━   ┃
+ *     ┃ ┳┛ ┗┳ ┃
+ *     ┃       ┃
+ *     ┃   ┻   ┃ Created by nekuata.
+ *     ┃       ┃
+ *     ┗━┓   ┏━┛ Code is far away from bug with
+ *       ┃   ┃   the alpaca protecting.
+ *       ┃   ┃   神兽保佑,代码无bug.💊💊💊
+ *       ┃   ┗━━━┓
+ *       ┃       ┣┓
+ *       ┃       ┏┛
+ *       ┗┓┓┏━┳┓┏┛
+ *        ┃┫┫ ┃┫┫
+ *        ┗┻┛ ┗┻┛
+ *
+ * ━━━━━━感觉萌萌哒━━━━━━
+ */
+
 @Service
 public class PostServiceImpl implements PostService {
 
@@ -82,7 +105,11 @@ public class PostServiceImpl implements PostService {
      */
     @Override
     public int insertPost(Post post) {
-        return 0;
+        int result = 0;
+        if (post != null) {
+            result = postMapper.insert(post);
+        }
+        return result;
     }
 
     /**

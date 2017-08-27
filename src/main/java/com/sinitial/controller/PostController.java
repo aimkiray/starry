@@ -12,26 +12,27 @@ import java.util.List;
 
 /**
  * ━━━━━━神兽出没━━━━━━
- * ┏┓   ┏┓
- * ┏┛┻━━━┛┻┓
- * ┃       ┃
- * ┃   ━   ┃
- * ┃ ┳┛ ┗┳ ┃
- * ┃       ┃
- * ┃   ┻   ┃ Created by nekuata.
- * ┃       ┃
- * ┗━┓   ┏━┛ Code is far away from bug with
- * ┃   ┃   the alpaca protecting.
- * ┃   ┃   神兽保佑,代码无bug.💊💊💊
- * ┃   ┗━━━┓
- * ┃       ┣┓
- * ┃       ┏┛
- * ┗┓┓┏━┳┓┏┛
- * ┃┫┫ ┃┫┫
- * ┗┻┛ ┗┻┛
- * <p>
+ *      ┏┓   ┏┓
+ *     ┏┛┻━━━┛┻┓
+ *     ┃       ┃
+ *     ┃   ━   ┃
+ *     ┃ ┳┛ ┗┳ ┃
+ *     ┃       ┃
+ *     ┃   ┻   ┃ Created by nekuata.
+ *     ┃       ┃
+ *     ┗━┓   ┏━┛ Code is far away from bug with
+ *       ┃   ┃   the alpaca protecting.
+ *       ┃   ┃   神兽保佑,代码无bug.💊💊💊
+ *       ┃   ┗━━━┓
+ *       ┃       ┣┓
+ *       ┃       ┏┛
+ *       ┗┓┓┏━┳┓┏┛
+ *        ┃┫┫ ┃┫┫
+ *        ┗┻┛ ┗┻┛
+ *
  * ━━━━━━感觉萌萌哒━━━━━━
  */
+
 @Controller
 @RequestMapping("/post/")
 public class PostController {
@@ -68,6 +69,6 @@ public class PostController {
     @RequestMapping("write")
     public String writePost(HttpServletRequest request, @PathVariable String authorName) {
         request.setAttribute("authorName",authorName);
-        return "panel/write_post";
+        return "panel/swrite_post";
     }
 }

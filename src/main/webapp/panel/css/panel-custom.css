@@ -1,0 +1,15 @@
+
+/*iframe自适应*/
+.iframe-container{
+    height: 0;
+    padding-bottom: 97.6%;
+    position: relative;
+}
+.iframe-container iframe{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}

@@ -58,11 +58,13 @@
 <br/>
 <form>
 
-    <div class="form-group" id="formTag">
-        <span id="tagSpan0">
-            <input class="form-control tagArea" type="text" value="测试" style="width: auto" readonly>
-            <input type="hidden" name="tagId" value="0">
-        </span>
+    <div class="form-group">
+        <c:forEach items="${requestScope.postTags}" var="postTag">
+            <span id="tagSpan${postTag.tagId}">
+                <input class="form-control tagArea" type="text" value="${postTag.tagName}" readonly>
+                <input type="hidden" name="tagId" value="${postTag.tagId}">
+            </span>
+        </c:forEach>
     </div>
 
     <div class="form-group">

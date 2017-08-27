@@ -4,13 +4,10 @@ import com.sinitial.dao.AuthorMapper;
 import com.sinitial.domain.AuthorExample;
 import com.sinitial.domain.Author;
 import com.sinitial.service.AuthorService;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -235,7 +232,7 @@ public class AuthorServiceImpl implements AuthorService {
 //        authorMapper = sqlSession.getMapper(AuthorMapper.class);
 
         int result = 0;
-        if (author.getAuthorName() != null && author.getAuthorPassword() != null) {
+        if (author != null && author.getAuthorName() != null && author.getAuthorPassword() != null) {
             result = authorMapper.insert(author);
         }
 //        if (result > 0) {
