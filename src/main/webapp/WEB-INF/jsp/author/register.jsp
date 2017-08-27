@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>${requestScope.title}</title>
     <c:set value="${pageContext.request.contextPath}" var="root"/>
-    <link rel="stylesheet" href="${root}/author/css/register.css" type="text/css">
-    <script src="${root}/author/js/register.js" type="/text/javascript"></script>
+    <link rel="stylesheet" href="${root}/user/css/register.css" type="text/css">
+    <script src="${root}/user/js/register.js" type="/text/javascript"></script>
 </head>
 <body onload="showContinent()">
-<form action="/author/doregister.do" name="login" class="login-content" method="post">
+<form action="/user/doregister.do" name="login" class="login-content" method="post">
 <table class="login-table">
     <tr>
         <td class="title" colspan="5">某不为人知的交易界面</td>

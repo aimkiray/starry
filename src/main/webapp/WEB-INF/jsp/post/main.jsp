@@ -67,7 +67,7 @@
                             <time datetime="${fullDate}">
                                 <a href="">${simpleDate}</a>
                                 &nbsp;&nbsp;
-                                <a href="">Author: ${post.author.authorName}</a>
+                                <a href="">Author: ${post.user.authorName}</a>
                             </time>
 
                             <h1 class="title">

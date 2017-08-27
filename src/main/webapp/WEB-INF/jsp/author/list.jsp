@@ -15,9 +15,9 @@
 </head>
 <body>
 <table>
-    <c:forEach items="${requestScope.authors}" var="author">
+    <c:forEach items="${requestScope.users}" var="user">
         <tr>
-            <td>${author.authorName}</td><td>${author.authorPassword}</td><td>${author.authorEmail}</td>
+            <td>${user.authorName}</td><td>${user.authorPassword}</td><td>${user.authorEmail}</td>
         </tr>
     </c:forEach>
 </table>

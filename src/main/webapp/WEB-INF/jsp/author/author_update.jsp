@@ -16,7 +16,7 @@
     $(document).ready(function () {
         $("#btn_update_author").click(function () {
             $.ajax({
-                url: "/author/doupdate.do",
+                url: "/user/doupdate.do",
                 cache: false, //禁用缓存
                 contentType : false,// 告诉jQuery不要去设置Content-Type请求头
                 processData : false,// 告诉jQuery不要去处理发送的数据
@@ -54,26 +54,26 @@
     });
 </script>
 <body>
-<c:set var="author" value="${requestScope.author}" />
-<fmt:formatDate value="${author.authorDate}" pattern="yyyy-MM-dd HH:mm:ss" var="authorDate"/>
+<c:set var="user" value="${requestScope.user}" />
+<fmt:formatDate value="${user.authorDate}" pattern="yyyy-MM-dd HH:mm:ss" var="authorDate"/>
 <form id="uploadForm" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="authorId" value="${author.authorId}">
-    <input type="hidden" name="headshot" value="${author.headshot}">
+    <input type="hidden" name="authorId" value="${user.authorId}">
+    <input type="hidden" name="headshot" value="${user.headshot}">
     <div class="form-group">
         <label for="authorName">名称</label>
-        <input type="text" class="form-control" id="authorName" name="authorName" value="${author.authorName}" placeholder="君の名は。">
+        <input type="text" class="form-control" id="authorName" name="authorName" value="${user.authorName}" placeholder="君の名は。">
     </div>
     <div class="form-group">
         <label for="nickName">昵称</label>
-        <input type="text" class="form-control" id="nickName" name="nickName" value="${author.nickName}" placeholder="昵称">
+        <input type="text" class="form-control" id="nickName" name="nickName" value="${user.nickName}" placeholder="昵称">
     </div>
     <div class="form-group">
         <label for="authorPassword">密码</label>
-        <input type="text" class="form-control" id="authorPassword" name="authorPassword" value="${author.authorPassword}" placeholder="密码">
+        <input type="text" class="form-control" id="authorPassword" name="authorPassword" value="${user.authorPassword}" placeholder="密码">
     </div>
     <div class="form-group">
         <label for="authorInfo">简介</label>
-        <input type="text" class="form-control" id="authorInfo" name="authorInfo" value="${author.authorInfo}" placeholder="简介">
+        <input type="text" class="form-control" id="authorInfo" name="authorInfo" value="${user.authorInfo}" placeholder="简介">
     </div>
     <div class="form-group">
         <label for="authorDate">注册日期</label>

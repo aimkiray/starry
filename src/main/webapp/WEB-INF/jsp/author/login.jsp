@@ -11,37 +11,37 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <script>
     if(top != self) {
-        top.location.href = "/WEB-INF/jsp/author/login.jsp";
+        top.location.href = "/WEB-INF/jsp/user/login.jsp";
     }
 </script>
 <html>
 <head>
     <title>blog</title>
     <c:set var="root" value="${pageContext.request.contextPath}" />
-    <link rel="stylesheet" type="text/css" href="${root}/author/css/login.css">
+    <link rel="stylesheet" type="text/css" href="${root}/user/css/login.css">
 </head>
 <body>
 <%
     Cookie[] cookies = request.getCookies();
-    String author = null;
+    String user = null;
     if (cookies != null) {
         for (int i = 0; i < cookies.length; i++) {
-            if ("author".equals(cookies[i].getName().toString())) {
-                author = cookies[i].getValue();
-                author = URLDecoder.decode(author, "utf-8");
+            if ("user".equals(cookies[i].getName().toString())) {
+                user = cookies[i].getValue();
+                user = URLDecoder.decode(user, "utf-8");
             }
             out.print(cookies[i].getName() + ":" + cookies[i].getValue() + "<br/>");
         }
     }
 %>
-<form class="login-content" name="login" action="/author/verify.do" method="post">
+<form class="login-content" name="login" action="/user/verify.do" method="post">
     <table class="login-table">
         <tr>
             <td colspan="4" class="title">作者登录</td>
         </tr>
         <tr>
             <td class="login-text">用户名：</td>
-            <td colspan="2"><input type="text" value="${author}" name="authorName" id="authorName" onblur="checkRegular('authorname',this)"></td>
+            <td colspan="2"><input type="text" value="${user}" name="authorName" id="authorName" onblur="checkRegular('authorname',this)"></td>
             <td class="login-prompt"><span style="color: #00FFFF">&nbsp;中文</span></td>
         </tr>
         <tr>
@@ -52,7 +52,7 @@
         <tr>
             <td colspan="4" class="bottom-buttons">
                 <a href="javascript:document.login.submit();">登陆</a>
-                <a href="/author/register.do">注册</a>
+                <a href="/user/register.do">注册</a>
             </td>
         </tr>
     </table>

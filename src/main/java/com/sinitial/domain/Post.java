@@ -15,7 +15,7 @@ public class Post {
 
     private String postType;
 
-    private Author author;
+    private User user;
 
     private String postMimeType;
 
@@ -56,12 +56,12 @@ public class Post {
         this.postType = postType == null ? null : postType.trim();
     }
 
-    public Author getPostAuthor() {
-        return author;
+    public User getPostAuthor() {
+        return user;
     }
 
-    public void setPostAuthor(Author author) {
-        this.author = author;
+    public void setPostAuthor(User user) {
+        this.user = user;
     }
 
     public String getPostMimeType() {
@@ -88,12 +88,12 @@ public class Post {
         this.postContent = postContent == null ? null : postContent.trim();
     }
 
-    public Author getAuthor() {
-        return author;
+    public User getUser() {
+        return user;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
@@ -103,7 +103,7 @@ public class Post {
                 ", postTitle='" + postTitle + '\'' +
                 ", postStatus='" + postStatus + '\'' +
                 ", postType='" + postType + '\'' +
-                ", author=" + author +
+                ", user=" + user +
                 ", postMimeType='" + postMimeType + '\'' +
                 ", postDate=" + postDate +
                 ", postContent='" + postContent + '\'' +

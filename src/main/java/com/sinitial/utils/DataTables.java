@@ -1,6 +1,6 @@
 package com.sinitial.utils;
 
-import com.sinitial.domain.Author;
+import com.sinitial.domain.User;
 
 import java.util.List;
 
@@ -10,12 +10,12 @@ import java.util.List;
 public class DataTables {
     private int recordsTotal;
     private int recordsFiltered;
-    private List<Author> data;
+    private List<User> data;
 
     public DataTables() {
     }
 
-    public DataTables(int recordsTotal, int recordsFiltered, List<Author> data) {
+    public DataTables(int recordsTotal, int recordsFiltered, List<User> data) {
         this.recordsTotal = recordsTotal;
         this.recordsFiltered = recordsFiltered;
         this.data = data;
@@ -37,11 +37,11 @@ public class DataTables {
         this.recordsFiltered = recordsFiltered;
     }
 
-    public List<Author> getData() {
+    public List<User> getData() {
         return data;
     }
 
-    public void setData(List<Author> data) {
+    public void setData(List<User> data) {
         this.data = data;
     }
 }

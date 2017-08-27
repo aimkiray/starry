@@ -93,7 +93,7 @@
         <select class="form-control" id="typeId" name="authorTypeId">
             <option value="0">请选择类别</option>
             <c:forEach items="${requestScope.authorTypes}" var="authorTypes">
-                <option value="${authorTypes.typeId}" <c:if test="${authorTypes.typeId == requestScope.author.authorType.typeId}">selected</c:if>>${authorTypes.typeName}</option>
+                <option value="${authorTypes.typeId}" <c:if test="${authorTypes.typeId == requestScope.user.authorType.typeId}">selected</c:if>>${authorTypes.typeName}</option>
             </c:forEach>
         </select>
     </div>

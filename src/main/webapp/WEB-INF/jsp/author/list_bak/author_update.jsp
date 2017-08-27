@@ -76,21 +76,21 @@
     });
 </script>
 <body>
-<c:set var="author" value="${requestScope.author}" />
-<fmt:formatDate value="${author.authorTime}" pattern="yyyy-MM-dd HH:mm:ss" var="authorTime"/>
+<c:set var="user" value="${requestScope.user}" />
+<fmt:formatDate value="${user.authorTime}" pattern="yyyy-MM-dd HH:mm:ss" var="authorTime"/>
 <form id="uploadForm" enctype="multipart/form-data">
-    <input type="hidden" name="authorId" value="${author.authorId}">
+    <input type="hidden" name="authorId" value="${user.authorId}">
     <div class="form-group">
         <label for="authorName">名称</label>
-        <input type="text" class="form-control" id="authorName" name="authorName" value="${author.authorName}" placeholder="君の名は。">
+        <input type="text" class="form-control" id="authorName" name="authorName" value="${user.authorName}" placeholder="君の名は。">
     </div>
     <div class="form-group">
         <label for="authorPrice">价格</label>
-        <input type="text" class="form-control" id="authorPrice" name="authorPrice" value="${author.authorPrice}" placeholder="价格">
+        <input type="text" class="form-control" id="authorPrice" name="authorPrice" value="${user.authorPrice}" placeholder="价格">
     </div>
     <div class="form-group">
         <label for="number">库存</label>
-        <input type="text" class="form-control" id="number" name="number" value="${author.number}" placeholder="库存">
+        <input type="text" class="form-control" id="number" name="number" value="${user.number}" placeholder="库存">
     </div>
     <div class="form-group">
         <label for="authorTime">日期</label>
@@ -101,7 +101,7 @@
         <select class="form-control" id="typeId" name="authorTypeId">
             <option value="0">请选择类别</option>
             <c:forEach items="${requestScope.authorTypes}" var="authorTypes">
-                <option value="${authorTypes.typeId}" <c:if test="${authorTypes.typeId == requestScope.author.authorType.typeId}">selected</c:if>>${authorTypes.typeName}</option>
+                <option value="${authorTypes.typeId}" <c:if test="${authorTypes.typeId == requestScope.user.authorType.typeId}">selected</c:if>>${authorTypes.typeName}</option>
             </c:forEach>
         </select>
     </div>

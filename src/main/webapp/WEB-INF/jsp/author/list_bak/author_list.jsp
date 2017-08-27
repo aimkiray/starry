@@ -15,7 +15,7 @@
     <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">
     <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-table.css">
     <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-editable.css">
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/author-custom.css">
+    <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/user-custom.css">
     <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css">
 
     <script src="${root}/js/jquery-3.2.1.min.js" type="text/javascript"></script>
@@ -28,7 +28,7 @@
     <script src="${root}/js/bootbox.min.js" type="text/javascript"></script>
     <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
     <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap-3.3.7-dist/js/author-custom.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap-3.3.7-dist/js/user-custom.js" type="text/javascript"></script>
 </head>
 
 <body>

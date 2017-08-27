@@ -15,7 +15,7 @@
     <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
     <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css">
     <link type="text/css" rel="stylesheet" href="${root}/dataTables/media/css/dataTables.bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="${root}/panel/css/author-custom.css">
+    <link type="text/css" rel="stylesheet" href="${root}/panel/css/user-custom.css">
 
     <script src="${root}/dataTables/media/js/jquery.js" type="text/javascript"></script>
     <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript"></script>

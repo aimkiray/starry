@@ -15,7 +15,7 @@
     $(document).ready(function () {
         $("#btn_add_author").click(function () {
             $.ajax({
-                url: "/author/doadd.do",
+                url: "/user/doadd.do",
                 cache: false, //禁用缓存
                 contentType : false,// 告诉jQuery不要去设置Content-Type请求头
                 processData : false,// 告诉jQuery不要去处理发送的数据
@@ -56,7 +56,7 @@
 <body>
 
 <form id="addUploadForm" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="authorId" value="${author.authorId}">
+    <input type="hidden" name="authorId" value="${user.authorId}">
     <div class="form-group">
         <label for="authorName">名称</label>
         <input type="text" class="form-control" id="authorName" name="authorName" placeholder="君の名は。">

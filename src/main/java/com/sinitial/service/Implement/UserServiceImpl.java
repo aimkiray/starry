@@ -1,9 +1,9 @@
 package com.sinitial.service.Implement;
 
-import com.sinitial.dao.AuthorMapper;
-import com.sinitial.domain.AuthorExample;
-import com.sinitial.domain.Author;
-import com.sinitial.service.AuthorService;
+import com.sinitial.dao.UserMapper;
+import com.sinitial.domain.UserExample;
+import com.sinitial.domain.User;
+import com.sinitial.service.UserService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,13 +36,13 @@ import java.util.Map;
  */
 
 @Service
-public class AuthorServiceImpl implements AuthorService {
+public class UserServiceImpl implements UserService {
 
 //    private SqlSessionFactory sqlSessionFactory = null;
     @Autowired
-    private AuthorMapper authorMapper;
+    private UserMapper userMapper;
 
-//    public AuthorServiceImpl() {
+//    public UserServiceImpl() {
 //        sqlSessionFactory = NewSqlSessionFactory.getSessionFactory();
 //    }
 
@@ -51,18 +51,18 @@ public class AuthorServiceImpl implements AuthorService {
      *
      */
     @Override
-    public List<Author> findAllAuthor() {
+    public List<User> findAllUser() {
 //        根据sqlSessionFactory得到session
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        List<Author> authors = sqlSession.selectList("Author.findAllAuthor");
-//        authorMapper = sqlSession.getMapper(AuthorMapper.class);
-        List<Author> authors = authorMapper.selectByExample(null);
+//        List<User> users = sqlSession.selectList("User.findAllUser");
+//        userMapper = sqlSession.getMapper(UserMapper.class);
+        List<User> users = userMapper.selectByExample(null);
 
 //        if (sqlSession != null) {
 //            sqlSession.close();
 //        }
 
-        return authors;
+        return users;
     }
 
     /**
@@ -70,108 +70,108 @@ public class AuthorServiceImpl implements AuthorService {
      *
      * @param pageNumber  当前页
      * @param pageSize  每页数量
-     * @param author 按条件搜索
+     * @param user 按条件搜索
      * @return 符合条件的作者，不超过limit
      */
     @Override
-    public List<Author> searchAuthor(int pageNumber, int pageSize, Author author) {
+    public List<User> searchUser(int pageNumber, int pageSize, User user) {
         Map<String,Object> map = new HashMap<>();
 //        根据sqlSessionFactory得到session
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        authorMapper = sqlSession.getMapper(AuthorMapper.class);
+//        userMapper = sqlSession.getMapper(UserMapper.class);
         map.put("start",(pageNumber-1)*pageSize);
         map.put("limit",pageSize);
-        map.put("author",author);
+        map.put("user", user);
 
-        List<Author> authors = authorMapper.searchAuthor(map);
+        List<User> users = userMapper.searchUser(map);
 
 //        if (sqlSession != null) {
 //            sqlSession.close();
 //        }
 
-        return authors;
+        return users;
     }
 
     /**
      * 查询符合条件的记录数目
      *
-     * @param author
+     * @param user
      * @return
      */
     @Override
-    public int queryAuthorNum(Author author) {
+    public int queryUserNum(User user) {
 //        根据sqlSessionFactory得到session
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        authorMapper = sqlSession.getMapper(AuthorMapper.class);
-        AuthorExample authorExample = new AuthorExample();
-        AuthorExample.Criteria criteria = authorExample.createCriteria();
-        if (author != null && author.getAuthorName() != null && !"".equals(author.getAuthorName())) {
-            criteria.andAuthorNameLike("%"+author.getAuthorName()+"%");
+//        userMapper = sqlSession.getMapper(UserMapper.class);
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        if (user != null && user.getUserName() != null && !"".equals(user.getUserName())) {
+            criteria.andUserNameLike("%"+ user.getUserName()+"%");
         }
-        if (author != null && author.getNickName() != null && !"".equals(author.getNickName())) {
-            criteria.andNickNameLike("%"+author.getNickName()+"%");
+        if (user != null && user.getNickName() != null && !"".equals(user.getNickName())) {
+            criteria.andNickNameLike("%"+ user.getNickName()+"%");
         }
-        int count = (int)authorMapper.countByExample(authorExample);
+        int count = (int) userMapper.countByExample(userExample);
         return count;
     }
 
     /**
      * 通过名字查找作者
      *
-     * @param authorName
+     * @param userName
      */
     @Override
-    public Author findAuthorByName(String authorName) {
+    public User findUserByName(String userName) {
 //        根据sqlSessionFactory得到session
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        authorMapper = sqlSession.getMapper(AuthorMapper.class);
-        AuthorExample authorExample = new AuthorExample();
-        AuthorExample.Criteria criteria = authorExample.createCriteria();
-        criteria.andAuthorNameEqualTo(authorName);
-        List<Author> authors = authorMapper.selectByExample(authorExample);
+//        userMapper = sqlSession.getMapper(UserMapper.class);
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andUserNameEqualTo(userName);
+        List<User> users = userMapper.selectByExample(userExample);
 
 //        if (sqlSession != null) {
 //            sqlSession.close();
 //        }
 
-        return authors.get(0);
+        return users.get(0);
     }
 
     /**
      * 通过Id查找作者
      *
-     * @param authorId
+     * @param userId
      */
     @Override
-    public Author findAuthorById(int authorId) {
+    public User findUserById(int userId) {
 //        根据sqlSessionFactory得到session
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        authorMapper = sqlSession.getMapper(AuthorMapper.class);
-        Author author = authorMapper.selectByPrimaryKey(authorId);
+//        userMapper = sqlSession.getMapper(UserMapper.class);
+        User user = userMapper.selectByPrimaryKey(userId);
 
 //        if (sqlSession != null) {
 //            sqlSession.close();
 //        }
 
-        return author;
+        return user;
     }
 
     /**
      * 作者登录校验
      *
-     * @param author
+     * @param user
      */
     @Override
-    public boolean verifyAuthor(Author author) {
+    public boolean verifyUser(User user) {
         boolean result = false;
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        authorMapper = sqlSession.getMapper(AuthorMapper.class);
-        AuthorExample authorExample = new AuthorExample();
-        AuthorExample.Criteria criteria = authorExample.createCriteria();
-        criteria.andAuthorNameEqualTo(author.getAuthorName());
-        criteria.andAuthorPasswordEqualTo(author.getAuthorPassword());
-        List<Author> authors = authorMapper.selectByExample(authorExample);
-        if (authors != null && authors.size() > 0) {
+//        userMapper = sqlSession.getMapper(UserMapper.class);
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andUserNameEqualTo(user.getUserName());
+        criteria.andUserPasswordEqualTo(user.getUserPassword());
+        List<User> users = userMapper.selectByExample(userExample);
+        if (users != null && users.size() > 0) {
             result = true;
         } else {
             result = false;
@@ -185,13 +185,13 @@ public class AuthorServiceImpl implements AuthorService {
     /**
      * 根据作者id获得该作者的全部文章
      *
-     * @param authorId
+     * @param userId
      */
     @Override
-    public Author findAuthorAndPostById(int authorId) {
+    public User findUserAndPostById(int userId) {
 //        根据sqlSessionFactory得到session
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        Author author = sqlSession.selectOne("Author.findAuthorByName", "魔理沙");
+//        User user = sqlSession.selectOne("User.findUserByName", "魔理沙");
 //        if (sqlSession != null) {
 //            sqlSession.close();
 //        }
@@ -201,14 +201,14 @@ public class AuthorServiceImpl implements AuthorService {
     /**
      * 根据id删除作者
      *
-     * @param authorId
+     * @param userId
      */
     @Override
-    public int deleteAuthor(int authorId) {
+    public int deleteUser(int userId) {
         int result = 0;
 //        根据sqlSessionFactory得到session
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
-        result = authorMapper.deleteByPrimaryKey(authorId);
+        result = userMapper.deleteByPrimaryKey(userId);
 //        if (result > 0) {
 //            sqlSession.commit();
 //        }
@@ -222,18 +222,18 @@ public class AuthorServiceImpl implements AuthorService {
     /**
      * 向数据库添加作者
      *
-     * @param author
+     * @param user
      */
     @Override
-    public int insertAuthor(Author author) {
+    public int insertUser(User user) {
 //        根据sqlSessionFactory得到session
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        List<Author> authors = sqlSession.selectList("Author.findAllAuthor");
-//        authorMapper = sqlSession.getMapper(AuthorMapper.class);
+//        List<User> users = sqlSession.selectList("User.findAllUser");
+//        userMapper = sqlSession.getMapper(UserMapper.class);
 
         int result = 0;
-        if (author != null && author.getAuthorName() != null && author.getAuthorPassword() != null) {
-            result = authorMapper.insert(author);
+        if (user != null && user.getUserName() != null && user.getUserPassword() != null) {
+            result = userMapper.insert(user);
         }
 //        if (result > 0) {
 //            sqlSession.commit();
@@ -247,15 +247,15 @@ public class AuthorServiceImpl implements AuthorService {
     /**
      * 修改作者信息
      *
-     * @param author
+     * @param user
      */
     @Override
-    public int updateAuthor(Author author) {
+    public int updateUser(User user) {
         int result = 0;
 //        根据sqlSessionFactory得到session
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        authorMapper = sqlSession.getMapper(AuthorMapper.class);
-        result = authorMapper.updateByPrimaryKey(author);
+//        userMapper = sqlSession.getMapper(UserMapper.class);
+        result = userMapper.updateByPrimaryKey(user);
 //        if (result > 0) {
 //            sqlSession.commit();
 //        }
@@ -269,20 +269,20 @@ public class AuthorServiceImpl implements AuthorService {
      * 通过用户名查找作者
      */
     @Test
-    public void findAuthorByName() {
+    public void findUserByName() {
 //        根据sqlSessionFactory得到session
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        authorMapper = sqlSession.getMapper(AuthorMapper.class);
-        AuthorExample authorExample = new AuthorExample();
-        AuthorExample.Criteria criteria = authorExample.createCriteria();
-        criteria.andAuthorNameEqualTo("魔理沙");
-        List<Author> authors = authorMapper.selectByExample(authorExample);
-//        Author author = sqlSession.selectOne("Author.findAuthorByName", "魔理沙");
+//        userMapper = sqlSession.getMapper(UserMapper.class);
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andUserNameEqualTo("魔理沙");
+        List<User> users = userMapper.selectByExample(userExample);
+//        User user = sqlSession.selectOne("User.findUserByName", "魔理沙");
 //        if (sqlSession != null) {
 //            sqlSession.close();
 //        }
-        if(authors.size()>0) {
-            System.out.println(authors.get(0).getAuthorName());
+        if(users.size()>0) {
+            System.out.println(users.get(0).getUserName());
 
         }
     }
@@ -291,11 +291,11 @@ public class AuthorServiceImpl implements AuthorService {
      * 根据id删除用户
      */
     @Test
-    public void deleteAuthor() {
+    public void deleteUser() {
 //        int result = 0;
 //        根据sqlSessionFactory得到session
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        result = sqlSession.delete("Author.deleteAuthorById", 1);
+//        result = sqlSession.delete("User.deleteUserById", 1);
 //        if (result > 0) {
 //            sqlSession.commit();
 //        }
@@ -309,16 +309,16 @@ public class AuthorServiceImpl implements AuthorService {
      * 向数据库添加用户
      */
     @Test
-    public void insertAuthor() {
+    public void insertUser() {
 //        int result = 0;
 //        根据sqlSessionFactory得到session
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
-        /*Author author = new Author();
-        author.setAuthorName("魔理沙");
-        author.setAuthorPassword("1234");
-        author.setAuthorInfo("魔女");
-        author.setAuthorDate(new Date());
-        result = sqlSession.insert("Author.insertAuthor", author);
+        /*User user = new User();
+        user.setUserName("魔理沙");
+        user.setUserPassword("1234");
+        user.setUserInfo("魔女");
+        user.setUserDate(new Date());
+        result = sqlSession.insert("User.insertUser", user);
         if (result > 0) {
             sqlSession.commit();
         }
@@ -331,17 +331,17 @@ public class AuthorServiceImpl implements AuthorService {
      * 向数据库添加用户
      */
     @Test
-    public void updateAuthor() {
+    public void updateUser() {
 //        int result = 0;
 //        根据sqlSessionFactory得到session
         /*SqlSession sqlSession = sqlSessionFactory.openSession();
-        Author author = new Author();
-        author.setAuthorId(3);
-        author.setAuthorName("魔理沙");
-        author.setAuthorPassword("1234");
-        author.setAuthorInfo("魔女");
-        author.setAuthorDate(new Date());
-        result = sqlSession.update("Author.updateAuthorId", author);
+        User user = new User();
+        user.setUserId(3);
+        user.setUserName("魔理沙");
+        user.setUserPassword("1234");
+        user.setUserInfo("魔女");
+        user.setUserDate(new Date());
+        result = sqlSession.update("User.updateUserId", user);
         if (result > 0) {
             sqlSession.commit();
         }
@@ -354,18 +354,18 @@ public class AuthorServiceImpl implements AuthorService {
      * 根据作者id获得该作者的全部文章
      */
     /*@Test
-    public void findAuthorAndPostById() {
+    public void findUserAndPostById() {
         int result = 0;
 //        根据sqlSessionFactory得到session
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        Author author = sqlSession.selectOne("Author.findAuthorAndPostById", 1);
+        User user = sqlSession.selectOne("User.findUserAndPostById", 1);
 
         if (sqlSession != null) {
             sqlSession.close();
         }
-        System.out.println(author);
+        System.out.println(user);
 
-        for (Post post : author.get) {
+        for (Post post : user.get) {
             System.out.println("\n" + post);
         }
     }*/
