@@ -7,7 +7,7 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-  <context:component-scan base-package="com.sinitial.service.Implement"/>
+  <context:component-scan base-package="com.sinitial.service"/>
 
   <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     <property name="locations">
@@ -59,19 +59,6 @@
     <property name="filters" value="${filters}"/>
   </bean>
 
-  <!--<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-    &lt;!&ndash; 基本属性 url、user、password &ndash;&gt;
-    <property name="driver" value="${jdbc_driver}"/>
-    <property name="url" value="${jdbc_url}" />
-    <property name="username" value="${jdbc_user}" />
-    <property name="password" value="${jdbc_password}" />
-  </bean>-->
-  <!--<bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource">
-    <property name="driver" value="org.mariadb.jdbc.Driver"/>
-    <property name="url" value="jdbc:mariadb://localhost:2233/sinitial"/>
-    <property name="username" value="sinitial"/>
-    <property name="password" value="1234"/>
-  </bean>-->
   <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
     <property name="dataSource" ref="dataSource"/>
     <!-- 配置MyBaties全局配置文件:mybatis-config.xml -->

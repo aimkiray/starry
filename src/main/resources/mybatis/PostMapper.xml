@@ -28,38 +28,7 @@
   <sql id="Blob_Column_List">
     post_content
   </sql>
-  <select id="selectBySearch" parameterType="map" resultMap="ResultMapWithBLOBs">
-    select
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from sl_post
-    LEFT JOIN sinitial.sl_author
-    ON sinitial.sl_post.post_author = sinitial.sl_author.author_id
-    where 1=1
-    <if test="searchParam != null and searchParam != ''">
-      and (post_title like concat('%',#{searchParam},'%')
-      or post_content like concat('%',#{searchParam},'%'))
-    </if>
-    LIMIT #{start},#{limit}
-  </select>
-  <!--&lt;select id="selectBySearch" parameterType="map" resultMap="ResultMapWithBLOBs"&gt;
-    select
-    &lt;include refid="Base_Column_List"/&gt;
-    ,
-    &lt;include refid="Blob_Column_List"/&gt;
-    from sl_post
-    LEFT JOIN sinitial.sl_author
-    ON sinitial.sl_post.post_author = sinitial.sl_author.author_id
-    where 1=1
-    &lt;if test="post != null and post.postTitle != null"&gt;
-      and post_title like concat('%',#{post.postTitle},'%')
-    &lt;/if&gt;
-    &lt;if test="post != null and post.postContent != null"&gt;
-      and post_content like concat('%',#{post.postContent},'%')
-    &lt;/if&gt;
-    LIMIT #{start},#{limit}
-  &lt;/select&gt;-->
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select
     <include refid="Base_Column_List" />

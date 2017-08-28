@@ -11,14 +11,20 @@ public class User {
 
     private String userName;
 
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    private Date userDate;
-
-    private String userInfo;
-
     private String userPassword;
 
     private String nickName;
+
+    private String email;
+
+    private Integer gender;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date signDate;
+
+    private Integer userRole;
+
+    private String userInfo;
 
     private String headshot;
 
@@ -38,22 +44,6 @@ public class User {
         this.userName = userName == null ? null : userName.trim();
     }
 
-    public Date getUserDate() {
-        return userDate;
-    }
-
-    public void setUserDate(Date userDate) {
-        this.userDate = userDate;
-    }
-
-    public String getUserInfo() {
-        return userInfo;
-    }
-
-    public void setUserInfo(String userInfo) {
-        this.userInfo = userInfo == null ? null : userInfo.trim();
-    }
-
     public String getUserPassword() {
         return userPassword;
     }
@@ -70,24 +60,51 @@ public class User {
         this.nickName = nickName == null ? null : nickName.trim();
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
+
+    public Integer getGender() {
+        return gender;
+    }
+
+    public void setGender(Integer gender) {
+        this.gender = gender;
+    }
+
+    public Date getSignDate() {
+        return signDate;
+    }
+
+    public void setSignDate(Date signDate) {
+        this.signDate = signDate;
+    }
+
+    public Integer getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(Integer userRole) {
+        this.userRole = userRole;
+    }
+
+    public String getUserInfo() {
+        return userInfo;
+    }
+
+    public void setUserInfo(String userInfo) {
+        this.userInfo = userInfo == null ? null : userInfo.trim();
+    }
+
     public String getHeadshot() {
         return headshot;
     }
 
     public void setHeadshot(String headshot) {
         this.headshot = headshot == null ? null : headshot.trim();
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", userDate=" + userDate +
-                ", userInfo='" + userInfo + '\'' +
-                ", userPassword='" + userPassword + '\'' +
-                ", nickName='" + nickName + '\'' +
-                ", headshot='" + headshot + '\'' +
-                '}';
     }
 }

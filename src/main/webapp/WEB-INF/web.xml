@@ -7,7 +7,7 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <welcome-file-list>
-    <welcome-file>/admin/login.do</welcome-file>
+    <welcome-file>/author/login</welcome-file>
   </welcome-file-list>
 
   <!-- 加载log4j的配置文件log4j.properties -->
@@ -25,44 +25,27 @@
   <!-- 为避免项目间冲突，定义唯一的 webAppRootKey -->
   <context-param>
     <param-name>webAppRootKey</param-name>
-    <param-value>scheduleProject</param-value>
+    <param-value>sinitialProject</param-value>
   </context-param>
 
-
-  <!--<listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>-->
-
-  <!--<context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring/spring-*.xml</param-value>
-  </context-param>-->
-  <!--<context-param>
-      <param-name>domainConfigLocation</param-name>
-      <param-value>classpath:spring/spring-domain.xml</param-value>
-  </context-param>-->
   <!-- 配置 Spring MVC DispatchcerServlet 前端控制器 -->
   <servlet>
-    <servlet-name>springmvc</servlet-name>
+    <servlet-name>springMVC</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <!-- contextConfigLocation 是参数名称，该参数的值包含 Spring MVC 的配置文件路径 -->
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:spring/applicationContext.xml,classpath*:spring/spring-*.xml</param-value>
+      <param-value>classpath*:spring/spring-*.xml</param-value>
     </init-param>
     <!-- 在 Web 应用启动时立即加载 Servlet -->
     <load-on-startup>1</load-on-startup>
   </servlet>
   <!-- Servlet 映射声明 -->
   <servlet-mapping>
-    <servlet-name>springmvc</servlet-name>
+    <servlet-name>springMVC</servlet-name>
     <!-- 监听当前域的所有请求 -->
-    <url-pattern>*.do</url-pattern>
+    <url-pattern>/*</url-pattern>
   </servlet-mapping>
-  <!-- 添加 login.jsp 为首页 -->
-  <!--<welcome-file-list>
-      <welcome-file>login.jsp</welcome-file>
-  </welcome-file-list>-->
 
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>

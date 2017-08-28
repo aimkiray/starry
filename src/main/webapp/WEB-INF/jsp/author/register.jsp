@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <title>${requestScope.title}</title>
     <c:set value="${pageContext.request.contextPath}" var="root"/>
-    <link rel="stylesheet" href="${root}/user/css/register.css" type="text/css">
-    <script src="${root}/user/js/register.js" type="/text/javascript"></script>
+    <link rel="stylesheet" href="${root}/author/css/register.css" type="text/css">
+    <script src="${root}/author/js/register.js" type="/text/javascript"></script>
 </head>
 <body onload="showContinent()">
-<form action="/user/doregister.do" name="login" class="login-content" method="post">
+<form action="/author/doregister.do" name="login" class="login-content" method="post">
 <table class="login-table">
     <tr>
         <td class="title" colspan="5">某不为人知的交易界面</td>
     </tr>
     <tr>
         <td class="login-text"><span style="color: red;">*</span>君の名は:</td>
-        <td colspan="2"><input name="authorName" type="text" onblur="checkRegular(this,1)"></td>
+        <td colspan="2"><input name="userName" type="text" onblur="checkRegular(this,1)"></td>
         <td colspan="2" class="login-prompt"><span style="color: #00FFFF">&nbsp;用户名</span></td>
     </tr>
     <tr>
@@ -25,13 +25,13 @@
     </tr>
     <tr>
         <td class="login-text"><span style="color: red;">*</span>确认密码：</td>
-        <td colspan="2"><input name="authorPassword" type="text" onblur="checkRegular(this,4)"></td>
+        <td colspan="2"><input name="userPassword" type="text" onblur="checkRegular(this,4)"></td>
         <td colspan="2" class="login-prompt"></td>
     </tr>
     <tr>
         <td class="login-text">info：</td>
         <td colspan="2">
-            <input name="authorInfo" type="text" id="inputInfo">
+            <input name="userInfo" type="text" id="inputInfo">
         </td>
         <td colspan="2" class="login-prompt"></td>
     </tr>

@@ -40,8 +40,8 @@ import java.io.IOException;
  */
 
 @Controller
-@RequestMapping("/user/")
-public class UserController {
+@RequestMapping("/author/")
+public class AuthorController {
 
     @Autowired
     private UserService userService;
@@ -72,7 +72,7 @@ public class UserController {
 
     @RequestMapping("login")
     public String userLogin() {
-        return "user/login";
+        return "author/login";
     }
 
     @RequestMapping("verify")
@@ -81,7 +81,7 @@ public class UserController {
         if (result) {
 //            req.setAttribute("userName", user.getUserName());
             httpSession.setAttribute("userName", user.getUserName());
-            return "redirect:/user/panel.do";
+            return "redirect:/author/panel.do";
         } else {
             try {
                 resp.getWriter().print("<script>alert('false:-1,exist');history.go(-1);</script>");
@@ -95,7 +95,7 @@ public class UserController {
     @RequestMapping("register")
     public String userRegister(HttpServletRequest req, HttpServletResponse resp) {
         req.setAttribute("title", "hello world");
-        return "user/register";
+        return "author/register";
     }
 
     @RequestMapping("delete")
@@ -140,7 +140,7 @@ public class UserController {
             result = userService.insertUser(user);
         }
         if (result == 1) {
-            return "redirect:/user/users.do";
+            return "redirect:/author/author_list.do";
         } else if (result == -1) {
             try {
                 resp.getWriter().print("<script>alert('false:-1,exist');history.go(-1);</script>");
@@ -160,11 +160,11 @@ public class UserController {
     }
 
 //    转到作者列表界面
-    @RequestMapping("user_list")
+    @RequestMapping("author_list")
     public String userList(HttpServletRequest req) {
 //        List<User> users = userService.findAllUser();
 //        req.setAttribute("users", users);
-        return "user/user_list";
+        return "author/author_list";
     }
 
 //    转到修改界面
@@ -172,7 +172,7 @@ public class UserController {
     public String showUpdateUser(HttpServletRequest req, int userId) {
         User user = userService.findUserById(userId);
         req.setAttribute("user", user);
-        return "user/user_update";
+        return "author/author_update";
     }
 
 //    执行修改操作
@@ -250,7 +250,7 @@ public class UserController {
      */
     @RequestMapping("add")
     public String showAddUser() {
-        return "user/user_add";
+        return "author/author_add";
     }
 
     /**
@@ -325,6 +325,6 @@ public class UserController {
     public String userPanel(HttpServletRequest req) {
 //        User user = (User) req.getAttribute("userName");
 //        System.out.println(user);
-        return "panel/user_panel";
+        return "panel/author_panel";
     }
 }

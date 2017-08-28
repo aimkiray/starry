@@ -15,7 +15,7 @@
     <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
     <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css">
     <link type="text/css" rel="stylesheet" href="${root}/dataTables/media/css/dataTables.bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="${root}/panel/css/user-custom.css">
+    <link type="text/css" rel="stylesheet" href="${root}/panel/css/author-custom.css">
 
     <script src="${root}/dataTables/media/js/jquery.js" type="text/javascript"></script>
     <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript"></script>
@@ -24,7 +24,7 @@
     <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-    <script src="${root}/panel/js/user-custom.js" type="text/javascript"></script>
+    <script src="${root}/panel/js/author-custom.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -41,8 +41,8 @@
 
         <%--用户名模糊搜索--%>
         <div class="form-group" style="margin-top: 5px;margin-left: 10px">
-            <label for="authorNameSearch">用户名：</label>
-            <input type="text" class="form-control" id="authorNameSearch" placeholder="请输入用户名">
+            <label for="userNameSearch">用户名：</label>
+            <input type="text" class="form-control" id="userNameSearch" placeholder="请输入用户名">
         </div>
 
         <%--确认按钮--%>
@@ -61,7 +61,7 @@
         </button>
     </div>
 
-    <table id="author_list" class="table table-striped table-bordered">
+    <table id="user_list" class="table table-striped table-bordered">
         <thead>
         <tr>
             <th><input type="checkbox"></th>

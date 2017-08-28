@@ -79,7 +79,7 @@
                     </form>--%>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">${sessionScope.authorName}</a>
+                            <a href="#">${sessionScope.userName}</a>
                         </li>
                         <li>
                             <a href="#">安全退出</a>

@@ -14,9 +14,9 @@
 </head>
 <script>
     $(document).ready(function () {
-        $("#btn_update_author").click(function () {
+        $("#btn_update_user").click(function () {
             $.ajax({
-                url: "/user/doupdate.do",
+                url: "/author/doupdate.do",
                 cache: false, //禁用缓存
                 contentType : false,// 告诉jQuery不要去设置Content-Type请求头
                 processData : false,// 告诉jQuery不要去处理发送的数据
@@ -55,29 +55,29 @@
 </script>
 <body>
 <c:set var="user" value="${requestScope.user}" />
-<fmt:formatDate value="${user.authorDate}" pattern="yyyy-MM-dd HH:mm:ss" var="authorDate"/>
+<fmt:formatDate value="${user.userDate}" pattern="yyyy-MM-dd HH:mm:ss" var="userDate"/>
 <form id="uploadForm" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="authorId" value="${user.authorId}">
+    <input type="hidden" name="userId" value="${user.userId}">
     <input type="hidden" name="headshot" value="${user.headshot}">
     <div class="form-group">
-        <label for="authorName">名称</label>
-        <input type="text" class="form-control" id="authorName" name="authorName" value="${user.authorName}" placeholder="君の名は。">
+        <label for="userName">名称</label>
+        <input type="text" class="form-control" id="userName" name="userName" value="${user.userName}" placeholder="君の名は。">
     </div>
     <div class="form-group">
         <label for="nickName">昵称</label>
         <input type="text" class="form-control" id="nickName" name="nickName" value="${user.nickName}" placeholder="昵称">
     </div>
     <div class="form-group">
-        <label for="authorPassword">密码</label>
-        <input type="text" class="form-control" id="authorPassword" name="authorPassword" value="${user.authorPassword}" placeholder="密码">
+        <label for="userPassword">密码</label>
+        <input type="text" class="form-control" id="userPassword" name="userPassword" value="${user.userPassword}" placeholder="密码">
     </div>
     <div class="form-group">
-        <label for="authorInfo">简介</label>
-        <input type="text" class="form-control" id="authorInfo" name="authorInfo" value="${user.authorInfo}" placeholder="简介">
+        <label for="userInfo">简介</label>
+        <input type="text" class="form-control" id="userInfo" name="userInfo" value="${user.userInfo}" placeholder="简介">
     </div>
     <div class="form-group">
-        <label for="authorDate">注册日期</label>
-        <input class="form_datetime form-control" id="authorDate" name="authorDate" type="text" value="${authorDate}" placeholder="注册日期" readonly>
+        <label for="userDate">注册日期</label>
+        <input class="form_datetime form-control" id="userDate" name="userDate" type="text" value="${userDate}" placeholder="注册日期" readonly>
     </div>
     <div class="form-group">
         <label for="uploadPic">File input</label>
@@ -85,7 +85,7 @@
         <p class="help-block">头像上传</p>
     </div>
 
-    <button type="button" id="btn_update_author" class="btn btn-default">提交</button>
+    <button type="button" id="btn_update_user" class="btn btn-default">提交</button>
 </form>
 </body>
 </html>

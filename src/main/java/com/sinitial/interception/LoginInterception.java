@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 
 public class LoginInterception implements HandlerInterceptor {
 
-    private final String LOGINURL = "/author/login.do";
+    private final String LOGINURL = "/author/login";
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
@@ -32,12 +32,12 @@ public class LoginInterception implements HandlerInterceptor {
         }
 
 //        验证登录 放行
-        if (httpServletRequest.getServletPath().startsWith("/author/verify.do")) {
+        if (httpServletRequest.getServletPath().startsWith("/author/verify")) {
             return true;
         }
 
 //        如果用户已经登录 放行
-        if (httpServletRequest.getSession().getAttribute("authorName") != null) {
+        if (httpServletRequest.getSession().getAttribute("userName") != null) {
 //            更好的实现方式的使用cookie
             return true;
         }

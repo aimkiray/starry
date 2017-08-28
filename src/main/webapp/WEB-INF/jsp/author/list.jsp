@@ -17,7 +17,7 @@
 <table>
     <c:forEach items="${requestScope.users}" var="user">
         <tr>
-            <td>${user.authorName}</td><td>${user.authorPassword}</td><td>${user.authorEmail}</td>
+            <td>${user.userName}</td><td>${user.userPassword}</td><td>${user.userEmail}</td>
         </tr>
     </c:forEach>
 </table>

@@ -11,14 +11,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <script>
     if(top != self) {
-        top.location.href = "/WEB-INF/jsp/user/login.jsp";
+        top.location.href = "/author/login.do";
     }
 </script>
 <html>
 <head>
     <title>blog</title>
     <c:set var="root" value="${pageContext.request.contextPath}" />
-    <link rel="stylesheet" type="text/css" href="${root}/user/css/login.css">
+    <link rel="stylesheet" type="text/css" href="${root}/author/css/login.css">
 </head>
 <body>
 <%
@@ -34,25 +34,25 @@
         }
     }
 %>
-<form class="login-content" name="login" action="/user/verify.do" method="post">
+<form class="login-content" name="login" action="/author/verify.do" method="post">
     <table class="login-table">
         <tr>
             <td colspan="4" class="title">作者登录</td>
         </tr>
         <tr>
             <td class="login-text">用户名：</td>
-            <td colspan="2"><input type="text" value="${user}" name="authorName" id="authorName" onblur="checkRegular('authorname',this)"></td>
+            <td colspan="2"><input type="text" value="${user}" name="userName" id="userName" onblur="checkRegular('username',this)"></td>
             <td class="login-prompt"><span style="color: #00FFFF">&nbsp;中文</span></td>
         </tr>
         <tr>
             <td class="login-text">密码：</td>
-            <td colspan="2"><input type="password" name="authorPassword" id="authorPassword" onblur="checkRegular('authorpassword',this)"></td>
+            <td colspan="2"><input type="password" name="userPassword" id="userPassword" onblur="checkRegular('userpassword',this)"></td>
             <td class="login-prompt"><span style="color: #00FFFF">&nbsp;数字，字母</span></td>
         </tr>
         <tr>
             <td colspan="4" class="bottom-buttons">
                 <a href="javascript:document.login.submit();">登陆</a>
-                <a href="/user/register.do">注册</a>
+                <a href="/author/register.do">注册</a>
             </td>
         </tr>
     </table>
