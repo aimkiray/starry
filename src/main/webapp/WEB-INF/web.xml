@@ -7,7 +7,7 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <welcome-file-list>
-    <welcome-file>/author/login</welcome-file>
+    <welcome-file>/author/login/page</welcome-file>
   </welcome-file-list>
 
   <!-- 加载log4j的配置文件log4j.properties -->
@@ -44,7 +44,7 @@
   <servlet-mapping>
     <servlet-name>springMVC</servlet-name>
     <!-- 监听当前域的所有请求 -->
-    <url-pattern>/*</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 
   <filter>
@@ -57,7 +57,7 @@
   </filter>
   <filter-mapping>
     <filter-name>CharacterEncodingFilter</filter-name>
-    <url-pattern>/*</url-pattern>
+    <url-pattern>/**</url-pattern>
   </filter-mapping>
 
   <filter>
@@ -70,7 +70,7 @@
   </filter>
   <filter-mapping>
     <filter-name>DruidWebStatFilter</filter-name>
-    <url-pattern>/*</url-pattern>
+    <url-pattern>/**</url-pattern>
   </filter-mapping>
   <servlet>
     <servlet-name>DruidStatView</servlet-name>
@@ -78,7 +78,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>DruidStatView</servlet-name>
-    <url-pattern>/druid2333/*</url-pattern>
+    <url-pattern>/druid2333/**</url-pattern>
   </servlet-mapping>
 
 </web-app>

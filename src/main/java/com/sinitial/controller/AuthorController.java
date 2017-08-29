@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -70,9 +71,13 @@ public class AuthorController {
         return dataTables;
     }
 
-    @RequestMapping("login")
-    public String userLogin() {
-        return "author/login";
+    @RequestMapping(value = "login/page",method = RequestMethod.GET)
+    public ModelAndView userLogin() {
+//        return "author/login";
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("author/login_page");
+//        modelAndView.addObject("message","hello world");
+        return modelAndView;
     }
 
     @RequestMapping("verify")
@@ -81,7 +86,7 @@ public class AuthorController {
         if (result) {
 //            req.setAttribute("userName", user.getUserName());
             httpSession.setAttribute("userName", user.getUserName());
-            return "redirect:/author/panel.do";
+            return "redirect:/author/panel";
         } else {
             try {
                 resp.getWriter().print("<script>alert('false:-1,exist');history.go(-1);</script>");
@@ -140,7 +145,7 @@ public class AuthorController {
             result = userService.insertUser(user);
         }
         if (result == 1) {
-            return "redirect:/author/author_list.do";
+            return "redirect:/author/author_list";
         } else if (result == -1) {
             try {
                 resp.getWriter().print("<script>alert('false:-1,exist');history.go(-1);</script>");

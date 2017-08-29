@@ -25,6 +25,14 @@
                 chkStyle: "checkbox",
                 chkboxType: {"Y": "ps", "N": "ps"}
             },
+            edit: {
+                enable: true
+            },
+            view: {
+                addHoverDom: addHoverDom,
+                removeHoverDom: removeHoverDom,
+                selectedMulti: false
+            },
             data: {
                 key: {
                     name: "permissionName"

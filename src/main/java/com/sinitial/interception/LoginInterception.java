@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 
 public class LoginInterception implements HandlerInterceptor {
 
-    private final String LOGINURL = "/author/login";
+    private final String LOGINURL = "/author/login/page";
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {

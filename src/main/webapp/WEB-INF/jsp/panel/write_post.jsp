@@ -24,7 +24,7 @@
     <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-    <script src="${root}/panel/js/write_post.js" type="text/javascript"></script>
+    <script src="${root}/js/panel/write_post.js" type="text/javascript"></script>
 </head>
 <body>
 

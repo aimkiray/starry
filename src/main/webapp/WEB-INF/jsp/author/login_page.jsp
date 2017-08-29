@@ -11,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <script>
     if(top != self) {
-        top.location.href = "/author/login.do";
+        top.location.href = "/author/login/page";
     }
 </script>
 <html>
@@ -34,7 +34,7 @@
         }
     }
 %>
-<form class="login-content" name="login" action="/author/verify.do" method="post">
+<form class="login-content" name="login" action="/author/verify" method="post">
     <table class="login-table">
         <tr>
             <td colspan="4" class="title">作者登录</td>
@@ -52,7 +52,7 @@
         <tr>
             <td colspan="4" class="bottom-buttons">
                 <a href="javascript:document.login.submit();">登陆</a>
-                <a href="/author/register.do">注册</a>
+                <a href="/author/register">注册</a>
             </td>
         </tr>
     </table>

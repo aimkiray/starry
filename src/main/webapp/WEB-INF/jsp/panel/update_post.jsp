@@ -11,20 +11,20 @@
 <head>
     <title>写文章</title>
     <c:set var="root" value="${pageContext.request.contextPath}"/>
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css">
+    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">
+    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-datetimepicker.min.css">
     <link type="text/css" rel="stylesheet" href="${root}/dataTables/media/css/dataTables.bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="${root}/panel/css/user-custom.css">
+    <link type="text/css" rel="stylesheet" href="${root}/css/panel/write_post.css">
 
     <script src="${root}/dataTables/media/js/jquery.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap/js/bootstrap.js" type="text/javascript"></script>
     <script src="${root}/js/bootbox.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-    <script src="${root}/panel/js/write_post.js" type="text/javascript"></script>
+    <script src="${root}/js/panel/write_post.js" type="text/javascript"></script>
 </head>
 <body>
 
