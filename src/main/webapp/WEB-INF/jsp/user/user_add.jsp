@@ -15,16 +15,18 @@
     $(document).ready(function () {
         $("#btn_add_user").click(function () {
             $.ajax({
-                url: "/author/doadd.do",
-                cache: false, //禁用缓存
-                contentType : false,// 告诉jQuery不要去设置Content-Type请求头
-                processData : false,// 告诉jQuery不要去处理发送的数据
+                url: "/user/add",
+                cache: false, // 禁用缓存
+                contentType : false, // 告诉jQuery不要去设置Content-Type请求头
+                processData : false, // 告诉jQuery不要去处理发送的数据
                 async: false,
                 type: "post",
                 data: new FormData($("#addUploadForm")[0]),
                 success: function (data) {
                     if (data == "true") {
-                        authorTable().Init.ajax.reload();
+                        if (typeof userTable === "function") {
+                            userTable().Init.ajax.reload()
+                        }
                         $(".bootbox-close-button").click();
                     } else {
                         alert("添加失败");
@@ -56,7 +58,6 @@
 <body>
 
 <form id="addUploadForm" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="userId" value="${user.userId}">
     <div class="form-group">
         <label for="userName">名称</label>
         <input type="text" class="form-control" id="userName" name="userName" placeholder="君の名は。">
@@ -70,8 +71,32 @@
         <input type="text" class="form-control" id="userPassword" name="userPassword" placeholder="密码">
     </div>
     <div class="form-group">
+        <label for="email">邮箱</label>
+        <input type="text" class="form-control" id="email" name="email" placeholder="邮箱">
+    </div>
+    <div class="form-group">
         <label for="userInfo">简介</label>
         <input type="text" class="form-control" id="userInfo" name="userInfo" placeholder="简介">
+    </div>
+    <div class="form-group">
+        <label for="gender">性别</label>
+        <div id="gender">
+            <label class="radio-inline">
+                <input type="radio" name="gender" value="1" >女
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="gender" value="1" >girl
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="roleSelect">角色</label>
+        <select class="form-control" id="roleSelect" name="userRole">
+            <option value="0">请选择</option>
+            <c:forEach items="${requestScope.roles}" var="role">
+                <option value="${role.roleId}">${role.roleName}</option>
+            </c:forEach>
+        </select>
     </div>
     <div class="form-group">
         <label for="userDate">注册日期</label>

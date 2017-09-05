@@ -1,6 +1,10 @@
 package com.sinitial.controller;
 
+import com.sinitial.domain.Permission;
+import com.sinitial.domain.Role;
 import com.sinitial.domain.User;
+import com.sinitial.service.PermissionService;
+import com.sinitial.service.RoleService;
 import com.sinitial.service.UserService;
 import com.sinitial.utils.DataTables;
 import com.sinitial.utils.DateTools;
@@ -16,45 +20,54 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * ━━━━━━神兽出没━━━━━━
- *      ┏┓   ┏┓
- *     ┏┛┻━━━┛┻┓
- *     ┃       ┃
- *     ┃   ━   ┃
- *     ┃ ┳┛ ┗┳ ┃
- *     ┃       ┃
- *     ┃   ┻   ┃ Created by nekuata.
- *     ┃       ┃
- *     ┗━┓   ┏━┛ Code is far away from bug with
- *       ┃   ┃   the alpaca protecting.
- *       ┃   ┃   神兽保佑,代码无bug.💊💊💊
- *       ┃   ┗━━━┓
- *       ┃       ┣┓
- *       ┃       ┏┛
- *       ┗┓┓┏━┳┓┏┛
- *        ┃┫┫ ┃┫┫
- *        ┗┻┛ ┗┻┛
- *
+ * ┏┓   ┏┓
+ * ┏┛┻━━━┛┻┓
+ * ┃       ┃
+ * ┃   ━   ┃
+ * ┃ ┳┛ ┗┳ ┃
+ * ┃       ┃
+ * ┃   ┻   ┃ Created by nekuata.
+ * ┃       ┃
+ * ┗━┓   ┏━┛ Code is far away from bug with
+ * ┃   ┃   the alpaca protecting.
+ * ┃   ┃   神兽保佑,代码无bug.💊💊💊
+ * ┃   ┗━━━┓
+ * ┃       ┣┓
+ * ┃       ┏┛
+ * ┗┓┓┏━┳┓┏┛
+ * ┃┫┫ ┃┫┫
+ * ┗┻┛ ┗┻┛
+ * <p>
  * ━━━━━━感觉萌萌哒━━━━━━
  */
 
 @Controller
-@RequestMapping("/author/")
-public class AuthorController {
+@RequestMapping("/user")
+public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping("search")
+    @Autowired
+    private RoleService roleService;
+
+    //    转到作者列表界面
+    @RequestMapping("/list/page")
+    public String userList(HttpServletRequest req) {
+//        List<User> users = userService.findAllUser();
+//        req.setAttribute("users", users);
+        return "user/user_list";
+    }
+
+    @RequestMapping("/list")
     @ResponseBody
     public DataTables searchUser(int start, int length, String userName, String nickName) {
         DataTables dataTables = new DataTables();
-        /*int pageSize = start == null ? 10 : Integer.parseInt(start);
-        int pageNumber = length == null ? 1 : Integer.parseInt(length);*/
-        int pageSize = length;
-        int pageNumber = (start / length) + 1;//当前页码
+        length = length == 0 ? 5 : length;
         User user = new User();
         if (userName != null && !"".equals(userName)) {
             user.setUserName(userName);
@@ -63,7 +76,7 @@ public class AuthorController {
             user.setNickName(nickName);
         }
 //        if (pageNumber != 0 && pageSize != 0) {
-        dataTables.setData(userService.searchUser(pageNumber, pageSize, user));
+        dataTables.setData(userService.searchUser(start, length, user));
 //        }
         int count = userService.queryUserNum(user);
         dataTables.setRecordsFiltered(count);
@@ -71,22 +84,24 @@ public class AuthorController {
         return dataTables;
     }
 
-    @RequestMapping(value = "login/page",method = RequestMethod.GET)
+    @RequestMapping(value = "/login/page")
     public ModelAndView userLogin() {
 //        return "author/login";
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("author/login_page");
+        modelAndView.setViewName("user/login_page");
 //        modelAndView.addObject("message","hello world");
         return modelAndView;
     }
 
-    @RequestMapping("verify")
+    @RequestMapping("/login")
     public String verifyUser(HttpServletRequest req, HttpServletResponse resp, HttpSession httpSession, User user) {
         boolean result = userService.verifyUser(user);
         if (result) {
-//            req.setAttribute("userName", user.getUserName());
-            httpSession.setAttribute("userName", user.getUserName());
-            return "redirect:/author/panel";
+            User realUser = userService.findUserByName(user.getUserName());
+            List<Permission> permissions = roleService.findRoleById(realUser.getUserRole()).getPermissions();
+            httpSession.setAttribute("user", realUser);
+            httpSession.setAttribute("permissions", permissions);
+            return "redirect:/user/panel";
         } else {
             try {
                 resp.getWriter().print("<script>alert('false:-1,exist');history.go(-1);</script>");
@@ -97,14 +112,23 @@ public class AuthorController {
         }
     }
 
-    @RequestMapping("register")
-    public String userRegister(HttpServletRequest req, HttpServletResponse resp) {
-        req.setAttribute("title", "hello world");
-        return "author/register";
+    /**
+     * 转到用户面板
+     *
+     * @return
+     */
+    @RequestMapping("/panel")
+    public String userPanel() {
+        return "panel/main";
     }
 
-    @RequestMapping("delete")
-    public String deleteUser(HttpServletResponse resp, HttpServletRequest req, Integer userId) {
+    @RequestMapping("/register")
+    public String userRegister() {
+        return "user/register";
+    }
+
+    @RequestMapping(value = "/del/{userId}", method = RequestMethod.POST)
+    public String deleteUser(HttpServletResponse resp, HttpServletRequest req, @PathVariable int userId) {
 
         int result = 0;
         String msg = "false";
@@ -115,12 +139,15 @@ public class AuthorController {
         String path = req.getSession().getServletContext().getRealPath("headimg");
         User user = userService.findUserById(userId);
         String headImg = user.getHeadshot();
-        File imgPath = new File(path, headImg);
-        if (imgPath.delete()) {
+//        表示文件是图片或别的什么，执行删除
+        if (headImg.contains(".")) {
+            File imgPath = new File(path, headImg);
+            if (imgPath.delete()) {
 //            文件删除后再从数据库删除作者
-            result = userService.deleteUser(userId);
-        } else {
-            msg = "false";
+                result = userService.deleteUser(userId);
+            } else {
+                msg = "false";
+            }
         }
 
         if (result == 1) {
@@ -138,14 +165,26 @@ public class AuthorController {
         return null;
     }
 
-    @RequestMapping("doregister")
+    /**
+     * 获取添加界面
+     *
+     * @return ModelAndView
+     */
+    @RequestMapping("add/page")
+    public String showAddUser(HttpServletRequest request) {
+        List<Role> roles = roleService.findAllRole();
+        request.setAttribute("roles", roles);
+        return "user/user_add";
+    }
+
+    @RequestMapping("/add")
     public String userDoRegister(HttpServletRequest req, HttpServletResponse resp, User user) {
         int result = 0;
         if (user != null) {
             result = userService.insertUser(user);
         }
         if (result == 1) {
-            return "redirect:/author/author_list";
+            return "redirect:/user/list/page";
         } else if (result == -1) {
             try {
                 resp.getWriter().print("<script>alert('false:-1,exist');history.go(-1);</script>");
@@ -164,24 +203,18 @@ public class AuthorController {
 
     }
 
-//    转到作者列表界面
-    @RequestMapping("author_list")
-    public String userList(HttpServletRequest req) {
-//        List<User> users = userService.findAllUser();
-//        req.setAttribute("users", users);
-        return "author/author_list";
-    }
-
-//    转到修改界面
-    @RequestMapping("update")
-    public String showUpdateUser(HttpServletRequest req, int userId) {
+    //    转到修改界面
+    @RequestMapping(value = "update/{userId}", method = RequestMethod.POST)
+    public String showUpdateUser(HttpServletRequest req, @PathVariable int userId) {
         User user = userService.findUserById(userId);
+        List<Role> roles = roleService.findAllRole();
         req.setAttribute("user", user);
-        return "author/author_update";
+        req.setAttribute("roles", roles);
+        return "user/user_update";
     }
 
-//    执行修改操作
-    @RequestMapping(value = "doupdate", method = RequestMethod.POST)
+    //    执行修改操作
+    @RequestMapping(value = "update", method = RequestMethod.POST)
     public String updateUser(HttpServletResponse resp, HttpServletRequest req, @RequestParam(value = "uploadPic", required = false) MultipartFile file, User user) {
 
         String msg = "false";
@@ -201,15 +234,18 @@ public class AuthorController {
 //            先删除文件，然后构建上传目录及文件对象，不存在则自动创建
             String path = req.getSession().getServletContext().getRealPath("headimg");
             String oldHeadImg = user.getHeadshot();
-            File oldImgPath = new File(path, oldHeadImg);
+//        表示文件是图片或别的什么，执行删除
+            if (oldHeadImg.contains(".")) {
+                File oldImgPath = new File(path, oldHeadImg);
 //            如果图片删除失败，返回false，end.
-            if (!oldImgPath.delete()) {
-                try {
-                    resp.getWriter().print("false");
-                } catch (IOException e) {
-                    e.printStackTrace();
+                if (!oldImgPath.delete()) {
+                    try {
+                        resp.getWriter().print("false");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    return null;
                 }
-                return null;
             }
             File imgPath = new File(path);
             if (!imgPath.exists()) {
@@ -250,23 +286,15 @@ public class AuthorController {
     }
 
     /**
-     * 获取添加界面
-     * @return ModelAndView
-     */
-    @RequestMapping("add")
-    public String showAddUser() {
-        return "author/author_add";
-    }
-
-    /**
      * 执行添加操作
+     *
      * @param resp
      * @param req
      * @param file
      * @param user
      * @return
      */
-    @RequestMapping(value = "doadd", method = RequestMethod.POST)
+    @RequestMapping(value = "add", method = RequestMethod.POST)
     public String addUser(HttpServletResponse resp, HttpServletRequest req, @RequestParam(value = "uploadPic", required = false) MultipartFile file, User user) {
 //        System.out.println(user);
 
@@ -303,7 +331,7 @@ public class AuthorController {
          */
         user.setHeadshot(headImg);
         int result = 0;
-        if (user != null && user.getUserId() != null) {
+        if (user != null) {
             result = userService.insertUser(user);
         }
 
@@ -320,16 +348,5 @@ public class AuthorController {
             e.printStackTrace();
         }
         return null;
-    }
-
-    /**
-     * 转到用户面板
-     * @return
-     */
-    @RequestMapping("panel")
-    public String userPanel(HttpServletRequest req) {
-//        User user = (User) req.getAttribute("userName");
-//        System.out.println(user);
-        return "panel/author_panel";
     }
 }

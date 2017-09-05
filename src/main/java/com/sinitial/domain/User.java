@@ -1,11 +1,7 @@
 package com.sinitial.domain;
 
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.stereotype.Component;
-
 import java.util.Date;
 
-@Component("user")
 public class User {
     private Integer userId;
 
@@ -19,7 +15,6 @@ public class User {
 
     private Integer gender;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date signDate;
 
     private Integer userRole;

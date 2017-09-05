@@ -14,12 +14,15 @@
     <result column="post_content" jdbcType="LONGVARCHAR" property="postContent" />
   </resultMap>
   <resultMap id="AuthorResult" type="com.sinitial.domain.User">
-    <id column="author_id" jdbcType="INTEGER" property="authorId" />
-    <result column="author_name" jdbcType="VARCHAR" property="authorName" />
-    <result column="author_date" jdbcType="TIMESTAMP" property="authorDate" />
-    <result column="author_info" jdbcType="VARCHAR" property="authorInfo" />
-    <result column="author_password" jdbcType="VARCHAR" property="authorPassword" />
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
     <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="sign_date" jdbcType="TIMESTAMP" property="signDate" />
+    <result column="user_role" jdbcType="INTEGER" property="userRole" />
+    <result column="user_info" jdbcType="VARCHAR" property="userInfo" />
     <result column="headshot" jdbcType="VARCHAR" property="headshot" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -28,6 +31,23 @@
   <sql id="Blob_Column_List">
     post_content
   </sql>
+
+  <!--自定义文章搜索功能-->
+  <select id="selectBySearch" parameterType="map" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from sl_post
+    LEFT JOIN sinitial.sl_author
+    ON sinitial.sl_post.post_author = sinitial.sl_author.author_id
+    where 1=1
+    <if test="searchParam != null and searchParam != ''">
+      and (post_title like concat('%',#{searchParam},'%')
+      or post_content like concat('%',#{searchParam},'%'))
+    </if>
+    LIMIT #{start},#{limit}
+  </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select

@@ -1,22 +1,22 @@
-package com.sinitial.domain;
+package com.sinitial.utils;
 
 public class AjaxMessage {
-    private String message;
+    private int message;
     private Object result;
 
     public AjaxMessage() {
     }
 
-    public AjaxMessage(String message, Object result) {
+    public AjaxMessage(int message, Object result) {
         this.message = message;
         this.result = result;
     }
 
-    public String getMessage() {
+    public int getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
+    public void setMessage(int message) {
         this.message = message;
     }
 

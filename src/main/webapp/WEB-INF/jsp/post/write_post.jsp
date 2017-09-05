@@ -11,17 +11,17 @@
 <head>
     <title>写文章</title>
     <c:set var="root" value="${pageContext.request.contextPath}"/>
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css">
+    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">
+    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-datetimepicker.min.css">
     <link type="text/css" rel="stylesheet" href="${root}/dataTables/media/css/dataTables.bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="${root}/panel/css/user-custom.css">
+    <link type="text/css" rel="stylesheet" href="${root}/css/panel/write_post.css">
 
     <script src="${root}/dataTables/media/js/jquery.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap/js/bootstrap.js" type="text/javascript"></script>
     <script src="${root}/js/bootbox.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
     <script src="${root}/js/panel/write_post.js" type="text/javascript"></script>
@@ -48,7 +48,6 @@
     <div class="col-md-6 form-group">
         <label for="selectTag">已有标签</label>
         <select class="form-control" id="selectTag" name="tagId">
-            <option value="0">请选择</option>
             <c:forEach items="${requestScope.tags}" var="tag">
                 <option value="${tag.tagId}">${tag.tagName}</option>
             </c:forEach>
@@ -59,10 +58,7 @@
 <form>
 
     <div class="form-group" id="formTag">
-        <span id="tagSpan0">
-            <input class="form-control tagArea" type="text" value="测试" style="width: auto" readonly>
-            <input type="hidden" name="tagId" value="0">
-        </span>
+
     </div>
 
     <div class="form-group">

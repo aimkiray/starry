@@ -68,19 +68,19 @@ public class UserServiceImpl implements UserService {
     /**
      * 根据条件搜索作者
      *
-     * @param pageNumber  当前页
-     * @param pageSize  每页数量
+     * @param start  当前页
+     * @param length  每页数量
      * @param user 按条件搜索
      * @return 符合条件的作者，不超过limit
      */
     @Override
-    public List<User> searchUser(int pageNumber, int pageSize, User user) {
+    public List<User> searchUser(int start, int length, User user) {
         Map<String,Object> map = new HashMap<>();
 //        根据sqlSessionFactory得到session
 //        SqlSession sqlSession = sqlSessionFactory.openSession();
 //        userMapper = sqlSession.getMapper(UserMapper.class);
-        map.put("start",(pageNumber-1)*pageSize);
-        map.put("limit",pageSize);
+        map.put("start",start);
+        map.put("limit",length);
         map.put("user", user);
 
         List<User> users = userMapper.searchUser(map);
@@ -264,109 +264,4 @@ public class UserServiceImpl implements UserService {
 //        }
         return result;
     }
-
-    /**
-     * 通过用户名查找作者
-     */
-    @Test
-    public void findUserByName() {
-//        根据sqlSessionFactory得到session
-//        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        userMapper = sqlSession.getMapper(UserMapper.class);
-        UserExample userExample = new UserExample();
-        UserExample.Criteria criteria = userExample.createCriteria();
-        criteria.andUserNameEqualTo("魔理沙");
-        List<User> users = userMapper.selectByExample(userExample);
-//        User user = sqlSession.selectOne("User.findUserByName", "魔理沙");
-//        if (sqlSession != null) {
-//            sqlSession.close();
-//        }
-        if(users.size()>0) {
-            System.out.println(users.get(0).getUserName());
-
-        }
-    }
-
-    /**
-     * 根据id删除用户
-     */
-    @Test
-    public void deleteUser() {
-//        int result = 0;
-//        根据sqlSessionFactory得到session
-//        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        result = sqlSession.delete("User.deleteUserById", 1);
-//        if (result > 0) {
-//            sqlSession.commit();
-//        }
-//
-//        if (sqlSession != null) {
-//            sqlSession.close();
-//        }
-    }
-
-    /**
-     * 向数据库添加用户
-     */
-    @Test
-    public void insertUser() {
-//        int result = 0;
-//        根据sqlSessionFactory得到session
-//        SqlSession sqlSession = sqlSessionFactory.openSession();
-        /*User user = new User();
-        user.setUserName("魔理沙");
-        user.setUserPassword("1234");
-        user.setUserInfo("魔女");
-        user.setUserDate(new Date());
-        result = sqlSession.insert("User.insertUser", user);
-        if (result > 0) {
-            sqlSession.commit();
-        }
-        if (sqlSession != null) {
-            sqlSession.close();
-        }*/
-    }
-
-    /**
-     * 向数据库添加用户
-     */
-    @Test
-    public void updateUser() {
-//        int result = 0;
-//        根据sqlSessionFactory得到session
-        /*SqlSession sqlSession = sqlSessionFactory.openSession();
-        User user = new User();
-        user.setUserId(3);
-        user.setUserName("魔理沙");
-        user.setUserPassword("1234");
-        user.setUserInfo("魔女");
-        user.setUserDate(new Date());
-        result = sqlSession.update("User.updateUserId", user);
-        if (result > 0) {
-            sqlSession.commit();
-        }
-        if (sqlSession != null) {
-            sqlSession.close();
-        }*/
-    }
-
-    /**
-     * 根据作者id获得该作者的全部文章
-     */
-    /*@Test
-    public void findUserAndPostById() {
-        int result = 0;
-//        根据sqlSessionFactory得到session
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        User user = sqlSession.selectOne("User.findUserAndPostById", 1);
-
-        if (sqlSession != null) {
-            sqlSession.close();
-        }
-        System.out.println(user);
-
-        for (Post post : user.get) {
-            System.out.println("\n" + post);
-        }
-    }*/
 }

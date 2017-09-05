@@ -8,7 +8,7 @@
     <script src="${root}/author/js/register.js" type="/text/javascript"></script>
 </head>
 <body onload="showContinent()">
-<form action="/author/doregister.do" name="login" class="login-content" method="post">
+<form action="/user/register/doregister.do" name="login" class="login-content" method="post">
 <table class="login-table">
     <tr>
         <td class="title" colspan="5">某不为人知的交易界面</td>

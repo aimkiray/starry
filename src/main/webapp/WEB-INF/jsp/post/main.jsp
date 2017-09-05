@@ -33,17 +33,17 @@
 <body>
 <header id="header" class="inner">
     <div class="alignleft">
-        <h1><a href="">Light</a></h1>
+        <h1><a href="">Lucky!</a></h1>
         <h2><a href=""></a></h2>
     </div>
     <nav id="main-nav" class="alignright">
         <ul>
 
-            <li><a href="">Home</a></li>
+            <li><a href="${root}/post">主页</a></li>
 
-            <li><a href="">Archives</a></li>
+            <li><a href="${root}/user/login/page">登陆</a></li>
 
-            <li><a href="">Page</a></li>
+            <li><a href="###">关于我</a></li>
 
         </ul>
         <div class="clearfix"></div>
@@ -67,7 +67,7 @@
                             <time datetime="${fullDate}">
                                 <a href="">${simpleDate}</a>
                                 &nbsp;&nbsp;
-                                <a href="">Author: ${post.user.authorName}</a>
+                                <a href="">Author: ${post.user.userName}</a>
                             </time>
 
                             <h1 class="title">
@@ -108,17 +108,12 @@
             <h3 class="title">Tags</h3>
             <ul class="entry">
 
-                <li><a href="">amet</a>
-                    <small>2</small>
+                <c:forEach items="${requestScope.tags}" var="tag">
+                <li><a href="">${tag.tagName}</a>
+                    <%--TODO 标签联查--%>
+                    <small>1</small>
                 </li>
-
-                <li><a href="">consectetur</a>
-                    <small>3</small>
-                </li>
-
-                <li><a href="">dolor</a>
-                    <small>4</small>
-                </li>
+                </c:forEach>
 
             </ul>
         </div>

@@ -24,6 +24,6 @@ public class PanelController {
     public String writePost(HttpServletRequest req) {
         List<Tag> tags = tagService.findAllTag();
         req.setAttribute("tags",tags);
-        return "panel/write_post";
+        return "post/write_post";
     }
 }

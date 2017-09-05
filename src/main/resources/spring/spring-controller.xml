@@ -8,6 +8,9 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+  <!--启用默认servlet来处理资源-->
+  <mvc:default-servlet-handler/>
+
   <context:component-scan base-package="com.sinitial.controller"/>
   <!-- 配置SpringMVC -->
   <!-- 开启SpringMVC注解模式 -->
@@ -35,10 +38,13 @@
     <property name="suffix" value=".jsp"/>
   </bean>
 
+  <!--<mvc:exclude-mapping path="/post"/>
+  <mvc:exclude-mapping path="/user/login/page"/>
+  <mvc:exclude-mapping path="/user/login"/>-->
   <mvc:interceptors>
     <mvc:interceptor>
       <mvc:mapping path="/**"/>
-      <bean class="com.sinitial.interception.LoginInterception"/>
+      <bean class="com.sinitial.interception.PermissionInterception"/>
     </mvc:interceptor>
   </mvc:interceptors>
 

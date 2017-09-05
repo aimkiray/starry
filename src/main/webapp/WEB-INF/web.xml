@@ -7,7 +7,7 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <welcome-file-list>
-    <welcome-file>/author/login/page</welcome-file>
+    <welcome-file>/user/login/page</welcome-file>
   </welcome-file-list>
 
   <!-- 加载log4j的配置文件log4j.properties -->
@@ -27,6 +27,15 @@
     <param-name>webAppRootKey</param-name>
     <param-value>sinitialProject</param-value>
   </context-param>
+
+  <!--静态资源-->
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.js</url-pattern>
+    <url-pattern>*.css</url-pattern>
+    <url-pattern>/postimg/*</url-pattern>
+    <url-pattern>/img/*</url-pattern>
+  </servlet-mapping>
 
   <!-- 配置 Spring MVC DispatchcerServlet 前端控制器 -->
   <servlet>
@@ -57,7 +66,7 @@
   </filter>
   <filter-mapping>
     <filter-name>CharacterEncodingFilter</filter-name>
-    <url-pattern>/**</url-pattern>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
 
   <filter>
@@ -70,7 +79,7 @@
   </filter>
   <filter-mapping>
     <filter-name>DruidWebStatFilter</filter-name>
-    <url-pattern>/**</url-pattern>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
   <servlet>
     <servlet-name>DruidStatView</servlet-name>
@@ -78,7 +87,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>DruidStatView</servlet-name>
-    <url-pattern>/druid2333/**</url-pattern>
+    <url-pattern>/druid2333/*</url-pattern>
   </servlet-mapping>
 
 </web-app>

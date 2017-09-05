@@ -16,7 +16,7 @@
     $(document).ready(function () {
         $("#btn_update_user").click(function () {
             $.ajax({
-                url: "/author/doupdate.do",
+                url: "/user/update",
                 cache: false, //禁用缓存
                 contentType : false,// 告诉jQuery不要去设置Content-Type请求头
                 processData : false,// 告诉jQuery不要去处理发送的数据
@@ -25,7 +25,7 @@
                 data: new FormData($("#uploadForm")[0]),
                 success: function (data) {
                     if (data == "true") {
-                        authorTable().Init.ajax.reload();
+                        userTable().Init.ajax.reload()
                         $(".bootbox-close-button").click();
                     } else {
                         alert("修改失败");
@@ -55,7 +55,7 @@
 </script>
 <body>
 <c:set var="user" value="${requestScope.user}" />
-<fmt:formatDate value="${user.userDate}" pattern="yyyy-MM-dd HH:mm:ss" var="userDate"/>
+<fmt:formatDate value="${user.signDate}" pattern="yyyy-MM-dd HH:mm:ss" var="signDate"/>
 <form id="uploadForm" method="post" enctype="multipart/form-data">
     <input type="hidden" name="userId" value="${user.userId}">
     <input type="hidden" name="headshot" value="${user.headshot}">
@@ -72,12 +72,35 @@
         <input type="text" class="form-control" id="userPassword" name="userPassword" value="${user.userPassword}" placeholder="密码">
     </div>
     <div class="form-group">
+        <label for="email">邮箱</label>
+        <input type="text" class="form-control" id="email" name="email" value="${user.email}" placeholder="邮箱">
+    </div>
+    <div class="form-group">
         <label for="userInfo">简介</label>
         <input type="text" class="form-control" id="userInfo" name="userInfo" value="${user.userInfo}" placeholder="简介">
     </div>
     <div class="form-group">
+        <label for="gender">性别</label>
+        <div id="gender">
+            <label class="radio-inline">
+                <input type="radio" name="gender" value="1" <c:if test="${user.gender == 1}">checked</c:if>>女
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="gender" value="0" <c:if test="${user.gender == 0}">checked</c:if>>girl
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="roleSelect">角色</label>
+        <select class="form-control" id="roleSelect" name="userRole">
+            <c:forEach items="${requestScope.roles}" var="role">
+                <option value="${role.roleId}" <c:if test="${user.userRole == role.roleId}">selected</c:if>>${role.roleName}</option>
+            </c:forEach>
+        </select>
+    </div>
+    <div class="form-group">
         <label for="userDate">注册日期</label>
-        <input class="form_datetime form-control" id="userDate" name="userDate" type="text" value="${userDate}" placeholder="注册日期" readonly>
+        <input class="form_datetime form-control" id="userDate" name="userDate" type="text" value="${signDate}" placeholder="注册日期" readonly>
     </div>
     <div class="form-group">
         <label for="uploadPic">File input</label>

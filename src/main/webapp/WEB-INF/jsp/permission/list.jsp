@@ -10,10 +10,23 @@
 <html>
 <head>
     <title> ZTREE DEMO - Simple Data</title>
-    <c:set var="root" value="${pageContext.request.contextPath}"/>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <c:set var="root" value="${pageContext.request.contextPath}"/>
+    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">
+    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link type="text/css" rel="stylesheet" href="${root}/dataTables/media/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="${root}/css/ztree/demo.css" type="text/css">
     <link rel="stylesheet" href="${root}/css/ztree/zTreeStyle/zTreeStyle.css" type="text/css">
+
+    <script src="${root}/dataTables/media/js/jquery.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="${root}/js/bootbox.min.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+    <script src="${root}/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="${root}/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+
     <script type="text/javascript" src="${root}/js/ztree/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="${root}/js/ztree/jquery.ztree.core.js"></script>
     <script type="text/javascript" src="${root}/js/ztree/jquery.ztree.excheck.js"></script>
@@ -49,7 +62,7 @@
         $(document).ready(function () {
             $.ajax({
                 type: "post",
-                url: "/permission/all.do",
+                url: "/permission/all",
                 dataType: "json",
                 cache: false,
                 success: function (data) {
@@ -84,16 +97,13 @@
                         dataType: "json",
                         cache: false,
                         success: function (data) {
-                            $.fn.zTree.init($("#treeDemo"), setting, data);
-                            var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
-                            treeObj.expandAll(true);
+
                         },
                         error: function () {
                             alert("通信失败！");
                         }
                     });
                 }
-
             })
         });
     </script>

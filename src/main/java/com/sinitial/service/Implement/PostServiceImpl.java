@@ -41,23 +41,44 @@ public class PostServiceImpl implements PostService {
 
     /**
      * 通用文章获取功能，包含搜索&分页，参数可选，不需要的话传入0或null
+     * @param start 查询开始位置
+     * @param length 查询几条
+     * @param searchParam 搜索条件
+     */
+    @Override
+    public List<Post> searchPost(int start, int length, String searchParam) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("start", start);
+        map.put("limit", length);
+//        判断是否为搜索
+        if (searchParam != null) {
+            map.put("searchParam", searchParam);
+        }
+//        剩下的交给xml判断
+        List<Post> posts = postMapper.selectBySearch(map);
+
+        return posts;
+    }
+
+    /**
+     * 通用文章展示功能，包含搜索&分页，参数可选，不需要的话传入0或null
      * @param pageNumber 当前页数
      * @param pageSize 每页条目数
      * @param searchParam 搜索条件
      */
     @Override
-    public List<Post> searchPost(int pageNumber, int pageSize, String searchParam) {
+    public List<Post> showPost(int pageNumber, int pageSize, String searchParam) {
         Map<String, Object> map = new HashMap<>();
 //        定义limit起始和结束位置，默认查询全部
         int start = 0;
-        int stop = -1;
+        int limit = -1;
 //        开启分页
         if (pageNumber != 0 && pageSize != 0) {
             start = (pageNumber - 1) * pageSize;
-//            stop = pageNumber * pageSize;
+            limit = pageSize;
         }
         map.put("start", start);
-        map.put("limit", pageSize);
+        map.put("limit", limit);
 //        判断是否为搜索
         if (searchParam != null) {
             map.put("searchParam", searchParam);
