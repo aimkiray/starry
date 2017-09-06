@@ -41,39 +41,6 @@
         }
     }
 %>
-
-<%--<div class="container">
-
-    <div class="row" id="pwd-container">
-        <div class="col-md-4"></div>
-
-        <div class="col-md-4">
-            <section class="login-form">
-                <form method="post" action="#" role="login">
-                    <input type="text" name="userName" placeholder="用户名" required class="form-control input-lg"/>
-
-                    <input type="password" class="form-control input-lg" id="userPassword" name="userPassword" placeholder="Password" required="" />
-
-
-                    <div class="pwstrength_viewport_progress"></div>
-
-
-                    <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">登陆</button>
-                    <div>
-                        <a href="#">注册</a>
-                    </div>
-
-                </form>
-
-            </section>
-        </div>
-
-        <div class="col-md-4"></div>
-
-    </div>
-
-</div>--%>
-
 <form class="login-content" name="login" action="/user/login" method="post">
     <table class="login-table">
         <tr>

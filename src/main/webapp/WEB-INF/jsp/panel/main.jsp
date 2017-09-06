@@ -108,7 +108,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">${sessionScope.user.userName}</a>
+                        <a href="#">${sessionScope.user.nickName}</a>
                     </li>
                     <li>
                         <a href="#">安全退出</a>
@@ -129,7 +129,7 @@
         </div>
         <div class="col-sm-10" id="mainScope">
             <div class="iframe-container">
-                <iframe src="${pageContext.request.contextPath}/panel/write_post.do" name="author_main" width="800" frameborder="no" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+                <iframe src="${pageContext.request.contextPath}/role/list/page" name="author_main" width="800" frameborder="no" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
             </div>
         </div>
     </div>

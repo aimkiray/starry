@@ -26,6 +26,7 @@
     <script src="${root}/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="${root}/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <script src="${root}/user/js/login.js" type="text/javascript"></script>
 </head>
 <body>
 <%
@@ -41,6 +42,7 @@
         }
     }
 %>
+
 <form class="login-content" name="login" action="/user/login" method="post">
     <table class="login-table">
         <tr>
@@ -48,7 +50,7 @@
         </tr>
         <tr>
             <td class="login-text">用户名：</td>
-            <td colspan="2"><input type="text" value="${user}" name="userName" id="userName" onblur="checkRegular('username',this)"></td>
+            <td colspan="2"><input type="text" value="" name="userName" id="userName" onblur="checkRegular('username',this)"></td>
             <td class="login-prompt"><span style="color: #00FFFF">&nbsp;中文</span></td>
         </tr>
         <tr>

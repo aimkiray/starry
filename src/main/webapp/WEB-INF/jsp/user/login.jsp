@@ -48,91 +48,39 @@
 </head>
 <body>
 
-<!-- REGISTRATION FORM -->
+<!-- Where all the magic happens -->
+<!-- LOGIN FORM -->
 <div class="text-center" style="padding:50px 0">
-    <div class="logo">注册</div>
+    <div class="logo">登陆</div>
     <!-- Main Form -->
     <div class="login-form-1">
-        <form id="register-form" class="text-left" action="/user/add" method="post">
+        <form id="login-form" class="text-left" action="/login" method="post">
             <div class="login-form-main-message"></div>
             <div class="main-login-form">
                 <div class="login-group">
                     <div class="form-group">
-                        <label for="reg_username" class="sr-only">Email address</label>
-                        <input type="text" class="form-control" id="reg_username" name="userName" placeholder="username">
+                        <label for="lg_username" class="sr-only">Username</label>
+                        <input type="text" class="form-control" id="lg_username" name="userName" placeholder="username">
                     </div>
                     <div class="form-group">
-                        <label for="reg_password" class="sr-only">Password</label>
-                        <input type="password" class="form-control" id="reg_password" name="userPassword" placeholder="password">
+                        <label for="lg_password" class="sr-only">Password</label>
+                        <input type="password" class="form-control" id="lg_password" name="userPassword" placeholder="password">
                     </div>
-                    <div class="form-group">
-                        <label for="reg_password_confirm" class="sr-only">Password Confirm</label>
-                        <input type="password" class="form-control" id="reg_password_confirm" name="userPassword_confirm" placeholder="confirm password">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="reg_email" class="sr-only">Email</label>
-                        <input type="text" class="form-control" id="reg_email" name="email" placeholder="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="reg_fullname" class="sr-only">Full Name</label>
-                        <input type="text" class="form-control" id="reg_fullname" name="realName" placeholder="full name">
-                    </div>
-
                     <div class="form-group login-group-checkbox">
-                        <input type="radio" class="" name="gender" id="male">
-                        <label for="male">女</label>
-
-                        <input type="radio" class="" name="gender" id="female">
-                        <label for="female">girl</label>
-                    </div>
-
-                    <div class="form-group login-group-checkbox">
-                        <input type="checkbox" class="" id="reg_agree" name="agree">
-                        <label for="reg_agree">i agree with <a href="#">terms</a></label>
+                        <input type="checkbox" id="lg_remember" name="remember">
+                        <label for="lg_remember">remember</label>
                     </div>
                 </div>
                 <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
             </div>
             <div class="etc-login-form">
-                <p>已有账号？<a href="/login/page">登陆</a></p>
+                <p>忘记密码？<a href="/login/forgot">点我~</a></p>
+                <p>新用户？<a href="/login/register">用户注册</a></p>
             </div>
         </form>
     </div>
     <!-- end:Main Form -->
 </div>
-
-<%--<script>
-    $(document).ready(function () {
-        $("#btn_add_user").click(function () {
-            $.ajax({
-                url: "/user/add",
-                cache: false, // 禁用缓存
-                contentType : false, // 告诉jQuery不要去设置Content-Type请求头
-                processData : false, // 告诉jQuery不要去处理发送的数据
-                async: false,
-                type: "post",
-                dataType: "json",
-                data: new FormData($("#addUploadForm")[0]),
-                success: function (data) {
-                    if (data == 1) {
-                        if (typeof userTable === "function") {
-                            userTable().Init.ajax.reload()
-                        }
-                        $(".bootbox-close-button").click();
-                    } else {
-                        alert("添加失败");
-                        $(".bootbox-close-button").click();
-                    }
-                },
-                error: function () {
-                    alert("通信失败");
-                    $(".bootbox-close-button").click();
-                }
-            });
-        });
-    });
-</script>--%>
 
 </body>
 </html>

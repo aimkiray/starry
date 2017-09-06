@@ -7,7 +7,7 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <welcome-file-list>
-    <welcome-file>/user/login/page</welcome-file>
+    <welcome-file>/post</welcome-file>
   </welcome-file-list>
 
   <!-- 加载log4j的配置文件log4j.properties -->

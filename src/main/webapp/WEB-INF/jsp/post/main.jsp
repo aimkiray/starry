@@ -12,7 +12,6 @@
 <head>
     <title>作者管理</title>
     <c:set var="root" value="${pageContext.request.contextPath}"/>
-    <c:set var="root" value="${pageContext.request.contextPath}"/>
     <link rel="stylesheet" href="${root}/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">
     <link rel="stylesheet" href="${root}/bootstrap/css/bootstrap-datetimepicker.min.css">
@@ -41,7 +40,7 @@
 
             <li><a href="${root}/post">主页</a></li>
 
-            <li><a href="${root}/user/login/page">登陆</a></li>
+            <li><a href="${root}/login/page">登陆</a></li>
 
             <li><a href="###">关于我</a></li>
 

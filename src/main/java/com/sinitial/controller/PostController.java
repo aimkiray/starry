@@ -80,6 +80,13 @@ public class PostController {
     @RequestMapping("/add")
     public String writePost(HttpServletRequest request, @PathVariable String authorName) {
         request.setAttribute("authorName", authorName);
-        return "panel/swrite_post";
+        return "post/write_post";
+    }
+
+    @RequestMapping(value = "/update/{postId}")
+    public String updatePost(HttpServletRequest request, @PathVariable("postId") int postId) {
+        Post post = postService.findPostById(postId);
+        request.setAttribute("post",post);
+        return "post/update_post";
     }
 }

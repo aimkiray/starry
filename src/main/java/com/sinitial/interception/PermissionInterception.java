@@ -22,12 +22,12 @@ public class PermissionInterception implements HandlerInterceptor {
         }
 
 //        请求到登录页面 放行
-        if (url.startsWith("/user/login/page")) {
+        if (url.startsWith("/login/page")) {
             return true;
         }
 
 //        验证登录 放行
-        if (url.startsWith("/user/login")) {
+        if (url.startsWith("/login")) {
             return true;
         }
 
@@ -45,7 +45,7 @@ public class PermissionInterception implements HandlerInterceptor {
 
 //        非法请求 即这些请求需要登录后才能访问
 //        重定向到登录页面
-        httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/user/login/page");
+        httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/post");
         return false;
     }
 

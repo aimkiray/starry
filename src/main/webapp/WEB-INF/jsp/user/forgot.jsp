@@ -48,61 +48,34 @@
 </head>
 <body>
 
-<!-- REGISTRATION FORM -->
+<!-- FORGOT PASSWORD FORM -->
 <div class="text-center" style="padding:50px 0">
-    <div class="logo">注册</div>
+    <div class="logo">forgot password</div>
     <!-- Main Form -->
     <div class="login-form-1">
-        <form id="register-form" class="text-left" action="/user/add" method="post">
+        <form id="forgot-password-form" class="text-left">
+            <div class="etc-login-form">
+                <p>When you fill in your registered email address, you will be sent instructions on how to reset your password.</p>
+            </div>
             <div class="login-form-main-message"></div>
             <div class="main-login-form">
                 <div class="login-group">
                     <div class="form-group">
-                        <label for="reg_username" class="sr-only">Email address</label>
-                        <input type="text" class="form-control" id="reg_username" name="userName" placeholder="username">
-                    </div>
-                    <div class="form-group">
-                        <label for="reg_password" class="sr-only">Password</label>
-                        <input type="password" class="form-control" id="reg_password" name="userPassword" placeholder="password">
-                    </div>
-                    <div class="form-group">
-                        <label for="reg_password_confirm" class="sr-only">Password Confirm</label>
-                        <input type="password" class="form-control" id="reg_password_confirm" name="userPassword_confirm" placeholder="confirm password">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="reg_email" class="sr-only">Email</label>
-                        <input type="text" class="form-control" id="reg_email" name="email" placeholder="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="reg_fullname" class="sr-only">Full Name</label>
-                        <input type="text" class="form-control" id="reg_fullname" name="realName" placeholder="full name">
-                    </div>
-
-                    <div class="form-group login-group-checkbox">
-                        <input type="radio" class="" name="gender" id="male">
-                        <label for="male">女</label>
-
-                        <input type="radio" class="" name="gender" id="female">
-                        <label for="female">girl</label>
-                    </div>
-
-                    <div class="form-group login-group-checkbox">
-                        <input type="checkbox" class="" id="reg_agree" name="agree">
-                        <label for="reg_agree">i agree with <a href="#">terms</a></label>
+                        <label for="fp_email" class="sr-only">Email address</label>
+                        <input type="text" class="form-control" id="fp_email" name="fp_email" placeholder="email address">
                     </div>
                 </div>
                 <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
             </div>
             <div class="etc-login-form">
-                <p>已有账号？<a href="/login/page">登陆</a></p>
+                <p>already have an account? <a href="#">login here</a></p>
+                <p>new user? <a href="#">create new account</a></p>
             </div>
         </form>
     </div>
     <!-- end:Main Form -->
 </div>
-
-<%--<script>
+<script>
     $(document).ready(function () {
         $("#btn_add_user").click(function () {
             $.ajax({
@@ -132,7 +105,7 @@
             });
         });
     });
-</script>--%>
+</script>
 
 </body>
 </html>

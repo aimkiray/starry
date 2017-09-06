@@ -1,7 +1,7 @@
 function checkRegular() {
     var regulars;
     if (arguments[0] == 'adminname') {
-        regulars = /^[\u4e00-\u9fa5]{1,6}$/;
+        regulars = /^([\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*[\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)$/i;
     }
     if(arguments[0] == 'adminpassword') {
         regulars = /^[a-z|A-Z|0-9]{6,12}$/;

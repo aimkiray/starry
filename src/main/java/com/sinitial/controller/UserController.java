@@ -3,7 +3,6 @@ package com.sinitial.controller;
 import com.sinitial.domain.Permission;
 import com.sinitial.domain.Role;
 import com.sinitial.domain.User;
-import com.sinitial.service.PermissionService;
 import com.sinitial.service.RoleService;
 import com.sinitial.service.UserService;
 import com.sinitial.utils.DataTables;
@@ -84,49 +83,6 @@ public class UserController {
         return dataTables;
     }
 
-    @RequestMapping(value = "/login/page")
-    public ModelAndView userLogin() {
-//        return "author/login";
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("user/login_page");
-//        modelAndView.addObject("message","hello world");
-        return modelAndView;
-    }
-
-    @RequestMapping("/login")
-    public String verifyUser(HttpServletRequest req, HttpServletResponse resp, HttpSession httpSession, User user) {
-        boolean result = userService.verifyUser(user);
-        if (result) {
-            User realUser = userService.findUserByName(user.getUserName());
-            List<Permission> permissions = roleService.findRoleById(realUser.getUserRole()).getPermissions();
-            httpSession.setAttribute("user", realUser);
-            httpSession.setAttribute("permissions", permissions);
-            return "redirect:/user/panel";
-        } else {
-            try {
-                resp.getWriter().print("<script>alert('false:-1,exist');history.go(-1);</script>");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-    }
-
-    /**
-     * 转到用户面板
-     *
-     * @return
-     */
-    @RequestMapping("/panel")
-    public String userPanel() {
-        return "panel/main";
-    }
-
-    @RequestMapping("/register")
-    public String userRegister() {
-        return "user/register";
-    }
-
     @RequestMapping(value = "/del/{userId}", method = RequestMethod.POST)
     public String deleteUser(HttpServletResponse resp, HttpServletRequest req, @PathVariable int userId) {
 
@@ -184,7 +140,7 @@ public class UserController {
             result = userService.insertUser(user);
         }
         if (result == 1) {
-            return "redirect:/user/list/page";
+            return "redirect:/user/login/page";
         } else if (result == -1) {
             try {
                 resp.getWriter().print("<script>alert('false:-1,exist');history.go(-1);</script>");

@@ -7,6 +7,13 @@ import java.util.List;
 public interface TagService {
 
     /**
+     * 通过Id获取标签
+     * @param tagId
+     * @return
+     */
+    public Tag findTagById(int tagId);
+
+    /**
      * 获取全部的标签
      */
     public List<Tag> findAllTag();

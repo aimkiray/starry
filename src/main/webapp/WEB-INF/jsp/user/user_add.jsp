@@ -21,9 +21,10 @@
                 processData : false, // 告诉jQuery不要去处理发送的数据
                 async: false,
                 type: "post",
+                dataType: "json",
                 data: new FormData($("#addUploadForm")[0]),
                 success: function (data) {
-                    if (data == "true") {
+                    if (data == 1) {
                         if (typeof userTable === "function") {
                             userTable().Init.ajax.reload()
                         }
