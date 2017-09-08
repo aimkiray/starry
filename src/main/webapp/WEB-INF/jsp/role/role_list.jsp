@@ -11,27 +11,25 @@
 <head>
     <title>用户管理</title>
     <c:set var="root" value="${pageContext.request.contextPath}"/>
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap.css">
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-datetimepicker.min.css">
-    <link type="text/css" rel="stylesheet" href="${root}/dataTables/media/css/dataTables.bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="${root}/css/role/role-custom.css">
+    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-theme.css">
+    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link type="text/css" rel="stylesheet" href="${root}/resources/dataTables/media/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="${root}/resources/css/ztree/demo.css" type="text/css">
+    <link rel="stylesheet" href="${root}/resources/css/ztree/zTreeStyle/zTreeStyle.css" type="text/css">
 
-    <link rel="stylesheet" href="${root}/css/ztree/demo.css" type="text/css">
-    <link rel="stylesheet" href="${root}/css/ztree/zTreeStyle/zTreeStyle.css" type="text/css">
+    <script src="${root}/resources/dataTables/media/js/jquery.js" type="text/javascript"></script>
+    <script src="${root}/resources/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="${root}/resources/js/bootbox.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+    <script src="${root}/resources/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
 
-    <script src="${root}/dataTables/media/js/jquery.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="${root}/js/bootbox.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
-    <script src="${root}/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="${root}/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-    <script src="${root}/js/role/role-custom.js" type="text/javascript"></script>
-
-    <script type="text/javascript" src="${root}/js/ztree/jquery.ztree.core.js"></script>
-    <script type="text/javascript" src="${root}/js/ztree/jquery.ztree.excheck.js"></script>
-    <script type="text/javascript" src="${root}/js/ztree/jquery.ztree.exedit.js"></script>
+    <script type="text/javascript" src="${root}/resources/js/ztree/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="${root}/resources/js/ztree/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript" src="${root}/resources/js/ztree/jquery.ztree.exedit.js"></script>
+    <script type="text/javascript" src="${root}/resources/js/role/role-custom.js"></script>
 </head>
 
 <body>

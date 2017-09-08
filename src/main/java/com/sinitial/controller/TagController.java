@@ -1,6 +1,5 @@
 package com.sinitial.controller;
 
-import com.sinitial.domain.Post;
 import com.sinitial.domain.Tag;
 import com.sinitial.service.PostService;
 import com.sinitial.service.TagService;

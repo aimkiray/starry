@@ -73,7 +73,7 @@ var userTable = function () {
         //列表表头字段
         columns: [
             {data : "userId", "orderable": false, "width": "2%", "render": function(data,type,row,meta){ return '<input type="checkbox" name="'+data+'">'; } },
-            {data : "headshot", "orderable": false, "width": "12px", "render": function(data,type,row,meta){ return '<img style="width: 50px" src="/headimg/'+data+'"/>'; } },
+            {data : "headshot", "orderable": false, "width": "12px", "render": function(data,type,row,meta){ return '<img style="width: 50px" src="/resources/headimg/'+data+'"/>'; } },
             {data : "userName"},
             {data : "userPassword"},
             {data : "nickName"},

@@ -11,20 +11,20 @@
 <head>
     <title>用户管理</title>
     <c:set var="root" value="${pageContext.request.contextPath}"/>
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap.css">
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-datetimepicker.min.css">
-    <link type="text/css" rel="stylesheet" href="${root}/dataTables/media/css/dataTables.bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="${root}/css/panel/user-custom.css">
+    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-theme.css">
+    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link type="text/css" rel="stylesheet" href="${root}/resources/dataTables/media/css/dataTables.bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="${root}/resources/css/panel/user-custom.css">
 
-    <script src="${root}/dataTables/media/js/jquery.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="${root}/js/bootbox.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
-    <script src="${root}/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="${root}/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-    <script src="${root}/js/panel/user-custom.js" type="text/javascript"></script>
+    <script src="${root}/resources/dataTables/media/js/jquery.js" type="text/javascript"></script>
+    <script src="${root}/resources/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="${root}/resources/js/bootbox.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+    <script src="${root}/resources/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/js/panel/user-custom.js" type="text/javascript"></script>
 </head>
 
 <body>

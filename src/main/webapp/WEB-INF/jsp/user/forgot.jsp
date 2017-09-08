@@ -25,20 +25,20 @@
 <head>
     <title>登陆&注册</title>
     <c:set var="root" value="${pageContext.request.contextPath}"/>
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap.css">
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">
-    <link type="text/css" rel="stylesheet" href="${root}/bootstrap/css/bootstrap-datetimepicker.min.css">
-    <link type="text/css" rel="stylesheet" href="${root}/dataTables/media/css/dataTables.bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="${root}/user/css/login-custom.css">
+    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-theme.css">
+    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link type="text/css" rel="stylesheet" href="${root}/resources/dataTables/media/css/dataTables.bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="${root}/resources/user/css/login-custom.css">
 
-    <script src="${root}/dataTables/media/js/jquery.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="${root}/js/bootbox.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
-    <script src="${root}/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="${root}/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-    <script src="${root}/user/js/login-custom.js" type="text/javascript"></script>
+    <script src="${root}/resources/dataTables/media/js/jquery.js" type="text/javascript"></script>
+    <script src="${root}/resources/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="${root}/resources/js/bootbox.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+    <script src="${root}/resources/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/user/js/login-custom.js" type="text/javascript"></script>
 
     <!-- All the files that are required -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
