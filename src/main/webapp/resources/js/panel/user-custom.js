@@ -7,6 +7,19 @@ $(document).ready(function () {
     // 初始化Button的点击事件
     buttonInit();
 
+    // 自定义Toolbar
+    $("div.toolbar").html('<div id="toolbar" class="btn-group">\n' +
+        '        <button id="btn_add" type="button" class="btn btn-default">\n' +
+        '            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增\n' +
+        '        </button>\n' +
+        '        <button id="btn_edit" type="button" class="btn btn-default">\n' +
+        '            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改\n' +
+        '        </button>\n' +
+        '        <button id="btn_delete" type="button" class="btn btn-default">\n' +
+        '            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除\n' +
+        '        </button>\n' +
+        '    </div>');
+
     // 丢掉datatables报错信息（官方方案之一）
     $.fn.dataTable.ext.errMode = 'throw';
 
@@ -44,7 +57,7 @@ var userTable = function () {
     var tableParam = {};
     tableParam.Init = $("#user_list").dataTable({
         destroy: true, //创建表格前先删除旧表格
-        dom: '<"top"i>rt<"bottom"flp><"clear">',
+        dom: "<'row'<'col-sm-6'<'toolbar'>><'col-sm-6'f>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>",
         language: lang,  //提示信息
         autoWidth: false,  //禁用自动调整列宽
         stripeClasses: ["odd", "even"],  //为奇偶行加上样式，兼容不支持CSS伪类的场合

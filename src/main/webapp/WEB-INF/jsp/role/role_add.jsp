@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>进化</title>
+    <title>添加</title>
 </head>
 <script>
     var setting = {

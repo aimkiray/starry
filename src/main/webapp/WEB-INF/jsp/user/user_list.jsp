@@ -48,8 +48,9 @@
         <%--确认按钮--%>
         <input type="button" id="btn_query" class="btn btn-primary" style="margin-top: 5px;margin-left: 10px" value="查询">
     </form>
+    <br>
 
-    <div id="toolbar" class="btn-group">
+    <%--<div id="toolbar" class="btn-group">
         <button id="btn_add" type="button" class="btn btn-default">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
         </button>
@@ -59,7 +60,7 @@
         <button id="btn_delete" type="button" class="btn btn-default">
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
         </button>
-    </div>
+    </div>--%>
 
     <table id="user_list" class="table table-striped table-bordered">
         <thead>

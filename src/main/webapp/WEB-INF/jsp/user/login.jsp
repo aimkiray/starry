@@ -1,6 +1,6 @@
-<%@ page import="java.net.URLDecoder" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core_1_1" %>
+<%@ page import="java.net.URLDecoder" %>
 <%
     Cookie[] cookies = request.getCookies();
     String user = null;
