@@ -7,15 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/postimg/1491647719728.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/postimg/1491647902087.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/panel/user-custom.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/user/css/user-custom.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/panel/user-custom.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/user/js/user-custom.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/user_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/user_list.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -99,8 +91,8 @@
       <file leaf-file-name="user-custom.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/user/js/user-custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="111" column="29" lean-forward="true" selection-start-line="111" selection-start-column="29" selection-end-line="111" selection-end-column="29" />
+            <state relative-caret-position="323">
+              <caret line="102" column="17" lean-forward="true" selection-start-line="102" selection-start-column="17" selection-end-line="102" selection-end-column="17" />
               <folding>
                 <marker date="1505108103681" expanded="true" signature="3181:3192" ph="..." />
                 <marker date="1505108103681" expanded="true" signature="3732:3738" ph="&amp;nbsp;" />
@@ -965,7 +957,7 @@
       <workItem from="1505106520168" duration="1722000" />
       <workItem from="1505126990589" duration="1215000" />
       <workItem from="1505302737932" duration="35000" />
-      <workItem from="1505304650044" duration="636000" />
+      <workItem from="1505304650044" duration="1028000" />
     </task>
     <task id="LOCAL-00001" summary="test git">
       <created>1502287055815</created>
@@ -1037,7 +1029,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504864389643</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix bug.">
+      <created>1505309347307</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1505309347307</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1073,7 +1072,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="673151000" />
+    <option name="totallyTimeSpent" value="673543000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1528,8 +1527,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/user/js/user-custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="111" column="29" lean-forward="true" selection-start-line="111" selection-start-column="29" selection-end-line="111" selection-end-column="29" />
+        <state relative-caret-position="323">
+          <caret line="102" column="17" lean-forward="true" selection-start-line="102" selection-start-column="17" selection-end-line="102" selection-end-column="17" />
           <folding>
             <marker date="1505108103681" expanded="true" signature="3181:3192" ph="..." />
             <marker date="1505108103681" expanded="true" signature="3732:3738" ph="&amp;nbsp;" />
