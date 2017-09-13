@@ -21,19 +21,6 @@
     <link rel="stylesheet" type="text/css" href="${root}/admin/css/login.css">
 </head>
 <body>
-<%
-    Cookie[] cookies = request.getCookies();
-    String admin = null;
-    if (cookies != null) {
-        for (int i = 0; i < cookies.length; i++) {
-            if ("admin".equals(cookies[i].getName().toString())) {
-                admin = cookies[i].getValue();
-                admin = URLDecoder.decode(admin, "utf-8");
-            }
-            out.print(cookies[i].getName() + ":" + cookies[i].getValue() + "<br/>");
-        }
-    }
-%>
 <form class="login-content" name="login" action="/admin/verify.do" method="post">
     <table class="login-table">
         <tr>

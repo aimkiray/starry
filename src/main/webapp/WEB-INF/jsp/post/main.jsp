@@ -8,21 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ page import="java.net.URLDecoder" %>
-<%
-    Cookie[] cookies = request.getCookies();
-    String user = null;
-    if (cookies != null) {
-        for (int i = 0; i < cookies.length; i++) {
-            if ("user".equals(cookies[i].getName().toString())) {
-                user = cookies[i].getValue();
-                user = URLDecoder.decode(user, "utf-8");
-            }
-            out.print(cookies[i].getName() + ":" + cookies[i].getValue() + "<br/>");
-        }
-    }
-%>
 <html>
+<script>
+    if (top != self) {
+        top.location.href = "/WEB-INF/jsp/admin/login.jsp";
+    }
+</script>
 <head>
     <title>作者管理</title>
     <c:set var="root" value="${pageContext.request.contextPath}"/>

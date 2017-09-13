@@ -92,7 +92,7 @@ public class UserController {
         /**
          * 先删除文件
          */
-        String path = req.getSession().getServletContext().getRealPath("headimg");
+        String path = req.getSession().getServletContext().getRealPath("/resources/headimg");
         User user = userService.findUserById(userId);
         String headImg = user.getHeadshot();
 //        表示文件是图片或别的什么，执行删除
@@ -143,7 +143,7 @@ public class UserController {
             return "redirect:/user/login/page";
         } else if (result == -1) {
             try {
-                resp.getWriter().print("<script>alert('false:-1,exist');history.go(-1);</script>");
+                resp.getWriter().print("<script>alert('false:-1');history.go(-1);</script>");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -188,7 +188,7 @@ public class UserController {
             String ext = FilenameUtils.getExtension(realName);
             headImg = DateTools.getFileName(ext);
 //            先删除文件，然后构建上传目录及文件对象，不存在则自动创建
-            String path = req.getSession().getServletContext().getRealPath("headimg");
+            String path = req.getSession().getServletContext().getRealPath("/resources/headimg");
             String oldHeadImg = user.getHeadshot();
 //        表示文件是图片或别的什么，执行删除
             if (oldHeadImg.contains(".")) {
@@ -267,7 +267,7 @@ public class UserController {
             String ext = FilenameUtils.getExtension(realName);
             headImg = DateTools.getFileName(ext);
 //            构建上传目录及文件对象，不存在则自动创建
-            String path = req.getSession().getServletContext().getRealPath("headimg");
+            String path = req.getSession().getServletContext().getRealPath("/resources/headimg");
             File imgPath = new File(path);
             if (!imgPath.exists()) {
                 imgPath.mkdir();
