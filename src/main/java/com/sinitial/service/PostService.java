@@ -7,12 +7,20 @@ import java.util.List;
 public interface PostService {
 
     /**
-     * 通用文章获取功能，包含搜索&分页，参数可选，不需要的话传入0或null
+     * 通用文章展示功能，包含搜索&分页，参数可选，不需要的话传入0或null
      * @param pageNumber 当前页数
      * @param pageSize 每页条目数
      * @param searchParam 搜索条件
      */
-    public List<Post> searchPost(int pageNumber, int pageSize, String searchParam);
+    public List<Post> showPost(int pageNumber, int pageSize, String searchParam);
+
+    /**
+     * 通用文章获取功能，包含搜索&分页，参数可选，不需要的话传入0或null
+     * @param start 查询开始位置
+     * @param length 查询几条
+     * @param searchParam 搜索条件
+     */
+    public List<Post> searchPost(int start, int length, String searchParam);
 
     /**
      * 通过标题查找文章

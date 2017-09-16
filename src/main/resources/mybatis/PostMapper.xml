@@ -8,18 +8,21 @@
     <result column="post_type" jdbcType="VARCHAR" property="postType" />
     <result column="post_mime_type" jdbcType="VARCHAR" property="postMimeType" />
     <result column="post_date" jdbcType="TIMESTAMP" property="postDate" />
-    <association property="author" resultMap="AuthorResult" />
+    <association property="user" resultMap="AuthorResult" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.sinitial.domain.Post">
     <result column="post_content" jdbcType="LONGVARCHAR" property="postContent" />
   </resultMap>
-  <resultMap id="AuthorResult" type="com.sinitial.domain.Author">
-    <id column="author_id" jdbcType="INTEGER" property="authorId" />
-    <result column="author_name" jdbcType="VARCHAR" property="authorName" />
-    <result column="author_date" jdbcType="TIMESTAMP" property="authorDate" />
-    <result column="author_info" jdbcType="VARCHAR" property="authorInfo" />
-    <result column="author_password" jdbcType="VARCHAR" property="authorPassword" />
+  <resultMap id="AuthorResult" type="com.sinitial.domain.User">
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
     <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="sign_date" jdbcType="TIMESTAMP" property="signDate" />
+    <result column="user_role" jdbcType="INTEGER" property="userRole" />
+    <result column="user_info" jdbcType="VARCHAR" property="userInfo" />
     <result column="headshot" jdbcType="VARCHAR" property="headshot" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -28,6 +31,8 @@
   <sql id="Blob_Column_List">
     post_content
   </sql>
+
+  <!--自定义文章搜索功能-->
   <select id="selectBySearch" parameterType="map" resultMap="ResultMapWithBLOBs">
     select
     <include refid="Base_Column_List" />
@@ -43,23 +48,7 @@
     </if>
     LIMIT #{start},#{limit}
   </select>
-  <!--&lt;select id="selectBySearch" parameterType="map" resultMap="ResultMapWithBLOBs"&gt;
-    select
-    &lt;include refid="Base_Column_List"/&gt;
-    ,
-    &lt;include refid="Blob_Column_List"/&gt;
-    from sl_post
-    LEFT JOIN sinitial.sl_author
-    ON sinitial.sl_post.post_author = sinitial.sl_author.author_id
-    where 1=1
-    &lt;if test="post != null and post.postTitle != null"&gt;
-      and post_title like concat('%',#{post.postTitle},'%')
-    &lt;/if&gt;
-    &lt;if test="post != null and post.postContent != null"&gt;
-      and post_content like concat('%',#{post.postContent},'%')
-    &lt;/if&gt;
-    LIMIT #{start},#{limit}
-  &lt;/select&gt;-->
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select
     <include refid="Base_Column_List" />
@@ -78,7 +67,7 @@
                          post_type, post_author, post_mime_type,
                          post_date, post_content)
     VALUES (#{postId,jdbcType=INTEGER}, #{postTitle,jdbcType=VARCHAR}, #{postStatus,jdbcType=VARCHAR},
-            #{postType,jdbcType=VARCHAR}, #{author.authorId,jdbcType=INTEGER}, #{postMimeType,jdbcType=VARCHAR},
+            #{postType,jdbcType=VARCHAR}, #{user.authorId,jdbcType=INTEGER}, #{postMimeType,jdbcType=VARCHAR},
             #{postDate,jdbcType=TIMESTAMP}, #{postContent,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.sinitial.domain.Post">
@@ -96,7 +85,7 @@
       <if test="postType != null">
         post_type,
       </if>
-      <if test="author != null and author.authorId != null">
+      <if test="user != null and user.authorId != null">
         post_author,
       </if>
       <if test="postMimeType != null">
@@ -122,8 +111,8 @@
       <if test="postType != null">
         #{postType,jdbcType=VARCHAR},
       </if>
-      <if test="author != null and author.authorId != null">
-        #{author.authorId,jdbcType=INTEGER},
+      <if test="user != null and user.authorId != null">
+        #{user.authorId,jdbcType=INTEGER},
       </if>
       <if test="postMimeType != null">
         #{postMimeType,jdbcType=VARCHAR},
@@ -148,8 +137,8 @@
       <if test="postType != null">
         post_type = #{postType,jdbcType=VARCHAR},
       </if>
-      <if test="author != null and author.authorId != null">
-        post_author = #{author.authorId,jdbcType=INTEGER},
+      <if test="user != null and user.authorId != null">
+        post_author = #{user.authorId,jdbcType=INTEGER},
       </if>
       <if test="postMimeType != null">
         post_mime_type = #{postMimeType,jdbcType=VARCHAR},
@@ -168,7 +157,7 @@
     SET post_title   = #{postTitle,jdbcType=VARCHAR},
       post_status    = #{postStatus,jdbcType=VARCHAR},
       post_type      = #{postType,jdbcType=VARCHAR},
-      post_author    = #{author.authorId,jdbcType=INTEGER},
+      post_author    = #{user.authorId,jdbcType=INTEGER},
       post_mime_type = #{postMimeType,jdbcType=VARCHAR},
       post_date      = #{postDate,jdbcType=TIMESTAMP},
       post_content   = #{postContent,jdbcType=LONGVARCHAR}
@@ -179,7 +168,7 @@
     SET post_title   = #{postTitle,jdbcType=VARCHAR},
       post_status    = #{postStatus,jdbcType=VARCHAR},
       post_type      = #{postType,jdbcType=VARCHAR},
-      post_author    = #{author.authorId,jdbcType=INTEGER},
+      post_author    = #{user.authorId,jdbcType=INTEGER},
       post_mime_type = #{postMimeType,jdbcType=VARCHAR},
       post_date      = #{postDate,jdbcType=TIMESTAMP}
     WHERE post_id = #{postId,jdbcType=INTEGER}

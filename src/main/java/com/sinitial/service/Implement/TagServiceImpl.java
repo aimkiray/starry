@@ -33,6 +33,16 @@ public class TagServiceImpl implements TagService {
     }
 
     /**
+     * 通过Id获取标签
+     * @param tagId
+     * @return
+     */
+    @Override
+    public Tag findTagById(int tagId) {
+        return tagMapper.selectByPrimaryKey(tagId);
+    }
+
+    /**
      * 根据id删除标签
      *
      * @param tagId

@@ -9,41 +9,45 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
+<script>
+    if (top != self) {
+        top.location.href = "/WEB-INF/jsp/admin/login.jsp";
+    }
+</script>
 <head>
     <title>作者管理</title>
     <c:set var="root" value="${pageContext.request.contextPath}"/>
-    <c:set var="root" value="${pageContext.request.contextPath}"/>
-    <link rel="stylesheet" href="${root}/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="${root}/bootstrap/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="${root}/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="${root}/dataTables/media/css/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="${root}/css/font-awesome.min.css">
-    <link rel="stylesheet" href="${root}/post/css/style.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="${root}/resources/dataTables/media/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="${root}/resources/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${root}/resources/post/css/style.css" media="screen" type="text/css">
 
-    <script src="${root}/dataTables/media/js/jquery.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="${root}/js/bootbox.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-    <script src="${root}/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
-    <script src="${root}/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="${root}/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/dataTables/media/js/jquery.js" type="text/javascript"></script>
+    <script src="${root}/resources/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="${root}/resources/js/bootbox.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+    <script src="${root}/resources/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
 
 </head>
 
 <body>
 <header id="header" class="inner">
     <div class="alignleft">
-        <h1><a href="">Light</a></h1>
+        <h1><a href="">Lucky!</a></h1>
         <h2><a href=""></a></h2>
     </div>
     <nav id="main-nav" class="alignright">
         <ul>
 
-            <li><a href="">Home</a></li>
+            <li><a href="${root}/post">主页</a></li>
 
-            <li><a href="">Archives</a></li>
+            <li><a href="${root}/login/page">登陆</a></li>
 
-            <li><a href="">Page</a></li>
+            <li><a href="###">关于我</a></li>
 
         </ul>
         <div class="clearfix"></div>
@@ -67,7 +71,7 @@
                             <time datetime="${fullDate}">
                                 <a href="">${simpleDate}</a>
                                 &nbsp;&nbsp;
-                                <a href="">Author: ${post.author.authorName}</a>
+                                <a href="">Author: ${post.user.userName}</a>
                             </time>
 
                             <h1 class="title">
@@ -108,17 +112,12 @@
             <h3 class="title">Tags</h3>
             <ul class="entry">
 
-                <li><a href="">amet</a>
-                    <small>2</small>
+                <c:forEach items="${requestScope.tags}" var="tag">
+                <li><a href="">${tag.tagName}</a>
+                    <%--TODO 标签联查--%>
+                    <small>1</small>
                 </li>
-
-                <li><a href="">consectetur</a>
-                    <small>3</small>
-                </li>
-
-                <li><a href="">dolor</a>
-                    <small>4</small>
-                </li>
+                </c:forEach>
 
             </ul>
         </div>
@@ -140,10 +139,6 @@
     </div>
     <div class="clearfix"></div>
 </footer>
-
-<script src="${root}/js/jquery-3.2.1.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="${root}/post/css/jquery.css" media="screen" type="text/css">
-
 <div id="sbi_camera_button" class="sbi_search"
      style="left: 0px; top: 0px; position: absolute; width: 29px; height: 27px; border: medium none; margin: 0px; padding: 0px; z-index: 2147483647; display: none;"></div>
 </body>
