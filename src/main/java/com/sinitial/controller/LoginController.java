@@ -42,7 +42,7 @@ public class LoginController {
             List<Permission> permissions = roleService.findRoleById(realUser.getUserRole()).getPermissions();
             httpSession.setAttribute("user", realUser);
             httpSession.setAttribute("permissions", permissions);
-            return "redirect:/login/panel";
+            return "redirect:/panel";
         } else {
             try {
                 resp.getWriter().print("<script>alert('false:-1');history.go(-1);</script>");
@@ -51,16 +51,6 @@ public class LoginController {
             }
             return null;
         }
-    }
-
-    /**
-     * 转到用户面板
-     *
-     * @return
-     */
-    @RequestMapping("/panel")
-    public String userPanel() {
-        return "panel/main";
     }
 
     @RequestMapping("/register")

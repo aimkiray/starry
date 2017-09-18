@@ -59,7 +59,7 @@
     }
 </style>--%>
 <style type="text/css">
-    .ztree * {font-size: 10pt;font-family:"Microsoft Yahei",Verdana,Simsun,"Segoe UI Web Light","Segoe UI Light","Segoe UI Web Regular","Segoe UI","Segoe UI Symbol","Helvetica Neue",Arial}
+    .ztree * {font-size: 10pt}
     .ztree li ul{ margin:0; padding:0}
     .ztree li {line-height:30px;}
     .ztree li a {width:200px;height:30px;padding-top: 0px;}
@@ -72,7 +72,7 @@
     .ztree li span.button.switch {width: 16px;height: 16px;}
 
     .ztree li a.level0 span {font-size: 150%;font-weight: bold;}
-    .ztree li span.button {background-image:url("/img/left_menuForOutLook.png"); *background-image:url("/img/left_menuForOutLook.gif")}
+    .ztree li span.button {background-image:url("${root}/resources/img/left_menuForOutLook.png"); *background-image:url("${root}/resources/img/left_menuForOutLook.gif")}
     .ztree li span.button.switch.level0 {width: 20px; height:20px}
     .ztree li span.button.switch.level1 {width: 20px; height:20px}
     .ztree li span.button.noline_open {background-position: 0 0;}
@@ -143,13 +143,13 @@
         </div>
         <div class="col-sm-10" id="mainScope">
             <div class="iframe-container">
-                <iframe src="${pageContext.request.contextPath}/role/list/page" name="author_main" width="800" frameborder="no" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+                <iframe src="${pageContext.request.contextPath}/role/list/page" name="panel_container" width="800" frameborder="no" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
             </div>
         </div>
     </div>
 </div>
 <input id="userRole" type="hidden" value="${sessionScope.user.userRole}">
-<SCRIPT type="text/javascript">
+<script type="text/javascript">
     var setting = {
         view: {
             showLine: false,
@@ -191,7 +191,7 @@
         if (treeNode.level == 0 ) {
             var zTree = $.fn.zTree.getZTreeObj("treeDemo");
             zTree.expandNode(treeNode);
-            window.open(treeNode.zz+"\\page","author_main");
+            window.open(treeNode.zz+"\\page","panel_container");
             return false;
         }
         return true;
@@ -216,6 +216,6 @@
             }
         });
     });
-</SCRIPT>
+</script>
 </body>
 </html>

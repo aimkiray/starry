@@ -56,7 +56,16 @@
     </div>
 </div>
 <br/>
+
 <form>
+
+    <div class="form-group" id="formTag">
+        <input type="hidden" value="${requestScope.postTags}">
+        <input class="form-control tagArea" type="text" value="${postTag.tagName}" readonly>
+        <c:forEach items="${requestScope.postTags}" var="postTag">
+            <input type="hidden" name="tagId" value="${postTag.tagId}">
+        </c:forEach>
+    </div>
 
     <div class="form-group">
         <c:forEach items="${requestScope.postTags}" var="postTag">

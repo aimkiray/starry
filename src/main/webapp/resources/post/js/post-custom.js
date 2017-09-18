@@ -3,7 +3,7 @@
  */
 $(document).ready(function () {
     // 初始化Table
-    userTable();
+    postTable();
 
     // 初始化Toolbar
     $("div.toolbar").html('<div id="toolbar" class="btn-group">\n' +
@@ -54,20 +54,22 @@ var lang = {
 };
 
 //初始化表格
-var userTable = function () {
+var postTable = function () {
     var tableParam = {};
-    tableParam.Init = $("#user_list").dataTable({
+    tableParam.Init = $("#post_list").dataTable({
         destroy: true, //创建表格前先删除旧表格
+        // dom: '<"top"f>rt<"bottom"lp>i<"clear">',
+        // dom: '<"toolbar">frtip',
         dom: "<'row'<'col-sm-6'<'toolbar'>><'col-sm-6'f>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>",
         language: lang,  //提示信息
-        autoWidth: false,  //禁用自动调整列宽
+        // autoWidth: false,  //禁用自动调整列宽
         stripeClasses: ["odd", "even"],  //为奇偶行加上样式，兼容不支持CSS伪类的场合
         processing: true,  //隐藏加载提示,自行处理
         serverSide: true,  //启用服务器端分页
         lengthMenu: [[5,25,50,100,-1],[5,25,50,100,"All"]],
         pageLength: 5,
         pagingType: "full_numbers",  //分页样式：simple,simple_numbers,full,full_numbers
-        searching: false,  //禁用原生搜索
+        searching: true,  //原生搜索
         orderMulti: false,  //启用多列排序
         order: [],  //取消默认排序查询,否则复选框一列会出现小箭头
         renderer: "bootstrap",  //渲染样式：Bootstrap和jquery-ui
@@ -76,31 +78,22 @@ var userTable = function () {
             "orderable": false    //包含上样式名‘nosort’的禁止排序
         }],
         ajax: {
-            url: '/user/list',
+            url: '/post/list',
             type: 'POST',
-            dataType: "json",
-            data: {
-                userName : $("#userNameSearch").val(),
-                nickName : $("#nickNameSearch").val()
-            }
+            dataType: "json"
         },
         //列表表头字段
         columns: [
-            {data : "userId", "orderable": false, "width": "2%", "render": function(data,type,row,meta){ return '<input type="checkbox" name="'+data+'">'; } },
-            {data : "headshot", "orderable": false, "width": "12px", "render": function(data,type,row,meta){ return '<img style="width: 50px" src="/resources/headimg/'+data+'"/>'; } },
-            {data : "userName"},
-            {data : "userPassword"},
-            {data : "nickName"},
-            {data : "gender"},
-            {data : "userRole"},
-            {data : "userInfo"},
-            {data : "signDate"},
-            {
-                data : "userId",
+            {data : "postId", "orderable": false, "width": "2%", "render": function(data,type,row,meta){ return '<input type="checkbox" name="'+data+'">'; } },
+            {data : "postStatus"},
+            {data : "postTitle"},
+            {data : "user.nickName"},
+            {data : "postDate"},
+            {data : "postId",
                 render: function (data, type, row) {
-                    return '<button class="btn btn-info btn-sm" onclick="updateUser('+data+')"><i class="fa fa-pencil"></i>修改</button>' +
+                    return '<button class="btn btn-info btn-sm" onclick="updatePost('+data+')"><i class="fa fa-pencil"></i>修改</button>' +
                         '&nbsp;&nbsp;' +
-                        '<button class="btn btn-danger btn-sm" onclick="delUser('+data+')"><i class="fa fa-trash-o"></i>删除</button>';
+                        '<button class="btn btn-danger btn-sm" onclick="delPost('+data+')"><i class="fa fa-trash-o"></i>删除</button>';
                 }
             }
         ]
@@ -108,13 +101,13 @@ var userTable = function () {
 //此处需调用api()方法,否则返回的是JQuery对象而不是DataTables的API对象
 
     return tableParam;
-}
+};
 
-function updateUser(userId) {
+function updatePost(postId) {
     $.ajax({
-        url: "/user/update/" + userId,
+        url: "/post/update/" + postId,
         type: "post",
-        dataType: "text",
+        dataType: "json",
         success: function (data) {
             bootbox.dialog({
                 message: data,
@@ -127,7 +120,7 @@ function updateUser(userId) {
     });
 }
 
-function delUser(userId) {
+function delPost(postId) {
     bootbox.confirm({
         message: "确认删除？",
         buttons: {
@@ -143,11 +136,11 @@ function delUser(userId) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: "/user/del/" + userId,
+                    url: "/post/del/" + postId,
                     type: "post",
                     dataType: "text",
                     success: function () {
-                        userTable().Init.ajax.reload();
+                        postTable().Init.ajax.reload();
                         $(".bootbox-close-button").click();
                     },
                     error: function () {
@@ -175,24 +168,10 @@ function buttonInit() {
     });
 
     $("#btn_add").click(function () {
-        $.ajax({
-            url: "/user/add/page",
-            type: "post",
-            dataType: "text",
-            success: function (data) {
-                bootbox.dialog({
-                    message: data,
-                    title: "添加用户"
-                })
-            },
-            error: function () {
-                alert("通信失败");
-            }
-        });
+        window.open("/post/add/page","panel_container");
     });
 
-    // 刷新列表
     $("#btn_query").click(function () {
-        userTable().Init.ajax.reload()
+        postTable().Init.ajax.reload();
     });
 }

@@ -75,7 +75,7 @@
     <input type="hidden" id="tId" name="tId" value="${requestScope.tId}">
 
     <div class="form-group">
-        <label for="isParent" class="col-sm-2 control-label">是否父权限：</label>
+        <label for="isParent" class="col-sm-2 control-label">父权限：</label>
         <div class="col-sm-10" id="isParent">
             <input type="radio" name="isParent" value="1">是
             <input type="radio" name="isParent" value="0" checked="checked">否
@@ -83,7 +83,7 @@
     </div>
 
     <div class="form-group">
-        <label for="isMenu" class="col-sm-2 control-label">是否菜单：</label>
+        <label for="isMenu" class="col-sm-2 control-label">菜单：</label>
         <div class="col-sm-10" id="isMenu">
             <input type="radio" name="isMenu" value="1">是
             <input type="radio" name="isMenu" value="0" checked="checked">否

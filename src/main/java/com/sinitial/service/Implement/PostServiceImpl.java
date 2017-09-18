@@ -67,7 +67,7 @@ public class PostServiceImpl implements PostService {
      * @param searchParam 搜索条件
      */
     @Override
-    public List<Post> showPost(int pageNumber, int pageSize, String searchParam) {
+    public List<Post> findPost(int pageNumber, int pageSize, String searchParam) {
         Map<String, Object> map = new HashMap<>();
 //        定义limit起始和结束位置，默认查询全部
         int start = 0;
@@ -141,5 +141,10 @@ public class PostServiceImpl implements PostService {
     @Override
     public int updatePost(Post post) {
         return 0;
+    }
+
+    @Override
+    public int queryPostNum() {
+        return postMapper.count();
     }
 }

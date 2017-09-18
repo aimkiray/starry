@@ -49,6 +49,10 @@
     LIMIT #{start},#{limit}
   </select>
 
+  <select id="count" resultType="int">
+    SELECT count(*) FROM sinitial.sl_post
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select
     <include refid="Base_Column_List" />

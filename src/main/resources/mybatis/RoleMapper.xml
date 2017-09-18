@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sinitial.dao.RoleMapper">
+  <resultMap id="BaseResultMap" type="com.sinitial.domain.Role">
+    <id column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="role_info" jdbcType="VARCHAR" property="roleInfo" />
+  </resultMap>
+
+  <resultMap id="SuperResultMap" type="com.sinitial.domain.Role">
+    <id column="the_role" jdbcType="INTEGER" property="roleId" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="role_info" jdbcType="VARCHAR" property="roleInfo" />
+    <collection property="rolePermissionLinks" javaType="java.util.List" ofType="com.sinitial.domain.RolePermissionLink">
+      <id column="id" jdbcType="INTEGER" property="id" />
+      <result column="relation_role" jdbcType="INTEGER" property="roleId" />
+      <result column="relation_permission" jdbcType="INTEGER" property="permissionId" />
+    </collection>
+    <collection property="permissions" javaType="java.util.List" ofType="com.sinitial.domain.Permission">
+      <id column="the_permission" jdbcType="INTEGER" property="permissionId" />
+      <result column="permission_name" jdbcType="VARCHAR" property="permissionName" />
+      <result column="description" jdbcType="VARCHAR" property="description" />
+      <result column="url" jdbcType="VARCHAR" property="url" />
+      <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+      <result column="is_parent" jdbcType="INTEGER" property="isParent" />
+      <result column="is_menu" jdbcType="INTEGER" property="isMenu" />
+    </collection>
+  </resultMap>
+
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    role_id, role_name, role_info
+  </sql>
+
+  <sql id="Role_Column_List">
+    sl_role.role_id, role_name, role_info
+  </sql>
+
+  <sql id="Role_Permission_Column_List">
+    id, sl_role_permission.role_id, sl_role_permission.permission_id
+  </sql>
+
+  <sql id="Permission_Column_List">
+    sl_permission.permission_id AS permission, permission_name, description, url, parent_id, is_parent, is_menu
+  </sql>
+
+ <!-- <include refid="Role_Column_List" />
+  ,
+  <include refid="Role_Permission_Column_List" />
+  ,
+  <include refid="Permission_Column_List" />-->
+
+  <select id="selectWithPermissions" parameterType="map" resultMap="SuperResultMap">
+    SELECT
+    role.role_id AS the_role, role_name, role_info, id, role_permission.role_id AS relation_role, role_permission.permission_id AS relation_permission, permission.permission_id AS the_permission, permission_name, description, url, parent_id, is_parent, is_menu
+    FROM sl_role AS role
+    LEFT JOIN sl_role_permission AS role_permission ON role.role_id = role_permission.role_id
+    LEFT JOIN sl_permission AS permission ON role_permission.permission_id = permission.permission_id
+    WHERE 1=1
+    <if test="roleId != null and roleId != ''">
+      and role.role_id = #{roleId}
+    </if>
+    <if test="isMenu != null and isMenu != ''">
+      and is_menu = #{isMenu}
+    </if>
+  </select>
+
+  <select id="selectByExample" parameterType="com.sinitial.domain.RoleExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sl_role
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sl_role
+    where role_id = #{roleId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sl_role
+    where role_id = #{roleId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.sinitial.domain.RoleExample">
+    delete from sl_role
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.sinitial.domain.Role">
+    insert into sl_role (role_id, role_name, role_info
+      )
+    values (#{roleId,jdbcType=INTEGER}, #{roleName,jdbcType=VARCHAR}, #{roleInfo,jdbcType=VARCHAR}
+      )
+  </insert>
+
+  <!--插入角色并获取自动生成的Id-->
+  <insert id="insertAndGetId" useGeneratedKeys="true" keyProperty="roleId" parameterType="com.sinitial.domain.Role">
+    insert into sl_role (role_id, role_name, role_info
+    )
+    values (#{roleId,jdbcType=INTEGER}, #{roleName,jdbcType=VARCHAR}, #{roleInfo,jdbcType=VARCHAR}
+    )
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.sinitial.domain.Role">
+    insert into sl_role
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="roleName != null">
+        role_name,
+      </if>
+      <if test="roleInfo != null">
+        role_info,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="roleName != null">
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleInfo != null">
+        #{roleInfo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.sinitial.domain.RoleExample" resultType="java.lang.Long">
+    select count(*) from sl_role
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update sl_role
+    <set>
+      <if test="record.roleId != null">
+        role_id = #{record.roleId,jdbcType=INTEGER},
+      </if>
+      <if test="record.roleName != null">
+        role_name = #{record.roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.roleInfo != null">
+        role_info = #{record.roleInfo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update sl_role
+    set role_id = #{record.roleId,jdbcType=INTEGER},
+      role_name = #{record.roleName,jdbcType=VARCHAR},
+      role_info = #{record.roleInfo,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sinitial.domain.Role">
+    update sl_role
+    <set>
+      <if test="roleName != null">
+        role_name = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleInfo != null">
+        role_info = #{roleInfo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where role_id = #{roleId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sinitial.domain.Role">
+    update sl_role
+    set role_name = #{roleName,jdbcType=VARCHAR},
+      role_info = #{roleInfo,jdbcType=VARCHAR}
+    where role_id = #{roleId,jdbcType=INTEGER}
+  </update>
+</mapper>

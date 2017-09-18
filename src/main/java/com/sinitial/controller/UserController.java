@@ -21,29 +21,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * ━━━━━━神兽出没━━━━━━
- * ┏┓   ┏┓
- * ┏┛┻━━━┛┻┓
- * ┃       ┃
- * ┃   ━   ┃
- * ┃ ┳┛ ┗┳ ┃
- * ┃       ┃
- * ┃   ┻   ┃ Created by nekuata.
- * ┃       ┃
- * ┗━┓   ┏━┛ Code is far away from bug with
- * ┃   ┃   the alpaca protecting.
- * ┃   ┃   神兽保佑,代码无bug.💊💊💊
- * ┃   ┗━━━┓
- * ┃       ┣┓
- * ┃       ┏┛
- * ┗┓┓┏━┳┓┏┛
- * ┃┫┫ ┃┫┫
- * ┗┻┛ ┗┻┛
- * <p>
- * ━━━━━━感觉萌萌哒━━━━━━
- */
-
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -53,6 +30,44 @@ public class UserController {
 
     @Autowired
     private RoleService roleService;
+
+    @RequestMapping(value = "/login/page")
+    public ModelAndView userLogin() {
+//        return "author/login";
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("user/login");
+//        modelAndView.addObject("message","hello world");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/login")
+    public String verifyUser(HttpServletResponse resp, HttpSession httpSession, User user) {
+        boolean result = userService.verifyUser(user);
+        if (result) {
+            User realUser = userService.findUserByName(user.getUserName());
+            List<Permission> permissions = roleService.findRoleById(realUser.getUserRole()).getPermissions();
+            httpSession.setAttribute("user", realUser);
+            httpSession.setAttribute("permissions", permissions);
+            return "redirect:/panel";
+        } else {
+            try {
+                resp.getWriter().print("<script>alert('false:-1');history.go(-1);</script>");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
+    @RequestMapping("/register/page")
+    public String registerPage() {
+        return "user/register";
+    }
+
+    @RequestMapping("/forgot/page")
+    public String forgotPage() {
+        return "user/forgot";
+    }
 
     //    转到作者列表界面
     @RequestMapping("/list/page")
@@ -64,9 +79,10 @@ public class UserController {
 
     @RequestMapping("/list")
     @ResponseBody
-    public DataTables searchUser(int start, int length, String userName, String nickName) {
+    public DataTables searchUser(Integer start, Integer length, String userName, String nickName) {
         DataTables dataTables = new DataTables();
-        length = length == 0 ? 5 : length;
+        start = start == null ? 0 : start;
+        length = length == null ? 5 : length;
         User user = new User();
         if (userName != null && !"".equals(userName)) {
             user.setUserName(userName);
@@ -192,9 +208,9 @@ public class UserController {
             String oldHeadImg = user.getHeadshot();
 //        表示文件是图片或别的什么，执行删除
             if (oldHeadImg.contains(".")) {
-                File oldImgPath = new File(path, oldHeadImg);
+                File oldImg = new File(path, oldHeadImg);
 //            如果图片删除失败，返回false，end.
-                if (!oldImgPath.delete()) {
+                if (oldImg.exists() && !oldImg.delete()) {
                     try {
                         resp.getWriter().print("false");
                     } catch (IOException e) {
