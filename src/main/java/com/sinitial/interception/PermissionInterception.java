@@ -16,25 +16,34 @@ public class PermissionInterception implements HandlerInterceptor {
 
 //        获取请求地址
         String url = httpServletRequest.getServletPath();
+
 //        访问主页 放行
         if (url.startsWith("/post")) {
             return true;
         }
 
-//        请求到登录页面 放行
-        if (url.startsWith("/login/page")) {
+//        用户登录 放行
+        if (url.startsWith("/user/login")) {
             return true;
         }
 
-//        验证登录 放行
-        if (url.startsWith("/login")) {
+//        用户注册 放行
+        if (url.startsWith("/user/register")) {
             return true;
         }
 
-//        如果用户已经登录 放行
+//        忘记密码 放行
+        if (url.startsWith("/user/forgot")) {
+            return true;
+        }
+
+//        用户已经登录
         if (httpServletRequest.getSession().getAttribute("user") != null) {
-//            更好的实现方式的使用cookie
-//            获取用户权限
+//            用户面板 放行
+            if (url.startsWith("/panel")) {
+                return true;
+            }
+//            获取用户权限 TODO 改用cookie
             List<Permission> permissions = (List<Permission>) httpServletRequest.getSession().getAttribute("permissions");
             for (Permission permission : permissions) {
                 if (url.startsWith(permission.getUrl())) {
@@ -43,8 +52,7 @@ public class PermissionInterception implements HandlerInterceptor {
             }
         }
 
-//        非法请求 即这些请求需要登录后才能访问
-//        重定向到登录页面
+//        非法请求 重定向到登录页面
         httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/post");
         return false;
     }

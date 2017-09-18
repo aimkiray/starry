@@ -9,10 +9,7 @@ $(document).ready(function () {
         var checkText = $("#selectTag").find("option:selected").text();
         var checkValue = $("#selectTag").val();
         $("#selectTag").val(0);
-        $("#formTag").append('<span id="tagSpan0">' +
-            '            <input class="form-control tagArea" type="text" value="'+checkText+'" readonly>' +
-            '            <input type="hidden" name="tagId" value="'+checkValue+'">' +
-            '        </span>')
+        $("#formTag").append('<input type="hidden" name="tagId" value="'+checkValue+'">')
     })
 
 })

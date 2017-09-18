@@ -1,19 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core_1_1" %>
-<%@ page import="java.net.URLDecoder" %>
-<%
-    Cookie[] cookies = request.getCookies();
-    String user = null;
-    if (cookies != null) {
-        for (int i = 0; i < cookies.length; i++) {
-            if ("user".equals(cookies[i].getName().toString())) {
-                user = cookies[i].getValue();
-                user = URLDecoder.decode(user, "utf-8");
-            }
-            out.print(cookies[i].getName() + ":" + cookies[i].getValue() + "<br/>");
-        }
-    }
-%>
 <%--
   Created by IntelliJ IDEA.
   User: Akari
@@ -39,12 +25,6 @@
     <script src="${root}/resources/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="${root}/resources/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
     <script src="${root}/resources/user/js/login-custom.js" type="text/javascript"></script>
-
-    <!-- All the files that are required -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 </head>
 <body>
 
@@ -54,7 +34,7 @@
     <div class="logo">登陆</div>
     <!-- Main Form -->
     <div class="login-form-1">
-        <form id="login-form" class="text-left" action="/login" method="post">
+        <form id="login-form" class="text-left" action="${root}/user/login" method="post">
             <div class="login-form-main-message"></div>
             <div class="main-login-form">
                 <div class="login-group">
@@ -74,8 +54,8 @@
                 <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
             </div>
             <div class="etc-login-form">
-                <p>忘记密码？<a href="/login/forgot">点我~</a></p>
-                <p>新用户？<a href="/login/register">用户注册</a></p>
+                <p>忘记密码？<a href="${root}/user/forgot/page">点我~</a></p>
+                <p>新用户？<a href="${root}/user/register/page">用户注册</a></p>
             </div>
         </form>
     </div>

@@ -12,7 +12,7 @@ public interface PostService {
      * @param pageSize 每页条目数
      * @param searchParam 搜索条件
      */
-    public List<Post> showPost(int pageNumber, int pageSize, String searchParam);
+    public List<Post> findPost(int pageNumber, int pageSize, String searchParam);
 
     /**
      * 通用文章获取功能，包含搜索&分页，参数可选，不需要的话传入0或null
@@ -49,4 +49,10 @@ public interface PostService {
      * 修改文章
      */
     public int updatePost(Post post);
+
+    /**
+     * 获取文章总数
+     * @return 文章总数
+     */
+    public int queryPostNum();
 }

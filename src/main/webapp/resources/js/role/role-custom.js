@@ -2,21 +2,23 @@
  * Created by nekuata on 2017/7/20.
  */
 $(document).ready(function () {
+
     // 初始化Table
     roleTable();
 
-    // 自定义Toolbar
+    // 初始化Toolbar
     $("div.toolbar").html('<div id="toolbar" class="btn-group">\n' +
         '        <button id="btn_add" type="button" class="btn btn-default">\n' +
-        '            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增\n' +
+        '            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增' +
         '        </button>\n' +
         '        <button id="btn_edit" type="button" class="btn btn-default">\n' +
-        '            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改\n' +
+        '            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改' +
         '        </button>\n' +
         '        <button id="btn_delete" type="button" class="btn btn-default">\n' +
-        '            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除\n' +
+        '            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除' +
         '        </button>\n' +
         '    </div>');
+
     // 初始化Button的点击事件
     buttonInit();
 

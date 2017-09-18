@@ -8,6 +8,8 @@ import java.util.Map;
 public interface PostMapper {
     int deleteByPrimaryKey(Integer postId);
 
+    int count();
+
     int insert(Post record);
 
     int insertSelective(Post record);

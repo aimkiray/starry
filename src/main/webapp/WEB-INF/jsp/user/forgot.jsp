@@ -40,10 +40,9 @@
     <script src="${root}/resources/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
     <script src="${root}/resources/user/js/login-custom.js" type="text/javascript"></script>
 
-    <!-- All the files that are required -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="${root}/resources/user/css/font-awesome.min.css">
+    <link href='${root}/resources/user/css/Varela&Round.css' rel='stylesheet' type='text/css'>
+    <script src="${root}/resources/user/js/jquery.validate.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 </head>
 <body>

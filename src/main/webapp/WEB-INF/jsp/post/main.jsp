@@ -45,7 +45,7 @@
 
             <li><a href="${root}/post">主页</a></li>
 
-            <li><a href="${root}/login/page">登陆</a></li>
+            <li><a href="${root}/user/login/page">管理</a></li>
 
             <li><a href="###">关于我</a></li>
 
@@ -103,7 +103,7 @@
         <div class="search">
             <form action="http://google.com/search" method="get" accept-charset="utf-8">
                 <input name="q" results="0" placeholder="Search By Google" type="text">
-                <input name="q" value="site:meowwoo.com/${post.postTitle}" type="hidden">
+                <input name="q" value="site:meowwoo.com" type="hidden">
             </form>
         </div>
 

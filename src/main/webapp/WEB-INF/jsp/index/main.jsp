@@ -13,6 +13,6 @@
 <body>
 ${requestScope.test}
 ${requestScope.adminName}
-<a href="/user/register.do">作者注册</a>
+<a href="/user/register">作者注册</a>
 </body>
 </html>
