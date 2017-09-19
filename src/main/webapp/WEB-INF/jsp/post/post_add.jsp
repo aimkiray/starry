@@ -87,8 +87,8 @@
             <textarea class="form-control" name="postContent" placeholder="Markdown格式 PS.右下角可拖动~"></textarea>
         </div>
         <div class="form-group">
-            <button class="btn btn-primary" id="btn-publish">发布</button>
-            <button class="btn btn-primary" id="btn-save">保存</button>
+            <input class="btn btn-primary" id="btn-publish" type="button" value="发布">
+            <input class="btn btn-primary" id="btn-save" type="button" value="保存">
         </div>
     </form>
 

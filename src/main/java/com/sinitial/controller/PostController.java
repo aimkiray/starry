@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -76,23 +77,28 @@ public class PostController {
     @RequestMapping(value = "/add/page")
     public String addPostPage(HttpServletRequest request) {
         List<Tag> tags = tagService.findAllTag();
-        request.setAttribute("tags",tags);
-        return "post/add_post";
+        request.setAttribute("tags", tags);
+        return "post/post_add";
     }
 
     @RequestMapping(value = "/add")
-    public String addPost(HttpSession session, Post post) {
+    @ResponseBody
+    public int addPost(HttpSession session, Post post) {
+        int result = 0;
         // 从session中获取作者信息
-        User user = (User)session.getAttribute("user");
-        post.setPostAuthor(user);
-
-        return null;
+        User user = (User) session.getAttribute("user");
+        post.setPostAuthor(user.getUserId());
+        post.setPostDate(new Date());
+        post.setPostType("none");
+        post.setPostMimeType("post");
+        result = postService.insertPost(post);
+        return result;
     }
 
     @RequestMapping(value = "/update/{postId}")
     public String updatePostPage(HttpServletRequest request, @PathVariable("postId") int postId) {
         Post post = postService.findPostById(postId);
-        request.setAttribute("post",post);
-        return "post/update_post";
+        request.setAttribute("post", post);
+        return "post/post_update";
     }
 }

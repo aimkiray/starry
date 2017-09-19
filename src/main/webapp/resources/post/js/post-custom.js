@@ -168,7 +168,7 @@ function buttonInit() {
     });
 
     $("#btn_add").click(function () {
-        window.open("/post/add/page","panel_container");
+        window.open("/post/add/page","_self");
     });
 
     $("#btn_query").click(function () {

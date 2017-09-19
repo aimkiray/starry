@@ -64,18 +64,18 @@ $(document).ready(function () {
             dataType: "json",
             data: $("#postUploadForm").serialize(),
             success: function (data) {
-                // 返回新标签的Id
+                console.log(0);
                 if (data > 0) {
-                    // 把新Id加入全家桶
-                    $("#formTag").append('<input type="hidden" name="tagId" value="'+data+'">');
-                    // 更新显示
-                    $("#tagArea").val($("#tagArea").val()+" "+$("#inputTag").val());
+                    console.log(1);
+                    window.open("/post/list/page","_self")
                 } else {
-                    alert("标签已存在→")
+                    console.log(2);
+                    alert("发布失败⊙﹏⊙")
                 }
             },
             error: function () {
-                alert("执行失败！⊙﹏⊙")
+                console.log(3);
+                alert("执行失败⊙﹏⊙")
             }
         })
     }

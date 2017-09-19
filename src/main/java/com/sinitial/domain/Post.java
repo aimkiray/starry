@@ -1,11 +1,9 @@
 package com.sinitial.domain;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
-@Component("post")
 public class Post {
     private Integer postId;
 
@@ -13,18 +11,26 @@ public class Post {
 
     private String postStatus;
 
-    private String postType;
-
-    private User user;
-
-    private int authorId;
+    private Integer postAuthor;
 
     private String postMimeType;
 
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date postDate;
 
+    private String postType;
+
     private String postContent;
+
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Integer getPostId() {
         return postId;
@@ -50,12 +56,12 @@ public class Post {
         this.postStatus = postStatus == null ? null : postStatus.trim();
     }
 
-    public String getPostType() {
-        return postType;
+    public Integer getPostAuthor() {
+        return postAuthor;
     }
 
-    public void setPostType(String postType) {
-        this.postType = postType == null ? null : postType.trim();
+    public void setPostAuthor(Integer postAuthor) {
+        this.postAuthor = postAuthor;
     }
 
     public String getPostMimeType() {
@@ -74,33 +80,19 @@ public class Post {
         this.postDate = postDate;
     }
 
+    public String getPostType() {
+        return postType;
+    }
+
+    public void setPostType(String postType) {
+        this.postType = postType == null ? null : postType.trim();
+    }
+
     public String getPostContent() {
         return postContent;
     }
 
     public void setPostContent(String postContent) {
         this.postContent = postContent == null ? null : postContent.trim();
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    @Override
-    public String toString() {
-        return "Post{" +
-                "postId=" + postId +
-                ", postTitle='" + postTitle + '\'' +
-                ", postStatus='" + postStatus + '\'' +
-                ", postType='" + postType + '\'' +
-                ", user=" + user +
-                ", postMimeType='" + postMimeType + '\'' +
-                ", postDate=" + postDate +
-                ", postContent='" + postContent + '\'' +
-                '}';
     }
 }
