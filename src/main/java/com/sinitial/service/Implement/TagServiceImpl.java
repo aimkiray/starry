@@ -68,8 +68,16 @@ public class TagServiceImpl implements TagService {
      * @param tag
      */
     @Override
-    public int insertTag(Tag tag) {
-        return 0;
+    public int addTag(Tag tag) {
+        int result = 0;
+//        如果名字存在且没有重复
+        if (tag.getTagName() != null && tagMapper.selectByName(tag.getTagName()) == null) {
+            result = tagMapper.insertAndGetId(tag);
+        }
+        if (result > 0) {
+            result = tag.getTagId();
+        }
+        return result;
     }
 
     /**

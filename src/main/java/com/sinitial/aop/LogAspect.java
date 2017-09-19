@@ -8,7 +8,7 @@ public class LogAspect {
     public void before(JoinPoint joinPoint) {
         String className = joinPoint.getTarget().getClass().getName();
         String methodName = joinPoint.getSignature().getName();
-        System.out.println(className + "  " + methodName + " at " + new Date() + "执行！");
+        System.out.println(className + "  " + methodName + " at " + new Date() + " 执行！");
     }
 
     public void after(JoinPoint joinPoint) {
@@ -23,7 +23,7 @@ public class LogAspect {
     public void afterReturn(JoinPoint joinPoint, Object value) {
         String className = joinPoint.getTarget().getClass().getName();
         String methodName = joinPoint.getSignature().getName();
-        System.out.println(className + "  " + methodName + " at " + new Date() + "完成！");
+        System.out.println(className + "  " + methodName + " at " + new Date() + " 完成！");
         System.out.println(value);
     }
 }

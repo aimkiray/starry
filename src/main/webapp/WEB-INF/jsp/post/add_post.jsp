@@ -25,6 +25,7 @@
     <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
     <script src="${root}/resources/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="${root}/resources/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/post/js/add_post.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -32,13 +33,10 @@
 
     <ul class="breadcrumb">
         <li>
-            <a href="#">主页</a>
-        </li>
-        <li>
-            <a href="#">Library</a>
+            <a href="${root}/post/list/page" target="_self">文章管理</a>
         </li>
         <li class="active">
-            Data
+            新文章
         </li>
     </ul>
 
@@ -46,6 +44,7 @@
         <div class="col-md-6 form-group">
             <label for="inputTag">输入标签</label>
             <input class="form-control" id="inputTag" name="tagName" type="text"/>
+            <input class="btn" id="addTag" type="button" value="确定">
         </div>
         <div class="col-md-6 form-group">
             <label for="selectTag">已有标签</label>
@@ -57,24 +56,39 @@
             </select>
         </div>
     </div>
+
     <br/>
-    <form>
+
+    <form id="postUploadForm">
+
+        <div class="form-group">
+            <label for="tagArea">已选标签</label>
+            <div class="row">
+            <span class="col-md-11">
+                <input class="form-control" id="tagArea" type="text" readonly>
+            </span>
+            <span class="col-md-1">
+                <input class="btn" id="cleanTag" type="button" value="清空">
+            </span>
+            </div>
+        </div>
 
         <div class="form-group" id="formTag">
-
         </div>
+
+        <input type="hidden" id="postStatus" name="postStatus" value="save">
 
         <div class="form-group">
             <label>标题</label>
-            <input class="form-control" data-toggle="tooltip" placeholder="请输入标题">
+            <input class="form-control" name="postTitle" placeholder="请输入标题">
         </div>
         <div class="form-group">
             <label>内容</label>
-            <textarea class="form-control" data-toggle="tooltip" placeholder="Markdown格式内容"></textarea>
+            <textarea class="form-control" name="postContent" placeholder="Markdown格式 PS.右下角可拖动~"></textarea>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">发布</button>
-            <button type="submit" class="btn btn-primary">保存</button>
+            <button class="btn btn-primary" id="btn-publish">发布</button>
+            <button class="btn btn-primary" id="btn-save">保存</button>
         </div>
     </form>
 

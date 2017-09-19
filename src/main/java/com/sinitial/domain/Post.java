@@ -17,6 +17,8 @@ public class Post {
 
     private User user;
 
+    private int authorId;
+
     private String postMimeType;
 
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
@@ -54,14 +56,6 @@ public class Post {
 
     public void setPostType(String postType) {
         this.postType = postType == null ? null : postType.trim();
-    }
-
-    public User getPostAuthor() {
-        return user;
-    }
-
-    public void setPostAuthor(User user) {
-        this.user = user;
     }
 
     public String getPostMimeType() {

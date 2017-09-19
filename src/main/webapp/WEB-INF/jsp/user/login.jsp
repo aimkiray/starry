@@ -51,7 +51,7 @@
                         <label for="lg_remember">remember</label>
                     </div>
                 </div>
-                <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+                <button type="submit" class="login-button">开</button>
             </div>
             <div class="etc-login-form">
                 <p>忘记密码？<a href="${root}/user/forgot/page">点我~</a></p>

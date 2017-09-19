@@ -41,13 +41,13 @@ public class UserController {
     }
 
     @RequestMapping(value = "/login")
-    public String verifyUser(HttpServletResponse resp, HttpSession httpSession, User user) {
+    public String verifyUser(HttpServletResponse resp, HttpSession session, User user) {
         boolean result = userService.verifyUser(user);
         if (result) {
             User realUser = userService.findUserByName(user.getUserName());
             List<Permission> permissions = roleService.findRoleById(realUser.getUserRole()).getPermissions();
-            httpSession.setAttribute("user", realUser);
-            httpSession.setAttribute("permissions", permissions);
+            session.setAttribute("user", realUser);
+            session.setAttribute("permissions", permissions);
             return "redirect:/panel";
         } else {
             try {

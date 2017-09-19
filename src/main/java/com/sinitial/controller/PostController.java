@@ -2,6 +2,7 @@ package com.sinitial.controller;
 
 import com.sinitial.domain.Post;
 import com.sinitial.domain.Tag;
+import com.sinitial.domain.User;
 import com.sinitial.service.PostService;
 import com.sinitial.service.TagService;
 import com.sinitial.utils.DataTables;
@@ -73,13 +74,18 @@ public class PostController {
     }
 
     @RequestMapping(value = "/add/page")
-    public String addPostPage() {
+    public String addPostPage(HttpServletRequest request) {
+        List<Tag> tags = tagService.findAllTag();
+        request.setAttribute("tags",tags);
         return "post/add_post";
     }
 
     @RequestMapping(value = "/add")
-    public String addPost(HttpSession session) {
-        // TODO 从session中获取作者信息
+    public String addPost(HttpSession session, Post post) {
+        // 从session中获取作者信息
+        User user = (User)session.getAttribute("user");
+        post.setPostAuthor(user);
+
         return null;
     }
 

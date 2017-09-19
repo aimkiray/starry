@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
-@RequestMapping("/Tag")
+@RequestMapping("/tag")
 public class TagController {
     @Autowired
     private PostService postService;
@@ -30,16 +30,23 @@ public class TagController {
         return tagService.findAllTag();
     }
 
-    @RequestMapping("/add")
-    public String writeTag(HttpServletRequest request, @PathVariable String authorName) {
-        request.setAttribute("authorName", authorName);
+    @RequestMapping("/add/page")
+    public String getAddTag() {
         return "tag/add_tag";
+    }
+
+    @RequestMapping("/add")
+    @ResponseBody
+    public int addTag(Tag tag) {
+        /*Tag tag = new Tag();
+        tag.setTagName(tagName);*/
+        return tagService.addTag(tag);
     }
 
     @RequestMapping(value = "/update/{tagId}")
     public String updateTag(HttpServletRequest request, @PathVariable("tagId") int tagId) {
         Tag tag = tagService.findTagById(tagId);
-        request.setAttribute("tag",tag);
+        request.setAttribute("tag", tag);
         return "tag/update_tag";
     }
 

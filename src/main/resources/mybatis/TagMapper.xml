@@ -26,6 +26,7 @@
     from sl_tag
     where tag_id = #{tagId,jdbcType=INTEGER}
   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from sl_tag
     where tag_id = #{tagId,jdbcType=INTEGER}
@@ -34,6 +35,18 @@
     insert into sl_tag (tag_id, tag_name)
     values (#{tagId,jdbcType=INTEGER}, #{tagName,jdbcType=VARCHAR})
   </insert>
+  <!--插入后返回主键值-->
+  <insert id="insertAndGetId" useGeneratedKeys="true" keyProperty="tagId" parameterType="com.sinitial.domain.Tag">
+    insert into sl_tag (tag_id, tag_name)
+    values (#{tagId,jdbcType=INTEGER}, #{tagName,jdbcType=VARCHAR})
+  </insert>
+  <!--通过名字查找标签-->
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sl_tag
+    where tag_name = #{tagName}
+  </select>
   <insert id="insertSelective" parameterType="com.sinitial.domain.Tag">
     insert into sl_tag
     <trim prefix="(" suffix=")" suffixOverrides=",">

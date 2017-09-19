@@ -36,7 +36,7 @@ public interface TagService {
     /**
      * 向数据库添加标签
      */
-    public int insertTag(Tag tag);
+    public int addTag(Tag tag);
 
     /**
      * 修改标签信息

@@ -1,19 +1,5 @@
-<%@ page import="java.net.URLDecoder" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core_1_1" %>
-<%
-    Cookie[] cookies = request.getCookies();
-    String user = null;
-    if (cookies != null) {
-        for (int i = 0; i < cookies.length; i++) {
-            if ("user".equals(cookies[i].getName().toString())) {
-                user = cookies[i].getValue();
-                user = URLDecoder.decode(user, "utf-8");
-            }
-            out.print(cookies[i].getName() + ":" + cookies[i].getValue() + "<br/>");
-        }
-    }
-%>
 <%--
   Created by IntelliJ IDEA.
   User: Akari
@@ -40,10 +26,6 @@
     <script src="${root}/resources/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
     <script src="${root}/resources/user/js/login-custom.js" type="text/javascript"></script>
 
-    <link rel="stylesheet" href="${root}/resources/user/css/font-awesome.min.css">
-    <link href='${root}/resources/user/css/Varela&Round.css' rel='stylesheet' type='text/css'>
-    <script src="${root}/resources/user/js/jquery.validate.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 </head>
 <body>
 
@@ -88,10 +70,10 @@
 
                     <div class="form-group login-group-checkbox">
                         <input type="checkbox" class="" id="reg_agree" name="agree">
-                        <label for="reg_agree">i agree with <a href="#">terms</a></label>
-                    </div>
+                        <label for="reg_agree"> agree with <a href="#">terms</a></label>
+                    </div>I
                 </div>
-                <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+                <button type="submit" class="login-button">开</button>
             </div>
             <div class="etc-login-form">
                 <p>已有账号？<a href="${root}/user/login/page">登陆</a></p>
