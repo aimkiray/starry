@@ -104,20 +104,7 @@ var postTable = function () {
 };
 
 function updatePost(postId) {
-    $.ajax({
-        url: "/post/update/" + postId,
-        type: "post",
-        dataType: "json",
-        success: function (data) {
-            bootbox.dialog({
-                message: data,
-                title: "修改信息"
-            })
-        },
-        error: function () {
-            alert("通信失败");
-        }
-    });
+    window.open("/post/update/"+postId, "_self");
 }
 
 function delPost(postId) {

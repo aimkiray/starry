@@ -6,12 +6,6 @@
     <result column="tag_name" jdbcType="VARCHAR" property="tagName" />
   </resultMap>
 
-  <!--<resultMap id="AllResultMap" type="com.sinitial.domain.Tag">
-    <id column="tag_id" jdbcType="INTEGER" property="tagId" />
-    <result column="tag_name" jdbcType="VARCHAR" property="tagName" />
-    <collection property="posts" resultMap="PostResultMap"/>
-  </resultMap>-->
-
   <sql id="Base_Column_List">
     tag_id, tag_name
   </sql>

@@ -53,16 +53,6 @@ public class TagServiceImpl implements TagService {
     }
 
     /**
-     * 标签登录校验
-     *
-     * @param tag
-     */
-    @Override
-    public boolean verifyTag(Tag tag) {
-        return false;
-    }
-
-    /**
      * 向数据库添加标签
      *
      * @param tag

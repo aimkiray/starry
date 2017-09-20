@@ -1,9 +1,11 @@
 package com.sinitial.controller;
 
 import com.sinitial.domain.Post;
+import com.sinitial.domain.PostTagLink;
 import com.sinitial.domain.Tag;
 import com.sinitial.domain.User;
 import com.sinitial.service.PostService;
+import com.sinitial.service.PostTagLinkService;
 import com.sinitial.service.TagService;
 import com.sinitial.utils.DataTables;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,9 @@ public class PostController {
 
     @Autowired
     private TagService tagService;
+
+    @Autowired
+    private PostTagLinkService postTagLinkService;
 
     /**
      * 首页文章获取功能
@@ -83,7 +88,7 @@ public class PostController {
 
     @RequestMapping(value = "/add")
     @ResponseBody
-    public int addPost(HttpSession session, Post post) {
+    public int addPost(HttpSession session, Post post, String tagId[]) {
         int result = 0;
         // 从session中获取作者信息
         User user = (User) session.getAttribute("user");
@@ -91,7 +96,18 @@ public class PostController {
         post.setPostDate(new Date());
         post.setPostType("none");
         post.setPostMimeType("post");
+        // 添加文章，返回新添加的文章Id
         result = postService.insertPost(post);
+        // 添加详情表
+        if (result > 0) {
+            int postId = result;
+            for (int i = 0; i < tagId.length; i++) {
+                PostTagLink postTagLink = new PostTagLink();
+                postTagLink.setPostId(postId);
+                postTagLink.setTagId(Integer.parseInt(tagId[i]));
+                result = postTagLinkService.addPostTagLink(postTagLink);
+            }
+        }
         return result;
     }
 
@@ -100,5 +116,32 @@ public class PostController {
         Post post = postService.findPostById(postId);
         request.setAttribute("post", post);
         return "post/post_update";
+    }
+
+    @RequestMapping(value = "/update")
+    @ResponseBody
+    public int updatePost(Post post, String tagId[]) {
+        int result = 0;
+        /*post.setPostDate(new Date());
+        post.setPostType("none");
+        post.setPostMimeType("post");*/
+        // 更新文章
+        result = postService.updatePost(post);
+        // 添加详情表
+        if (result > 0) {
+            int postId = post.getPostId();
+            // 先删除旧的详情表
+            result = postTagLinkService.deletePostTagLinkByPost(postId);
+            // 删除成功后添加新的
+            if (result > 0) {
+                for (int i = 0; i < tagId.length; i++) {
+                    PostTagLink postTagLink = new PostTagLink();
+                    postTagLink.setPostId(postId);
+                    postTagLink.setTagId(Integer.parseInt(tagId[i]));
+                    result = postTagLinkService.addPostTagLink(postTagLink);
+                }
+            }
+        }
+        return result;
     }
 }

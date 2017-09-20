@@ -29,11 +29,6 @@ public interface TagService {
     public int deleteTag(int tagId);
 
     /**
-     * 标签登录校验
-     */
-    public boolean verifyTag(Tag tag);
-
-    /**
      * 向数据库添加标签
      */
     public int addTag(Tag tag);

@@ -25,7 +25,7 @@
     <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
     <script src="${root}/resources/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="${root}/resources/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-    <script src="${root}/resources/post/js/add_post.js" type="text/javascript"></script>
+    <script src="${root}/resources/post/js/post_add.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -36,7 +36,7 @@
             <a href="${root}/post/list/page" target="_self">文章管理</a>
         </li>
         <li class="active">
-            新文章
+            初生
         </li>
     </ul>
 

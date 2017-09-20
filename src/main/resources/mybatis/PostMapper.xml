@@ -2,19 +2,33 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sinitial.dao.PostMapper">
   <resultMap id="BaseResultMap" type="com.sinitial.domain.Post">
-    <id column="post_id" jdbcType="INTEGER" property="postId" />
+    <id column="the_post" jdbcType="INTEGER" property="postId" />
     <result column="post_title" jdbcType="VARCHAR" property="postTitle" />
     <result column="post_status" jdbcType="VARCHAR" property="postStatus" />
     <result column="post_author" jdbcType="INTEGER" property="postAuthor" />
     <result column="post_mime_type" jdbcType="VARCHAR" property="postMimeType" />
     <result column="post_date" jdbcType="TIMESTAMP" property="postDate" />
     <result column="post_type" jdbcType="VARCHAR" property="postType" />
-    <association property="user" resultMap="UserResult" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.sinitial.domain.Post">
     <result column="post_content" jdbcType="LONGVARCHAR" property="postContent" />
   </resultMap>
-  <resultMap id="UserResult" type="com.sinitial.domain.User">
+
+  <resultMap id="SuperResultMap" type="com.sinitial.domain.Post">
+    <id column="the_post" jdbcType="INTEGER" property="postId" />
+    <result column="post_title" jdbcType="VARCHAR" property="postTitle" />
+    <result column="post_status" jdbcType="VARCHAR" property="postStatus" />
+    <result column="post_author" jdbcType="INTEGER" property="postAuthor" />
+    <result column="post_mime_type" jdbcType="VARCHAR" property="postMimeType" />
+    <result column="post_date" jdbcType="TIMESTAMP" property="postDate" />
+    <result column="post_type" jdbcType="VARCHAR" property="postType" />
+    <association property="user" resultMap="UserResultMap" />
+    <collection property="tags" javaType="java.util.List" ofType="com.sinitial.domain.Tag" >
+      <id column="the_tag" jdbcType="INTEGER" property="tagId" />
+      <result column="tag_name" jdbcType="VARCHAR" property="tagName" />
+    </collection>
+  </resultMap>
+  <resultMap id="UserResultMap" type="com.sinitial.domain.User">
     <id column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
@@ -25,6 +39,9 @@
     <result column="user_role" jdbcType="INTEGER" property="userRole" />
     <result column="user_info" jdbcType="VARCHAR" property="userInfo" />
     <result column="headshot" jdbcType="VARCHAR" property="headshot" />
+  </resultMap>
+  <resultMap extends="SuperResultMap" id="SuperResultMapWithBLOBs" type="com.sinitial.domain.Post">
+    <result column="post_content" jdbcType="LONGVARCHAR" property="postContent" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -86,7 +103,10 @@
   </sql>
   <sql id="Base_Column_List">
     post_id, post_title, post_status, post_author, post_mime_type, post_date, post_type, user_id, user_name, user_password, nick_name, email, gender, sign_date, user_role,
-    user_info, headshot
+    user_info, headshot, tag_id, tag_name
+  </sql>
+  <sql id="Super_Column_List">
+    sl_post.post_id as the_post, post_title, post_status, post_author, post_mime_type, post_date, post_type, sl_tag.tag_id as the_tag, tag_name, post_tag_id, sl_post_tag.post_id AS relation_post, sl_post_tag.tag_id AS relation_tag, user_id, user_name, user_password, nick_name, email, gender, sign_date, user_role, user_info, headshot
   </sql>
   <sql id="User_Column_List">
     user_id, user_name, user_password, nick_name, email, gender, sign_date, user_role,
@@ -97,20 +117,23 @@
   </sql>
 
   <!--简洁的文章搜索功能（多此一举）-->
-  <select id="selectBySearch" parameterType="map" resultMap="ResultMapWithBLOBs">
-    select
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
+  <!--为解决一对多重复数据-->
+  <!--先对主表分页，再进行关联查询-->
+  <select id="selectBySearch" parameterType="map" resultMap="SuperResultMapWithBLOBs">
+    SELECT
+    the_post, post_title, post_status, post_author, post_mime_type, post_date, post_type, post_content, sl_tag.tag_id as the_tag, tag_name post_tag_id, sl_post_tag.post_id AS relation_post, sl_post_tag.tag_id AS relation_tag, user_id, user_name, user_password, nick_name, email, gender, sign_date, user_role, user_info, headshot
+    FROM (select
+    sl_post.post_id as the_post, post_title, post_status, post_author, post_mime_type, post_date, post_type, post_content
     from sl_post
-    LEFT JOIN sinitial.sl_user
-    ON sinitial.sl_post.post_author = sinitial.sl_user.user_id
-    where 1=1
+    LIMIT #{start},#{limit}) page
+    LEFT JOIN sl_post_tag ON the_post = sl_post_tag.post_id
+    LEFT JOIN sl_tag ON sl_tag.tag_id = sl_post_tag.tag_id
+    LEFT JOIN sl_user ON page.post_author = sl_user.user_id
+    WHERE 1=1
     <if test="searchParam != null and searchParam != ''">
       and (post_title like concat('%',#{searchParam},'%')
       or post_content like concat('%',#{searchParam},'%'))
     </if>
-    LIMIT #{start},#{limit}
   </select>
 
   <!--获取文章总数-->
@@ -148,13 +171,16 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="SuperResultMapWithBLOBs">
     select 
-    <include refid="Base_Column_List" />
+    <include refid="Super_Column_List" />
     ,
     <include refid="Blob_Column_List" />
     from sl_post
-    where post_id = #{postId,jdbcType=INTEGER}
+    LEFT JOIN sl_post_tag ON sl_post.post_id = sl_post_tag.post_id
+    LEFT JOIN sl_tag ON sl_tag.tag_id = sl_post_tag.tag_id
+    LEFT JOIN sl_user ON sl_post.post_author = sl_user.user_id
+    where sl_post.post_id = #{postId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from sl_post

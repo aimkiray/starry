@@ -106,7 +106,7 @@ public class PostServiceImpl implements PostService {
      */
     @Override
     public Post findPostById(int postId) {
-        return null;
+        return postMapper.selectByPrimaryKey(postId);
     }
 
     /**

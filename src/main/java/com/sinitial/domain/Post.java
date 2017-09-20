@@ -3,6 +3,7 @@ package com.sinitial.domain;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 public class Post {
     private Integer postId;
@@ -23,6 +24,8 @@ public class Post {
     private String postContent;
 
     private User user;
+
+    private List<Tag> tags;
 
     public User getUser() {
         return user;
@@ -94,5 +97,13 @@ public class Post {
 
     public void setPostContent(String postContent) {
         this.postContent = postContent == null ? null : postContent.trim();
+    }
+
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
     }
 }
