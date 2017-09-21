@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans.xsd
    http://www.springframework.org/schema/context
@@ -25,10 +26,20 @@
     </mvc:message-converters>
   </mvc:annotation-driven>
 
+  <!--配置Spring时间转换器-->
+  <mvc:annotation-driven conversion-service="customConversionService">
+  </mvc:annotation-driven>
+  <bean id="customConversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+    <property name="converters">
+      <set>
+        <bean class="com.sinitial.utils.DateConverter"/>
+      </set>
+    </property>
+  </bean>
+
   <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
   <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>-->
-  <bean id="multipartResolver"
-        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+  <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
     <property name="defaultEncoding" value="utf-8"/>
     <property name="maxUploadSize" value="5242880"/>
   </bean>

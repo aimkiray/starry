@@ -1,7 +1,5 @@
 package com.sinitial.domain;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.util.Date;
 import java.util.List;
 
@@ -16,7 +14,6 @@ public class Post {
 
     private String postMimeType;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date postDate;
 
     private String postType;

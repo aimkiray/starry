@@ -54,27 +54,24 @@ $(document).ready(function () {
     });
 
     $("#btn-save").click(function () {
+        $("#postStatus").val("save");
         addPost();
     });
 
     function addPost() {
         $.ajax({
-            url: "/post/add",
+            url: "/post/update",
             type: "post",
             dataType: "json",
             data: $("#postUploadForm").serialize(),
             success: function (data) {
-                console.log(0);
                 if (data > 0) {
-                    console.log(1);
                     window.open("/post/list/page","_self")
                 } else {
-                    console.log(2);
                     alert("发布失败⊙﹏⊙")
                 }
             },
             error: function () {
-                console.log(3);
                 alert("执行失败⊙﹏⊙")
             }
         })

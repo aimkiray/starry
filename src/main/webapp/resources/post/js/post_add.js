@@ -54,6 +54,7 @@ $(document).ready(function () {
     });
 
     $("#btn-save").click(function () {
+        $("#postStatus").val("save");
         addPost();
     });
 

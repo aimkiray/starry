@@ -50,7 +50,7 @@
             <label for="selectTag">已有标签</label>
             <select class="form-control" id="selectTag" name="tagId">
                 <option value="0">请选择</option>
-                <c:forEach items="${requestScope.post.tags}" var="tag">
+                <c:forEach items="${requestScope.tags}" var="tag">
                     <option value="${tag.tagId}">${tag.tagName}</option>
                 </c:forEach>
             </select>
@@ -75,10 +75,11 @@
 
         <div class="form-group" id="formTag">
             <c:forEach items="${requestScope.post.tags}" var="tag">
-                <input type="hidden" value="${tag.tagId}">
+                <input type="hidden" name="tagId" value="${tag.tagId}">
             </c:forEach>
         </div>
 
+        <input type="hidden" id="postId" name="postId" value="${requestScope.post.postId}">
         <input type="hidden" id="postStatus" name="postStatus" value="${requestScope.post.postStatus}">
         <input type="hidden" id="postDate" name="postDate" value="${requestScope.post.postDate}">
         <input type="hidden" id="postType" name="postType" value="${requestScope.post.postType}">

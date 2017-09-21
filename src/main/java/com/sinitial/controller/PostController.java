@@ -9,13 +9,17 @@ import com.sinitial.service.PostTagLinkService;
 import com.sinitial.service.TagService;
 import com.sinitial.utils.DataTables;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -88,7 +92,7 @@ public class PostController {
 
     @RequestMapping(value = "/add")
     @ResponseBody
-    public int addPost(HttpSession session, Post post, String tagId[]) {
+    public int addPost(HttpSession session, Post post, String[] tagId) {
         int result = 0;
         // 从session中获取作者信息
         User user = (User) session.getAttribute("user");
@@ -115,31 +119,31 @@ public class PostController {
     public String updatePostPage(HttpServletRequest request, @PathVariable("postId") int postId) {
         Post post = postService.findPostById(postId);
         request.setAttribute("post", post);
+        List<Tag> tags = tagService.findAllTag();
+        request.setAttribute("tags", tags);
         return "post/post_update";
     }
 
     @RequestMapping(value = "/update")
     @ResponseBody
-    public int updatePost(Post post, String tagId[]) {
+    public int updatePost(Post post, String[] tagId) {
         int result = 0;
-        /*post.setPostDate(new Date());
-        post.setPostType("none");
-        post.setPostMimeType("post");*/
         // 更新文章
         result = postService.updatePost(post);
         // 添加详情表
         if (result > 0) {
             int postId = post.getPostId();
-            // 先删除旧的详情表
-            result = postTagLinkService.deletePostTagLinkByPost(postId);
-            // 删除成功后添加新的
+            result = postTagLinkService.findPostTagNum(postId);
             if (result > 0) {
-                for (int i = 0; i < tagId.length; i++) {
-                    PostTagLink postTagLink = new PostTagLink();
-                    postTagLink.setPostId(postId);
-                    postTagLink.setTagId(Integer.parseInt(tagId[i]));
-                    result = postTagLinkService.addPostTagLink(postTagLink);
-                }
+                // 先删除旧的详情表
+                result = postTagLinkService.deletePostTagLinkByPost(postId);
+            }
+            // 删除成功后添加新的
+            for (int i = 0; i < tagId.length; i++) {
+                PostTagLink postTagLink = new PostTagLink();
+                postTagLink.setPostId(postId);
+                postTagLink.setTagId(Integer.parseInt(tagId[i]));
+                result = postTagLinkService.addPostTagLink(postTagLink);
             }
         }
         return result;

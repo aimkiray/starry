@@ -15,9 +15,9 @@ public interface PostTagLinkService {
     public PostTagLink findPostTagLinkById(int postTagId);
 
     /**
-     * 获取全部的标签详情
+     * 获取文章的全部的标签数量
      */
-    public List<PostTagLink> findAllPostTagLink();
+    public int findPostTagNum(int postId);
 
     /**
      * 根据id删除标签详情

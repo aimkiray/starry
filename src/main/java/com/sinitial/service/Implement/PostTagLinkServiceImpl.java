@@ -21,8 +21,13 @@ public class PostTagLinkServiceImpl implements PostTagLinkService {
     }
 
     @Override
-    public List<PostTagLink> findAllPostTagLink() {
-        return postTagLinkMapper.selectByExample(null);
+    public int findPostTagNum(int postId) {
+        int result = 0;
+        PostTagLinkExample postTagLinkExample = new PostTagLinkExample();
+        PostTagLinkExample.Criteria criteria = postTagLinkExample.createCriteria();
+        criteria.andPostIdEqualTo(postId);
+        result = (int)postTagLinkMapper.countByExample(postTagLinkExample);
+        return result;
     }
 
     @Override

@@ -140,7 +140,11 @@ public class PostServiceImpl implements PostService {
      */
     @Override
     public int updatePost(Post post) {
-        return 0;
+        int result = 0;
+        if (post != null && post.getPostId() != null) {
+            result = postMapper.updateByPrimaryKeyWithBLOBs(post);
+        }
+        return result;
     }
 
     @Override
