@@ -12,19 +12,7 @@
 <head>
     <title>写文章</title>
     <c:set var="root" value="${pageContext.request.contextPath}"/>
-    <link rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="${root}/resources/dataTables/media/css/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="${root}/resources/css/font-awesome.min.css">
 
-    <script src="${root}/resources/dataTables/media/js/jquery.js" type="text/javascript"></script>
-    <script src="${root}/resources/bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="${root}/resources/js/bootbox.min.js" type="text/javascript"></script>
-    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
-    <script src="${root}/resources/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="${root}/resources/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
     <script src="${root}/resources/post/js/post_update.js" type="text/javascript"></script>
 </head>
 <body>
@@ -82,7 +70,6 @@
         <input type="hidden" id="postId" name="postId" value="${requestScope.post.postId}">
         <input type="hidden" id="postStatus" name="postStatus" value="${requestScope.post.postStatus}">
         <input type="hidden" id="postDate" name="postDate" value="${requestScope.post.postDate}">
-        <input type="hidden" id="postType" name="postType" value="${requestScope.post.postType}">
         <input type="hidden" id="postAuthor" name="postAuthor" value="${requestScope.post.postAuthor}">
         <input type="hidden" id="postMimeType" name="postMimeType" value="${requestScope.post.postMimeType}">
 
@@ -90,6 +77,12 @@
             <label>标题</label>
             <input class="form-control" name="postTitle" value="${requestScope.post.postTitle}" placeholder="请输入标题">
         </div>
+
+        <div class="form-group">
+            <label>简介</label>
+            <textarea class="form-control" name="postType" placeholder="首页显示的内容">${requestScope.post.postType}</textarea>
+        </div>
+
         <div class="form-group">
             <label>内容</label>
             <textarea class="form-control" name="postContent" placeholder="Markdown格式 PS.右下角可拖动~">${requestScope.post.postContent}</textarea>

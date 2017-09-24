@@ -12,19 +12,7 @@
 <head>
     <title>写文章</title>
     <c:set var="root" value="${pageContext.request.contextPath}"/>
-    <link rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="${root}/resources/dataTables/media/css/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="${root}/resources/css/font-awesome.min.css">
 
-    <script src="${root}/resources/dataTables/media/js/jquery.js" type="text/javascript"></script>
-    <script src="${root}/resources/bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="${root}/resources/js/bootbox.min.js" type="text/javascript"></script>
-    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
-    <script src="${root}/resources/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="${root}/resources/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
     <script src="${root}/resources/post/js/post_add.js" type="text/javascript"></script>
 </head>
 <body>
@@ -82,6 +70,12 @@
             <label>标题</label>
             <input class="form-control" name="postTitle" placeholder="请输入标题">
         </div>
+
+        <div class="form-group">
+            <label>简介</label>
+            <textarea class="form-control" name="postType" placeholder="首页显示的内容"></textarea>
+        </div>
+
         <div class="form-group">
             <label>内容</label>
             <textarea class="form-control" name="postContent" placeholder="Markdown格式 PS.右下角可拖动~"></textarea>

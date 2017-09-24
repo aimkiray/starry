@@ -83,7 +83,7 @@ public class PostServiceImpl implements PostService {
         if (searchParam != null) {
             map.put("searchParam", searchParam);
         }
-//        剩下的交给xml判断
+//        交给mybatis xml处理
         List<Post> posts = postMapper.selectBySearch(map);
 
         return posts;

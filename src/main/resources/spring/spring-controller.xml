@@ -3,28 +3,53 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans.xsd
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-  <!--启用默认servlet来处理资源-->
-  <mvc:default-servlet-handler/>
+  <!--处理静态の资源，Spring版本>3.0.4，优先级(order)最好要最高-->
+  <!--若是配置了拦截器则一定会走拦截器，记得排除在外-->
+  <mvc:resources mapping="/resources/**" location="/resources/" order="0"/>
 
+  <!--检查是否为静态资源（web.xml中设置），不是才勉为其难的交给DispatcherServlet继续处理-->
+  <!--<mvc:default-servlet-handler />-->
+
+  <!--配置要扫描的Controller-->
   <context:component-scan base-package="com.sinitial.controller"/>
-  <!-- 配置SpringMVC -->
+
   <!-- 开启SpringMVC注解模式 -->
   <!-- 简化配置：
-    (1)自动注册DefaultAnootationHandlerMapping,AnotationMethodHandlerAdapter
-    (2)提供一些列：数据绑定，数字和日期的format @NumberFormat, @DateTimeFormat,xml,json默认读写支持
-    (3)引入Gson
-  -->
+    - 自动注册DefaultAnootationHandlerMapping,AnotationMethodHandlerAdapter
+    - 提供一些列：数据绑定，数字和日期的format @NumberFormat, @DateTimeFormat,xml,json默认读写支持
+    - 引入Gson
+    -->
   <mvc:annotation-driven>
     <mvc:message-converters>
       <bean class="org.springframework.http.converter.json.GsonHttpMessageConverter"/>
     </mvc:message-converters>
   </mvc:annotation-driven>
+
+  <!-- FreeMarkerConfigurer -->
+  <bean id="freemarkerConfig"
+        class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+    <property name="templateLoaderPath" value="/WEB-INF/ftl/"/>
+    <property name="freemarkerSettings">
+      <!-- 设置FreeMarker环境属性 -->
+      <props>
+        <prop key="template_update_delay">5</prop><!--刷新模板的周期，单位为秒-->
+        <prop key="default_encoding">UTF-8</prop><!--模板的编码格式-->
+        <prop key="locale">UTF-8</prop><!-- 本地化设置 -->
+        <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+        <prop key="time_format">HH:mm:ss</prop>
+        <prop key="number_format">0.####</prop>
+        <prop key="boolean_format">true,false</prop>
+        <prop key="whitespace_stripping">true</prop>
+        <prop key="tag_syntax">auto_detect</prop>
+        <prop key="url_escaping_charset">UTF-8</prop>
+      </props>
+    </property>
+  </bean>
 
   <!--配置Spring时间转换器-->
   <mvc:annotation-driven conversion-service="customConversionService">
@@ -37,25 +62,43 @@
     </property>
   </bean>
 
-  <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
-  <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>-->
+  <!-- 配置freeMarker视图解析器 -->
+  <bean id="ftlViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+    <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+    <property name="contentType" value="text/html; charset=utf-8"/>
+    <property name="exposeRequestAttributes" value="true" />
+    <property name="exposeSessionAttributes" value="true" />
+    <property name="exposeSpringMacroHelpers" value="true" />
+    <property name="requestContextAttribute" value="request" />
+    <property name="cache" value="true" />
+    <property name="suffix" value=".ftl" />
+    <!--先交给freemarker视图解析器-->
+    <property name="order" value="0"/>
+  </bean>
+
+  <!--配置Jsp视图解析器-->
+  <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView" />
+    <property name="prefix" value="/WEB-INF/jsp/"/>
+    <property name="suffix" value=".jsp"/>
+    <!--InternalResourceView比较特殊，传入视图名后不会交给下一个order，不管有没有对应模板，故优先级排在最低-->
+    <property name="order" value="1"/>
+  </bean>
+
+  <!--文件上传配置-->
   <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
     <property name="defaultEncoding" value="utf-8"/>
     <property name="maxUploadSize" value="5242880"/>
   </bean>
-  <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-    <property name="prefix" value="/WEB-INF/jsp/"/>
-    <property name="suffix" value=".jsp"/>
-  </bean>
 
-  <!--<mvc:exclude-mapping path="/post"/>
-  <mvc:exclude-mapping path="/user/login/page"/>
-  <mvc:exclude-mapping path="/user/login"/>-->
+  <!--配置拦截器，用于权限管理-->
   <mvc:interceptors>
     <mvc:interceptor>
-      <mvc:mapping path="/**"/>
-      <bean class="com.sinitial.interception.PermissionInterception"/>
+      <!--拦截所有url-->
+      <mvc:mapping path="/**" />
+      <!--排除静态资源-->
+      <mvc:exclude-mapping path="/resources/**" />
+      <bean class="com.sinitial.interception.PermissionInterception" />
     </mvc:interceptor>
   </mvc:interceptors>
 

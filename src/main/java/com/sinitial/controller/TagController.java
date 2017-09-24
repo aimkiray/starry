@@ -15,14 +15,12 @@ import java.util.List;
 @Controller
 @RequestMapping("/tag")
 public class TagController {
-    @Autowired
-    private PostService postService;
 
     @Autowired
     private TagService tagService;
 
     /**
-     * 访问文章列表
+     * 访问标签列表
      */
     @RequestMapping("/list")
     @ResponseBody

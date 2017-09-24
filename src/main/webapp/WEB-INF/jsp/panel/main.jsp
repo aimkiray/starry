@@ -10,64 +10,48 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>控制面板</title>
     <c:set var="root" value="${pageContext.request.contextPath}"/>
-    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap.css">
-    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-theme.css">
-    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-datetimepicker.min.css">
-    <link type="text/css" rel="stylesheet" href="${root}/resources/dataTables/media/css/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="${root}/resources/css/ztree/zTreeStyle/zTreeStyle.css" type="text/css">
-    <link type="text/css" rel="stylesheet" href="${root}/resources/css/panel/panel-custom.css">
 
-    <script src="${root}/resources/dataTables/media/js/jquery.js" type="text/javascript"></script>
-    <script src="${root}/resources/bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="${root}/resources/js/bootbox.min.js" type="text/javascript"></script>
-    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
-    <script src="${root}/resources/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="${root}/resources/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-    <script src="${root}/resources/js/panel/panel-custom.js" type="text/javascript"></script>
-    <script type="text/javascript" src="${root}/resources/js/ztree/jquery.ztree.core.js"></script>
-    <script type="text/javascript" src="${root}/resources/js/ztree/jquery.ztree.excheck.js"></script>
-    <script type="text/javascript" src="${root}/resources/js/ztree/jquery.ztree.exedit.js"></script>
+    <%--bootstrap--%>
+    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap-3.0/css/bootstrap.min.css">
+    <%--datetimepicker--%>
+    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap-3.0/extension/datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <%--datatables--%>
+    <link type="text/css" rel="stylesheet" href="${root}/resources/dataTables/css/dataTables.bootstrap.min.css">
+
+    <%--jquery--%>
+    <script src="${root}/resources/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <%--bootstrap--%>
+    <script src="${root}/resources/bootstrap-3.0/js/bootstrap.min.js" type="text/javascript"></script>
+    <%--bootbox--%>
+    <script src="${root}/resources/bootstrap-3.0/extension/bootbox/bootbox.min.js" type="text/javascript"></script>
+    <%--datetimepicker--%>
+    <script src="${root}/resources/bootstrap-3.0/extension/datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/bootstrap-3.0/extension/datetimepicker/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+    <%--dataTables--%>
+    <script src="${root}/resources/dataTables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/dataTables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <%--ztree--%>
+    <script type="text/javascript" src="${root}/resources/ztree/js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="${root}/resources/ztree/js/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript" src="${root}/resources/ztree/js/jquery.ztree.exedit.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="${root}/resources/panel/css/panel-custom.css">
+    <script src="${root}/resources/panel/js/panel-custom.js" type="text/javascript"></script>
 </head>
-
-<style type="text/css">
-    .ztree * {font-size: 10pt}
-    .ztree li ul{ margin:0; padding:0}
-    .ztree li {line-height:30px;}
-    .ztree li a {width:200px;height:30px;padding-top: 0px;}
-    .ztree li a:hover {text-decoration:none; background-color: #E7E7E7;}
-    .ztree li a span.button.switch {visibility:hidden}
-    .ztree.showIcon li a span.button.switch {visibility:visible}
-    .ztree li a.curSelectedNode {background-color:#D4D4D4;border:0;height:30px;}
-    .ztree li span {line-height:30px;}
-    .ztree li span.button {margin-top: -7px;}
-    .ztree li span.button.switch {width: 16px;height: 16px;}
-
-    .ztree li a.level0 span {font-size: 150%;font-weight: bold;}
-    .ztree li span.button {background-image:url("${root}/resources/img/left_menuForOutLook.png"); *background-image:url("${root}/resources/img/left_menuForOutLook.gif")}
-    .ztree li span.button.switch.level0 {width: 20px; height:20px}
-    .ztree li span.button.switch.level1 {width: 20px; height:20px}
-    .ztree li span.button.noline_open {background-position: 0 0;}
-    .ztree li span.button.noline_close {background-position: -18px 0;}
-    .ztree li span.button.noline_open.level0 {background-position: 0 -18px;}
-    .ztree li span.button.noline_close.level0 {background-position: -18px -18px;}
-</style>
 <body>
 <div class="row clearfix">
     <div class="col-md-12 column">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">SINITIAL系统控制中心</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">SInitial控制面板</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="#">文章</a>
-                    </li>
-                    <li>
-                        <a href="#">个人信息</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理<strong class="caret"></strong></a>
+                        <ul id="treeDemo" class="dropdown-menu"></ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多功能<strong class="caret"></strong></a>
@@ -110,7 +94,16 @@
 <%--用来占位--%>
 <nav class="navbar"></nav>
 <%--主体部分--%>
-<div class="row clearfix">
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="iframe-container">
+                <iframe src="${pageContext.request.contextPath}/role/list/page" name="panel_container" width="800" frameborder="no" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<%--<div class="row clearfix">
     <div class="col-sm-12 column">
         <div class="col-sm-2">
             <ul id="treeDemo" class="ztree"></ul>
@@ -121,7 +114,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>--%>
 <input id="userRole" type="hidden" value="${sessionScope.user.userRole}">
 <script type="text/javascript">
     var setting = {
@@ -182,8 +175,6 @@
             cache: false,
             success: function (data) {
                 $.fn.zTree.init($("#treeDemo"), setting, data);
-                /*var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
-                treeObj.expandAll(true);*/
             },
             error: function () {
                 alert("通信失败！");

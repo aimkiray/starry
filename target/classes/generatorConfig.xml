@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
     <!-- 配置mysql 驱动jar包路径.用了绝对路径 -->
-    <classPathEntry location="C:\Users\nekuata\.m2\repository\org\mariadb\jdbc\mariadb-java-client\2.1.0\mariadb-java-client-2.1.0.jar" />
+    <classPathEntry location="C:\Users\Akari\.m2\repository\org\mariadb\jdbc\mariadb-java-client\2.1.0\mariadb-java-client-2.1.0.jar" />
 
     <context id="mysql_tables" targetRuntime="MyBatis3">
         <!-- 防止生成的代码中有很多注释，加入下面的配置控制 -->
@@ -18,7 +18,7 @@
         <jdbcConnection driverClass="org.mariadb.jdbc.Driver"
                         connectionURL="jdbc:mariadb://localhost:2233"
                         userId="root"
-                        password="12138">
+                        password="1125">
         </jdbcConnection>
 
         <javaTypeResolver >
@@ -32,7 +32,7 @@
         </javaModelGenerator>
 
         <!-- sql mapper 映射配置文件 -->
-        <sqlMapGenerator targetPackage="mybatis"  targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="mybatis.mariadb"  targetProject="src/main/resources">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
@@ -42,7 +42,9 @@
         </javaClientGenerator>
 
         <!-- 数据表进行生成操作 schema:相当于库名; tableName:表名; domainObjectName:对应的DO -->
-        <table schema="sinitial" tableName="sl_post" domainObjectName="Post">
+        <table schema="sinitial" tableName="sl_tag" domainObjectName="Tag" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
             <!--enableCountByExample="false" enableUpdateByExample="false"
             enableDeleteByExample="false" enableSelectByExample="false"
             selectByExampleQueryId="false"-->

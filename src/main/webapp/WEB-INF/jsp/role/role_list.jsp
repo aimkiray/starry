@@ -11,25 +11,36 @@
 <head>
     <title>用户管理</title>
     <c:set var="root" value="${pageContext.request.contextPath}"/>
-    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap.css">
-    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-theme.css">
-    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap/css/bootstrap-datetimepicker.min.css">
-    <link type="text/css" rel="stylesheet" href="${root}/resources/dataTables/media/css/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" href="${root}/resources/css/ztree/demo.css" type="text/css">
-    <link rel="stylesheet" href="${root}/resources/css/ztree/zTreeStyle/zTreeStyle.css" type="text/css">
 
-    <script src="${root}/resources/dataTables/media/js/jquery.js" type="text/javascript"></script>
-    <script src="${root}/resources/bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="${root}/resources/js/bootbox.min.js" type="text/javascript"></script>
-    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-    <script src="${root}/resources/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
-    <script src="${root}/resources/dataTables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="${root}/resources/dataTables/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <%--bootstrap--%>
+    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap-3.0/css/bootstrap.min.css">
+    <%--datetimepicker--%>
+    <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap-3.0/extension/datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <%--datatables--%>
+    <link type="text/css" rel="stylesheet" href="${root}/resources/dataTables/css/dataTables.bootstrap.min.css">
+    <%--awesome--%>
+    <link type="text/css" rel="stylesheet" href="${root}/resources/font-awesome-4.7.0/css/font-awesome.min.css">
+    <%--ztree--%>
+    <link type="text/css" rel="stylesheet" href="${root}/resources/ztree/css/awesome.css">
 
-    <script type="text/javascript" src="${root}/resources/js/ztree/jquery.ztree.core.js"></script>
-    <script type="text/javascript" src="${root}/resources/js/ztree/jquery.ztree.excheck.js"></script>
-    <script type="text/javascript" src="${root}/resources/js/ztree/jquery.ztree.exedit.js"></script>
-    <script type="text/javascript" src="${root}/resources/js/role/role-custom.js"></script>
+    <%--jquery--%>
+    <script src="${root}/resources/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <%--bootstrap--%>
+    <script src="${root}/resources/bootstrap-3.0/js/bootstrap.min.js" type="text/javascript"></script>
+    <%--bootbox--%>
+    <script src="${root}/resources/bootstrap-3.0/extension/bootbox/bootbox.min.js" type="text/javascript"></script>
+    <%--datetimepicker--%>
+    <script src="${root}/resources/bootstrap-3.0/extension/datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/bootstrap-3.0/extension/datetimepicker/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+    <%--dataTables--%>
+    <script src="${root}/resources/dataTables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="${root}/resources/dataTables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <%--ztree--%>
+    <script type="text/javascript" src="${root}/resources/ztree/js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="${root}/resources/ztree/js/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript" src="${root}/resources/ztree/js/jquery.ztree.exedit.js"></script>
+
+    <script type="text/javascript" src="${root}/resources/role/js/role-custom.js"></script>
 </head>
 
 <body>
@@ -57,13 +68,13 @@
 
     <%--<div id="toolbar" class="btn-group">
         <button id="btn_add" type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+            <span class="fa fa-plus" aria-hidden="true"></span>新增
         </button>
         <button id="btn_edit" type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
+            <span class="fa fa-pencil" aria-hidden="true"></span>修改
         </button>
         <button id="btn_delete" type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+            <span class="fa fa-remove" aria-hidden="true"></span>删除
         </button>
     </div>--%>
 

@@ -8,13 +8,13 @@ $(document).ready(function () {
     // 初始化Toolbar
     $("div.toolbar").html('<div id="toolbar" class="btn-group">\n' +
         '        <button id="btn_add" type="button" class="btn btn-default">\n' +
-        '            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增' +
+        '            <span class="fa fa-plus" aria-hidden="true"></span>新增' +
         '        </button>\n' +
         '        <button id="btn_edit" type="button" class="btn btn-default">\n' +
-        '            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改' +
+        '            <span class="fa fa-pencil" aria-hidden="true"></span>修改' +
         '        </button>\n' +
         '        <button id="btn_delete" type="button" class="btn btn-default">\n' +
-        '            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除' +
+        '            <span class="fa fa-remove" aria-hidden="true"></span>删除' +
         '        </button>\n' +
         '    </div>');
 
@@ -100,7 +100,7 @@ var userTable = function () {
                 render: function (data, type, row) {
                     return '<button class="btn btn-info btn-sm" onclick="updateUser('+data+')"><i class="fa fa-pencil"></i>修改</button>' +
                         '&nbsp;&nbsp;' +
-                        '<button class="btn btn-danger btn-sm" onclick="delUser('+data+')"><i class="fa fa-trash-o"></i>删除</button>';
+                        '<button class="btn btn-danger btn-sm" onclick="delUser('+data+')"><i class="fa fa-remove"></i>删除</button>';
                 }
             }
         ]

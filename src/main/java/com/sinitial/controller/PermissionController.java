@@ -21,7 +21,7 @@ public class PermissionController {
 
     @RequestMapping(value = "/list/page")
     public String permissionManager() {
-        return "permission/manager";
+        return "permission/permission_list";
     }
 
     @RequestMapping(value = "/list")

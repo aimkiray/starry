@@ -532,8 +532,8 @@
     </column>
     <column id="130" parent="22" name="post_type">
       <Position>8</Position>
-      <DataType>varchar(30)|0</DataType>
-      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+      <DataType>varchar(666)|0</DataType>
+      <DefaultExpression>&apos;&apos;&apos;NULL&apos;&apos;&apos;</DefaultExpression>
     </column>
     <index id="131" parent="22" name="sl_post_post_id_uindex">
       <ColNames>post_id</ColNames>

@@ -4,11 +4,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-  <display-name>Archetype Created Web Application</display-name>
-
-  <welcome-file-list>
-    <welcome-file>/post</welcome-file>
-  </welcome-file-list>
+  <display-name>SInitial Web Application</display-name>
 
   <!-- 加载log4j的配置文件log4j.properties -->
   <context-param>
@@ -28,14 +24,12 @@
     <param-value>sinitialProject</param-value>
   </context-param>
 
-  <!--静态资源-->
-  <servlet-mapping>
+  <!--静态资源，交给Tomcat默认的Servlet处理-->
+  <!--需要在全局的tomcat中设置才能生效，或者配合Spring mvc的default-servlet-name-->
+  <!--<servlet-mapping>
     <servlet-name>default</servlet-name>
-    <url-pattern>*.js</url-pattern>
-    <url-pattern>*.css</url-pattern>
-    <url-pattern>*.ttf</url-pattern>
-    <url-pattern>/resources/*</url-pattern>
-  </servlet-mapping>
+    <url-pattern>/resources/**</url-pattern>
+  </servlet-mapping>-->
 
   <!-- 配置 Spring MVC DispatchcerServlet 前端控制器 -->
   <servlet>
@@ -56,6 +50,7 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
+  <!--设置编码-->
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -69,6 +64,7 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
+  <!--druid数据库连接池-->
   <filter>
     <filter-name>DruidWebStatFilter</filter-name>
     <filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>

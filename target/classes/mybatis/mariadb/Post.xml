@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-       Copyright 2009-2016 the original user or users.
+       Copyright 2009-2016 the original author or authors.
 
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@
       <result column="post_type" property="postType"/>
       <result column="post_content" property="postContent"/>
       <result column="post_mime_type" property="postMimeType"/>
-      <association property="user" column="post_author" resultMap="AuthorResult"/>
+      <association property="author" column="post_author" resultMap="AuthorResult"/>
     </resultMap>
 
     <resultMap type="Author" id="AuthorResult">
@@ -78,7 +78,7 @@
       post_type)
       VALUES
       (#{postTitle},
-      #{user.authorId},
+      #{author.authorId},
       #{postContent},
       #{postDate},
       #{postMimeType},

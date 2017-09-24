@@ -8,12 +8,12 @@ import java.util.List;
 public class DataTables {
     private int recordsTotal;
     private int recordsFiltered;
-    private List data;
+    private List<?> data;
 
     public DataTables() {
     }
 
-    public DataTables(int recordsTotal, int recordsFiltered, List data) {
+    public DataTables(int recordsTotal, int recordsFiltered, List<?> data) {
         this.recordsTotal = recordsTotal;
         this.recordsFiltered = recordsFiltered;
         this.data = data;
@@ -35,11 +35,11 @@ public class DataTables {
         this.recordsFiltered = recordsFiltered;
     }
 
-    public List getData() {
+    public List<?> getData() {
         return data;
     }
 
-    public void setData(List data) {
+    public void setData(List<?> data) {
         this.data = data;
     }
 }

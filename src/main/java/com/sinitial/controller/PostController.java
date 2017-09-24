@@ -9,17 +9,14 @@ import com.sinitial.service.PostTagLinkService;
 import com.sinitial.service.TagService;
 import com.sinitial.utils.DataTables;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -37,26 +34,11 @@ public class PostController {
     private PostTagLinkService postTagLinkService;
 
     /**
-     * 首页文章获取功能
-     *
-     * @param curNumber 当前页数
-     * @param curSize   每页条目数
+     * 获取文章列表页面
+     * @return
      */
-    @RequestMapping
-    public String postMain(HttpServletRequest request, String curNumber, String curSize) {
-        int pageNumber = curNumber == null ? 1 : Integer.parseInt(curNumber);
-        int pageSize = curSize == null ? 5 : Integer.parseInt(curSize);
-//        不传搜索条件，在service判断为分页
-        List<Post> posts = postService.findPost(pageNumber, pageSize, null);
-        List<Tag> tags = tagService.findAllTag();
-        request.setAttribute("posts", posts);
-        request.setAttribute("tags", tags);
-
-        return "post/main";
-    }
-
     @RequestMapping(value = "/list/page")
-    public String postPage() {
+    public String postListPage() {
         return "post/post_list";
     }
 
@@ -69,7 +51,7 @@ public class PostController {
      */
     @RequestMapping(value = "/list")
     @ResponseBody
-    public DataTables postPage(Integer start, Integer length) {
+    public DataTables postList(Integer start, Integer length) {
         DataTables dataTables = new DataTables();
         start = start == null ? 0 : start;
         length = length == null ? 5 : length;
@@ -98,7 +80,6 @@ public class PostController {
         User user = (User) session.getAttribute("user");
         post.setPostAuthor(user.getUserId());
         post.setPostDate(new Date());
-        post.setPostType("none");
         post.setPostMimeType("post");
         // 添加文章，返回新添加的文章Id
         result = postService.insertPost(post);

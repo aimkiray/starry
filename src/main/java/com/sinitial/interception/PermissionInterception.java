@@ -18,7 +18,12 @@ public class PermissionInterception implements HandlerInterceptor {
         String url = httpServletRequest.getServletPath();
 
 //        访问主页 放行
-        if (url.startsWith("/post")) {
+        if (url.equals("/")) {
+            return true;
+        }
+
+//        访问文章和分页
+        if (url.startsWith("/article") || url.startsWith("/page")) {
             return true;
         }
 
@@ -52,8 +57,8 @@ public class PermissionInterception implements HandlerInterceptor {
             }
         }
 
-//        非法请求 重定向到登录页面
-        httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/post");
+//        非法请求 重定向到主页
+        httpServletResponse.sendRedirect(httpServletRequest.getContextPath());
         return false;
     }
 
@@ -64,7 +69,6 @@ public class PermissionInterception implements HandlerInterceptor {
 
     @Override
     public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
-
 
     }
 }
