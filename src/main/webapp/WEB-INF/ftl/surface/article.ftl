@@ -10,7 +10,7 @@
     <#--awesome-->
     <link href="${root}/resources/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <#--markdown css-->
-    <link href="${root}/resources/post/css/github-markdown.css" rel="stylesheet" type="text/css">
+    <link href="${root}/resources/post/css/wysiwyg.css" rel="stylesheet" type="text/css">
 
     <#--jquery-->
     <script src="${root}/resources/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
@@ -47,14 +47,14 @@
                                    href="###">${post.user.userName}</a>
                                 &nbsp;|&nbsp;
                                 <#list (post.tags) as tag>
-                                    <a class="text-link"
+                                <a class="text-link"
                                        href="###">${(tag.tagName)!"none"}&nbsp;</a>
                                 </#list>
                             </div>
 
                         </div>
 
-                        <div class="post-text-content markdown-body">
+                        <div class="post-text-content wysiwyg">
                         <#--markdown格式原始文章-->
                             <div id="rawPost${post.postId}" style="display: none">${post.postContent}</div>
                         <#--文章显示区域-->

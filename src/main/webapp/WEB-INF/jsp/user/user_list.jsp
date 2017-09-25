@@ -14,6 +14,8 @@
 
     <%--bootstrap--%>
     <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap-3.0/css/bootstrap.min.css">
+    <%--awesome--%>
+    <link href="${root}/resources/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <%--datetimepicker--%>
     <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap-3.0/extension/datetimepicker/css/bootstrap-datetimepicker.min.css">
     <%--datatables--%>

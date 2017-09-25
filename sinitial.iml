@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="web springMVC servlet context" name="MVC springMVC servlet context" removed="true">
+          <file>file://$MODULE_DIR$/src/main/resources/spring/spring-mybatis.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/spring/spring-controller.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/spring/spring-domain.xml</file>
+        </fileset>
+        <fileset id="fileset" name="ApplicationMVC" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/spring/spring-domain.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/spring/spring-controller.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/spring/spring-mybatis.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
     <facet type="web" name="Web">
       <configuration>
         <descriptors>
@@ -10,19 +24,9 @@
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
         <sourceRoots>
-          <root url="file://$MODULE_DIR$/src/main/resources" />
           <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
         </sourceRoots>
-      </configuration>
-    </facet>
-    <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="ApplicationMVC" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/spring/applicationMVC.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/springmvc-config.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/spring/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/spring/spring-domain.xml</file>
-        </fileset>
       </configuration>
     </facet>
   </component>
