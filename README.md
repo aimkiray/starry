@@ -1,4 +1,4 @@
-# sinitial-blog
+# sinitial-blog 食用说明书
 
 作为一个~~轻量级~~小巧的博客系统，本项目采用Spring+Spring-mvc+Mybatis构建。
 
