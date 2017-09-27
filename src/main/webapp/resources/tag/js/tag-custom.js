@@ -72,13 +72,19 @@ $(document).ready(function () {
             },
             success: function (data) {
                 if (data > 0) {
+                    // 移出肯德基超值豪华午餐...select
+                    $("#selectTag option[value="+$('#tagId').val()+"]").remove();
+                    // 清空删除的tagId
+                    $("#formTag").html('');
+                    // 清空删除的tagName
+                    $("#tagArea").val('');
                     alert("删除成功！")
                 } else {
                     alert("删除失败，请检查标签是否被使用")
                 }
             },
             error: function () {
-                alert("执行失败！⊙﹏⊙")
+                alert("执行失败！请检查是否选中标签⊙﹏⊙")
             }
         })
     });

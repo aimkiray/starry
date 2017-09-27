@@ -133,4 +133,24 @@ public class PostController {
         }
         return result;
     }
+
+    /**
+     * 文章删除功能
+     * @param postId 文章Id
+     * @return
+     */
+    @RequestMapping(value = "/del/{postId}")
+    @ResponseBody
+    public int delPost(@PathVariable("postId") Integer postId) {
+        int result = 0;
+        if (postId != null && postId != 0) {
+//            先删掉文章所有详情表
+            if (postTagLinkService.findPostTagNum(postId) != 0) {
+                postTagLinkService.deletePostTagLinkByPost(postId);
+            }
+//            再删除文章本体
+            result = postService.deletePost(postId);
+        }
+        return result;
+    }
 }

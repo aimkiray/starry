@@ -48,17 +48,17 @@
 
 <div class="panel-body">
 
-    <%--<div id="toolbar" class="btn-group">
+    <div id="toolbar" class="btn-group">
         <button id="btn_add" type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+            <span class="fa fa-plus" aria-hidden="true"></span>新增
         </button>
         <button id="btn_edit" type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
+            <span class="fa fa-pencil" aria-hidden="true"></span>修改
         </button>
         <button id="btn_delete" type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+            <span class="fa fa-remove" aria-hidden="true"></span>删除
         </button>
-    </div>--%>
+    </div>
 
     <table id="post_list" class="table table-striped table-bordered">
         <thead>

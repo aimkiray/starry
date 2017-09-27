@@ -116,7 +116,7 @@ public class PostServiceImpl implements PostService {
      */
     @Override
     public int deletePost(int postId) {
-        return 0;
+        return postMapper.deleteByPrimaryKey(postId);
     }
 
     /**
