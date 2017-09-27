@@ -17,7 +17,7 @@
   </settings>
 
   <typeAliases>
-    <package name="com.sinitial.domain"/>
+    <package name="com.starry.domain"/>
   </typeAliases>
 
 </configuration>

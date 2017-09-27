@@ -8,10 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="sinitial" />
+        <module name="starry" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="sinitial" target="1.8" />
+      <module name="starry" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

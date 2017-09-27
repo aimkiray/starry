@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sinitial.dao.RoleMapper">
-  <resultMap id="BaseResultMap" type="com.sinitial.domain.Role">
+<mapper namespace="com.starry.dao.RoleMapper">
+  <resultMap id="BaseResultMap" type="com.starry.domain.Role">
     <id column="role_id" jdbcType="INTEGER" property="roleId" />
     <result column="role_name" jdbcType="VARCHAR" property="roleName" />
     <result column="role_info" jdbcType="VARCHAR" property="roleInfo" />
   </resultMap>
 
-  <resultMap id="SuperResultMap" type="com.sinitial.domain.Role">
+  <resultMap id="SuperResultMap" type="com.starry.domain.Role">
     <id column="the_role" jdbcType="INTEGER" property="roleId" />
     <result column="role_name" jdbcType="VARCHAR" property="roleName" />
     <result column="role_info" jdbcType="VARCHAR" property="roleInfo" />
-    <collection property="rolePermissionLinks" javaType="java.util.List" ofType="com.sinitial.domain.RolePermissionLink">
+    <collection property="rolePermissionLinks" javaType="java.util.List" ofType="com.starry.domain.RolePermissionLink">
       <id column="id" jdbcType="INTEGER" property="id" />
       <result column="relation_role" jdbcType="INTEGER" property="roleId" />
       <result column="relation_permission" jdbcType="INTEGER" property="permissionId" />
     </collection>
-    <collection property="permissions" javaType="java.util.List" ofType="com.sinitial.domain.Permission">
+    <collection property="permissions" javaType="java.util.List" ofType="com.starry.domain.Permission">
       <id column="the_permission" jdbcType="INTEGER" property="permissionId" />
       <result column="permission_name" jdbcType="VARCHAR" property="permissionName" />
       <result column="description" jdbcType="VARCHAR" property="description" />
@@ -122,7 +122,7 @@
     </if>
   </select>
 
-  <select id="selectByExample" parameterType="com.sinitial.domain.RoleExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.starry.domain.RoleExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -146,13 +146,13 @@
     delete from sl_role
     where role_id = #{roleId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.sinitial.domain.RoleExample">
+  <delete id="deleteByExample" parameterType="com.starry.domain.RoleExample">
     delete from sl_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.sinitial.domain.Role">
+  <insert id="insert" parameterType="com.starry.domain.Role">
     insert into sl_role (role_id, role_name, role_info
       )
     values (#{roleId,jdbcType=INTEGER}, #{roleName,jdbcType=VARCHAR}, #{roleInfo,jdbcType=VARCHAR}
@@ -160,14 +160,14 @@
   </insert>
 
   <!--插入角色并获取自动生成的Id-->
-  <insert id="insertAndGetId" useGeneratedKeys="true" keyProperty="roleId" parameterType="com.sinitial.domain.Role">
+  <insert id="insertAndGetId" useGeneratedKeys="true" keyProperty="roleId" parameterType="com.starry.domain.Role">
     insert into sl_role (role_id, role_name, role_info
     )
     values (#{roleId,jdbcType=INTEGER}, #{roleName,jdbcType=VARCHAR}, #{roleInfo,jdbcType=VARCHAR}
     )
   </insert>
 
-  <insert id="insertSelective" parameterType="com.sinitial.domain.Role">
+  <insert id="insertSelective" parameterType="com.starry.domain.Role">
     insert into sl_role
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="roleId != null">
@@ -192,7 +192,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.sinitial.domain.RoleExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.starry.domain.RoleExample" resultType="java.lang.Long">
     select count(*) from sl_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -224,7 +224,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sinitial.domain.Role">
+  <update id="updateByPrimaryKeySelective" parameterType="com.starry.domain.Role">
     update sl_role
     <set>
       <if test="roleName != null">
@@ -236,7 +236,7 @@
     </set>
     where role_id = #{roleId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sinitial.domain.Role">
+  <update id="updateByPrimaryKey" parameterType="com.starry.domain.Role">
     update sl_role
     set role_name = #{roleName,jdbcType=VARCHAR},
       role_info = #{roleInfo,jdbcType=VARCHAR}

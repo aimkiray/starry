@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sinitial.dao.PostTagLinkMapper">
-  <resultMap id="BaseResultMap" type="com.sinitial.domain.PostTagLink">
+<mapper namespace="com.starry.dao.PostTagLinkMapper">
+  <resultMap id="BaseResultMap" type="com.starry.domain.PostTagLink">
     <id column="post_tag_id" jdbcType="INTEGER" property="postTagId" />
     <result column="post_id" jdbcType="INTEGER" property="postId" />
     <result column="tag_id" jdbcType="INTEGER" property="tagId" />
@@ -67,7 +67,7 @@
   <sql id="Base_Column_List">
     post_tag_id, post_id, tag_id
   </sql>
-  <select id="selectByExample" parameterType="com.sinitial.domain.PostTagLinkExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.starry.domain.PostTagLinkExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -91,19 +91,19 @@
     delete from sl_post_tag
     where post_tag_id = #{postTagId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.sinitial.domain.PostTagLinkExample">
+  <delete id="deleteByExample" parameterType="com.starry.domain.PostTagLinkExample">
     delete from sl_post_tag
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.sinitial.domain.PostTagLink">
+  <insert id="insert" parameterType="com.starry.domain.PostTagLink">
     insert into sl_post_tag (post_tag_id, post_id, tag_id
       )
     values (#{postTagId,jdbcType=INTEGER}, #{postId,jdbcType=INTEGER}, #{tagId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.sinitial.domain.PostTagLink">
+  <insert id="insertSelective" parameterType="com.starry.domain.PostTagLink">
     insert into sl_post_tag
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="postTagId != null">
@@ -128,7 +128,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.sinitial.domain.PostTagLinkExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.starry.domain.PostTagLinkExample" resultType="java.lang.Long">
     select count(*) from sl_post_tag
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -160,7 +160,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sinitial.domain.PostTagLink">
+  <update id="updateByPrimaryKeySelective" parameterType="com.starry.domain.PostTagLink">
     update sl_post_tag
     <set>
       <if test="postId != null">
@@ -172,7 +172,7 @@
     </set>
     where post_tag_id = #{postTagId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sinitial.domain.PostTagLink">
+  <update id="updateByPrimaryKey" parameterType="com.starry.domain.PostTagLink">
     update sl_post_tag
     set post_id = #{postId,jdbcType=INTEGER},
       tag_id = #{tagId,jdbcType=INTEGER}

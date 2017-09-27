@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sinitial.dao.PostMapper">
-  <resultMap id="BaseResultMap" type="com.sinitial.domain.Post">
+<mapper namespace="com.starry.dao.PostMapper">
+  <resultMap id="BaseResultMap" type="com.starry.domain.Post">
     <id column="the_post" jdbcType="INTEGER" property="postId" />
     <result column="post_title" jdbcType="VARCHAR" property="postTitle" />
     <result column="post_status" jdbcType="VARCHAR" property="postStatus" />
@@ -10,11 +10,11 @@
     <result column="post_date" jdbcType="TIMESTAMP" property="postDate" />
     <result column="post_type" jdbcType="VARCHAR" property="postType" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.sinitial.domain.Post">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.starry.domain.Post">
     <result column="post_content" jdbcType="LONGVARCHAR" property="postContent" />
   </resultMap>
 
-  <resultMap id="SuperResultMap" type="com.sinitial.domain.Post">
+  <resultMap id="SuperResultMap" type="com.starry.domain.Post">
     <id column="the_post" jdbcType="INTEGER" property="postId" />
     <result column="post_title" jdbcType="VARCHAR" property="postTitle" />
     <result column="post_status" jdbcType="VARCHAR" property="postStatus" />
@@ -23,12 +23,12 @@
     <result column="post_date" jdbcType="TIMESTAMP" property="postDate" />
     <result column="post_type" jdbcType="VARCHAR" property="postType" />
     <association property="user" resultMap="UserResultMap" />
-    <collection property="tags" javaType="java.util.List" ofType="com.sinitial.domain.Tag" >
+    <collection property="tags" javaType="java.util.List" ofType="com.starry.domain.Tag" >
       <id column="the_tag" jdbcType="INTEGER" property="tagId" />
       <result column="tag_name" jdbcType="VARCHAR" property="tagName" />
     </collection>
   </resultMap>
-  <resultMap id="UserResultMap" type="com.sinitial.domain.User">
+  <resultMap id="UserResultMap" type="com.starry.domain.User">
     <id column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
@@ -40,7 +40,7 @@
     <result column="user_info" jdbcType="VARCHAR" property="userInfo" />
     <result column="headshot" jdbcType="VARCHAR" property="headshot" />
   </resultMap>
-  <resultMap extends="SuperResultMap" id="SuperResultMapWithBLOBs" type="com.sinitial.domain.Post">
+  <resultMap extends="SuperResultMap" id="SuperResultMapWithBLOBs" type="com.starry.domain.Post">
     <result column="post_content" jdbcType="LONGVARCHAR" property="postContent" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -141,7 +141,7 @@
     SELECT count(*) FROM sinitial.sl_post
   </select>
 
-  <select id="selectByExampleWithBLOBs" parameterType="com.sinitial.domain.PostExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="com.starry.domain.PostExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -157,7 +157,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" parameterType="com.sinitial.domain.PostExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.starry.domain.PostExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -186,13 +186,13 @@
     delete from sl_post
     where post_id = #{postId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.sinitial.domain.PostExample">
+  <delete id="deleteByExample" parameterType="com.starry.domain.PostExample">
     delete from sl_post
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.sinitial.domain.Post">
+  <insert id="insert" parameterType="com.starry.domain.Post">
     insert into sl_post (post_id, post_title, post_status, 
       post_author, post_mime_type, post_date, 
       post_type, post_content)
@@ -200,7 +200,7 @@
       #{postAuthor,jdbcType=INTEGER}, #{postMimeType,jdbcType=VARCHAR}, #{postDate,jdbcType=TIMESTAMP}, 
       #{postType,jdbcType=VARCHAR}, #{postContent,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.sinitial.domain.Post">
+  <insert id="insertSelective" parameterType="com.starry.domain.Post">
     insert into sl_post
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="postId != null">
@@ -255,7 +255,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.sinitial.domain.PostExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.starry.domain.PostExample" resultType="java.lang.Long">
     select count(*) from sl_post
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -320,7 +320,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sinitial.domain.Post">
+  <update id="updateByPrimaryKeySelective" parameterType="com.starry.domain.Post">
     update sl_post
     <set>
       <if test="postTitle != null">
@@ -347,7 +347,7 @@
     </set>
     where post_id = #{postId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.sinitial.domain.Post">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.starry.domain.Post">
     update sl_post
     set post_title = #{postTitle,jdbcType=VARCHAR},
       post_status = #{postStatus,jdbcType=VARCHAR},
@@ -358,7 +358,7 @@
       post_content = #{postContent,jdbcType=LONGVARCHAR}
     where post_id = #{postId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sinitial.domain.Post">
+  <update id="updateByPrimaryKey" parameterType="com.starry.domain.Post">
     update sl_post
     set post_title = #{postTitle,jdbcType=VARCHAR},
       post_status = #{postStatus,jdbcType=VARCHAR},

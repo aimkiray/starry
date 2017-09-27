@@ -4,7 +4,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-  <display-name>SInitial Web Application</display-name>
+  <display-name>Starry Blog</display-name>
 
   <!-- 加载log4j的配置文件log4j.properties -->
   <context-param>

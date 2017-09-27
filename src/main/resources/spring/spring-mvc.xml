@@ -16,7 +16,7 @@
   <!--<mvc:default-servlet-handler />-->
 
   <!--配置要扫描的Controller-->
-  <context:component-scan base-package="com.sinitial.controller"/>
+  <context:component-scan base-package="com.starry.controller"/>
 
   <!-- 开启SpringMVC注解模式 -->
   <!-- 简化配置：
@@ -36,7 +36,7 @@
   <bean id="customConversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
     <property name="converters">
       <set>
-        <bean class="com.sinitial.utils.DateConverter"/>
+        <bean class="com.starrytils.DateConverter"/>
       </set>
     </property>
   </bean>-->
@@ -98,7 +98,7 @@
       <mvc:mapping path="/**" />
       <!--排除静态资源-->
       <mvc:exclude-mapping path="/resources/**" />
-      <bean class="com.sinitial.interception.PermissionInterception" />
+      <bean class="com.starry.interception.PermissionInterception" />
     </mvc:interceptor>
   </mvc:interceptors>
 

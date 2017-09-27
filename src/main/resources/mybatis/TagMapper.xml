@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sinitial.dao.TagMapper">
-  <resultMap id="BaseResultMap" type="com.sinitial.domain.Tag">
+<mapper namespace="com.starry.dao.TagMapper">
+  <resultMap id="BaseResultMap" type="com.starry.domain.Tag">
     <id column="tag_id" jdbcType="INTEGER" property="tagId" />
     <result column="tag_name" jdbcType="VARCHAR" property="tagName" />
   </resultMap>
@@ -25,12 +25,12 @@
     delete from sl_tag
     where tag_id = #{tagId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.sinitial.domain.Tag">
+  <insert id="insert" parameterType="com.starry.domain.Tag">
     insert into sl_tag (tag_id, tag_name)
     values (#{tagId,jdbcType=INTEGER}, #{tagName,jdbcType=VARCHAR})
   </insert>
   <!--插入后返回主键值-->
-  <insert id="insertAndGetId" useGeneratedKeys="true" keyProperty="tagId" parameterType="com.sinitial.domain.Tag">
+  <insert id="insertAndGetId" useGeneratedKeys="true" keyProperty="tagId" parameterType="com.starry.domain.Tag">
     insert into sl_tag (tag_id, tag_name)
     values (#{tagId,jdbcType=INTEGER}, #{tagName,jdbcType=VARCHAR})
   </insert>
@@ -41,7 +41,7 @@
     from sl_tag
     where tag_name = #{tagName}
   </select>
-  <insert id="insertSelective" parameterType="com.sinitial.domain.Tag">
+  <insert id="insertSelective" parameterType="com.starry.domain.Tag">
     insert into sl_tag
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="tagId != null">
@@ -60,7 +60,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sinitial.domain.Tag">
+  <update id="updateByPrimaryKeySelective" parameterType="com.starry.domain.Tag">
     update sl_tag
     <set>
       <if test="tagName != null">
@@ -69,7 +69,7 @@
     </set>
     where tag_id = #{tagId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sinitial.domain.Tag">
+  <update id="updateByPrimaryKey" parameterType="com.starry.domain.Tag">
     update sl_tag
     set tag_name = #{tagName,jdbcType=VARCHAR}
     where tag_id = #{tagId,jdbcType=INTEGER}

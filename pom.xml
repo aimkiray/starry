@@ -2,10 +2,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>www.meowwoo.com</groupId>
-  <artifactId>sinitial</artifactId>
+  <artifactId>starry</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>sinitial blog system</name>
+  <name>starry blog system</name>
   <url>http://meowwoo.com</url>
 
   <properties>
@@ -200,7 +200,7 @@
   </dependencies>
 
   <build>
-    <finalName>sinitial</finalName>
+    <finalName>starry</finalName>
     <resources>
         <resource>
             <directory>src/main/resources</directory>
@@ -241,7 +241,7 @@
         <version>3.7.0</version>
         <configuration>
 
-          <webResources>
+          <!--<webResources>
             <resource>
               <directory>${basedir}/src/main/webapp</directory>
               <filtering>true</filtering>
@@ -251,7 +251,7 @@
                 <exclude>**/*.ttf</exclude>
               </excludes>
             </resource>
-          </webResources>
+          </webResources>-->
 
           <source>1.8</source>
           <target>1.8</target>

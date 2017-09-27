@@ -26,7 +26,7 @@
         </javaTypeResolver>
 
         <!-- 数据表对应的model层  -->
-        <javaModelGenerator targetPackage="com.sinitial.domain" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.starry.domain" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
@@ -37,7 +37,7 @@
         </sqlMapGenerator>
 
         <!-- mybatis3中的mapper接口 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.sinitial.dao" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.starry.dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 

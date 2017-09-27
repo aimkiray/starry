@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sinitial.dao.RolePermissionLinkMapper">
-  <resultMap id="BaseResultMap" type="com.sinitial.domain.RolePermissionLink">
+<mapper namespace="com.starry.dao.RolePermissionLinkMapper">
+  <resultMap id="BaseResultMap" type="com.starry.domain.RolePermissionLink">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="role_id" jdbcType="INTEGER" property="roleId" />
     <result column="permission_id" jdbcType="INTEGER" property="permissionId" />
@@ -87,7 +87,7 @@
     </if>
   </select>
 
-  <select id="selectByExample" parameterType="com.sinitial.domain.RolePermissionLinkExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.starry.domain.RolePermissionLinkExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -111,19 +111,19 @@
     delete from sl_role_permission
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.sinitial.domain.RolePermissionLinkExample">
+  <delete id="deleteByExample" parameterType="com.starry.domain.RolePermissionLinkExample">
     delete from sl_role_permission
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.sinitial.domain.RolePermissionLink">
+  <insert id="insert" parameterType="com.starry.domain.RolePermissionLink">
     insert into sl_role_permission (id, role_id, permission_id
       )
     values (#{id,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}, #{permissionId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.sinitial.domain.RolePermissionLink">
+  <insert id="insertSelective" parameterType="com.starry.domain.RolePermissionLink">
     insert into sl_role_permission
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -148,7 +148,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.sinitial.domain.RolePermissionLinkExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.starry.domain.RolePermissionLinkExample" resultType="java.lang.Long">
     select count(*) from sl_role_permission
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -180,7 +180,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sinitial.domain.RolePermissionLink">
+  <update id="updateByPrimaryKeySelective" parameterType="com.starry.domain.RolePermissionLink">
     update sl_role_permission
     <set>
       <if test="roleId != null">
@@ -192,7 +192,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.sinitial.domain.RolePermissionLink">
+  <update id="updateByPrimaryKey" parameterType="com.starry.domain.RolePermissionLink">
     update sl_role_permission
     set role_id = #{roleId,jdbcType=INTEGER},
       permission_id = #{permissionId,jdbcType=INTEGER}
