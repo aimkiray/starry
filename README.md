@@ -1,6 +1,6 @@
 # starry 食用指南
 
-作为一个~~轻量级~~小巧的博客系统，本项目采用Spring+Spring-mvc+Mybatis构建。
+作为一个~~轻量级~~小巧的博客系统，本项目采用Spring+Spring-mvc+MyBatis构建。
 
 > Q: SSM轻量级？吾阅诗书甚少，你不要骗我。
 > A: 捂脸(\*/ω＼\*)，找工作需要嘛！所谓轻量是指对Java程序员而言。PS. 隔壁sgroup第一个项目没用任何框架，初学者可以拿去参考。
@@ -12,7 +12,7 @@
 PS. 不懂java也没关系，可以直接跳到食用说明，理论上没问题！（有问题发issue）
 ```
 
-本项目基于maven的标准目录结构，使用maven构建；框架是Spring，MVC框架是Spring-mvc，数据库是MariaDB，持久化是MyBatis，权限管理是自制的，如下所示：
+本项目基于maven的标准目录结构，使用maven构建；框架是Spring，MVC框架是Spring-mvc，数据库是MariaDB，持久化是Mybatis，权限管理是自制的，如下所示：
 
 TODO 正在用Spring-boot写一个图床工具，搞定之后再来把这个也改成Spring-boot。
 
@@ -254,25 +254,55 @@ MariaDB [(none)]> exit
 ```
 > 其中\`sinitial\`.*是刚才导入的表名，starry是默认用户名，starry12138是默认密码，为了安全起见最好改成自己的。
 
-如果你改了默认用户名和密码，还要进行如下操作：
+使用maven下载依赖包并打包：
 
-1. 本项目采用druid数据库连接池，把数据库密码直接写在配置中，有安全问题。Druid为此提供一种数据库密码加密的手段ConfigFilter。在[这里](http://central.maven.org/maven2/com/alibaba/druid/1.0.16/druid-1.0.16.jar)下载druid，参考wiki中的[步骤](https://github.com/alibaba/druid/wiki/%E4%BD%BF%E7%94%A8ConfigFilter)获取密钥（可以在本地操作）。
+```shell=
+root@akari:~# cd /home/starry
+root@akari:/home/starry# mvn install
+```
 
-2. 修改druid配置文件：
+这一部分内容不是必须的
 
-> ```shell=
-> root@akari:~# vim /home/starry/src/main/resources/spring/druid.properties
-> ```
-> 输入`i`开启编辑模式，在这里填入数据库用户名和上面生成的密钥：
-> ```shell=
-> jdbc_username = starry
-> jdbc_password = i3Pch7zkrX584i1dXqc+lS6BsUD6q6XJoyGGINYPco+j2rBIZqLn7wpiPswTjg8+hJ9TgdsWM6rOJ6oqlfXEKw==
-> jdbc_privateKey = MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEAtvwcjDRIMQWImNLr++xnZ2fjAagfCoMF49iAulmB4JPIQfDYKxJntZFQYiRkhS9AAVzyAQ6rc9u8IMY4I7X0PwIDAQABAkBL0ay2f1dGUKenwwWazfqOgyIxZoruHRoMrYGxNTM2bPHDVOlwbMp05FxPu049SUtZIOfoi8FyKssJpnA8I8FJAiEA5iM53ungvnsy2eXwgvlq0+6ziWzBGAiLywuDWFqlWl0CIQDLjFunKHRVHFNiPmaGbMiv0F28F5A3y560lV/khZy3SwIgPXS4toNkJdnGaZPS11b9pRzASvmE0wMtOYqYh5alQ20CIQC0sG84Dxhd6Vw37Q7UK8NnFv/ulbhHX3EN+z/5u4YnywIgMLaDLQdtlUvW1aDULovjonXQ0obpdUrHGy90uksBBog=
-> jdbc_publicKey = MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALb8HIw0SDEFiJjS6/vsZ2dn4wGoHwqDBePYgLpZgeCTyEHw2CsSZ7WRUGIkZIUvQAFc8gEOq3PbvCDGOCO19D8CAwEAAQ==
-> ```
-> 然后点击esc，输入`:wq`保存退出。
+——————————————————start—————————————————————
 
-使用maven打包：
+生成druid数据库密钥
+
+本项目采用druid数据库连接池，把数据库密码直接写在配置中，有安全问题。Druid为此提供一种数据库密码加密的手段ConfigFilter，首先找到druid的jar包：
+
+```shell=
+root@akari:~# cd ~/.m2/repository/com/alibaba/druid/1.1.2
+```
+执行如下命令：
+
+```shell=
+root@akari:~/.m2/repository/com/alibaba/druid/1.1.2# java -cp druid-1.1.2.jar com.alibaba.druid.filter.config.ConfigTools starry12138
+```
+输出：
+
+```shell=
+privateKey:MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEAvMTUk4bMbDkg3U6SG5ErHb8b0B4CCOqQn/7kLWVyZgJyA6tFmrfvL3DFP/S7qt3pdoEisebBpJonQK07HM/fBwIDAQABAkBgrncp8Bp3O3NHpdxTXjC1FZKLLzNfmbPlHkmDrre+4pSNPZAJBfqsEXOCfduAXuvooeXPMJ2cXCy49402TujBAiEA3fTKJK1UdvBodp8+F/kz5iU186cjfeH2cYnQdacCIfcCIQDZuOzFyHHDvE8KfZ6xAjMUPLPxDwPnLd+aKGCHq0/ncQIhAMEhuatEb1S3SA6/7cXqf/BovJNxAf8NWeXdp1hYpBBtAiArMb73tj6rwI5F3IpBP9h2aVyhtILnuHgmE2CjSd9+YQIgPcfa3J5KjjWnCYLDRDtLMcGCJ2LCqB2ZyQPC+hA3VNY=
+publicKey:MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALzE1JOGzGw5IN1OkhuRKx2/G9AeAgjqkJ/+5C1lcmYCcgOrRZq37y9wxT/0u6rd6XaBIrHmwaSaJ0CtOxzP3wcCAwEAAQ==
+password:gNfnXJUtBokb9yuIGxw0a5FtRlM5+yuhJ+QM/sL9S1bps/zqAd2daBePWGNqdWirsZQtXbBg0sBVMaLX2ELzYw==
+```
+
+> 其中starry12138是刚才新建mariadb用户的密码
+
+修改druid配置文件：
+
+```shell=
+root@akari:~# vim /home/starry/src/main/resources/spring/druid.properties
+```
+输入`i`开启编辑模式，在这里填入数据库用户名和上面生成的密钥：
+```shell=
+jdbc_username = starry
+jdbc_password = gNfnXJUtBokb9yuIGxw0a5FtRlM5+yuhJ+QM/sL9S1bps/zqAd2daBePWGNqdWirsZQtXbBg0sBVMaLX2ELzYw==
+jdbc_publicKey = MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALzE1JOGzGw5IN1OkhuRKx2/G9AeAgjqkJ/+5C1lcmYCcgOrRZq37y9wxT/0u6rd6XaBIrHmwaSaJ0CtOxzP3wcCAwEAAQ==
+```
+点击esc，输入`:wq`保存退出。
+
+——————————————————end—————————————————————
+
+再次使用maven打包：
 
 ```shell=
 root@akari:~# cd /home/starry
@@ -296,6 +326,8 @@ root@akari:/home/starry/target# mv ROOT.war /home/apache-tomcat-9.0.0.M26/webapp
 root@akari:/home/starry/target# sh /home/apache-tomcat-9.0.0.M26/bin/startup.sh
 ```
 大功告成！
+
+现在地址栏输入`http://你的ip地址:8080`try it~
 
 
 ## 3. 自动化部署
