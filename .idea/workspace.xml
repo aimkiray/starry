@@ -7,41 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/dataTables/js/moment.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/tag/js/tag-custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/user/css/signin.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/dao/AdminMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/Admin.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/AdminExample.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/notebook/star.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/AdminMapper.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/notebook/blog搭建.md" afterPath="$PROJECT_DIR$/src/main/notebook/blog搭建log.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-controller.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-mybatis.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-manger.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LICENSE" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/PanelController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/PanelController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/PostController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/PostController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/TagController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/TagController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/interception/PermissionInterception.java" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/interception/PermissionInterception.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/Implement/TagServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/service/Implement/TagServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/utils/DateConverter.java" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/utils/DateConverter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/utils/DateTools.java" afterPath="$PROJECT_DIR$/src/main/java/com/sinitial/utils/DateTools.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/PostMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/PostMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/surface/article.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/surface/article.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/surface/index.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/surface/index.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/surface/page.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/surface/page.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/tag/tag_list.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/tag/tag_list.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/panel/main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/panel/main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/post_add.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/post_add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/post_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/post_list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/post_update.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/post_update.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/forgot.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/forgot.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/post/js/post-custom.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/post/js/post-custom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/post/js/post_add.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/post/js/post_add.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/post/js/post_update.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/post/js/post_update.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -101,8 +68,8 @@
       <file leaf-file-name="post_add.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/post/js/post_add.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="74" column="38" lean-forward="false" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+            <state relative-caret-position="426">
+              <caret line="85" column="10" lean-forward="true" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -958,7 +925,7 @@
       <workItem from="1506324955874" duration="181000" />
       <workItem from="1506325737719" duration="13951000" />
       <workItem from="1506390301249" duration="25628000" />
-      <workItem from="1506490265054" duration="62000" />
+      <workItem from="1506490265054" duration="933000" />
     </task>
     <task id="LOCAL-00001" summary="test git">
       <created>1502287055815</created>
@@ -1079,15 +1046,21 @@
       <option name="project" value="LOCAL" />
       <updated>1506354498594</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix bug.">
+      <created>1506490349799</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1506490349799</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="876457000" />
+    <option name="totallyTimeSpent" value="877328000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37164178" sideWeight="0.506135" order="7" side_tool="true" content_ui="tabs" />
@@ -1110,7 +1083,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23571429" sideWeight="0.46436286" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23571429" sideWeight="0.46436286" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21825397" sideWeight="0.53563714" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1610,8 +1583,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/post/js/post_add.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="74" column="38" lean-forward="false" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+        <state relative-caret-position="426">
+          <caret line="85" column="10" lean-forward="true" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
           <folding />
         </state>
       </provider>
