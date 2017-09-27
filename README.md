@@ -289,7 +289,7 @@ root@akari:/home/starry/target# mv starry.war ROOT.war
 # 关闭tomcat
 root@akari:/home/starry/target# sh /home/apache-tomcat-9.0.0.M26/bin/shutdown.sh
 # 删除旧包
-root@akari:/home/starry/target# rm -rf /home/apache-tomcat-9.0.0.M26webapps/ROOT
+root@akari:/home/starry/target# rm -rf /home/apache-tomcat-9.0.0.M26/webapps/ROOT
 # 添加新包
 root@akari:/home/starry/target# mv ROOT.war /home/apache-tomcat-9.0.0.M26/webapps/
 # 启动tomcat
