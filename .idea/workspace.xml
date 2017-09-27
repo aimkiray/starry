@@ -6,11 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/notebook/data.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/notebook/table.sql" />
+    <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="添加测试数据">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/notebook/starry.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/notebook/starry.sql" afterPath="$PROJECT_DIR$/src/main/notebook/starry.sql" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -286,8 +284,8 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="369" />
-    <option name="y" value="60" />
+    <option name="x" value="283" />
+    <option name="y" value="53" />
     <option name="width" value="1320" />
     <option name="height" value="775" />
   </component>
@@ -910,7 +908,7 @@
       <workItem from="1506390301249" duration="25628000" />
       <workItem from="1506490265054" duration="13883000" />
       <workItem from="1506524774577" duration="998000" />
-      <workItem from="1506536516457" duration="1766000" />
+      <workItem from="1506536516457" duration="1958000" />
     </task>
     <task id="LOCAL-00001" summary="test git">
       <created>1502287055815</created>
@@ -1087,14 +1085,21 @@
       <option name="project" value="LOCAL" />
       <updated>1506537709058</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="添加测试数据">
+      <created>1506539627624</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1506539627624</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="893042000" />
+    <option name="totallyTimeSpent" value="893234000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="369" y="60" width="1320" height="775" extended-state="0" />
+    <frame x="283" y="53" width="1320" height="775" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37164178" sideWeight="0.506135" order="7" side_tool="true" content_ui="tabs" />
@@ -1196,7 +1201,8 @@
     <MESSAGE value="add test sql" />
     <MESSAGE value="Change mariadb port to 3306" />
     <MESSAGE value="简化配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="简化配置" />
+    <MESSAGE value="添加测试数据" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加测试数据" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
