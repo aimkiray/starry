@@ -24,7 +24,7 @@
     <property name="url" value="${jdbc_url}"/>
     <property name="username" value="${jdbc_username}"/>
     <property name="password" value="${jdbc_password}"/>
-    <property name="connectionProperties" value="config.decrypt=true;config.decrypt.key=${jdbc_publicKey}" />
+    <!--<property name="connectionProperties" value="config.decrypt=true;config.decrypt.key=${jdbc_publicKey}" />-->
     <!-- 初始化连接数量 -->
     <property name="initialSize" value="${initialSize}"/>
     <!-- 最大并发连接数 -->
