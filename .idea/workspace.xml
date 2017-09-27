@@ -7,10 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/notebook/data.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/notebook/table.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/druid.properties" afterPath="$PROJECT_DIR$/src/main/resources/spring/druid.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-manger.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-manger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/notebook/starry.sql" afterPath="$PROJECT_DIR$/src/main/notebook/starry.sql" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,7 +50,7 @@
       <file leaf-file-name="post_update.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/post_update.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
+            <state relative-caret-position="0">
               <caret line="42" column="51" lean-forward="false" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
               <folding />
             </state>
@@ -84,8 +84,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="4047">
-                <caret line="213" column="9" lean-forward="false" selection-start-line="213" selection-start-column="9" selection-end-line="213" selection-end-column="9" />
+              <first_editor relative-caret-position="2337">
+                <caret line="123" column="9" lean-forward="false" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -142,16 +142,6 @@
                 <element signature="e#2745#2746#0" expanded="true" />
                 <element signature="e#2805#2806#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tag-custom.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/tag/js/tag-custom.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1425">
-              <caret line="75" column="81" lean-forward="false" selection-start-line="75" selection-start-column="81" selection-end-line="75" selection-end-column="81" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -295,9 +285,9 @@
   <component name="MavenRunner">
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="367" />
-    <option name="y" value="45" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="369" />
+    <option name="y" value="60" />
     <option name="width" value="1320" />
     <option name="height" value="775" />
   </component>
@@ -604,15 +594,15 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\notebook" />
-      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\dataTables\js" />
-      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\user\css" />
-      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\post\css" />
-      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.sinitial.dao" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\notebook" />
+      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\aboutme" />
+      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\tag\js" />
+      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\bootstrap-3.0\extension\datetimepicker\css" />
+      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\bootstrap-3.0\extension\datetimepicker\js" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.sinitial.service" />
@@ -621,12 +611,12 @@
       <recent name="com.sinitial.test" />
       <recent name="com.sinitial.services" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\aboutme" />
-      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\tag\js" />
-      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\bootstrap-3.0\extension\datetimepicker\css" />
-      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\bootstrap-3.0\extension\datetimepicker\js" />
-      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\ztree" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\notebook" />
+      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\dataTables\js" />
+      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\user\css" />
+      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources\post\css" />
+      <recent name="C:\Users\nekuata\Dropbox\IdeaProjects\sinitial\src\main\webapp\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -920,7 +910,7 @@
       <workItem from="1506390301249" duration="25628000" />
       <workItem from="1506490265054" duration="13883000" />
       <workItem from="1506524774577" duration="998000" />
-      <workItem from="1506536516457" duration="1027000" />
+      <workItem from="1506536516457" duration="1766000" />
     </task>
     <task id="LOCAL-00001" summary="test git">
       <created>1502287055815</created>
@@ -1090,15 +1080,21 @@
       <option name="project" value="LOCAL" />
       <updated>1506510044580</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="简化配置">
+      <created>1506537709058</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1506537709058</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="892303000" />
+    <option name="totallyTimeSpent" value="893042000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="true" />
+    <frame x="369" y="60" width="1320" height="775" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37164178" sideWeight="0.506135" order="7" side_tool="true" content_ui="tabs" />
@@ -1111,7 +1107,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35394126" sideWeight="0.49386504" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35893416" sideWeight="0.49386504" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153014" sideWeight="0.4936508" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1123,7 +1119,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39721793" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2436508" sideWeight="0.46436286" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2436508" sideWeight="0.46436286" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21825397" sideWeight="0.53563714" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1199,7 +1195,8 @@
     <MESSAGE value="Change the mariadb password" />
     <MESSAGE value="add test sql" />
     <MESSAGE value="Change mariadb port to 3306" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change mariadb port to 3306" />
+    <MESSAGE value="简化配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="简化配置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1216,13 +1213,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/starry/controller/PermissionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="72" column="94" lean-forward="true" selection-start-line="72" selection-start-column="94" selection-end-line="72" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/starry/controller/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
@@ -1502,7 +1492,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/post_update.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
+        <state relative-caret-position="0">
           <caret line="42" column="51" lean-forward="false" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
           <folding />
         </state>
@@ -1569,8 +1559,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="4047">
-            <caret line="213" column="9" lean-forward="false" selection-start-line="213" selection-start-column="9" selection-end-line="213" selection-end-column="9" />
+          <first_editor relative-caret-position="2337">
+            <caret line="123" column="9" lean-forward="false" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
             <folding />
           </first_editor>
           <second_editor />
@@ -1597,6 +1587,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/notebook/table.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
