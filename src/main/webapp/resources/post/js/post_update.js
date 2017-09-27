@@ -11,10 +11,14 @@ $(document).ready(function () {
         var newTag = $("#selectTag").find("option:selected").text();
         // 已有标签
         var oldTag = $("#tagArea").val();
-        var checkValue = $("#selectTag").val();
+        // 标签没被选中
+        if (oldTag.indexOf(newTag) == -1) {
+            var checkValue = $("#selectTag").val();
+            $("#formTag").append('<input type="hidden" name="tagId" value="'+checkValue+'">')
+            $("#tagArea").val(oldTag+" "+newTag);
+        }
+        // 清空选中
         $("#selectTag").val(0);
-        $("#formTag").append('<input type="hidden" name="tagId" value="'+checkValue+'">')
-        $("#tagArea").val(oldTag+" "+newTag);
     });
 
     // 清空标签
@@ -38,6 +42,10 @@ $(document).ready(function () {
                     $("#formTag").append('<input type="hidden" name="tagId" value="'+data+'">');
                     // 更新显示
                     $("#tagArea").val($("#tagArea").val()+" "+$("#inputTag").val());
+                    // 加入肯德基超值豪华午餐...select
+                    $("#selectTag").append('<option value="'+data+'">'+$("#inputTag").val()+'</option>');
+                    // 清空input
+                    $("#inputTag").val('')
                 } else {
                     alert("标签已存在→")
                 }
@@ -50,15 +58,15 @@ $(document).ready(function () {
 
     $("#btn-publish").click(function () {
         $("#postStatus").val("publish");
-        addPost();
+        updatePost();
     });
 
     $("#btn-save").click(function () {
         $("#postStatus").val("save");
-        addPost();
+        updatePost();
     });
 
-    function addPost() {
+    function updatePost() {
         $.ajax({
             url: "/post/update",
             type: "post",
@@ -72,7 +80,7 @@ $(document).ready(function () {
                 }
             },
             error: function () {
-                alert("执行失败⊙﹏⊙")
+                alert("执行失败，请检查标签是否输入⊙﹏⊙")
             }
         })
     }

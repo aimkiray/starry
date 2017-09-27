@@ -8,6 +8,9 @@ import java.util.Date;
 
 public class DateConverter implements Converter<String, Date> {
 
+    /**
+     * 配合Spring-mvc使用
+     */
     @Override
     public Date convert(String source) {
         String pattern = source.length()==10 ? "yyyy-MM-dd" : "yyyy-MM-dd HH:mm:ss";

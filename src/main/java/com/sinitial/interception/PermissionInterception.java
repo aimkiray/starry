@@ -58,7 +58,7 @@ public class PermissionInterception implements HandlerInterceptor {
         }
 
 //        非法请求 重定向到主页
-        httpServletResponse.sendRedirect(httpServletRequest.getContextPath());
+        httpServletResponse.sendRedirect("/");
         return false;
     }
 

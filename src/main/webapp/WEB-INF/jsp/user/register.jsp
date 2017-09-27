@@ -14,8 +14,11 @@
 
     <%--bootstrap--%>
     <link type="text/css" rel="stylesheet" href="${root}/resources/bootstrap-3.0/css/bootstrap.min.css">
+    <%--awesome--%>
+    <link href="${root}/resources/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <%--jquery--%>
+
+<%--jquery--%>
     <script src="${root}/resources/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
     <%--bootstrap--%>
     <script src="${root}/resources/bootstrap-3.0/js/bootstrap.min.js" type="text/javascript"></script>
@@ -69,7 +72,7 @@
                         <label for="reg_agree"> agree with <a href="#">terms</a></label>
                     </div>I
                 </div>
-                <button type="submit" class="login-button">开</button>
+                <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
             </div>
             <div class="etc-login-form">
                 <p>已有账号？<a href="${root}/user/login/page">登陆</a></p>

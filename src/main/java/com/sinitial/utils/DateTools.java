@@ -14,7 +14,7 @@ public class DateTools {
      * @param format 格式 yyyy-MM-dd HH-mm-ss
      * @return
      */
-    public static String getStrByDate (Date date, String format) {
+    public static String getStrByDate(Date date, String format) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
         return simpleDateFormat.format(date);
     }
@@ -25,7 +25,7 @@ public class DateTools {
      * @param format 格式 yyyy-MM-dd HH-mm-ss
      * @return
      */
-    public static Date getDateByStr (String dateStr, String format) {
+    public static Date getDateByStr(String dateStr, String format) {
         Date date = null;
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
         try {
@@ -41,7 +41,7 @@ public class DateTools {
      * @param ext 文件后缀
      * @return
      */
-    public static String getFileName (String ext) {
+    public static String getFileName(String ext) {
         String fileName = getStrByDate(new Date(),"yyyyMMddHHmmss");
         for (int i = 0; i< 4; i++) {
             fileName += (int)(Math.random()*10);

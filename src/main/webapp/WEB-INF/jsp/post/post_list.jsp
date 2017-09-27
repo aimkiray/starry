@@ -23,7 +23,9 @@
 
     <%--jquery--%>
     <script src="${root}/resources/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <%--bootstrap--%>
+    <%--moment--%>
+    <script src="${root}/resources/dataTables/js/moment.min.js" type="text/javascript"></script>
+<%--bootstrap--%>
     <script src="${root}/resources/bootstrap-3.0/js/bootstrap.min.js" type="text/javascript"></script>
     <%--bootbox--%>
     <script src="${root}/resources/bootstrap-3.0/extension/bootbox/bootbox.min.js" type="text/javascript"></script>

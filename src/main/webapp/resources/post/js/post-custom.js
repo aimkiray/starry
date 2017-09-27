@@ -73,10 +73,9 @@ var postTable = function () {
         orderMulti: false,  //启用多列排序
         order: [],  //取消默认排序查询,否则复选框一列会出现小箭头
         renderer: "bootstrap",  //渲染样式：Bootstrap和jquery-ui
-        columnDefs: [{
-            "targets": 'nosort',  //列的样式名
-            "orderable": false    //包含上样式名‘nosort’的禁止排序
-        }],
+        columnDefs:[
+            {"targets": 'nosort', "orderable": false}    //包含上样式名‘nosort’的禁止排序
+        ],
         ajax: {
             url: '/post/list',
             type: 'POST',
@@ -84,11 +83,11 @@ var postTable = function () {
         },
         //列表表头字段
         columns: [
-            {data : "postId", "orderable": false, "width": "2%", "render": function(data,type,row,meta){ return '<input type="checkbox" name="'+data+'">'; } },
+            {data : "postId", "orderable": false, "width": "2%", "render": function(data){ return '<input type="checkbox" name="'+data+'">'; }},
             {data : "postStatus"},
             {data : "postTitle"},
             {data : "user.nickName"},
-            {data : "postDate"},
+            {data : "postDate", "render": function(data){return moment(data).format('MM.DD.YYYY');}},
             {data : "postId",
                 render: function (data, type, row) {
                     return '<button class="btn btn-info btn-sm" onclick="updatePost('+data+')"><i class="fa fa-pencil"></i>修改</button>' +

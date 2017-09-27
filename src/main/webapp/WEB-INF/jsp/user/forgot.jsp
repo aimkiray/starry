@@ -42,7 +42,7 @@
                         <input type="text" class="form-control" id="fp_email" name="fp_email" placeholder="email address">
                     </div>
                 </div>
-                <button type="submit" class="login-button">开</button>
+                <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
             </div>
             <div class="etc-login-form">
                 <p>already have an account? <a href="#">login here</a></p>

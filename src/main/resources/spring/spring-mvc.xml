@@ -8,7 +8,7 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-  <!--处理静态の资源，Spring版本>3.0.4，优先级(order)最好要最高-->
+  <!--处理静态资源，Spring版本>3.0.4，优先级(order)最好要最高-->
   <!--若是配置了拦截器则一定会走拦截器，记得排除在外-->
   <mvc:resources mapping="/resources/**" location="/resources/" order="0"/>
 
@@ -30,6 +30,17 @@
     </mvc:message-converters>
   </mvc:annotation-driven>
 
+  <!--自定义Spring时间转换器-->
+  <!--<mvc:annotation-driven conversion-service="customConversionService">
+  </mvc:annotation-driven>
+  <bean id="customConversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+    <property name="converters">
+      <set>
+        <bean class="com.sinitial.utils.DateConverter"/>
+      </set>
+    </property>
+  </bean>-->
+
   <!-- FreeMarkerConfigurer -->
   <bean id="freemarkerConfig"
         class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
@@ -48,17 +59,6 @@
         <prop key="tag_syntax">auto_detect</prop>
         <prop key="url_escaping_charset">UTF-8</prop>
       </props>
-    </property>
-  </bean>
-
-  <!--配置Spring时间转换器-->
-  <mvc:annotation-driven conversion-service="customConversionService">
-  </mvc:annotation-driven>
-  <bean id="customConversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-    <property name="converters">
-      <set>
-        <bean class="com.sinitial.utils.DateConverter"/>
-      </set>
     </property>
   </bean>
 

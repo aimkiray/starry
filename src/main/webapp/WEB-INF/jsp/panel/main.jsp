@@ -75,17 +75,20 @@
                             <li class="divider">
                             </li>
                             <li>
-                                <a href="#">拖出去续了</a>
+                                <a href="${root}/panel/out">拖出去续了</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
+                        <img class="img-circle" style="height: 50px;margin-top: 5px" src="/resources/headimg/${sessionScope.user.headshot}">
+                    </li>
+                    <li>
                         <a href="#">${sessionScope.user.nickName}</a>
                     </li>
                     <li>
-                        <a href="#">安全退出</a>
+                        <a href="${root}/panel/out">安全退出</a>
                     </li>
                     <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
                 </ul>
@@ -100,7 +103,7 @@
     <div class="row">
         <div class="col">
             <div class="iframe-container">
-                <iframe src="${pageContext.request.contextPath}/role/list/page" name="panel_container" width="800" frameborder="no" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+                <iframe src="${pageContext.request.contextPath}/post/list/page" name="panel_container" width="800" frameborder="no" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
             </div>
         </div>
     </div>

@@ -11,10 +11,14 @@ $(document).ready(function () {
         var newTag = $("#selectTag").find("option:selected").text();
         // 已有标签
         var oldTag = $("#tagArea").val();
-        var checkValue = $("#selectTag").val();
+        // 标签没被选中
+        if (oldTag.indexOf(newTag) == -1) {
+            var checkValue = $("#selectTag").val();
+            $("#formTag").append('<input type="hidden" name="tagId" value="'+checkValue+'">')
+            $("#tagArea").val(oldTag+" "+newTag);
+        }
+        // 清空选中
         $("#selectTag").val(0);
-        $("#formTag").append('<input type="hidden" name="tagId" value="'+checkValue+'">')
-        $("#tagArea").val(oldTag+" "+newTag);
     });
 
     // 清空标签
@@ -34,10 +38,14 @@ $(document).ready(function () {
             success: function (data) {
                 // 返回新标签的Id
                 if (data > 0) {
-                    // 把新Id加入全家桶
+                    // 把新Id加入全家桶...form
                     $("#formTag").append('<input type="hidden" name="tagId" value="'+data+'">');
                     // 更新显示
                     $("#tagArea").val($("#tagArea").val()+" "+$("#inputTag").val());
+                    // 加入肯德基超值豪华午餐...select
+                    $("#selectTag").append('<option value="'+data+'">'+$("#inputTag").val()+'</option>');
+                    // 清空input
+                    $("#inputTag").val('');
                 } else {
                     alert("标签已存在→")
                 }
@@ -65,20 +73,17 @@ $(document).ready(function () {
             dataType: "json",
             data: $("#postUploadForm").serialize(),
             success: function (data) {
-                console.log(0);
                 if (data > 0) {
                     console.log(1);
                     window.open("/post/list/page","_self")
                 } else {
-                    console.log(2);
                     alert("发布失败⊙﹏⊙")
                 }
             },
             error: function () {
-                console.log(3);
-                alert("执行失败⊙﹏⊙")
+                alert("执行失败，请检查标签是否输入⊙﹏⊙")
             }
         })
     }
 
-})
+});

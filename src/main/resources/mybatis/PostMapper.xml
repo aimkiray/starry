@@ -121,7 +121,7 @@
   <!--先对主表分页，再进行关联查询-->
   <select id="selectBySearch" parameterType="map" resultMap="SuperResultMapWithBLOBs">
     SELECT
-    the_post, post_title, post_status, post_author, post_mime_type, post_date, post_type, post_content, sl_tag.tag_id as the_tag, tag_name post_tag_id, sl_post_tag.post_id AS relation_post, sl_post_tag.tag_id AS relation_tag, user_id, user_name, user_password, nick_name, email, gender, sign_date, user_role, user_info, headshot
+    the_post, post_title, post_status, post_author, post_mime_type, post_date, post_type, post_content, sl_tag.tag_id as the_tag, tag_name, post_tag_id, sl_post_tag.post_id AS relation_post, sl_post_tag.tag_id AS relation_tag, user_id, user_name, user_password, nick_name, email, gender, sign_date, user_role, user_info, headshot
     FROM (select
     sl_post.post_id as the_post, post_title, post_status, post_author, post_mime_type, post_date, post_type, post_content
     from sl_post

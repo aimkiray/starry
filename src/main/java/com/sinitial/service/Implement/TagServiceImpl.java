@@ -1,6 +1,8 @@
 package com.sinitial.service.Implement;
 
+import com.sinitial.dao.PostTagLinkMapper;
 import com.sinitial.dao.TagMapper;
+import com.sinitial.domain.PostTagLinkExample;
 import com.sinitial.domain.Tag;
 import com.sinitial.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,9 @@ public class TagServiceImpl implements TagService {
 
     @Autowired
     private TagMapper tagMapper;
+
+    @Autowired
+    private PostTagLinkMapper postTagLinkMapper;
 
     /**
      * 获取全部的标签
@@ -49,7 +54,15 @@ public class TagServiceImpl implements TagService {
      */
     @Override
     public int deleteTag(int tagId) {
-        return 0;
+        int result = 0;
+        PostTagLinkExample postTagLinkExample = new PostTagLinkExample();
+        PostTagLinkExample.Criteria criteria = postTagLinkExample.createCriteria();
+        criteria.andTagIdEqualTo(tagId);
+//        如果该标签没有使用，执行删除
+        if (postTagLinkMapper.countByExample(postTagLinkExample) == 0) {
+            result = tagMapper.deleteByPrimaryKey(tagId);
+        }
+        return result;
     }
 
     /**
@@ -77,6 +90,10 @@ public class TagServiceImpl implements TagService {
      */
     @Override
     public int updateTag(Tag tag) {
-        return 0;
+        int result = 0;
+        if (tag.getTagName() != null && !"".equals(tag.getTagName())) {
+            result = tagMapper.updateByPrimaryKey(tag);
+        }
+        return result;
     }
 }

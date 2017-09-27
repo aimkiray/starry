@@ -8,6 +8,8 @@ import com.sinitial.service.PostService;
 import com.sinitial.service.PostTagLinkService;
 import com.sinitial.service.TagService;
 import com.sinitial.utils.DataTables;
+import com.sinitial.utils.DateConverter;
+import com.sinitial.utils.DateTools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -45,8 +47,8 @@ public class PostController {
     /**
      * 文章列表
      *
-     * @param start
-     * @param length
+     * @param start 查询开始位置
+     * @param length 查询结束位置
      * @return DataTables专用Json
      */
     @RequestMapping(value = "/list")
@@ -107,8 +109,10 @@ public class PostController {
 
     @RequestMapping(value = "/update")
     @ResponseBody
-    public int updatePost(Post post, String[] tagId) {
+    public int updatePost(Post post,String postStringDate, String[] tagId) {
         int result = 0;
+        // 将String类型的时间转成Date类型
+        post.setPostDate(DateTools.getDateByStr(postStringDate,"yyyy-MM-dd HH:mm:ss"));
         // 更新文章
         result = postService.updatePost(post);
         // 添加详情表
