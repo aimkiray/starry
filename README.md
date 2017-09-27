@@ -12,96 +12,6 @@
 PS. 不懂java也没关系，可以直接跳到食用说明，理论上没问题！（有问题发issue）
 ```
 
-Windows系统配置要求如下：
-
-<table>
-	<thead>
-		<tr>
-			<th scope="row" style="width: 122.222px;"></th>
-			<th scope="col" style="width: 244.444px;">最低配置</th>
-			<th scope="col" style="width: 243.333px;">推荐配置</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th scope="row">操作系统</th>
-			<td>
-			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Windows® 7 / Windows® 8 / Windows® 10 64位系统 (或最新版本的 Service Pack)</span></div>
-			</td>
-			<td>
-			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Windows® 7 / Windows® 8 / Windows® 10 64位系统(最新版本的Service Pack)</span></div>
-			</td>
-		</tr>
-		<tr>
-			<th scope="row">
-			<div class="centered">处理器</div>
-			</th>
-			<td>
-			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Intel® Core™ i3或是 AMD Phenom™ X3 8650</span></div>
-			</td>
-			<td>
-			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Intel® Core™ i9-7980XE或 AMD Ryzen™ ThreadRipper 1950X 处理器及以上</span></div>
-			</td>
-		</tr>
-		<tr>
-			<th scope="row">
-			<div class="centered">显卡</div>
-			</th>
-			<td>
-			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">NVIDIA® GeForce® GTX 460,&nbsp;ATI Radeon™ HD 4850, 或是 Intel® HDGraphics 4400</span></div>
-			</td>
-			<td>
-			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">NVIDIA® GeForce® GTX 1080Ti or AMD Radeon™ R9 Fury 或以上</span></div>
-			</td>
-		</tr>
-		<tr>
-			<th scope="row">
-			<div class="centered">内存</div>
-			</th>
-			<td>
-			<div class="centered">4 GB RAM</div>
-			</td>
-			<td>
-			<div class="centered">64 GB RAM</div>
-			</td>
-		</tr>
-		<tr>
-			<th scope="row">
-			<div class="centered">储存空间</div>
-			</th>
-			<td colspan="2" rowspan="1">
-			<div class="centered">30 GB 硬件空间</div>
-			</td>
-		</tr>
-		<tr>
-			<th scope="row">
-			<div class="centered">网络</div>
-			</th>
-			<td colspan="2" rowspan="1">
-			<div class="centered">宽带网络</div>
-			</td>
-		</tr>
-		<tr>
-			<th scope="row">
-			<div class="centered">媒体</div>
-			</th>
-			<td colspan="2" rowspan="1">
-			<div class="centered">无特殊需求</div>
-			</td>
-		</tr>
-		<tr>
-			<th scope="row">
-			<div class="centered">分辨率</div>
-			</th>
-			<td colspan="2" rowspan="1">
-			<div class="centered">最低 1024 x 768</div>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
-（有话好好说，别打脸）PS. 你至少知道了下一台主机的配件表，也不是白来一趟嘛！
-
 本项目基于maven的标准目录结构，使用maven构建；框架是Spring，MVC框架是Spring-mvc，数据库是MariaDB，持久化是Mybatis，权限管理是自制的，如下所示：
 
 TODO 正在用Spring-boot写一个图床工具，搞定之后再来把这个也改成Spring-boot。
@@ -391,3 +301,93 @@ root@akari:/home/starry/target# sh /home/apache-tomcat-9.0.0.M26/bin/startup.sh
 ## 3. 自动化部署
 
 To Be Continue...
+
+附：Windows系统配置要求如下：
+
+<table>
+	<thead>
+		<tr>
+			<th scope="row" style="width: 122.222px;"></th>
+			<th scope="col" style="width: 244.444px;">最低配置</th>
+			<th scope="col" style="width: 243.333px;">推荐配置</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row">操作系统</th>
+			<td>
+			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Windows® 7 / Windows® 8 / Windows® 10 64位系统 (或最新版本的 Service Pack)</span></div>
+			</td>
+			<td>
+			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Windows® 7 / Windows® 8 / Windows® 10 64位系统(最新版本的Service Pack)</span></div>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+			<div class="centered">处理器</div>
+			</th>
+			<td>
+			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Intel® Core™ i3或是 AMD Phenom™ X3 8650</span></div>
+			</td>
+			<td>
+			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Intel® Core™ i9-7980XE或 AMD Ryzen™ ThreadRipper 1950X 处理器及以上</span></div>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+			<div class="centered">显卡</div>
+			</th>
+			<td>
+			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">NVIDIA® GeForce® GTX 460,&nbsp;ATI Radeon™ HD 4850, 或是 Intel® HDGraphics 4400</span></div>
+			</td>
+			<td>
+			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">NVIDIA® GeForce® GTX 1080Ti or AMD Radeon™ R9 Fury 或以上</span></div>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+			<div class="centered">内存</div>
+			</th>
+			<td>
+			<div class="centered">4 GB RAM</div>
+			</td>
+			<td>
+			<div class="centered">64 GB RAM</div>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+			<div class="centered">储存空间</div>
+			</th>
+			<td colspan="2" rowspan="1">
+			<div class="centered">30 GB 硬件空间</div>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+			<div class="centered">网络</div>
+			</th>
+			<td colspan="2" rowspan="1">
+			<div class="centered">宽带网络</div>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+			<div class="centered">媒体</div>
+			</th>
+			<td colspan="2" rowspan="1">
+			<div class="centered">无特殊需求</div>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+			<div class="centered">分辨率</div>
+			</th>
+			<td colspan="2" rowspan="1">
+			<div class="centered">最低 1024 x 768</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+（有话好好说，别打脸）PS. 你至少知道了下一台主机的配件表，也不是白来一趟嘛！
