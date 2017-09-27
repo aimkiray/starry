@@ -12,7 +12,7 @@
 PS. 不懂java也没关系，可以直接跳到食用说明，理论上没问题！（有问题发issue）
 ```
 
-本项目基于maven的标准目录结构，使用maven构建；框架是Spring，MVC框架是Spring-mvc，数据库是MariaDB，持久化是Mybatis，权限管理是自制的，如下所示：
+本项目基于maven的标准目录结构，使用maven构建；框架是Spring，MVC框架是Spring-mvc，数据库是MariaDB，持久化是MyBatis，权限管理是自制的，如下所示：
 
 TODO 正在用Spring-boot写一个图床工具，搞定之后再来把这个也改成Spring-boot。
 
