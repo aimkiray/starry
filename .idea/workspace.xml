@@ -7,81 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/aboutme/resume.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/artifacts/sinitial_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/starry_war.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/artifacts/sinitial_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/starry_war_exploded.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sinitial.iml" afterPath="$PROJECT_DIR$/starry.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/aop/LogAspect.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/aop/LogAspect.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/controller/IndexController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/controller/LoginController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/PanelController.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/controller/PanelController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/PermissionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/controller/PermissionController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/PostController.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/controller/PostController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/RoleController.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/controller/RoleController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/TagController.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/controller/TagController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/controller/UserController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/dao/PermissionMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/dao/PermissionMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/dao/PostMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/dao/PostMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/dao/PostTagLinkMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/dao/PostTagLinkMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/dao/RoleMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/dao/RoleMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/dao/RolePermissionLinkMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/dao/RolePermissionLinkMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/dao/TagMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/dao/TagMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/dao/UserMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/dao/UserMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/Permission.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/domain/Permission.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/PermissionExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/domain/PermissionExample.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/Post.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/domain/Post.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/PostExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/domain/PostExample.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/PostTagLink.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/domain/PostTagLink.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/PostTagLinkExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/domain/PostTagLinkExample.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/Role.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/domain/Role.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/RoleExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/domain/RoleExample.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/RolePermissionLink.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/domain/RolePermissionLink.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/RolePermissionLinkExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/domain/RolePermissionLinkExample.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/Tag.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/domain/Tag.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/domain/User.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/domain/UserExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/domain/UserExample.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/interception/PermissionInterception.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/interception/PermissionInterception.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/Implement/PermissionServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/service/Implement/PermissionServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/Implement/PostServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/service/Implement/PostServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/Implement/PostTagLinkServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/service/Implement/PostTagLinkServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/Implement/RolePermissionLinkServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/service/Implement/RolePermissionLinkServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/Implement/RoleServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/service/Implement/RoleServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/Implement/TagServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/service/Implement/TagServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/Implement/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/service/Implement/UserServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/PermissionService.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/service/PermissionService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/PostService.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/service/PostService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/PostTagLinkService.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/service/PostTagLinkService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/RolePermissionLinkService.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/service/RolePermissionLinkService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/RoleService.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/service/RoleService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/TagService.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/service/TagService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/service/UserService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/utils/AjaxMessage.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/utils/AjaxMessage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/utils/DataTables.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/utils/DataTables.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/utils/DateConverter.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/utils/DateConverter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/sinitial/utils/DateTools.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/utils/DateTools.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/PermissionMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/PermissionMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/PostMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/PostMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/PostTagLinkMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/PostTagLinkMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/RoleMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/RoleMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/RolePermissionLinkMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/RolePermissionLinkMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/TagMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/TagMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/UserMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/UserMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Configuration.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Configuration.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/oracle/Configuration.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/oracle/Configuration.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-domain.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-domain.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-manger.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-manger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mybatis/mariadb/Configuration.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis/mariadb/Configuration.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mybatis/oracle/Configuration.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis/oracle/Configuration.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/druid.properties" afterPath="$PROJECT_DIR$/src/main/resources/spring/druid.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -174,11 +102,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1169">
-              <caret line="238" column="34" lean-forward="false" selection-start-line="238" selection-start-column="34" selection-end-line="238" selection-end-column="34" />
+            <state relative-caret-position="67">
+              <caret line="180" column="50" lean-forward="false" selection-start-line="180" selection-start-column="50" selection-end-line="180" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="druid.properties" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/spring/druid.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="49" lean-forward="true" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -279,7 +217,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/post/page.ftl" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/post/index.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/service/PostService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sinitial/controller/IndexController.java" />
@@ -330,6 +267,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/druid.properties" />
       </list>
     </option>
   </component>
@@ -878,6 +816,7 @@
       <listeners />
     </configuration>
     <configuration name="starry" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.0.M26" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="starry:war exploded">
           <settings>
@@ -1059,7 +998,7 @@
       <workItem from="1506324955874" duration="181000" />
       <workItem from="1506325737719" duration="13951000" />
       <workItem from="1506390301249" duration="25628000" />
-      <workItem from="1506490265054" duration="10038000" />
+      <workItem from="1506490265054" duration="11337000" />
     </task>
     <task id="LOCAL-00001" summary="test git">
       <created>1502287055815</created>
@@ -1201,14 +1140,22 @@
       <option name="project" value="LOCAL" />
       <updated>1506499058804</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Change the name from sinitial to starry">
+      <created>1506503333903</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1506503333903</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="886433000" />
+    <option name="totallyTimeSpent" value="887732000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37164178" sideWeight="0.506135" order="7" side_tool="true" content_ui="tabs" />
@@ -1217,11 +1164,11 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18333334" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18333334" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35394126" sideWeight="0.49386504" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35394126" sideWeight="0.49386504" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153014" sideWeight="0.4936508" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1305,7 +1252,8 @@
     <MESSAGE value="文章页面&#10;markdown2html&#10;fix bug" />
     <MESSAGE value="fix bug." />
     <MESSAGE value="fix bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug" />
+    <MESSAGE value="Change the name from sinitial to starry" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change the name from sinitial to starry" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1322,14 +1270,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="48" column="31" lean-forward="true" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/c9c73db4/4b188587-fe54-43f9-a0e8-e5f1c4020b7d/sinitial.sl_post_tag">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1440,14 +1380,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sinitial/dao/AdminMapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/c9c73db4/4b188587-fe54-43f9-a0e8-e5f1c4020b7d/sinitial.sl_user">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1740,10 +1672,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1169">
-          <caret line="238" column="34" lean-forward="false" selection-start-line="238" selection-start-column="34" selection-end-line="238" selection-end-column="34" />
+        <state relative-caret-position="67">
+          <caret line="180" column="50" lean-forward="false" selection-start-line="180" selection-start-column="50" selection-end-line="180" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/druid.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="49" lean-forward="true" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
           <folding />
         </state>
       </provider>
