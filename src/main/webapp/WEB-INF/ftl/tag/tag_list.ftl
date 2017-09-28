@@ -22,25 +22,6 @@
 
 <body>
 
-<#--<div class="row">
-    <div class="col-6">
-        <div class="col-3">
-            <label for="inputTag">添加标签&nbsp;</label>
-            <input class="form-control" id="inputTag" name="tagName" type="text"/>
-        </div>
-        <input class="form-control col-3" id="addTag" type="button" value="确定">
-    </div>
-    <div class="col-6">
-        <label for="selectTag">已有标签</label>
-        <select class="custom-select" id="selectTag" name="tagId">
-            <option value="0">请选择</option>
-        <#list tags as tag>
-            <option value="${tag.tagId}">${tag.tagName}</option>
-        </#list>
-        </select>
-    </div>
-</div>-->
-
 <div class="row">
     <div class="col-lg-6">
         <div class="input-group">

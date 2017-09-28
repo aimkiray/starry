@@ -31,6 +31,7 @@
     <div class="container-fluid">
         <div class="custom-row row">
 
+            <div class="col col-1 hidden-small"></div>
         <#--功能面板-->
             <div class="col col-3 hidden-small">
                 <#include "side.ftl" >
@@ -38,7 +39,7 @@
 
         <#--首页文章区域-->
             <div class="content-column col">
-                <#--<input type="hidden" value="<#list posts as post>${post.postId},</#list>">-->
+
                 <div class="list-group">
 
                 <#list posts as post>
@@ -77,7 +78,9 @@
                 <div class="sidebar-on-mobile">
                     <#include "side.ftl" >
                 </div>
+
             </div>
+            <div class="col col-1 hidden-small"></div>
         </div>
     </div>
 </html>

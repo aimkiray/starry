@@ -24,6 +24,13 @@
     <param-value>sinitialProject</param-value>
   </context-param>
 
+  <!--防XSS注入-->
+  <!--在form界面添加<spring:htmlEscape defaultHtmlEscape="true" />-->
+  <context-param>
+    <param-name>defaultHtmlEscape</param-name>
+    <param-value>true</param-value>
+  </context-param>
+
   <!--静态资源，交给Tomcat默认的Servlet处理-->
   <!--需要在全局的tomcat中设置才能生效，或者配合Spring mvc的default-servlet-name-->
   <!--<servlet-mapping>

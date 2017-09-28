@@ -25,6 +25,7 @@
 <div class="content-wrapper">
     <div class="container-fluid">
         <div class="custom-row row">
+            <div class="col col-1 hidden-small"></div>
 
         <#--功能面板-->
             <div class="col col-3 hidden-small">
@@ -73,6 +74,7 @@
                 <#include "side.ftl" >
                 </div>
             </div>
+            <div class="col col-1 hidden-small"></div>
         </div>
     </div>
 </html>

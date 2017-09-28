@@ -47,7 +47,7 @@ public class PostController {
      *
      * @param start 查询开始位置
      * @param length 查询结束位置
-     * @return DataTables专用Json
+     * @return DataTables 专用 Json
      */
     @RequestMapping(value = "/list")
     @ResponseBody

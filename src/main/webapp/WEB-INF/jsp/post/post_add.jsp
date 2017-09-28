@@ -7,6 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<spring:htmlEscape defaultHtmlEscape="true" />
 
 <html>
 <head>
@@ -74,6 +77,7 @@
     <br/>
 
     <form id="postUploadForm">
+        <form:input path="someFormField" htmlEscape="true" />
 
         <div class="form-group">
             <label for="tagArea">已选标签</label>
