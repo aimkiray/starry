@@ -336,9 +336,14 @@ root@akari:/home/starry/target# sh /home/apache-tomcat-9.0.0.M26/bin/startup.sh
 
 ```shell=
 # 赋予脚本执行权限
+root@akari:~# sh /home/starry/src/main/notebook/deploy.sh
+```
+or
+```shell=
+# 赋予脚本执行权限
 root@akari:~# chmod +x /home/starry/src/main/notebook/deploy.sh
 # 执行脚本
-root@akari:~# ./home/starry/src/main/notebook/deploy.sh
+root@akari:~# /home/starry/src/main/notebook/deploy.sh
 ```
 
 To Be Continue...

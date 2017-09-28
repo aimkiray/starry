@@ -6,8 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="">
+    <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="更新食谱">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -103,8 +104,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="2462">
-                <caret line="437" column="40" lean-forward="false" selection-start-line="437" selection-start-column="40" selection-end-line="437" selection-end-column="40" />
+              <first_editor relative-caret-position="277">
+                <caret line="340" column="2" lean-forward="false" selection-start-line="340" selection-start-column="2" selection-end-line="340" selection-end-column="2" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -954,7 +955,7 @@
       <workItem from="1506524774577" duration="998000" />
       <workItem from="1506536516457" duration="2580000" />
       <workItem from="1506567294290" duration="14514000" />
-      <workItem from="1506619262162" duration="1670000" />
+      <workItem from="1506619262162" duration="1966000" />
     </task>
     <task id="LOCAL-00001" summary="test git">
       <created>1502287055815</created>
@@ -1166,11 +1167,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506620857608</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="更新食谱">
+      <created>1506620945978</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1506620945978</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="910040000" />
+    <option name="totallyTimeSpent" value="910336000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -1685,8 +1693,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="2462">
-            <caret line="437" column="40" lean-forward="false" selection-start-line="437" selection-start-column="40" selection-end-line="437" selection-end-column="40" />
+          <first_editor relative-caret-position="277">
+            <caret line="340" column="2" lean-forward="false" selection-start-line="340" selection-start-column="2" selection-end-line="340" selection-end-column="2" />
             <folding />
           </first_editor>
           <second_editor />
