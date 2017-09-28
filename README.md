@@ -261,7 +261,7 @@ root@akari:~# cd /home/starry
 root@akari:/home/starry# mvn install
 ```
 
-这一部分内容不是必须的
+> 以下内容不是必须的。
 
 ——————————————————start—————————————————————
 
@@ -332,7 +332,20 @@ root@akari:/home/starry/target# sh /home/apache-tomcat-9.0.0.M26/bin/startup.sh
 
 ## 3. 自动化部署
 
+执行脚本：
+
+```shell=
+# 赋予脚本执行权限
+root@akari:~# chmod +x /home/starry/src/main/notebook/deploy.sh
+# 执行脚本
+root@akari:~# ./home/starry/src/main/notebook/deploy.sh
+```
+
 To Be Continue...
+
+## 4. 致谢
+
+TODO
 
 附：Windows系统配置要求如下：
 
