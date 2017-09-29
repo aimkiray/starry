@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `sl_post` (
   `post_content` longtext DEFAULT NULL,
   `post_mime_type` varchar(30) DEFAULT NULL,
   `post_date` datetime DEFAULT NULL,
-  `post_type` varchar(666) DEFAULT 'NULL',
+  `post_type` varchar(6666) DEFAULT 'NULL',
   PRIMARY KEY (`post_id`),
   UNIQUE KEY `sl_post_post_id_uindex` (`post_id`),
   KEY `sl_post_sl_user_user_id_fk` (`post_author`),
