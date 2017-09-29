@@ -609,6 +609,13 @@ figcaption {
         display: block;
         padding-top: 0px;
     }
+    .button-wrapper {
+        text-align: center;
+    }
+    .white-wrapper {
+        margin-top: 20px;
+        padding: 34px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -713,5 +720,8 @@ figcaption {
     .sidebar-on-mobile {
         display: block;
         padding-top: 0px;
+    }
+    .button-wrapper {
+        text-align: center;
     }
 }

@@ -25,15 +25,15 @@
 <div class="content-wrapper">
     <div class="container-fluid">
         <div class="custom-row row">
-            <div class="col-md-1 hidden-small"></div>
+            <div class="col-lg-1 hidden-small"></div>
 
         <#--功能面板-->
-            <div class="col-md-3 hidden-small">
+            <div class="col-lg-3 hidden-small">
             <#include "side.ftl" >
             </div>
 
         <#--首页文章区域-->
-            <div class="content-column col col-md-7">
+            <div class="content-column col col-lg-7">
                 <div class="list-group">
 
                     <div class="post-wrapper">
@@ -74,7 +74,7 @@
                 <#include "side.ftl" >
                 </div>
             </div>
-            <div class="col-md-1 hidden-small"></div>
+            <div class="col-lg-1 hidden-small"></div>
         </div>
     </div>
 </html>
