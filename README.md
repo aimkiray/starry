@@ -350,16 +350,16 @@ To Be Continue...
 
 ## 4. 致谢
 
-[spring-framework](https://github.com/spring-projects/spring-framework)
-[MyBatis](https://github.com/mybatis/mybatis-3)
-[druid](https://github.com/alibaba/druid)
-[bootstrap](https://github.com/twbs/bootstrap)
-[DataTables](https://github.com/DataTables/DataTables)
-[MariaDB](https://github.com/MariaDB)
-[freemarker](https://github.com/freemarker)
-[tomcat](https://github.com/apache/tomcat)
-[maven](https://github.com/apache/maven)
-[jquery](https://github.com/jquery/jquery)
+- [spring-framework](https://github.com/spring-projects/spring-framework)
+- [MyBatis](https://github.com/mybatis/mybatis-3)
+- [druid](https://github.com/alibaba/druid)
+- [bootstrap](https://github.com/twbs/bootstrap)
+- [DataTables](https://github.com/DataTables/DataTables)
+- [MariaDB](https://github.com/MariaDB)
+- [freemarker](https://github.com/freemarker)
+- [tomcat](https://github.com/apache/tomcat)
+- [maven](https://github.com/apache/maven)
+- [jquery](https://github.com/jquery/jquery)
 
 附：Windows系统配置要求如下：
 

@@ -6,10 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="">
+    <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="🍩食用指南">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-manger.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-manger.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -106,8 +105,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="143">
-                <caret line="354" column="41" lean-forward="true" selection-start-line="354" selection-start-column="41" selection-end-line="354" selection-end-column="41" />
+              <first_editor relative-caret-position="238">
+                <caret line="359" column="24" lean-forward="true" selection-start-line="359" selection-start-column="24" selection-end-line="359" selection-end-column="24" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -941,7 +940,7 @@
       <workItem from="1506619262162" duration="3631000" />
       <workItem from="1506659056751" duration="5540000" />
       <workItem from="1506669443280" duration="577000" />
-      <workItem from="1506673379286" duration="4502000" />
+      <workItem from="1506673379286" duration="4641000" />
     </task>
     <task id="LOCAL-00001" summary="test git">
       <created>1502287055815</created>
@@ -1202,11 +1201,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506676971845</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="🍩食用指南">
+      <created>1506678171579</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1506678171579</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="922620000" />
+    <option name="totallyTimeSpent" value="922759000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -1295,7 +1301,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="test git" />
     <MESSAGE value="spring mvc" />
     <MESSAGE value="start hibernate" />
     <MESSAGE value="完善作者后台，合并用户表。" />
@@ -1320,7 +1325,8 @@
     <MESSAGE value="响应式布局 &amp; 防XSS注入Ver.2.0&#10;fix bug" />
     <MESSAGE value="fix bug" />
     <MESSAGE value="防御SQL注入" />
-    <option name="LAST_COMMIT_MESSAGE" value="防御SQL注入" />
+    <MESSAGE value="🍩食用指南" />
+    <option name="LAST_COMMIT_MESSAGE" value="🍩食用指南" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1738,8 +1744,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="143">
-            <caret line="354" column="41" lean-forward="true" selection-start-line="354" selection-start-column="41" selection-end-line="354" selection-end-column="41" />
+          <first_editor relative-caret-position="238">
+            <caret line="359" column="24" lean-forward="true" selection-start-line="359" selection-start-column="24" selection-end-line="359" selection-end-column="24" />
             <folding />
           </first_editor>
           <second_editor />
