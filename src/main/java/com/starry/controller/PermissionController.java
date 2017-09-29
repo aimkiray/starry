@@ -14,7 +14,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value = "/permission")
-public class PermissionController {
+public class PermissionController extends BaseController {
 
     @Autowired
     private PermissionService permissionService;

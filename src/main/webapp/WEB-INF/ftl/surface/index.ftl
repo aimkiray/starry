@@ -9,6 +9,8 @@
 </script>
 <head>
     <meta charset="utf-8">
+    <#--响应式标记-->
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Hi, there..?</title>
 <#--bootstrap 4.0-->
     <link href="${root}/resources/bootstrap-4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -31,15 +33,14 @@
     <div class="container-fluid">
         <div class="custom-row row">
 
-            <div class="col col-1 hidden-small"></div>
+            <div class="col-md-1 hidden-small"></div>
         <#--功能面板-->
-            <div class="col col-3 hidden-small">
+            <div class="col-md-3 hidden-small">
                 <#include "side.ftl" >
             </div>
 
         <#--首页文章区域-->
-            <div class="content-column col">
-
+            <div class="content-column col col-md-7">
                 <div class="list-group">
 
                 <#list posts as post>
@@ -80,7 +81,7 @@
                 </div>
 
             </div>
-            <div class="col col-1 hidden-small"></div>
+            <div class="col-md-1 hidden-small"></div>
         </div>
     </div>
 </html>

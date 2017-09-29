@@ -110,6 +110,7 @@ figcaption {
 .button {
     display: inline-block;
     padding: 11px 20px;
+    /*margin: 0 0 20px;*/
     border-radius: 0px;
     background-color: #fc7d64;
     box-shadow: 0 0 6px 1px pink;
@@ -308,7 +309,7 @@ figcaption {
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     margin-bottom: 30px;
-    word-wrap: normal;
+    word-wrap: break-word;
     background: rgba(255, 255, 255, .9);
     padding: 15px;
 }
@@ -601,6 +602,13 @@ figcaption {
     .blog-page-image {
         height: 240px;
     }
+    .hidden-small {
+        display: none;
+    }
+    .sidebar-on-mobile {
+        display: block;
+        padding-top: 0px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -701,5 +709,9 @@ figcaption {
 
     .hidden-small {
         display: none;
+    }
+    .sidebar-on-mobile {
+        display: block;
+        padding-top: 0px;
     }
 }

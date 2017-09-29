@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping(value = "/panel")
-public class PanelController {
+public class PanelController extends BaseController {
 
     @RequestMapping
     public String getPanel() {

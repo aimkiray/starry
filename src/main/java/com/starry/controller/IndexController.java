@@ -14,7 +14,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping
-public class IndexController {
+public class IndexController extends BaseController {
 
     @Autowired
     private PostService postService;

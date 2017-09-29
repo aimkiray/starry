@@ -80,7 +80,7 @@ $(document).ready(function () {
                 }
             },
             error: function () {
-                alert("执行失败，请检查标签是否输入⊙﹏⊙")
+                alert("执行失败，请检查标签是否输入或者字数超过限制（6666）⊙﹏⊙")
             }
         })
     }

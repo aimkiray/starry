@@ -12,7 +12,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/tag")
-public class TagController {
+public class TagController extends BaseController {
 
     @Autowired
     private TagService tagService;
