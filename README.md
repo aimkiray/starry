@@ -362,6 +362,8 @@ To Be Continue...
 - [jquery](https://github.com/jquery/jquery)
 - [showdown](https://github.com/showdownjs/showdown)
 
+> PS. 不完全统计，排名不分先后，大小写依据Official项目名
+
 附：Windows系统配置要求如下：
 
 <table>
