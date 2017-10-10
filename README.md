@@ -1,8 +1,8 @@
 # starry 食用指南
 
-作为一个~~轻量级~~小巧的博客系统，本项目采用Spring+Spring-mvc+MyBatis构建。
+作为一个~~轻量级~~小巧的博客系统，本项目采用Spring+Spring MVC+MyBatis构建。
 
-> Q: SSM轻量级？吾阅诗书甚少，你不要骗我。
+> Q: SSM轻量级？吾阅诗书甚少，汝勿欺我。
 > A: 捂脸(\*/ω＼\*)，找工作需要嘛！所谓轻量是指对Java程序员而言。PS. 隔壁sgroup第一个项目没用任何框架，初学者可以拿去参考。
 
 > Q: 那你这个意义何在？
@@ -12,9 +12,9 @@
 PS. 不懂java也没关系，可以直接跳到食用说明，理论上没问题！（有问题发issue）
 ```
 
-本项目基于maven的标准目录结构，使用maven构建；框架是Spring，MVC框架是Spring-mvc，数据库是MariaDB，持久化是Mybatis，权限管理是自制的，如下所示：
+本项目基于maven的标准目录结构，使用maven构建；框架是Spring，MVC框架是Spring MVC，数据库是MariaDB，持久化是MyBatis，权限管理是自制的，如下所示：
 
-TODO 正在用Spring-boot写一个图床工具，搞定之后再来把这个也改成Spring-boot。
+TODO 正在用Spring Boot写一个图床工具，搞定之后再来考虑是否改Spring Boot。
 
 ```shell=
 src
@@ -40,9 +40,9 @@ src
     └─webapp
 ```
 
-本项目采用mvc架构，前端部分同时使用jsp和freemarker，目录结构如下：
+本项目采用MVC架构，前端部分同时使用JSP和Freemarker，目录结构如下：
 
-TODO 后续会将jsp全部改成freemarker，以配合Spring-boot和RESTful API实现前后端分离。
+TODO 后续考虑将JSP全部改成Freemarker，以配合Spring Boot和RESTful API实现前后端分离。
 
 ```shell=
 webapp
@@ -131,13 +131,13 @@ root@akari:~# apt install openjdk-8-jdk -y
 root@akari:~# java -version
 ```
 
-### 1.2. 安装git
+### 1.2. 安装Git
 
 ```shell=
 root@akari:~# apt install git -y
 ```
 
-检查git是否安装成功；输入如下命令，安装成功返回版本号。
+检查Git是否安装成功；输入如下命令，安装成功返回版本号。
 
 ```shell=
 root@akari:~# git --version
@@ -187,7 +187,7 @@ Default locale: en_US, platform encoding: UTF-8
 OS name: "linux", version: "4.4.0-47-generic", arch: "amd64", family: "unix"
 ```
 
-### 1.4. 配置tomcat
+### 1.4. 配置Tomcat
 
 在这儿获取最新版[tomcat](http://tomcat.apache.org/download-90.cgi)下载地址（core版本的tar.gz），如下：
 
@@ -198,7 +198,7 @@ root@akari:/home# wget http://mirrors.shuosc.org/apache/tomcat/tomcat-9/v9.0.0.M
 root@akari:/home# tar -zxvf apache-tomcat-9.0.0.M26.tar.gz
 ```
 
-启动tomcat：
+启动Tomcat：
 
 ```shell=
 root@akari:/home# sh apache-tomcat-9.0.0.M26/bin/startup.sh
@@ -209,9 +209,9 @@ Using JRE_HOME:        /usr
 Using CLASSPATH:       /home/apache-tomcat-9.0.0.M26/bin/bootstrap.jar:/home/apache-tomcat-9.0.0.M26/bin/tomcat-juli.jar
 Tomcat started.
 ```
-### 1.5. 安装mariaDB数据库
+### 1.5. 安装MariaDB数据库
 
-MariaDB是MySQL源代码的一个分支，在意识到Oracle会对MySQL许可做什么后分离了出来（有闭源的潜在风险）。作者Michael Widenius Monty也是Mysql创办者。MariaDB目的是完全兼容Mysql，也包括一些新特性优于MySQL。
+MariaDB是MySQL源代码的一个分支，在意识到Oracle会对MySQL许可做什么后分离了出来（有闭源的潜在风险）。作者Michael Widenius Monty也是MySQL创办者。MariaDB目的是完全兼容MySQL，也包括一些新特性优于MySQL。
 
 直接apt安装：
 
@@ -265,9 +265,9 @@ root@akari:/home/starry# mvn install
 
 ——————————————————start—————————————————————
 
-生成druid数据库密钥
+生成Druid数据库密钥
 
-本项目采用druid数据库连接池，把数据库密码直接写在配置中，有安全问题。Druid为此提供一种数据库密码加密的手段ConfigFilter，首先找到druid的jar包：
+本项目采用Druid数据库连接池，把数据库密码直接写在配置中，有安全问题。Druid为此提供一种数据库密码加密的手段ConfigFilter，首先找到Druid的jar包：
 
 ```shell=
 root@akari:~# cd ~/.m2/repository/com/alibaba/druid/1.1.2
@@ -287,7 +287,7 @@ password:gNfnXJUtBokb9yuIGxw0a5FtRlM5+yuhJ+QM/sL9S1bps/zqAd2daBePWGNqdWirsZQtXbB
 
 > 其中starry12138是刚才新建mariadb用户的密码
 
-修改druid配置文件：
+修改Druid配置文件：
 
 ```shell=
 root@akari:~# vim /home/starry/src/main/resources/spring/druid.properties
@@ -309,7 +309,7 @@ root@akari:~# cd /home/starry
 root@akari:/home/starry# mvn install
 ```
 
-完成后，把打好的war包重命名，丢到tomcat服务器里：
+完成后，把打好的war包重命名，丢到Tomcat服务器里：
 
 ```shell=
 # 进入war包目录
@@ -355,6 +355,9 @@ To Be Continue...
 - [tomcat](https://github.com/apache/tomcat)
 - [maven](https://github.com/apache/maven)
 - [jquery](https://github.com/jquery/jquery)
+- [showdown](https://github.com/showdownjs/showdown)
+
+> PS. 不完全统计，排名不分先后，大小写依据Official项目名
 
 附：Windows系统配置要求如下：
 
