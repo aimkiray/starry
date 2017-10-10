@@ -77,7 +77,6 @@
     <br/>
 
     <form id="postUploadForm">
-        <form:input path="someFormField" htmlEscape="true" />
 
         <div class="form-group">
             <label for="tagArea">已选标签</label>

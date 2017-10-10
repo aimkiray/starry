@@ -16,7 +16,7 @@
 body {
     background: #eee;
     color: #444;
-    font-family: Helvetica, Arial, "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
+    font-family: Helvetica, Arial,Consolas,"Source Han Serif SC", "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
     font-size: 14px;
     text-shadow: 0 0 1px transparent;
 }
@@ -39,7 +39,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Helvetica, Arial, "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
+    font-family: Helvetica, Arial,Consolas,"Source Han Serif SC", "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
 }
 
 h1 {
@@ -154,7 +154,7 @@ a:hover {
 }
 
 #header #main-nav {
-    font-family: Helvetica, Arial, "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
+    font-family: Helvetica, Arial,Consolas,"Source Han Serif SC", "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
     line-height: 2.5em;
 }
 
@@ -591,11 +591,10 @@ article footer .addthis iframe {
     padding: 5px 10px;
     background: #ddd;
     color: #999;
-    font-family: Helvetica, Arial, "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
+    font-family: Helvetica, Arial,Consolas,"Source Han Serif SC", "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
     text-shadow: 0 0 1px #fff;
     margin-bottom: 50px;
 }
-
 #pagination a:hover {
     background: #258fb8;
     color: #fff;
@@ -709,7 +708,7 @@ article footer .addthis iframe {
 
 #sidebar .search input {
     background: #fff;
-    font-family: Helvetica, Arial, "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
+    font-family: Helvetica, Arial,Consolas,"Source Han Serif SC", "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
     font-style: italic;
     font-size: 1em;
     padding: 10px 15px;
@@ -766,7 +765,7 @@ article footer .addthis iframe {
 #footer {
     color: #999;
     margin-bottom: 50px;
-    font: 0.9em/1.6 Helvetica, Arial, "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
+    font: 0.9em/1.6 Helvetica, Arial,Consolas,"Source Han Serif SC", "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
     text-shadow: 0 0 1px #fff;
 }
 
