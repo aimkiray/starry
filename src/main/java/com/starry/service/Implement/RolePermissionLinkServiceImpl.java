@@ -41,4 +41,18 @@ public class RolePermissionLinkServiceImpl implements RolePermissionLinkService 
         int result = rolePermissionLinkMapper.deleteByExample(rolePermissionLinkExample);
         return result;
     }
+
+    /**
+     * 获取角色权限数量
+     *
+     * @param roleId
+     * @return
+     */
+    @Override
+    public int findPermissionNumByRoleId(int roleId) {
+        RolePermissionLinkExample rolePermissionLinkExample = new RolePermissionLinkExample();
+        RolePermissionLinkExample.Criteria criteria = rolePermissionLinkExample.createCriteria();
+        criteria.andRoleIdEqualTo(roleId);
+        return (int)rolePermissionLinkMapper.countByExample(rolePermissionLinkExample);
+    }
 }

@@ -59,13 +59,13 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多功能<strong class="caret"></strong></a>
                         <ul class="dropdown-menu">
                             <li class="disabled">
-                                <a href="#">一键删库</a>
+                                <a href="#">一键xx</a>
                             </li>
                             <li class="disabled">
-                                <a href="#">一键格盘</a>
+                                <a href="#">一键xx</a>
                             </li>
                             <li class="disabled">
-                                <a href="#">一键自毁</a>
+                                <a href="#">一键xx</a>
                             </li>
                             <li class="divider">
                             </li>

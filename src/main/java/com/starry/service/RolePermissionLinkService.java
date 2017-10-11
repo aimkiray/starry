@@ -15,4 +15,11 @@ public interface RolePermissionLinkService {
      * @return
      */
     int delRolePermissionLinkByRoleId(int roleId);
+
+    /**
+     * 获取角色权限数量
+     * @param roleId
+     * @return
+     */
+    int findPermissionNumByRoleId(int roleId);
 }

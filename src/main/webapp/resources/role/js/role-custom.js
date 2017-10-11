@@ -7,7 +7,7 @@ $(document).ready(function () {
     roleTable();
 
     // 初始化Toolbar
-    $("div.toolbar").html('<div id="toolbar" class="btn-group">\n' +
+    /*$("div.toolbar").html('<div id="toolbar" class="btn-group">\n' +
         '        <button id="btn_add" type="button" class="btn btn-default">\n' +
         '            <span class="fa fa-plus" aria-hidden="true"></span>新增' +
         '        </button>\n' +
@@ -17,7 +17,7 @@ $(document).ready(function () {
         '        <button id="btn_delete" type="button" class="btn btn-default">\n' +
         '            <span class="fa fa-remove" aria-hidden="true"></span>删除' +
         '        </button>\n' +
-        '    </div>');
+        '    </div>');*/
 
     // 初始化Button的点击事件
     buttonInit();
@@ -61,7 +61,8 @@ var roleTable = function () {
         destroy: true, //创建表格前先删除旧表格
         // dom: '<"top"f>rt<"bottom"lp>i<"clear">',
         // dom: '<"toolbar">frtip',
-        dom: "<'row'<'col-sm-6'<'toolbar'>><'col-sm-6'f>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>",
+        // dom: "<'row'<'col-sm-6'<'toolbar'>><'col-sm-6'f>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>",
+        dom: "<'row'<'col-sm-6'><'col-sm-6'>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>",
         language: lang,  //提示信息
         // autoWidth: false,  //禁用自动调整列宽
         stripeClasses: ["odd", "even"],  //为奇偶行加上样式，兼容不支持CSS伪类的场合
@@ -107,7 +108,7 @@ function updateRole(roleId) {
     $.ajax({
         url: "/role/update/" + roleId,
         type: "post",
-        dataType: "json",
+        dataType: "text",
         success: function (data) {
             bootbox.dialog({
                 message: data,
@@ -183,6 +184,8 @@ function buttonInit() {
             }
         });
     });
+
+
 
     $("#btn_query").click(function () {
         roleTable().Init.ajax.reload();

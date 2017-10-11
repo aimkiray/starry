@@ -60,7 +60,9 @@
                         permissionIds = permissionIds + "," + nodes[i].permissionId;
                     }
                 }
+//                添加权限ID数组到表单中
                 $("#permissionIds").val(permissionIds);
+//                提交表单
                 $.ajax({
                     url: "/role/update",
                     cache: false, // 禁用缓存

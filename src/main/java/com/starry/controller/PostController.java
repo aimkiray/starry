@@ -111,22 +111,27 @@ public class PostController extends BaseController {
         int result = 0;
         // 将String类型的时间转成Date类型
         post.setPostDate(DateTools.getDateByStr(postStringDate,"yyyy-MM-dd HH:mm:ss"));
-        // 更新文章
-        result = postService.updatePost(post);
         // 添加详情表
         if (result > 0) {
             int postId = post.getPostId();
-            result = postTagLinkService.findPostTagNum(postId);
-            if (result > 0) {
+            if (postTagLinkService.findPostTagNum(postId) > 0) {
                 // 先删除旧的详情表
                 result = postTagLinkService.deletePostTagLinkByPost(postId);
+            } else {
+                result = 1;
             }
             // 删除成功后添加新的
-            for (int i = 0; i < tagId.length; i++) {
-                PostTagLink postTagLink = new PostTagLink();
-                postTagLink.setPostId(postId);
-                postTagLink.setTagId(Integer.parseInt(tagId[i]));
-                result = postTagLinkService.addPostTagLink(postTagLink);
+            if (result > 0) {
+                for (int i = 0; i < tagId.length; i++) {
+                    PostTagLink postTagLink = new PostTagLink();
+                    postTagLink.setPostId(postId);
+                    postTagLink.setTagId(Integer.parseInt(tagId[i]));
+                    result = postTagLinkService.addPostTagLink(postTagLink);
+                }
+                if (result > 0) {
+                    // 最后更新文章
+                    result = postService.updatePost(post);
+                }
             }
         }
         return result;
@@ -143,11 +148,15 @@ public class PostController extends BaseController {
         int result = 0;
         if (postId != null && postId != 0) {
 //            先删掉文章所有详情表
-            if (postTagLinkService.findPostTagNum(postId) != 0) {
-                postTagLinkService.deletePostTagLinkByPost(postId);
+            if (postTagLinkService.findPostTagNum(postId) > 0) {
+                result = postTagLinkService.deletePostTagLinkByPost(postId);
+            } else {
+                result = 1;
             }
 //            再删除文章本体
-            result = postService.deletePost(postId);
+            if (result > 0) {
+                result = postService.deletePost(postId);
+            }
         }
         return result;
     }

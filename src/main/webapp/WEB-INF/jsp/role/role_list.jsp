@@ -66,7 +66,7 @@
     </form>
     <br>
 
-    <%--<div id="toolbar" class="btn-group">
+    <div id="toolbar" class="btn-group">
         <button id="btn_add" type="button" class="btn btn-default">
             <span class="fa fa-plus" aria-hidden="true"></span>新增
         </button>
@@ -76,7 +76,7 @@
         <button id="btn_delete" type="button" class="btn btn-default">
             <span class="fa fa-remove" aria-hidden="true"></span>删除
         </button>
-    </div>--%>
+    </div>
 
     <table id="role_list" class="table table-striped table-bordered">
         <thead>

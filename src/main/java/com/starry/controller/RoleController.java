@@ -82,8 +82,12 @@ public class RoleController extends BaseController {
         int roleId = role.getRoleId();
         if (roleId != 0) {
 //            先删掉角色所有详情表
-            result = rolePermissionLinkService.delRolePermissionLinkByRoleId(roleId);
-//        添加详情表
+            if (rolePermissionLinkService.findPermissionNumByRoleId(roleId) > 0) {
+                result = rolePermissionLinkService.delRolePermissionLinkByRoleId(roleId);
+            } else {
+                result = 1;
+            }
+//            添加详情表
             if (result > 0) {
                 for (int i = 0; i < permissionIds.length; i++) {
                     RolePermissionLink rolePermissionLink = new RolePermissionLink();
@@ -92,6 +96,7 @@ public class RoleController extends BaseController {
                     result = rolePermissionLinkService.addRolePermissionLink(rolePermissionLink);
                 }
                 if (result > 0) {
+                    // 最后更新角色
                     result = roleService.updateRole(role);
                 }
             }
@@ -120,11 +125,15 @@ public class RoleController extends BaseController {
 
     @RequestMapping(value = "/del/{roleId}")
     @ResponseBody
-    public int delRole(@PathVariable("roleId") int roleId) {
+    public int delRole(@PathVariable("roleId") Integer roleId) {
         int result = 0;
-        if (roleId != 0) {
+        if (roleId != null && roleId != 0) {
 //            先删掉角色所有详情表
-            result = rolePermissionLinkService.delRolePermissionLinkByRoleId(roleId);
+            if (rolePermissionLinkService.findPermissionNumByRoleId(roleId) > 0) {
+                result = rolePermissionLinkService.delRolePermissionLinkByRoleId(roleId);
+            } else {
+                result = 1;
+            }
 //            再删除角色本体
             if (result > 0) {
                 result = roleService.delRoleById(roleId);
