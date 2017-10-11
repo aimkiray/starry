@@ -68,7 +68,7 @@ var roleTable = function () {
         stripeClasses: ["odd", "even"],  //为奇偶行加上样式，兼容不支持CSS伪类的场合
         processing: true,  //隐藏加载提示,自行处理
         // serverSide: true,  //启用服务器端分页
-        lengthMenu: [[5,25,50,100,-1],[5,25,50,100,"All"]],
+        lengthMenu: [[5, 25, 50, 100, -1], [5, 25, 50, 100, "All"]],
         pageLength: 5,
         pagingType: "full_numbers",  //分页样式：simple,simple_numbers,full,full_numbers
         searching: true,  //原生搜索
@@ -86,15 +86,20 @@ var roleTable = function () {
         },
         //列表表头字段
         columns: [
-            {data : "roleId", "orderable": false, "width": "2%", "render": function(data,type,row,meta){ return '<input type="checkbox" name="'+data+'">'; } },
-            {data : "roleId"},
-            {data : "roleName"},
-            {data : "roleInfo"},
-            {data : "roleId",
+            {
+                data: "roleId", "orderable": false, "width": "2%", "render": function (data, type, row, meta) {
+                return '<input type="checkbox" name="' + data + '">';
+            }
+            },
+            {data: "roleId"},
+            {data: "roleName"},
+            {data: "roleInfo"},
+            {
+                data: "roleId",
                 render: function (data, type, row) {
-                    return '<button class="btn btn-info btn-sm" onclick="updateRole('+data+')"><i class="fa fa-pencil"></i>修改</button>' +
+                    return '<button class="btn btn-info btn-sm" onclick="updateRole(' + data + ')"><i class="fa fa-pencil"></i>修改</button>' +
                         '&nbsp;&nbsp;' +
-                        '<button class="btn btn-danger btn-sm" onclick="delRole('+data+')"><i class="fa fa-remove"></i>删除</button>';
+                        '<button class="btn btn-danger btn-sm" onclick="delRole(' + data + ')"><i class="fa fa-remove"></i>删除</button>';
                 }
             }
         ]
@@ -124,16 +129,6 @@ function updateRole(roleId) {
 function delRole(roleId) {
     bootbox.confirm({
         message: "确认删除？",
-        buttons: {
-            confirm: {
-                label: '确认',
-                className: 'btn-success'
-            },
-            cancel: {
-                label: '取消',
-                className: 'btn-danger'
-            }
-        },
         callback: function (result) {
             if (result) {
                 $.ajax({
@@ -149,24 +144,20 @@ function delRole(roleId) {
                         $(".bootbox-close-button").click();
                     }
                 });
-            } else {
-                $(".bootbox-close-button").click();
             }
         }
     });
 }
 
-
 function buttonInit() {
 
     // 初始化页面上面的按钮事件
-
-    $(document).click(function (e) {
-        var _con = $(".modal-content");   // 设置目标区域
+    /*$(document).unbind('click').click(function (e) {
+        var _con = $(".modal-dialog");   // 设置目标区域
         if (!_con.is(e.target) && _con.has(e.target).length === 0) { // Mark 1
             $(".bootbox-close-button").click();
         }
-    });
+    });*/
 
     $("#btn_add").click(function () {
         $.ajax({
@@ -184,7 +175,6 @@ function buttonInit() {
             }
         });
     });
-
 
 
     $("#btn_query").click(function () {

@@ -168,12 +168,12 @@ function buttonInit() {
 
     // 初始化页面上面的按钮事件
 
-    $(document).click(function (e) {
+    /*$(document).click(function (e) {
         var _con = $(".modal-content");   // 设置目标区域
         if (!_con.is(e.target) && _con.has(e.target).length === 0) { // Mark 1
             $(".bootbox-close-button").click();
         }
-    });
+    });*/
 
     $("#btn_add").click(function () {
         $.ajax({

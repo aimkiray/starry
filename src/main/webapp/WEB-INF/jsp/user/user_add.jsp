@@ -47,12 +47,6 @@
             todayBtn: true
         });
 
-        $(document).click(function(e){
-            var _con = $(".modal-content");   // 设置目标区域
-            if(!_con.is(e.target) && _con.has(e.target).length === 0){ // Mark 1
-                $(".bootbox-close-button").click();
-            }
-        });
 //        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii:ss'});
     });
 </script>
