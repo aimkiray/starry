@@ -1,6 +1,6 @@
 <div class="white-wrapper"><img class="circle-profile"
                                 src="${root}/resources/img/head_img.jpg">
-    <p class="site-description">咸鱼王...先这样。</p>
+    <p class="site-description">(≧∇≦)/</p>
     <div class="grey-rule"></div>
     <ul>
         <li><a href="/" target="_self">主页</a></li>
