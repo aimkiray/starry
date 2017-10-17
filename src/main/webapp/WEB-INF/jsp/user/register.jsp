@@ -33,7 +33,7 @@
     <div class="logo">注册</div>
     <!-- Main Form -->
     <div class="login-form-1">
-        <form id="register-form" class="text-left" action="/user/add" method="post">
+        <form id="register-form" class="text-left" action="${root}/user/register" method="post">
             <div class="login-form-main-message"></div>
             <div class="main-login-form">
                 <div class="login-group">

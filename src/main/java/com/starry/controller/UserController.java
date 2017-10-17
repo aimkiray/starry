@@ -62,6 +62,32 @@ public class UserController extends BaseController {
         return "user/register";
     }
 
+    @RequestMapping("/register")
+    public String userDoRegister(HttpServletResponse resp, User user) {
+        int result = 0;
+        if (user != null) {
+            user.setUserRole(2);
+            result = userService.insertUser(user);
+        }
+        if (result == 1) {
+            return "redirect:/user/login/page";
+        } else if (result == -1) {
+            try {
+                resp.getWriter().print("<script>alert('false:-1');history.go(-1);</script>");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        } else {
+            try {
+                resp.getWriter().print("<script>alert('false:0');history.go(-1);</script>");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
     @RequestMapping("/forgot/page")
     public String forgotPage() {
         return "user/forgot";
@@ -95,27 +121,66 @@ public class UserController extends BaseController {
         return dataTables;
     }
 
-    @RequestMapping(value = "/del/{userId}")
-    public String deleteUser(HttpServletResponse resp, HttpServletRequest req, @PathVariable int userId) {
+    /**
+     * 获取添加界面
+     *
+     * @return ModelAndView
+     */
+    @RequestMapping("/add/page")
+    public String showAddUser(HttpServletRequest request) {
+        List<Role> roles = roleService.findAllRole();
+        request.setAttribute("roles", roles);
+        return "user/user_add";
+    }
 
-        int result = 0;
+    /**
+     * 执行添加操作
+     *
+     * @param resp
+     * @param req
+     * @param file
+     * @param user
+     * @return
+     */
+    @RequestMapping(value = "/add")
+    public String addUser(HttpServletResponse resp, HttpServletRequest req, @RequestParam(value = "uploadPic", required = false) MultipartFile file, User user) {
+//        System.out.println(user);
+
         String msg = "false";
 
         /**
-         * 先删除文件
+         * 上传文件并保存到headimg目录下
          */
-        String path = req.getSession().getServletContext().getRealPath("/resources/headimg");
-        User user = userService.findUserById(userId);
-        String headImg = user.getHeadshot();
-//        表示文件是图片或别的什么，执行删除
-        if (headImg.contains(".")) {
-            File imgPath = new File(path, headImg);
-            if (imgPath.delete()) {
-//            文件删除后再从数据库删除作者
-                result = userService.deleteUser(userId);
-            } else {
-                msg = "false";
+        String headImg = null; // 用户保存用户头像文件名
+        String realName = null;
+        if (file != null && !file.isEmpty()) {
+            realName = file.getOriginalFilename();
+//            获取文件后缀名
+            String ext = FilenameUtils.getExtension(realName);
+            headImg = DateTools.getFileName(ext);
+//            构建上传目录及文件对象，不存在则自动创建
+            String path = req.getSession().getServletContext().getRealPath("/resources/headimg");
+            File imgPath = new File(path);
+            if (!imgPath.exists()) {
+                imgPath.mkdir();
             }
+            File imgFile = new File(path, headImg);
+
+//            保存文件
+            try {
+                file.transferTo(imgFile);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        /**
+         * 添加作者
+         */
+        user.setHeadshot(headImg);
+        int result = 0;
+        if (user != null) {
+            result = userService.insertUser(user);
         }
 
         if (result == 1) {
@@ -131,45 +196,6 @@ public class UserController extends BaseController {
             e.printStackTrace();
         }
         return null;
-    }
-
-    /**
-     * 获取添加界面
-     *
-     * @return ModelAndView
-     */
-    @RequestMapping("/add/page")
-    public String showAddUser(HttpServletRequest request) {
-        List<Role> roles = roleService.findAllRole();
-        request.setAttribute("roles", roles);
-        return "user/user_add";
-    }
-
-    @RequestMapping("/add")
-    public String userDoRegister(HttpServletResponse resp, User user) {
-        int result = 0;
-        if (user != null) {
-            user.setUserRole(2);
-            result = userService.insertUser(user);
-        }
-        if (result == 1) {
-            return "redirect:/user/login/page";
-        } else if (result == -1) {
-            try {
-                resp.getWriter().print("<script>alert('false:-1');history.go(-1);</script>");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        } else {
-            try {
-                resp.getWriter().print("<script>alert('false:0');history.go(-1);</script>");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
     }
 
     //    转到修改界面
@@ -254,54 +280,27 @@ public class UserController extends BaseController {
         return null;
     }
 
-    /**
-     * 执行添加操作
-     *
-     * @param resp
-     * @param req
-     * @param file
-     * @param user
-     * @return
-     */
-    @RequestMapping(value = "/add")
-    public String addUser(HttpServletResponse resp, HttpServletRequest req, @RequestParam(value = "uploadPic", required = false) MultipartFile file, User user) {
-//        System.out.println(user);
+    @RequestMapping(value = "/del/{userId}")
+    public String deleteUser(HttpServletResponse resp, HttpServletRequest req, @PathVariable int userId) {
 
+        int result = 0;
         String msg = "false";
 
         /**
-         * 上传文件并保存到headimg目录下
+         * 先删除文件
          */
-        String headImg = null; // 用户保存用户头像文件名
-        String realName = null;
-        if (file != null && !file.isEmpty()) {
-            realName = file.getOriginalFilename();
-//            获取文件后缀名
-            String ext = FilenameUtils.getExtension(realName);
-            headImg = DateTools.getFileName(ext);
-//            构建上传目录及文件对象，不存在则自动创建
-            String path = req.getSession().getServletContext().getRealPath("/resources/headimg");
-            File imgPath = new File(path);
-            if (!imgPath.exists()) {
-                imgPath.mkdir();
+        String path = req.getSession().getServletContext().getRealPath("/resources/headimg");
+        User user = userService.findUserById(userId);
+        String headImg = user.getHeadshot();
+//        表示文件是图片或别的什么，执行删除
+        if (headImg.contains(".")) {
+            File imgPath = new File(path, headImg);
+            if (imgPath.delete()) {
+//            文件删除后再从数据库删除作者
+                result = userService.deleteUser(userId);
+            } else {
+                msg = "false";
             }
-            File imgFile = new File(path, headImg);
-
-//            保存文件
-            try {
-                file.transferTo(imgFile);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-        /**
-         * 添加作者
-         */
-        user.setHeadshot(headImg);
-        int result = 0;
-        if (user != null) {
-            result = userService.insertUser(user);
         }
 
         if (result == 1) {
