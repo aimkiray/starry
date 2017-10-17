@@ -99,7 +99,7 @@ public class UserController extends BaseController {
         return dataTables;
     }
 
-    @RequestMapping(value = "/del/{userId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/del/{userId}")
     public String deleteUser(HttpServletResponse resp, HttpServletRequest req, @PathVariable int userId) {
 
         int result = 0;
@@ -176,7 +176,7 @@ public class UserController extends BaseController {
     }
 
     //    转到修改界面
-    @RequestMapping(value = "update/{userId}", method = RequestMethod.POST)
+    @RequestMapping(value = "update/{userId}")
     public String showUpdateUser(HttpServletRequest req, @PathVariable int userId) {
         User user = userService.findUserById(userId);
         List<Role> roles = roleService.findAllRole();
@@ -186,7 +186,7 @@ public class UserController extends BaseController {
     }
 
     //    执行修改操作
-    @RequestMapping(value = "update", method = RequestMethod.POST)
+    @RequestMapping(value = "update")
     public String updateUser(HttpServletResponse resp, HttpServletRequest req, @RequestParam(value = "uploadPic", required = false) MultipartFile file, User user) {
 
         String msg = "false";
@@ -266,7 +266,7 @@ public class UserController extends BaseController {
      * @param user
      * @return
      */
-    @RequestMapping(value = "add", method = RequestMethod.POST)
+    @RequestMapping(value = "add")
     public String addUser(HttpServletResponse resp, HttpServletRequest req, @RequestParam(value = "uploadPic", required = false) MultipartFile file, User user) {
 //        System.out.println(user);
 
