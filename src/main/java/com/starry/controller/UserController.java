@@ -33,10 +33,8 @@ public class UserController extends BaseController {
 
     @RequestMapping(value = "/login/page")
     public ModelAndView userLogin() {
-//        return "author/login";
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("user/login");
-//        modelAndView.addObject("message","hello world");
         return modelAndView;
     }
 
@@ -71,9 +69,7 @@ public class UserController extends BaseController {
 
     //    转到作者列表界面
     @RequestMapping("/list/page")
-    public String userList(HttpServletRequest req) {
-//        List<User> users = userService.findAllUser();
-//        req.setAttribute("users", users);
+    public String userList() {
         return "user/user_list";
     }
 
@@ -142,7 +138,7 @@ public class UserController extends BaseController {
      *
      * @return ModelAndView
      */
-    @RequestMapping("add/page")
+    @RequestMapping("/add/page")
     public String showAddUser(HttpServletRequest request) {
         List<Role> roles = roleService.findAllRole();
         request.setAttribute("roles", roles);
@@ -176,7 +172,7 @@ public class UserController extends BaseController {
     }
 
     //    转到修改界面
-    @RequestMapping(value = "update/{userId}")
+    @RequestMapping(value = "/update/{userId}")
     public String showUpdateUser(HttpServletRequest req, @PathVariable int userId) {
         User user = userService.findUserById(userId);
         List<Role> roles = roleService.findAllRole();
@@ -186,7 +182,7 @@ public class UserController extends BaseController {
     }
 
     //    执行修改操作
-    @RequestMapping(value = "update")
+    @RequestMapping(value = "/update")
     public String updateUser(HttpServletResponse resp, HttpServletRequest req, @RequestParam(value = "uploadPic", required = false) MultipartFile file, User user) {
 
         String msg = "false";
@@ -266,7 +262,7 @@ public class UserController extends BaseController {
      * @param user
      * @return
      */
-    @RequestMapping(value = "add")
+    @RequestMapping(value = "/add")
     public String addUser(HttpServletResponse resp, HttpServletRequest req, @RequestParam(value = "uploadPic", required = false) MultipartFile file, User user) {
 //        System.out.println(user);
 
