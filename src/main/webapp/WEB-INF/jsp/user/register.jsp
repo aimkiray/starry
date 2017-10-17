@@ -69,8 +69,8 @@
 
                     <div class="form-group login-group-checkbox">
                         <input type="checkbox" class="" id="reg_agree" name="agree">
-                        <label for="reg_agree"> agree with <a href="#">terms</a></label>
-                    </div>I
+                        <label for="reg_agree">I agree with <a href="#">terms</a></label>
+                    </div>
                 </div>
                 <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
             </div>
