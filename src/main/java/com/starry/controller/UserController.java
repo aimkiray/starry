@@ -146,7 +146,8 @@ public class UserController extends BaseController {
     }
 
     @RequestMapping("/add")
-    public String userDoRegister(HttpServletRequest req, HttpServletResponse resp, User user) {
+    public String userDoRegister(HttpServletResponse resp, User user) {
+        // TODO 添加默认用户组
         int result = 0;
         if (user != null) {
             result = userService.insertUser(user);
