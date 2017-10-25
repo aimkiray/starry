@@ -2,7 +2,6 @@ package com.starry.service.Implement;
 
 import com.starry.dao.PermissionMapper;
 import com.starry.dao.RoleMapper;
-import com.starry.dao.RolePermissionLinkMapper;
 import com.starry.domain.*;
 import com.starry.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +19,6 @@ public class PermissionServiceImpl implements PermissionService {
 
     @Autowired
     private RoleMapper roleMapper;
-
-    @Autowired
-    private RolePermissionLinkMapper rolePermissionLinkMapper;
 
     /**
      * 读取全部权限
@@ -84,7 +80,7 @@ public class PermissionServiceImpl implements PermissionService {
     @Override
     public int updatePermission(Permission permission) {
         int result = 0;
-        if (permission != null || permission.getParentId() != null) {
+        if (permission != null && permission.getParentId() != 0) {
             result = permissionMapper.updateByPrimaryKey(permission);
         }
         return result;

@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,14 +31,13 @@ public class UserController extends BaseController {
     private RoleService roleService;
 
     @RequestMapping(value = "/login/page")
-    public ModelAndView userLogin() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("user/login");
-        return modelAndView;
+    public String loginPage() {
+        return "user/login";
     }
 
+
     @RequestMapping(value = "/login")
-    public String verifyUser(HttpServletResponse resp, HttpSession session, User user) {
+    public String login(HttpServletResponse resp, HttpSession session, User user) {
         boolean result = userService.verifyUser(user);
         if (result) {
             User realUser = userService.findUserByName(user.getUserName());
@@ -58,12 +56,12 @@ public class UserController extends BaseController {
     }
 
     @RequestMapping("/register/page")
-    public String registerPage() {
+    public String signUpPage() {
         return "user/register";
     }
 
     @RequestMapping("/register")
-    public String userDoRegister(HttpServletResponse resp, User user) {
+    public String signUp(HttpServletResponse resp, User user) {
         int result = 0;
         if (user != null) {
             user.setUserRole(2);
@@ -95,13 +93,13 @@ public class UserController extends BaseController {
 
     //    转到作者列表界面
     @RequestMapping("/list/page")
-    public String userList() {
+    public String getUserPage() {
         return "user/user_list";
     }
 
     @RequestMapping("/list")
     @ResponseBody
-    public DataTables searchUser(Integer start, Integer length, String userName, String nickName) {
+    public DataTables getUser(Integer start, Integer length, String userName, String nickName) {
         DataTables dataTables = new DataTables();
         start = start == null ? 0 : start;
         length = length == null ? 5 : length;
@@ -127,7 +125,7 @@ public class UserController extends BaseController {
      * @return ModelAndView
      */
     @RequestMapping("/add/page")
-    public String showAddUser(HttpServletRequest request) {
+    public String addUserPage(HttpServletRequest request) {
         List<Role> roles = roleService.findAllRole();
         request.setAttribute("roles", roles);
         return "user/user_add";
@@ -144,7 +142,6 @@ public class UserController extends BaseController {
      */
     @RequestMapping(value = "/add")
     public String addUser(HttpServletResponse resp, HttpServletRequest req, @RequestParam(value = "uploadPic", required = false) MultipartFile file, User user) {
-//        System.out.println(user);
 
         String msg = "false";
 
@@ -200,7 +197,7 @@ public class UserController extends BaseController {
 
     //    转到修改界面
     @RequestMapping(value = "/update/{userId}")
-    public String showUpdateUser(HttpServletRequest req, @PathVariable int userId) {
+    public String updateUserPage(HttpServletRequest req, @PathVariable int userId) {
         User user = userService.findUserById(userId);
         List<Role> roles = roleService.findAllRole();
         req.setAttribute("user", user);

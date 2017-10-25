@@ -35,23 +35,24 @@ public class PostController extends BaseController {
 
     /**
      * 获取文章列表页面
+     *
      * @return
      */
     @RequestMapping(value = "/list/page")
-    public String postListPage() {
+    public String getPostPage() {
         return "post/post_list";
     }
 
     /**
      * 文章列表
      *
-     * @param start 查询开始位置
+     * @param start  查询开始位置
      * @param length 查询结束位置
      * @return DataTables 专用 Json
      */
     @RequestMapping(value = "/list")
     @ResponseBody
-    public DataTables postList(Integer start, Integer length) {
+    public DataTables getPost(Integer start, Integer length) {
         DataTables dataTables = new DataTables();
         start = start == null ? 0 : start;
         length = length == null ? 5 : length;
@@ -107,31 +108,30 @@ public class PostController extends BaseController {
 
     @RequestMapping(value = "/update")
     @ResponseBody
-    public int updatePost(Post post,String postStringDate, String[] tagId) {
+    public int updatePost(Post post, String postStringDate, String[] tagId) {
         int result = 0;
         // 将String类型的时间转成Date类型
-        post.setPostDate(DateTools.getDateByStr(postStringDate,"yyyy-MM-dd HH:mm:ss"));
+        post.setPostDate(DateTools.getDateByStr(postStringDate, "yyyy-MM-dd HH:mm:ss"));
         // 添加详情表
+        int postId = post.getPostId();
+        if (postTagLinkService.findPostTagNum(postId) > 0) {
+            // 先删除旧的详情表，删除失败返回0
+            result = postTagLinkService.deletePostTagLinkByPost(postId);
+        } else {
+            // 没有已存在的详情表
+            result = 1;
+        }
+        // 删除成功后添加新的
         if (result > 0) {
-            int postId = post.getPostId();
-            if (postTagLinkService.findPostTagNum(postId) > 0) {
-                // 先删除旧的详情表
-                result = postTagLinkService.deletePostTagLinkByPost(postId);
-            } else {
-                result = 1;
+            for (int i = 0; i < tagId.length; i++) {
+                PostTagLink postTagLink = new PostTagLink();
+                postTagLink.setPostId(postId);
+                postTagLink.setTagId(Integer.parseInt(tagId[i]));
+                result = postTagLinkService.addPostTagLink(postTagLink);
             }
-            // 删除成功后添加新的
             if (result > 0) {
-                for (int i = 0; i < tagId.length; i++) {
-                    PostTagLink postTagLink = new PostTagLink();
-                    postTagLink.setPostId(postId);
-                    postTagLink.setTagId(Integer.parseInt(tagId[i]));
-                    result = postTagLinkService.addPostTagLink(postTagLink);
-                }
-                if (result > 0) {
-                    // 最后更新文章
-                    result = postService.updatePost(post);
-                }
+                // 最后更新文章
+                result = postService.updatePost(post);
             }
         }
         return result;
@@ -139,12 +139,13 @@ public class PostController extends BaseController {
 
     /**
      * 文章删除功能
+     *
      * @param postId 文章Id
      * @return
      */
     @RequestMapping(value = "/del/{postId}")
     @ResponseBody
-    public int delPost(@PathVariable("postId") Integer postId) {
+    public int deletePost(@PathVariable("postId") Integer postId) {
         int result = 0;
         if (postId != null && postId != 0) {
 //            先删掉文章所有详情表
