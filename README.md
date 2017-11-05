@@ -103,7 +103,7 @@ webapp
 
 部署环境的配置如下（阿里云友情提供）：
 
-CPU： 1核
+CPU： 1 核
 
 内存： 1 GB
 
@@ -150,9 +150,12 @@ git version 2.7.4
 
 ```shell=
 root@akari:~# cd /home
-root@akari:/home# wget http://mirrors.hust.edu.cn/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
+# 若地址失效，请自行替换最新地址
+root@akari:/home# wget http://mirrors.hust.edu.cn/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.2-bin.tar.gz
 # 解压
-root@akari:/home# tar -zxvf apache-maven-3.5.0-bin.tar.gz
+root@akari:/home# tar -zxvf apache-maven-3.5.2-bin.tar.gz
+# 重命名
+root@akari:/home# mv apache-maven-3.5.2 apache-maven
 ```
 
 添加环境变量：
@@ -164,7 +167,7 @@ root@akari:/home# vim /etc/profile
 在最后加上这些：
 
 ```shell=
-MAVEN_HOME=/home/apache-maven-3.5.0
+MAVEN_HOME=/home/apache-maven
 export MAVEN_HOME
 export PATH=${PATH}:${MAVEN_HOME}/bin
 ```
@@ -193,20 +196,22 @@ OS name: "linux", version: "4.4.0-47-generic", arch: "amd64", family: "unix"
 
 ```shell=
 root@akari:~# cd /home
-root@akari:/home# wget http://mirrors.shuosc.org/apache/tomcat/tomcat-9/v9.0.0.M26/bin/apache-tomcat-9.0.0.M26.tar.gz
+root@akari:/home# wget http://mirrors.shuosc.org/apache/tomcat/tomcat-9/v9.0.0.M26/bin/apache-tomcat-9.0.1.tar.gz
 # 解压
-root@akari:/home# tar -zxvf apache-tomcat-9.0.0.M26.tar.gz
+root@akari:/home# tar -zxvf apache-tomcat-9.0.1.tar.gz
+# 重命名
+root@akari:/home# mv apache-tomcat-9.0.1 apache-tomcat
 ```
 
 启动Tomcat：
 
 ```shell=
-root@akari:/home# sh apache-tomcat-9.0.0.M26/bin/startup.sh
-Using CATALINA_BASE:   /home/apache-tomcat-9.0.0.M26
-Using CATALINA_HOME:   /home/apache-tomcat-9.0.0.M26
-Using CATALINA_TMPDIR: /home/apache-tomcat-9.0.0.M26/temp
+root@akari:/home# sh apache-tomcat/bin/startup.sh
+Using CATALINA_BASE:   /home/apache-tomcat-9.0.1
+Using CATALINA_HOME:   /home/apache-tomcat-9.0.1
+Using CATALINA_TMPDIR: /home/apache-tomcat-9.0.1/temp
 Using JRE_HOME:        /usr
-Using CLASSPATH:       /home/apache-tomcat-9.0.0.M26/bin/bootstrap.jar:/home/apache-tomcat-9.0.0.M26/bin/tomcat-juli.jar
+Using CLASSPATH:       /home/apache-tomcat-9.0.1/bin/bootstrap.jar:/home/apache-tomcat-9.0.1/bin/tomcat-juli.jar
 Tomcat started.
 ```
 ### 1.5. 安装MariaDB数据库
@@ -317,13 +322,13 @@ root@akari:/home/starry# cd /home/starry/target
 # 改名
 root@akari:/home/starry/target# mv starry.war ROOT.war
 # 关闭tomcat
-root@akari:/home/starry/target# sh /home/apache-tomcat-9.0.0.M26/bin/shutdown.sh
+root@akari:/home/starry/target# sh /home/apache-tomcat/bin/shutdown.sh
 # 删除旧包
-root@akari:/home/starry/target# rm -rf /home/apache-tomcat-9.0.0.M26/webapps/ROOT
+root@akari:/home/starry/target# rm -rf /home/apache-tomcat/webapps/ROOT
 # 添加新包
-root@akari:/home/starry/target# mv ROOT.war /home/apache-tomcat-9.0.0.M26/webapps/
+root@akari:/home/starry/target# mv ROOT.war /home/apache-tomcat/webapps/
 # 启动tomcat
-root@akari:/home/starry/target# sh /home/apache-tomcat-9.0.0.M26/bin/startup.sh
+root@akari:/home/starry/target# sh /home/apache-tomcat/bin/startup.sh
 ```
 大功告成！
 
