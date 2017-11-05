@@ -9,7 +9,6 @@
     <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/starry.iml" afterPath="$PROJECT_DIR$/starry.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -112,8 +111,8 @@
       <file leaf-file-name="deploy.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/notebook/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+            <state relative-caret-position="19">
+              <caret line="1" column="12" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -122,8 +121,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+            <state relative-caret-position="190">
+              <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -771,14 +770,7 @@
       <workItem from="1508945976303" duration="2550000" />
       <workItem from="1509357580218" duration="26000" />
       <workItem from="1509383667526" duration="23000" />
-      <workItem from="1509888988431" duration="1711000" />
-    </task>
-    <task id="LOCAL-00005" summary="fix bug">
-      <created>1503925671784</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1503925671786</updated>
+      <workItem from="1509888988431" duration="2480000" />
     </task>
     <task id="LOCAL-00006" summary="fix bug">
       <created>1503973646817</created>
@@ -1116,11 +1108,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509889482789</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="update &gt; pom.xml&#10;fix bug">
+      <created>1509890875853</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1509890875853</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="976063000" />
+    <option name="totallyTimeSpent" value="976832000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1218,7 +1217,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Change the post to mybatis style." />
     <MESSAGE value="文章发布，修改功能。" />
     <MESSAGE value="文章页面&#10;markdown2html&#10;fix bug" />
     <MESSAGE value="fix bug." />
@@ -1243,7 +1241,8 @@
     <MESSAGE value="fix bug&#10;用户注册时添加默认用户组" />
     <MESSAGE value="Code Review&#10;删除无用代码&#10;fix bug（文章更新逻辑）&#10;统一方法命名格式" />
     <MESSAGE value="update &gt; deploy.sh &amp; readme.md&#10;更新maven和tomcat" />
-    <option name="LAST_COMMIT_MESSAGE" value="update &gt; deploy.sh &amp; readme.md&#10;更新maven和tomcat" />
+    <MESSAGE value="update &gt; pom.xml&#10;fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="update &gt; pom.xml&#10;fix bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1570,16 +1569,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/notebook/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        <state relative-caret-position="19">
+          <caret line="1" column="12" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+        <state relative-caret-position="190">
+          <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
           <folding />
         </state>
       </provider>
