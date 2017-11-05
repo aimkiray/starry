@@ -7,12 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/starry_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/starry_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/starry.iml" afterPath="$PROJECT_DIR$/starry.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -125,8 +121,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="244" column="30" lean-forward="true" selection-start-line="244" selection-start-column="30" selection-end-line="244" selection-end-column="30" />
+            <state relative-caret-position="209">
+              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -774,14 +770,7 @@
       <workItem from="1508945976303" duration="2550000" />
       <workItem from="1509357580218" duration="26000" />
       <workItem from="1509383667526" duration="23000" />
-      <workItem from="1509888988431" duration="3576000" />
-    </task>
-    <task id="LOCAL-00008" summary="Before test kotlin.">
-      <created>1504677637924</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1504677637924</updated>
+      <workItem from="1509888988431" duration="4015000" />
     </task>
     <task id="LOCAL-00009" summary="fix bug.">
       <created>1504859746820</created>
@@ -1119,11 +1108,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509892814715</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="update &gt; pom.xml&#10;test maven 3.5.2">
+      <created>1509893280524</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1509893280524</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="977928000" />
+    <option name="totallyTimeSpent" value="978367000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1221,7 +1217,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="文章页面&#10;markdown2html&#10;fix bug" />
     <MESSAGE value="fix bug." />
     <MESSAGE value="Change the name from sinitial to starry" />
     <MESSAGE value="Change the mariadb password" />
@@ -1246,7 +1241,8 @@
     <MESSAGE value="update &gt; deploy.sh &amp; readme.md&#10;更新maven和tomcat" />
     <MESSAGE value="update &gt; pom.xml&#10;fix bug" />
     <MESSAGE value="update &gt; pom.xml&#10;Change the spring version" />
-    <option name="LAST_COMMIT_MESSAGE" value="update &gt; pom.xml&#10;Change the spring version" />
+    <MESSAGE value="update &gt; pom.xml&#10;test maven 3.5.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="update &gt; pom.xml&#10;test maven 3.5.2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1581,8 +1577,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="244" column="30" lean-forward="true" selection-start-line="244" selection-start-column="30" selection-end-line="244" selection-end-column="30" />
+        <state relative-caret-position="209">
+          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
           <folding />
         </state>
       </provider>

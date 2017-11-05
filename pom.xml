@@ -12,8 +12,8 @@
     <spring.version>4.3.9.RELEASE</spring.version>
   </properties>
 
-  <!--spring组件版本统一声明，在3.5.2中似乎有问题-->
-  <!--<dependencyManagement>
+  <!--spring组件版本统一声明-->
+  <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.springframework</groupId>
@@ -23,66 +23,55 @@
         <scope>import</scope>
       </dependency>
     </dependencies>
-  </dependencyManagement>-->
+  </dependencyManagement>
 
   <dependencies>
     <!--IOC&AOP-->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
-      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
-      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>${spring.version}</version>
     </dependency>
     <!--freemarker和Spring整合需要此jar包-->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>
-      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-expression</artifactId>
-      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-orm</artifactId>
-      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
-      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
-      <version>${spring.version}</version>
     </dependency>
     <!--MVC-->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>${spring.version}</version>
     </dependency>
 
     <!--freemarker-->
@@ -239,11 +228,6 @@
      </resources>
 
     <plugins>
-
-      <plugin>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>2.6</version>
-      </plugin>
 
       <!-- Mybatis自动生成插件 -->
       <plugin>
