@@ -12,7 +12,8 @@
     <spring.version>4.3.9.RELEASE</spring.version>
   </properties>
 
-  <dependencyManagement>
+  <!--spring组件版本统一声明，在3.5.2中似乎有问题-->
+  <!--<dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.springframework</groupId>
@@ -22,55 +23,66 @@
         <scope>import</scope>
       </dependency>
     </dependencies>
-  </dependencyManagement>
+  </dependencyManagement>-->
 
   <dependencies>
     <!--IOC&AOP-->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
     </dependency>
     <!--freemarker和Spring整合需要此jar包-->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-expression</artifactId>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-orm</artifactId>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
+      <version>${spring.version}</version>
     </dependency>
     <!--MVC-->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
     </dependency>
 
     <!--freemarker-->
@@ -207,6 +219,7 @@
 
   <build>
     <finalName>starry</finalName>
+
     <resources>
         <resource>
             <directory>src/main/resources</directory>
@@ -223,6 +236,7 @@
                  <include>font-awesome-4.7.0/fonts/**</include>
              </includes>
          </resource>
+         <!--打包xml后缀的文件-->
          <resource>
              <directory>src/main/java</directory>
              <includes>
@@ -246,19 +260,6 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.7.0</version>
         <configuration>
-
-          <!--<webResources>
-            <resource>
-              <directory>${basedir}/src/main/webapp</directory>
-              <filtering>true</filtering>
-              <excludes>
-                <exclude>**/*.woff</exclude>
-                <exclude>**/*.woff2</exclude>
-                <exclude>**/*.ttf</exclude>
-              </excludes>
-            </resource>
-          </webResources>-->
-
           <source>1.8</source>
           <target>1.8</target>
           <testSource>1.8</testSource>
