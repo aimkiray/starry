@@ -8,8 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/notebook/deploy.sh" afterPath="$PROJECT_DIR$/src/main/notebook/deploy.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/starry.iml" afterPath="$PROJECT_DIR$/starry.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -109,11 +109,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deploy.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="deploy.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/notebook/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            <state relative-caret-position="431">
+              <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -235,7 +245,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/starry/controller/ResourceController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/PostMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/post_add.jsp" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/panel/main.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/role/role_list.jsp" />
@@ -261,6 +270,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/starry/service/Implement/PermissionServiceImpl.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/notebook/deploy.sh" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -761,14 +771,7 @@
       <workItem from="1508945976303" duration="2550000" />
       <workItem from="1509357580218" duration="26000" />
       <workItem from="1509383667526" duration="23000" />
-      <workItem from="1509888988431" duration="438000" />
-    </task>
-    <task id="LOCAL-00004" summary="完善作者后台，合并用户表。">
-      <created>1503845639057</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1503845639057</updated>
+      <workItem from="1509888988431" duration="1711000" />
     </task>
     <task id="LOCAL-00005" summary="fix bug">
       <created>1503925671784</created>
@@ -1106,11 +1109,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508947304608</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="update &gt; deploy.sh &amp; readme.md&#10;更新maven和tomcat">
+      <created>1509889482788</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1509889482789</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="974790000" />
+    <option name="totallyTimeSpent" value="976063000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1136,8 +1146,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4126739" sideWeight="0.4904762" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4126739" sideWeight="0.4904762" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153014" sideWeight="0.4936508" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1154,7 +1165,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153014" sideWeight="0.4936508" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32148376" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2015873" sideWeight="0.53349876" order="10" side_tool="true" content_ui="tabs" />
@@ -1208,7 +1218,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Before refactor post." />
     <MESSAGE value="Change the post to mybatis style." />
     <MESSAGE value="文章发布，修改功能。" />
     <MESSAGE value="文章页面&#10;markdown2html&#10;fix bug" />
@@ -1233,7 +1242,8 @@
     <MESSAGE value="fix bug" />
     <MESSAGE value="fix bug&#10;用户注册时添加默认用户组" />
     <MESSAGE value="Code Review&#10;删除无用代码&#10;fix bug（文章更新逻辑）&#10;统一方法命名格式" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code Review&#10;删除无用代码&#10;fix bug（文章更新逻辑）&#10;统一方法命名格式" />
+    <MESSAGE value="update &gt; deploy.sh &amp; readme.md&#10;更新maven和tomcat" />
+    <option name="LAST_COMMIT_MESSAGE" value="update &gt; deploy.sh &amp; readme.md&#10;更新maven和tomcat" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1306,14 +1316,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="20" column="50" lean-forward="false" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-732">
-          <caret line="88" column="36" lean-forward="false" selection-start-line="88" selection-start-column="36" selection-end-line="88" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1568,8 +1570,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/notebook/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        <state relative-caret-position="431">
+          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
           <folding />
         </state>
       </provider>
