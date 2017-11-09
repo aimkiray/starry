@@ -1,35 +1,35 @@
 #!/bin/bash
-cd /home/starry
+cd ~/starry
 git pull
 mvn clean package
-cd /home/starry/target
+cd ~/starry/target
 mv starry.war ROOT.war
 echo "关闭Tomcat"
-sh /home/apache-tomcat/bin/shutdown.sh
+sh ~/apache-tomcat/bin/shutdown.sh
 echo "转移资源"
-if test ! -d "/home/headimg"
+if test ! -d "~/headimg"
 then
-    mkdir /home/headimg
+    mkdir ~/headimg
 else
-    rm -rf /home/headimg/*
+    rm -rf ~/headimg/*
 fi
-if test -d "/home/apache-tomcat/webapps/ROOT/resources/headimg/"
+if test -d "~/apache-tomcat/webapps/ROOT/resources/headimg/"
 then
-    mv /home/apache-tomcat/webapps/ROOT/resources/headimg/* /home/headimg/
+    mv ~/apache-tomcat/webapps/ROOT/resources/headimg/* ~/headimg/
 fi
 echo "重新部署"
-rm -rf /home/apache-tomcat/webapps/ROOT
-mv ROOT.war /home/apache-tomcat/webapps/
+rm -rf ~/apache-tomcat/webapps/ROOT
+mv ROOT.war ~/apache-tomcat/webapps/
 echo "启动Tomcat"
-sh /home/apache-tomcat/bin/startup.sh
+sh ~/apache-tomcat/bin/startup.sh
 echo "Waiting for Tomcat to start..."
 while true
 do
-    if test -d "/home/apache-tomcat/webapps/ROOT/resources/"
+    if test -d "~/apache-tomcat/webapps/ROOT/resources/"
     then
-        mkdir /home/apache-tomcat/webapps/ROOT/resources/headimg/
+        mkdir ~/apache-tomcat/webapps/ROOT/resources/headimg/
         break
     fi
 done
-mv /home/headimg/* /home/apache-tomcat/webapps/ROOT/resources/headimg/
+mv ~/headimg/* ~/apache-tomcat/webapps/ROOT/resources/headimg/
 echo -e "\033[32m Deployment is complete! \033[0m"

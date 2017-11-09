@@ -149,25 +149,25 @@ git version 2.7.4
 先下载最新版[maven](https://maven.apache.org/download.cgi)，右键Binary tar.gz archive获取下载地址，输入如下命令下载maven：
 
 ```shell=
-root@akari:~# cd /home
+root@akari:~# cd ~
 # 若地址失效，请自行替换最新地址
-root@akari:/home# wget http://mirrors.hust.edu.cn/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.2-bin.tar.gz
+root@akari:~# wget http://mirrors.hust.edu.cn/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.2-bin.tar.gz
 # 解压
-root@akari:/home# tar -zxvf apache-maven-3.5.2-bin.tar.gz
+root@akari:~# tar -zxvf apache-maven-3.5.2-bin.tar.gz
 # 重命名
-root@akari:/home# mv apache-maven-3.5.2 apache-maven
+root@akari:~# mv apache-maven-3.5.2 apache-maven
 ```
 
 添加环境变量：
 
 ```shell=
-root@akari:/home# vim /etc/profile
+root@akari:~# vim /etc/profile
 ```
 
 在最后加上这些：
 
 ```shell=
-MAVEN_HOME=/home/apache-maven
+MAVEN_HOME=~/apache-maven
 export MAVEN_HOME
 export PATH=${PATH}:${MAVEN_HOME}/bin
 ```
@@ -175,15 +175,15 @@ export PATH=${PATH}:${MAVEN_HOME}/bin
 保存，退出后重载文件：
 
 ```shell=
-root@akari:/home# source /etc/profile
+root@akari:~# source /etc/profile
 ```
 
 验证maven配置，成功则返回版本号：
 
 ```shell=
-root@akari:/home# mvn -v
+root@akari:~# mvn -v
 Apache Maven 3.5.0 (ff8f5e7444045639af65f6095c62210b5713f426; 2017-04-04T03:39:06+08:00)
-Maven home: /home/apache-maven-3.5.0
+Maven home: ~/apache-maven-3.5.0
 Java version: 1.8.0_131, vendor: Oracle Corporation
 Java home: /usr/lib/jvm/java-8-openjdk-amd64/jre
 Default locale: en_US, platform encoding: UTF-8
@@ -195,23 +195,23 @@ OS name: "linux", version: "4.4.0-47-generic", arch: "amd64", family: "unix"
 在这儿获取最新版[tomcat](http://tomcat.apache.org/download-90.cgi)下载地址（core版本的tar.gz），如下：
 
 ```shell=
-root@akari:~# cd /home
-root@akari:/home# wget http://mirrors.shuosc.org/apache/tomcat/tomcat-9/v9.0.0.M26/bin/apache-tomcat-9.0.1.tar.gz
+root@akari:~# cd ~
+root@akari:~# wget http://mirrors.shuosc.org/apache/tomcat/tomcat-9/v9.0.0.M26/bin/apache-tomcat-9.0.1.tar.gz
 # 解压
-root@akari:/home# tar -zxvf apache-tomcat-9.0.1.tar.gz
+root@akari:~# tar -zxvf apache-tomcat-9.0.1.tar.gz
 # 重命名
-root@akari:/home# mv apache-tomcat-9.0.1 apache-tomcat
+root@akari:~# mv apache-tomcat-9.0.1 apache-tomcat
 ```
 
 启动Tomcat：
 
 ```shell=
-root@akari:/home# sh apache-tomcat/bin/startup.sh
-Using CATALINA_BASE:   /home/apache-tomcat-9.0.1
-Using CATALINA_HOME:   /home/apache-tomcat-9.0.1
-Using CATALINA_TMPDIR: /home/apache-tomcat-9.0.1/temp
+root@akari:~# sh apache-tomcat/bin/startup.sh
+Using CATALINA_BASE:   ~/apache-tomcat-9.0.1
+Using CATALINA_HOME:   ~/apache-tomcat-9.0.1
+Using CATALINA_TMPDIR: ~/apache-tomcat-9.0.1/temp
 Using JRE_HOME:        /usr
-Using CLASSPATH:       /home/apache-tomcat-9.0.1/bin/bootstrap.jar:/home/apache-tomcat-9.0.1/bin/tomcat-juli.jar
+Using CLASSPATH:       ~/apache-tomcat-9.0.1/bin/bootstrap.jar:~/apache-tomcat-9.0.1/bin/tomcat-juli.jar
 Tomcat started.
 ```
 ### 1.5. 安装MariaDB数据库
@@ -221,7 +221,7 @@ MariaDB是MySQL源代码的一个分支，在意识到Oracle会对MySQL许可做
 直接apt安装：
 
 ```shell=
-root@akari:/home# apt install mariadb-server -y
+root@akari:~# apt install mariadb-server -y
 ```
 
 ## 2. 快速开始
@@ -229,8 +229,8 @@ root@akari:/home# apt install mariadb-server -y
 首先clone本项目（注意路径，之后要用到）：
 
 ```shell=
-root@akari:~# cd /home
-root@akari:/home# git clone https://github.com/nekuata/starry.git
+root@akari:~# cd ~
+root@akari:~# git clone https://github.com/nekuata/starry.git
 ```
 
 接着配置数据库，配置root密码：
@@ -243,9 +243,9 @@ root@akari:~# mysql_secure_installation
 
 ```shell=
 # 登录数据库
-root@akari:/home/starry/src/main# mysql -u root -p
+root@akari:~/starry/src/main# mysql -u root -p
 # 导入表结构
-MariaDB [(none)]> source /home/starry/src/main/notebook/starry.sql
+MariaDB [(none)]> source ~/starry/src/main/notebook/starry.sql
 ```
 
 新建一个用户，赋予表sinitial的所有权限：
@@ -262,8 +262,8 @@ MariaDB [(none)]> exit
 使用maven下载依赖包并打包：
 
 ```shell=
-root@akari:~# cd /home/starry
-root@akari:/home/starry# mvn install
+root@akari:~# cd ~/starry
+root@akari:~/starry# mvn install
 ```
 
 > 以下内容不是必须的。
@@ -295,7 +295,7 @@ password:gNfnXJUtBokb9yuIGxw0a5FtRlM5+yuhJ+QM/sL9S1bps/zqAd2daBePWGNqdWirsZQtXbB
 修改Druid配置文件：
 
 ```shell=
-root@akari:~# vim /home/starry/src/main/resources/spring/druid.properties
+root@akari:~# vim ~/starry/src/main/resources/spring/druid.properties
 ```
 输入`i`开启编辑模式，在这里填入数据库用户名和上面生成的密钥：
 ```shell=
@@ -310,25 +310,25 @@ jdbc_publicKey = MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALzE1JOGzGw5IN1OkhuRKx2/G9AeAgj
 再次使用maven打包：
 
 ```shell=
-root@akari:~# cd /home/starry
-root@akari:/home/starry# mvn install
+root@akari:~# cd ~/starry
+root@akari:~/starry# mvn install
 ```
 
 完成后，把打好的war包重命名，丢到Tomcat服务器里：
 
 ```shell=
 # 进入war包目录
-root@akari:/home/starry# cd /home/starry/target
+root@akari:~/starry# cd ~/starry/target
 # 改名
-root@akari:/home/starry/target# mv starry.war ROOT.war
+root@akari:~/starry/target# mv starry.war ROOT.war
 # 关闭tomcat
-root@akari:/home/starry/target# sh /home/apache-tomcat/bin/shutdown.sh
+root@akari:~/starry/target# sh ~/apache-tomcat/bin/shutdown.sh
 # 删除旧包
-root@akari:/home/starry/target# rm -rf /home/apache-tomcat/webapps/ROOT
+root@akari:~/starry/target# rm -rf ~/apache-tomcat/webapps/ROOT
 # 添加新包
-root@akari:/home/starry/target# mv ROOT.war /home/apache-tomcat/webapps/
+root@akari:~/starry/target# mv ROOT.war ~/apache-tomcat/webapps/
 # 启动tomcat
-root@akari:/home/starry/target# sh /home/apache-tomcat/bin/startup.sh
+root@akari:~/starry/target# sh ~/apache-tomcat/bin/startup.sh
 ```
 大功告成！
 
@@ -341,14 +341,14 @@ root@akari:/home/starry/target# sh /home/apache-tomcat/bin/startup.sh
 
 ```shell=
 # 执行脚本
-root@akari:~# sh /home/starry/src/main/notebook/deploy.sh
+root@akari:~# sh ~/starry/src/main/notebook/deploy.sh
 ```
 or
 ```shell=
 # 赋予脚本执行权限
-root@akari:~# chmod +x /home/starry/src/main/notebook/deploy.sh
+root@akari:~# chmod +x ~/starry/src/main/notebook/deploy.sh
 # 执行脚本
-root@akari:~# ./home/starry/src/main/notebook/deploy.sh
+root@akari:~# .~/starry/src/main/notebook/deploy.sh
 ```
 
 To Be Continue...
