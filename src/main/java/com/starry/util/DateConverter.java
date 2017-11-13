@@ -1,4 +1,4 @@
-package com.starry.utils;
+package com.starry.util;
 
 import org.springframework.core.convert.converter.Converter;
 
@@ -9,7 +9,7 @@ import java.util.Date;
 public class DateConverter implements Converter<String, Date> {
 
     /**
-     * 配合Spring-mvc使用
+     * 配合Spring MVC使用
      */
     @Override
     public Date convert(String source) {

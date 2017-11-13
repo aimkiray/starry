@@ -1,4 +1,4 @@
-package com.starry.utils;
+package com.starry.configurer;
 
 import freemarker.cache.TemplateLoader;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;

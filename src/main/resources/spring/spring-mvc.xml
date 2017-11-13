@@ -18,8 +18,8 @@
   <!--配置要扫描的Controller-->
   <context:component-scan base-package="com.starry.controller"/>
 
-  <!-- 开启SpringMVC注解模式 -->
-  <!-- 简化配置：
+  <!--开启SpringMVC注解模式-->
+  <!--简化配置：
     - 自动注册DefaultAnootationHandlerMapping,AnotationMethodHandlerAdapter
     - 提供一些列：数据绑定，数字和日期的format @NumberFormat, @DateTimeFormat,xml,json默认读写支持
     - 引入Gson
@@ -30,19 +30,19 @@
     </mvc:message-converters>
   </mvc:annotation-driven>
 
-  <!--自定义Spring时间转换器-->
+  <!--参数绑定时将String时间转换为Date-->
   <!--<mvc:annotation-driven conversion-service="customConversionService">
   </mvc:annotation-driven>
   <bean id="customConversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
     <property name="converters">
       <set>
-        <bean class="com.starrytils.DateConverter"/>
+        <bean class="com.starry.util.DateConverter"/>
       </set>
     </property>
   </bean>-->
 
-  <!-- FreeMarkerConfigurer -->
-  <bean id="freemarkerConfigurer" class="com.starry.utils.HtmlFreeMarkerConfigurer">
+  <!--FreeMarkerConfigurer-->
+  <bean id="freemarkerConfigurer" class="com.starry.configurer.HtmlFreeMarkerConfigurer">
   <property name="templateLoaderPath" value="/WEB-INF/ftl/"/>
     <property name="freemarkerSettings">
       <!-- 设置FreeMarker环境属性 -->
@@ -61,7 +61,7 @@
     </property>
   </bean>
 
-  <!-- 配置freeMarker视图解析器 -->
+  <!--配置freeMarker视图解析器-->
   <bean id="ftlViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
     <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
     <property name="contentType" value="text/html; charset=utf-8"/>

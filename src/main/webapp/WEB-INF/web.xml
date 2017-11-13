@@ -57,6 +57,24 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
+  <!--XSS过滤器-->
+  <filter>
+    <filter-name>XssFilter</filter-name>
+    <filter-class>com.starry.filter.XssFilter</filter-class>
+    <init-param>
+      <param-name>excludes</param-name>
+      <param-value>/favicon.ico,/img/*,/js/*,/css/*</param-value>
+    </init-param>
+    <init-param>
+      <param-name>isIncludeRichText</param-name>
+      <param-value>false</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>XssFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
   <!--设置编码-->
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>

@@ -6,7 +6,7 @@ import com.starry.domain.RolePermissionLink;
 import com.starry.service.PermissionService;
 import com.starry.service.RolePermissionLinkService;
 import com.starry.service.RoleService;
-import com.starry.utils.DataTables;
+import com.starry.util.DataTables;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

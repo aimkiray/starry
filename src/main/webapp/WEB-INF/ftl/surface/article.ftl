@@ -4,6 +4,8 @@
 <html>
 <head>
     <meta charset="utf-8">
+<#--响应式标记-->
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Hi, there..?</title>
     <#--bootstrap 4.0-->
     <link href="${root}/resources/bootstrap-4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -12,13 +14,8 @@
     <#--markdown css-->
     <link href="${root}/resources/post/css/wysiwyg.css" rel="stylesheet" type="text/css">
 
-    <#--jquery-->
-    <script src="${root}/resources/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <#--markdown2html，使用showdown-->
-    <script src="${root}/resources/showdown/showdown.js" type="text/javascript"></script>
-
     <link href="${root}/resources/post/css/custom.css" rel="stylesheet" type="text/css">
-    <script src="${root}/resources/post/js/custom.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -29,7 +26,7 @@
 
         <#--功能面板-->
             <div class="col-lg-3 hidden-small">
-            <#include "side.ftl" >
+                <#include "side.ftl" >
             </div>
 
         <#--首页文章区域-->
@@ -52,7 +49,6 @@
                                        href="###">${(tag.tagName)!"none"}&nbsp;</a>
                                 </#list>
                             </div>
-
                         </div>
 
                         <div class="post-text-content wysiwyg">
@@ -71,10 +67,18 @@
 
             <#--宽度过小显示-->
                 <div class="sidebar-on-mobile">
-                <#include "side.ftl" >
+                    <#include "side.ftl" >
                 </div>
+
             </div>
             <div class="col-lg-1 hidden-small"></div>
         </div>
     </div>
+</body>
+<#--jquery-->
+<script src="${root}/resources/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
+<#--markdown2html，使用showdown-->
+<script src="${root}/resources/showdown/showdown.js" type="text/javascript"></script>
+
+<script src="${root}/resources/post/js/custom.js" type="text/javascript"></script>
 </html>

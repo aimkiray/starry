@@ -22,7 +22,7 @@ rm -rf ~/apache-tomcat/webapps/ROOT
 mv ROOT.war ~/apache-tomcat/webapps/
 echo "启动Tomcat"
 sh ~/apache-tomcat/bin/startup.sh
-echo "Waiting for Tomcat to start..."
+echo "Waiting for Tomcat..."
 while true
 do
     if test -d "~/apache-tomcat/webapps/ROOT/resources/"

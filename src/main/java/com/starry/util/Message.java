@@ -1,13 +1,13 @@
-package com.starry.utils;
+package com.starry.util;
 
-public class AjaxMessage {
+public class Message {
     private int message;
     private Object result;
 
-    public AjaxMessage() {
+    public Message() {
     }
 
-    public AjaxMessage(int message, Object result) {
+    public Message(int message, Object result) {
         this.message = message;
         this.result = result;
     }

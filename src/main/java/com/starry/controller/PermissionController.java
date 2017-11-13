@@ -1,6 +1,6 @@
 package com.starry.controller;
 
-import com.starry.utils.AjaxMessage;
+import com.starry.util.Message;
 import com.starry.domain.Permission;
 import com.starry.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -107,16 +107,16 @@ public class PermissionController extends BaseController {
 
     @RequestMapping(value = "/del")
     @ResponseBody
-    public AjaxMessage permissionDel(int permissionId,int parentPermissionId) {
-        AjaxMessage ajaxMessage = new AjaxMessage();
+    public Message permissionDel(int permissionId, int parentPermissionId) {
+        Message message = new Message();
         int result = permissionService.delPermission(permissionId);
-        ajaxMessage.setResult(result);
+        message.setResult(result);
         Permission permission = permissionService.findPermission(parentPermissionId);
         if (permission != null) {
-            ajaxMessage.setMessage(1);
+            message.setMessage(1);
         } else {
-            ajaxMessage.setMessage(0);
+            message.setMessage(0);
         }
-        return ajaxMessage;
+        return message;
     }
 }

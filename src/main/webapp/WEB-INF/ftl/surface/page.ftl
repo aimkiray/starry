@@ -12,13 +12,7 @@
 <#--markdown css-->
     <link href="${root}/resources/post/css/wysiwyg.css" rel="stylesheet" type="text/css">
 
-<#--jquery-->
-    <script src="${root}/resources/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
-<#--markdown2html，使用showdown-->
-    <script src="${root}/resources/showdown/showdown.js" type="text/javascript"></script>
-
     <link href="${root}/resources/post/css/custom.css" rel="stylesheet" type="text/css">
-    <script src="${root}/resources/post/js/custom.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -90,4 +84,11 @@
             <div class="col-lg-1 hidden-small"></div>
         </div>
     </div>
+</body>
+<#--jquery-->
+<script src="${root}/resources/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
+<#--markdown2html，使用showdown-->
+<script src="${root}/resources/showdown/showdown.js" type="text/javascript"></script>
+
+<script src="${root}/resources/post/js/custom.js" type="text/javascript"></script>
 </html>

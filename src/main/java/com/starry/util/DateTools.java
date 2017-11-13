@@ -1,4 +1,4 @@
-package com.starry.utils;
+package com.starry.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
