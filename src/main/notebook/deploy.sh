@@ -1,6 +1,6 @@
 #!/bin/bash
-cd ~/
-path = $(pwd)
+cd
+path=$(pwd)
 cd ${path}/starry
 git pull
 mvn clean package

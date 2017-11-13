@@ -6,7 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="update &gt; XSS过滤器&#10;增加富文本支持&#10;增加markdown特殊符号支持">
+    <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/notebook/deploy.sh" afterPath="$PROJECT_DIR$/src/main/notebook/deploy.sh" />
     </list>
@@ -88,8 +88,8 @@
       <file leaf-file-name="deploy.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/notebook/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-306">
-              <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+            <state relative-caret-position="95">
+              <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -142,7 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>checkbox_false_full</find>
       <find>f022</find>
       <find>roots_docu</find>
       <find>octicons-link</find>
@@ -172,6 +171,7 @@
       <find>/home</find>
       <find>xss</find>
       <find>xss filter init</find>
+      <find>~/</find>
     </findStrings>
     <replaceStrings>
       <replace>Source Han Serif SC</replace>
@@ -822,14 +822,7 @@
       <workItem from="1510384931111" duration="676000" />
       <workItem from="1510497151628" duration="1227000" />
       <workItem from="1510553950006" duration="622000" />
-      <workItem from="1510560874944" duration="21697000" />
-    </task>
-    <task id="LOCAL-00013" summary="Change the post to mybatis style.">
-      <created>1505833965173</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1505833965173</updated>
+      <workItem from="1510560874944" duration="22526000" />
     </task>
     <task id="LOCAL-00014" summary="文章发布，修改功能。">
       <created>1505923189358</created>
@@ -1167,11 +1160,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510596780306</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="update &gt; Shell&#10;fix bug">
+      <created>1510598874424</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1510598874424</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1014614000" />
+    <option name="totallyTimeSpent" value="1015443000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1269,7 +1269,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add test sql" />
     <MESSAGE value="Change mariadb port to 3306" />
     <MESSAGE value="简化配置" />
     <MESSAGE value="添加测试数据" />
@@ -1294,7 +1293,8 @@
     <MESSAGE value="update &gt; pom.xml&#10;test maven 3.5.0" />
     <MESSAGE value="update &gt; deploy &amp; readme&#10;部署位置修改为当前用户目录" />
     <MESSAGE value="update &gt; XSS过滤器&#10;增加富文本支持&#10;增加markdown特殊符号支持" />
-    <option name="LAST_COMMIT_MESSAGE" value="update &gt; XSS过滤器&#10;增加富文本支持&#10;增加markdown特殊符号支持" />
+    <MESSAGE value="update &gt; Shell&#10;fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="update &gt; Shell&#10;fix bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1705,8 +1705,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/notebook/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        <state relative-caret-position="95">
+          <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding />
         </state>
       </provider>
