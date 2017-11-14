@@ -41,6 +41,11 @@ public class PermissionInterception implements HandlerInterceptor {
             return true;
         }
 
+//        关于我 放行
+        if (url.startsWith("/resume")) {
+            return true;
+        }
+
 //        用户已经登录
         if (httpServletRequest.getSession().getAttribute("user") != null) {
 //            用户面板 放行

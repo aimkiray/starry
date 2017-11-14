@@ -19,7 +19,6 @@ public class JsoupUtil {
         // 比如红色字体 style="color:red;"
         // 所以需要给所有标签添加style属性
         whitelist.addAttributes(":all","style");
-        whitelist.addTags(">");
     }
 
     public static String clean(String content) {

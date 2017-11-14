@@ -13,10 +13,12 @@
 
 
 -- 导出 sinitial 的数据库结构
+DROP DATABASE IF EXISTS `sinitial`;
 CREATE DATABASE IF NOT EXISTS `sinitial` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `sinitial`;
 
 -- 导出  表 sinitial.sl_permission 结构
+DROP TABLE IF EXISTS `sl_permission`;
 CREATE TABLE IF NOT EXISTS `sl_permission` (
   `permission_id` int(11) NOT NULL AUTO_INCREMENT,
   `permission_name` varchar(30) DEFAULT NULL,
@@ -72,6 +74,7 @@ INSERT INTO `sl_permission` (`permission_id`, `permission_name`, `description`, 
 /*!40000 ALTER TABLE `sl_permission` ENABLE KEYS */;
 
 -- 导出  表 sinitial.sl_post 结构
+DROP TABLE IF EXISTS `sl_post`;
 CREATE TABLE IF NOT EXISTS `sl_post` (
   `post_id` int(11) NOT NULL AUTO_INCREMENT,
   `post_title` varchar(30) DEFAULT NULL,
@@ -97,6 +100,7 @@ INSERT INTO `sl_post` (`post_id`, `post_title`, `post_status`, `post_author`, `p
 /*!40000 ALTER TABLE `sl_post` ENABLE KEYS */;
 
 -- 导出  表 sinitial.sl_post_tag 结构
+DROP TABLE IF EXISTS `sl_post_tag`;
 CREATE TABLE IF NOT EXISTS `sl_post_tag` (
   `post_tag_id` int(11) NOT NULL AUTO_INCREMENT,
   `post_id` int(11) DEFAULT NULL,
@@ -124,6 +128,7 @@ INSERT INTO `sl_post_tag` (`post_tag_id`, `post_id`, `tag_id`) VALUES
 /*!40000 ALTER TABLE `sl_post_tag` ENABLE KEYS */;
 
 -- 导出  表 sinitial.sl_role 结构
+DROP TABLE IF EXISTS `sl_role`;
 CREATE TABLE IF NOT EXISTS `sl_role` (
   `role_id` int(11) NOT NULL AUTO_INCREMENT,
   `role_name` varchar(30) DEFAULT NULL,
@@ -132,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `sl_role` (
   UNIQUE KEY `sl_role_role_id_uindex` (`role_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- 正在导出表  sinitial.sl_role 的数据：~4 rows (大约)
+-- 正在导出表  sinitial.sl_role 的数据：~3 rows (大约)
 /*!40000 ALTER TABLE `sl_role` DISABLE KEYS */;
 INSERT INTO `sl_role` (`role_id`, `role_name`, `role_info`) VALUES
 	(1, 'root', 'BOSS'),
@@ -141,6 +146,7 @@ INSERT INTO `sl_role` (`role_id`, `role_name`, `role_info`) VALUES
 /*!40000 ALTER TABLE `sl_role` ENABLE KEYS */;
 
 -- 导出  表 sinitial.sl_role_permission 结构
+DROP TABLE IF EXISTS `sl_role_permission`;
 CREATE TABLE IF NOT EXISTS `sl_role_permission` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `role_id` int(11) DEFAULT NULL,
@@ -224,6 +230,7 @@ INSERT INTO `sl_role_permission` (`id`, `role_id`, `permission_id`) VALUES
 /*!40000 ALTER TABLE `sl_role_permission` ENABLE KEYS */;
 
 -- 导出  表 sinitial.sl_tag 结构
+DROP TABLE IF EXISTS `sl_tag`;
 CREATE TABLE IF NOT EXISTS `sl_tag` (
   `tag_id` int(11) NOT NULL AUTO_INCREMENT,
   `tag_name` varchar(30) DEFAULT NULL,
@@ -244,6 +251,7 @@ INSERT INTO `sl_tag` (`tag_id`, `tag_name`) VALUES
 /*!40000 ALTER TABLE `sl_tag` ENABLE KEYS */;
 
 -- 导出  表 sinitial.sl_user 结构
+DROP TABLE IF EXISTS `sl_user`;
 CREATE TABLE IF NOT EXISTS `sl_user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(50) NOT NULL,
