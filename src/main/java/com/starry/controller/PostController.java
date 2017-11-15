@@ -54,8 +54,8 @@ public class PostController extends BaseController {
     @ResponseBody
     public DataTables getPost(Integer start, Integer length) {
         DataTables dataTables = new DataTables();
-        start = start == null ? 0 : start;
         length = length == null ? 5 : length;
+        start = start == null ? 0 : start;
 //        不传搜索条件，在service判断为分页
         List<Post> posts = postService.searchPost(start, length, null);
         dataTables.setData(posts);

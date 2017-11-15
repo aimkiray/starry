@@ -38,11 +38,11 @@
                 <div class="login-group">
                     <div class="form-group">
                         <label for="lg_username" class="sr-only">Username</label>
-                        <input type="text" class="form-control" id="lg_username" name="userName" placeholder="">
+                        <input type="text" class="form-control" id="lg_username" name="userName" placeholder="用户名">
                     </div>
                     <div class="form-group">
                         <label for="lg_password" class="sr-only">Password</label>
-                        <input type="password" class="form-control" id="lg_password" name="userPassword" placeholder="">
+                        <input type="password" class="form-control" id="lg_password" name="userPassword" placeholder="密码">
                     </div>
                     <div class="form-group login-group-checkbox">
                         <input type="checkbox" id="lg_remember" name="remember">
