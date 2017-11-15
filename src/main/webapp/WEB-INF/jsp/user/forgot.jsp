@@ -51,7 +51,7 @@
     </div>
 
 </div>
-<script>
+<%--<script>
     $(document).ready(function () {
         $("#btn_add_user").click(function () {
             $.ajax({
@@ -81,7 +81,7 @@
             });
         });
     });
-</script>
+</script>--%>
 
 </body>
 </html>
