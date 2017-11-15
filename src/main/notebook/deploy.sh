@@ -34,4 +34,8 @@ do
     fi
 done
 mv ${path}/headimg/* ${path}/apache-tomcat/webapps/ROOT/resources/headimg/
+if test -d "${path}/favicon/"
+then
+    mv ${path}/favicon/* ${path}/apache-tomcat/webapps/ROOT/
+fi
 echo -e "\033[32m Deployment is complete! \033[0m"

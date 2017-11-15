@@ -27,6 +27,7 @@
 </head>
 <body>
 
+
 <div class="text-center" style="padding:50px 0">
     <div class="logo">登陆</div>
 
@@ -53,8 +54,6 @@
             <div class="etc-login-form">
                 <p>忘记密码？<a href="${root}/user/forgot/page">点我~</a></p>
                 <p>新用户？<a href="${root}/user/register/page">用户注册</a></p>
-                <p>测试用户名：test</p>
-                <p>密码：1234</p>
             </div>
         </form>
     </div>
