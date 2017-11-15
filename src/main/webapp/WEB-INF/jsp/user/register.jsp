@@ -18,7 +18,7 @@
     <link href="${root}/resources/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
-<%--jquery--%>
+    <%--jquery--%>
     <script src="${root}/resources/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
     <%--bootstrap--%>
     <script src="${root}/resources/bootstrap-3.0/js/bootstrap.min.js" type="text/javascript"></script>
@@ -28,10 +28,10 @@
 </head>
 <body>
 
-<!-- REGISTRATION FORM -->
+
 <div class="text-center" style="padding:50px 0">
     <div class="logo">注册</div>
-    <!-- Main Form -->
+
     <div class="login-form-1">
         <form id="register-form" class="text-left" action="${root}/user/register" method="post">
             <div class="login-form-main-message"></div>
@@ -79,7 +79,7 @@
             </div>
         </form>
     </div>
-    <!-- end:Main Form -->
+
 </div>
 
 <%--<script>

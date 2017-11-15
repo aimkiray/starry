@@ -7,13 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Author.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Configuration.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mariadb/Post.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mariadb/User.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/PostMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/PostMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/forgot.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/forgot.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -135,11 +132,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostMapper.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PostMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/PostMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="134" column="35" lean-forward="true" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
+            <state relative-caret-position="229">
+              <caret line="125" column="28" lean-forward="false" selection-start-line="125" selection-start-column="28" selection-end-line="125" selection-end-column="28" />
               <folding>
                 <marker date="1510745028749" expanded="true" signature="6186:7117" ph="SELECT the_p... post_id" />
                 <marker date="1510745028749" expanded="true" signature="6533:6710" ph="select sl_po... sl_post" />
@@ -155,6 +152,40 @@
                 <marker date="1510745028749" expanded="true" signature="13665:14469" ph="update sl_po... " />
                 <marker date="1510745028749" expanded="true" signature="14569:14998" ph="update sl_po... " />
                 <marker date="1510745028749" expanded="true" signature="15089:15460" ph="update sl_po... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forgot.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/forgot.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1159">
+              <caret line="52" column="6" lean-forward="true" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -252,8 +283,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/starry/controller/ResourceController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/post_add.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/panel/main.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/role/role_list.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/starry/service/Implement/RoleServiceImpl.java" />
@@ -270,7 +299,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/user_add.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/user_update.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/post/js/post-custom.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/starry/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/starry/controller/PostController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/starry/service/Implement/PermissionServiceImpl.java" />
@@ -303,6 +331,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/surface/article.ftl" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/ftl/surface/index.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/PostMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/forgot.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp" />
       </list>
     </option>
   </component>
@@ -922,13 +953,6 @@
       <workItem from="1510654708968" duration="11242000" />
       <workItem from="1510726889111" duration="2559000" />
     </task>
-    <task id="LOCAL-00016" summary="文章页面&#10;markdown2html&#10;fix bug">
-      <created>1506276681140</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1506276681140</updated>
-    </task>
     <task id="LOCAL-00017" summary="fix bug.">
       <created>1506354498594</created>
       <option name="number" value="00017" />
@@ -1265,11 +1289,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510674856796</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="update &gt; sql&#10;fix bug">
+      <created>1510745159685</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1510745159685</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1032399000" />
+    <option name="totallyTimeSpent" value="1033253000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1394,7 +1425,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="简化配置" />
     <MESSAGE value="添加测试数据" />
     <MESSAGE value="重新设计的主页" />
     <MESSAGE value="防止XSS注入 &amp; 自动化部署" />
@@ -1419,7 +1449,8 @@
     <MESSAGE value="update &gt; XSS过滤器&#10;增加富文本支持&#10;增加markdown特殊符号支持" />
     <MESSAGE value="update &gt; Shell&#10;fix bug" />
     <MESSAGE value="update &gt; sql &amp; index&#10;fix bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="update &gt; sql &amp; index&#10;fix bug" />
+    <MESSAGE value="update &gt; sql&#10;fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="update &gt; sql&#10;fix bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1436,20 +1467,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/role/js/role-custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="159" column="9" lean-forward="true" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/user_update.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/user_list.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="779">
@@ -1461,13 +1478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1615">
           <caret line="85" column="10" lean-forward="false" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="34" column="30" lean-forward="false" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1643,6 +1653,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1330">
           <caret line="70" column="17" lean-forward="false" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1818,8 +1829,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/PostMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="134" column="35" lean-forward="true" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
+        <state relative-caret-position="229">
+          <caret line="125" column="28" lean-forward="false" selection-start-line="125" selection-start-column="28" selection-end-line="125" selection-end-column="28" />
           <folding>
             <marker date="1510745028749" expanded="true" signature="6186:7117" ph="SELECT the_p... post_id" />
             <marker date="1510745028749" expanded="true" signature="6533:6710" ph="select sl_po... sl_post" />
@@ -1835,6 +1846,34 @@
             <marker date="1510745028749" expanded="true" signature="13665:14469" ph="update sl_po... " />
             <marker date="1510745028749" expanded="true" signature="14569:14998" ph="update sl_po... " />
             <marker date="1510745028749" expanded="true" signature="15089:15460" ph="update sl_po... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/forgot.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1159">
+          <caret line="52" column="6" lean-forward="true" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

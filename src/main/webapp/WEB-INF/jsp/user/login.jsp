@@ -27,30 +27,9 @@
 </head>
 <body>
 
-<%--<div class="container">
-
-    <form class="form-signin" action="${root}/user/login">
-        <h2 class="form-signin-heading">登录</h2>
-        <label for="userName" class="sr-only">用户名</label>
-        <input id="userName" name="userName" class="form-control" placeholder="用户名" required="" autofocus="" type="text">
-        <label for="userPassword" class="sr-only">密码</label>
-        <input id="userPassword" name="userPassword" class="form-control" placeholder="密码" required="" type="password">
-        <div class="checkbox">
-            <label>
-                <input value="remember-me" type="checkbox"> Remember me
-            </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">开始</button>
-        <p>测试用户名：红白</p>
-        <p>密码：1234</p>
-    </form>
-
-</div> <!-- /container -->--%>
-
-<!-- LOGIN FORM -->
 <div class="text-center" style="padding:50px 0">
     <div class="logo">登陆</div>
-    <!-- Main Form -->
+
     <div class="login-form-1">
         <form id="login-form" class="text-left" action="${root}/user/login" method="post">
             <div class="login-form-main-message"></div>
@@ -58,11 +37,11 @@
                 <div class="login-group">
                     <div class="form-group">
                         <label for="lg_username" class="sr-only">Username</label>
-                        <input type="text" class="form-control" id="lg_username" name="userName" placeholder="测试用户名：test">
+                        <input type="text" class="form-control" id="lg_username" name="userName" placeholder="用户名">
                     </div>
                     <div class="form-group">
                         <label for="lg_password" class="sr-only">Password</label>
-                        <input type="password" class="form-control" id="lg_password" name="userPassword" placeholder="密码：1234">
+                        <input type="password" class="form-control" id="lg_password" name="userPassword" placeholder="密码">
                     </div>
                     <div class="form-group login-group-checkbox">
                         <input type="checkbox" id="lg_remember" name="remember">
@@ -79,7 +58,7 @@
             </div>
         </form>
     </div>
-    <!-- end:Main Form -->
+
 </div>
 
 </body>
