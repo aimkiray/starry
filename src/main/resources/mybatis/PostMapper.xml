@@ -125,6 +125,7 @@
     FROM (select
     sl_post.post_id as the_post, post_title, post_status, post_author, post_mime_type, post_date, post_type, post_content
     from sl_post
+    ORDER BY the_post DESC
     LIMIT #{start},#{limit}) page
     LEFT JOIN sl_post_tag ON the_post = sl_post_tag.post_id
     LEFT JOIN sl_tag ON sl_tag.tag_id = sl_post_tag.tag_id
@@ -134,7 +135,6 @@
       and (post_title like concat('%',#{searchParam},'%')
       or post_content like concat('%',#{searchParam},'%'))
     </if>
-    ORDER BY the_post DESC
   </select>
 
   <!--获取文章总数-->
