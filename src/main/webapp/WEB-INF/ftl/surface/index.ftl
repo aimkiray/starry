@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <#--响应式标记-->
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>DEMO</title>
+    <title>☆Kira~</title>
 <#--bootstrap 4.0-->
     <link href="${root}/resources/bootstrap-4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <#--awesome-->
