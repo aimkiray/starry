@@ -134,6 +134,7 @@
       and (post_title like concat('%',#{searchParam},'%')
       or post_content like concat('%',#{searchParam},'%'))
     </if>
+    ORDER BY the_post DESC
   </select>
 
   <!--获取文章总数-->

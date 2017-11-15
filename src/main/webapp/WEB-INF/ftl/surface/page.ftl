@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Hi, there..?</title>
+    <title>page ${pageNumber}</title>
 <#--bootstrap 4.0-->
     <link href="${root}/resources/bootstrap-4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <#--awesome-->
