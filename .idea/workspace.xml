@@ -7,10 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8cd9a49-0169-4dd9-8fb0-abc36f014c99" name="Default" comment="update &gt; shell&#10;fix bug">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/starry/controller/LoginController.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/starry/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/starry/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/notebook/deploy.sh" afterPath="$PROJECT_DIR$/src/main/notebook/deploy.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -100,7 +98,7 @@
       <file leaf-file-name="PostMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/PostMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
+            <state relative-caret-position="-265">
               <caret line="125" column="28" lean-forward="false" selection-start-line="125" selection-start-column="28" selection-end-line="125" selection-end-column="28" />
               <folding>
                 <marker date="1510745028749" expanded="true" signature="6186:7117" ph="SELECT the_p... post_id" />
@@ -126,12 +124,12 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="82">
-              <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+              <caret line="33" column="30" lean-forward="false" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
               <folding>
-                <marker date="1510746202901" expanded="true" signature="2563:2585" ph="..." />
-                <marker date="1510746202901" expanded="true" signature="2563:2601" ph="..." />
-                <marker date="1510746202901" expanded="true" signature="2563:2612" ph="..." />
-                <marker date="1510746202901" expanded="true" signature="2563:2620" ph="..." />
+                <marker date="1510747145525" expanded="true" signature="2563:2585" ph="..." />
+                <marker date="1510747145525" expanded="true" signature="2563:2601" ph="..." />
+                <marker date="1510747145525" expanded="true" signature="2563:2612" ph="..." />
+                <marker date="1510747145525" expanded="true" signature="2563:2620" ph="..." />
               </folding>
             </state>
           </provider>
@@ -141,7 +139,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/forgot.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="52" column="6" lean-forward="true" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+              <caret line="52" column="6" lean-forward="false" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -153,7 +151,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/notebook/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="185">
-              <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+              <caret line="33" column="6" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -162,9 +160,12 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/starry/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="75" column="36" lean-forward="true" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="152">
+              <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+              <folding>
+                <element signature="e#1998#1999#0" expanded="true" />
+                <element signature="e#2036#2037#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1286,7 +1287,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1039620000" />
+    <option name="totallyTimeSpent" value="1039930000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1722,9 +1723,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1740,12 +1739,12 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
-          <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+          <caret line="33" column="30" lean-forward="false" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
           <folding>
-            <marker date="1510746202901" expanded="true" signature="2563:2585" ph="..." />
-            <marker date="1510746202901" expanded="true" signature="2563:2601" ph="..." />
-            <marker date="1510746202901" expanded="true" signature="2563:2612" ph="..." />
-            <marker date="1510746202901" expanded="true" signature="2563:2620" ph="..." />
+            <marker date="1510747145525" expanded="true" signature="2563:2585" ph="..." />
+            <marker date="1510747145525" expanded="true" signature="2563:2601" ph="..." />
+            <marker date="1510747145525" expanded="true" signature="2563:2612" ph="..." />
+            <marker date="1510747145525" expanded="true" signature="2563:2620" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1786,7 +1785,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/PostMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
+        <state relative-caret-position="-265">
           <caret line="125" column="28" lean-forward="false" selection-start-line="125" selection-start-column="28" selection-end-line="125" selection-end-column="28" />
           <folding>
             <marker date="1510745028749" expanded="true" signature="6186:7117" ph="SELECT the_p... post_id" />
@@ -1810,34 +1809,30 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/forgot.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="52" column="6" lean-forward="true" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+          <caret line="52" column="6" lean-forward="false" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/starry/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starry/controller/LoginController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/notebook/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
-          <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+          <caret line="33" column="6" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/starry/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="75" column="36" lean-forward="true" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
-          <folding />
+        <state relative-caret-position="152">
+          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+          <folding>
+            <element signature="e#1998#1999#0" expanded="true" />
+            <element signature="e#2036#2037#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

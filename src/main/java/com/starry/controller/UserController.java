@@ -47,7 +47,8 @@ public class UserController extends BaseController {
             return "redirect:/panel";
         } else {
             try {
-                resp.getWriter().print("<script>alert('登陆失败，请检查用户名和密码是否正确');history.go(-1);</script>");
+                resp.setContentType("text/html; charset=UTF-8");
+                resp.getWriter().print("<script>alert('登陆失败，请检查用户名和密码是否正确！');history.go(-1);</script>");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -71,14 +72,16 @@ public class UserController extends BaseController {
             return "redirect:/user/login/page";
         } else if (result == -1) {
             try {
-                resp.getWriter().print("<script>alert('注册失败，用户名已注册');history.go(-1);</script>");
+                resp.setContentType("text/html; charset=UTF-8");
+                resp.getWriter().print("<script>alert('注册失败，用户名已注册。');history.go(-1);</script>");
             } catch (IOException e) {
                 e.printStackTrace();
             }
             return null;
         } else {
             try {
-                resp.getWriter().print("<script>alert('注册失败，用户名已注册');history.go(-1);</script>");
+                resp.setContentType("text/html; charset=UTF-8");
+                resp.getWriter().print("<script>alert('注册失败，用户名已注册。');history.go(-1);</script>");
             } catch (IOException e) {
                 e.printStackTrace();
             }
