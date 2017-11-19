@@ -2,16 +2,11 @@
 
 <!DOCTYPE html>
 <html>
-<script>
-    if (top != self) {
-        top.location.href = "/";
-    }
-</script>
 <head>
     <meta charset="utf-8">
-    <#--响应式标记-->
+<#--响应式标记-->
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>☆Kira~</title>
+    <title>${post.user.nickName}的文章</title>
 <#--bootstrap 4.0-->
     <link href="${root}/resources/bootstrap-4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <#--awesome-->
@@ -20,7 +15,6 @@
     <link href="${root}/resources/post/css/wysiwyg.css" rel="stylesheet" type="text/css">
 
     <link href="${root}/resources/post/css/custom.css" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
@@ -38,8 +32,17 @@
             <div class="content-column col col-lg-7">
                 <div class="list-group">
 
+                    <div class="top-post-wrapper">
+                        <div class="top-post-content">
+                            <span class="title-link">作者：${post.user.nickName}</span>
+                            <#--<div class="grey-rule"></div>-->
+                            <div class="text-block">
+                                page ${pageNumber} / ${allPageNum}
+                            </div>
+                        </div>
+                    </div>
+
                 <#list posts as post>
-                    <input name="postId" type="hidden" value="${post.postId}">
                     <div class="post-wrapper">
                         <div class="post-content">
                             <a class="title-link"
@@ -56,25 +59,29 @@
                                 </#list>
                             </div>
                         </div>
+
                         <div class="post-text-content wysiwyg">
-                            <#--markdown格式原始文章-->
+                        <#--markdown格式原始文章-->
                             <div id="rawPost${post.postId}" style="display: none">${post.postType}</div>
-                            <#--文章显示区域-->
+                        <#--文章显示区域-->
                             <div class="paragraph" id="htmlPost${post.postId}"></div>
                         </div>
+
                     </div>
+                    <input name="postId" type="hidden" value="${post.postId}">
                 </#list>
 
                 </div>
 
-            <#--全部文章-->
-                <div class="button-wrapper"><a class="button" href="${root}/page/1">剩下的&nbsp;→</a></div>
+                <#--上一页-->
+                <div <#if pageNumber == 1 >style="display: none"<#else>class="l-button-wrapper"</#if>><a class="button" href="${root}/page/${pageNumber - 1}">←&nbsp;上一页</a></div>
+                <#--下一页-->
+                <div <#if pageNumber == allPageNum >style="display: none"<#else>class="r-button-wrapper"</#if>><a class="button" href="${root}/page/${pageNumber + 1}">下一页&nbsp;→</a></div>
 
             <#--显示区域宽度过小时显示的内容-->
                 <div class="sidebar-on-mobile">
                     <#include "side.ftl" >
                 </div>
-
             </div>
             <div class="col-lg-1 hidden-small"></div>
         </div>

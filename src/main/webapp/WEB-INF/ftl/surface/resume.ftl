@@ -12,8 +12,8 @@
     <title>
         ☆Kira~
     </title>
-    <link rel="icon" type="image/png" href="http://ozevind8t.bkt.clouddn.com/favicon.ico">
-    <link rel="apple-touch-icon" href="http://ozevind8t.bkt.clouddn.com/favicon.ico">
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -35,7 +35,7 @@
 </head>
 
 <body>
-    <div id="doc" class="markdown-body container-fluid"><h2 id="联系方式"><a class="anchor hidden-xs" href="#联系方式" title="联系方式"><span class="octicon octicon-link"></span></a>联系方式</h2><ul>
+    <div id="doc" class="markdown-body container-fluid"><h2 id="联系方式" style=""><a class="anchor hidden-xs" href="#联系方式" title="联系方式"><span class="octicon octicon-link"></span></a>联系方式</h2><ul>
 <li>
 <p>手机：18557513332</p>
 </li>
@@ -45,7 +45,7 @@
 <li>
 <p>QQ：1127076792</p>
 </li>
-</ul><h2 id="个人信息"><a class="anchor hidden-xs" href="#个人信息" title="个人信息"><span class="octicon octicon-link"></span></a>个人信息</h2><ul>
+</ul><h2 id="个人信息" style=""><a class="anchor hidden-xs" href="#个人信息" title="个人信息"><span class="octicon octicon-link"></span></a>个人信息</h2><ul>
 <li>
 <p>张舜/男/1995.11</p>
 </li>
@@ -61,7 +61,7 @@
 <li>
 <p>期望城市：杭州</p>
 </li>
-</ul><h2 id="项目经历"><a class="anchor hidden-xs" href="#项目经历" title="项目经历"><span class="octicon octicon-link"></span></a>项目经历</h2><h3 id="starry-博客系统"><a class="anchor hidden-xs" href="#starry-博客系统" title="starry-博客系统"><span class="octicon octicon-link"></span></a>Starry 博客系统</h3><p>Code &amp; Demo: <a href="https://github.com/nekuata/starry" target="_blank">https://github.com/nekuata/starry</a></p><blockquote>
+</ul><h2 id="项目经历" style=""><a class="anchor hidden-xs" href="#项目经历" title="项目经历"><span class="octicon octicon-link"></span></a>项目经历</h2><h3 id="starry-博客系统" style=""><a class="anchor hidden-xs" href="#starry-博客系统" title="starry-博客系统"><span class="octicon octicon-link"></span></a>Starry 博客系统</h3><p>Code &amp; Demo: <a href="https://github.com/aimkiray/starry" target="_blank">https://github.com/aimkiray/starry</a></p><blockquote>
 <p>自用博客系统，快速，稳定，安全；有详细的说明文档和代码注释，用于学习主流框架和练习 Java 基础，积累项目经验。现已开源并附有线上 Demo，主要特点如下。</p>
 </blockquote><ul>
 <li>采用主流的 SSM(Spring, Spring MVC, MyBatis) 框架</li>
@@ -73,7 +73,7 @@
 <li>RESTful 风格 API，简洁易懂</li>
 <li>防御 XSS 和 SQL 注入</li>
 <li>Linux 下项目自动化部署，通过 Git 和 Shell 脚本实现</li>
-</ul><h3 id="sgroup-订单管理系统"><a class="anchor hidden-xs" href="#sgroup-订单管理系统" title="sgroup-订单管理系统"><span class="octicon octicon-link"></span></a>Sgroup 订单管理系统</h3><p>Code: <a href="https://github.com/nekuata/sgroup" target="_blank">https://github.com/nekuata/sgroup</a></p><blockquote>
+</ul><h3 id="sgroup-订单管理系统" style=""><a class="anchor hidden-xs" href="#sgroup-订单管理系统" title="sgroup-订单管理系统"><span class="octicon octicon-link"></span></a>Sgroup 订单管理系统</h3><p>Code: <a href="https://github.com/aimkiray/sgroup" target="_blank">https://github.com/aimkiray/sgroup</a></p><blockquote>
 <p>本人第一个 Java web 项目，用于巩固基础而作。在此过程中本人充分练习了 Java 常用的设计模式和 J2EE 基本知识，熟悉了 MVC 架构模式，初步学习了 ES5 语法以及 HTML5 和 CSS3 常用标签属性，并加强了独立解决问题的能力。项目已完成，主要特点如下。</p>
 </blockquote><ul>
 <li>采用 MVC 架构，有高可维护性与可扩展性设计</li>
@@ -84,14 +84,14 @@
 <li>原生 JS 实现产品 &amp; 类别的单页操作和行内修改效果</li>
 <li>jQuery 实现购物车相关操作和提交前的数据库验证操作</li>
 <li>Ajax 异步请求数据，缓解服务端压力</li>
-</ul><h3 id="starry-gallery-资源管理系统"><a class="anchor hidden-xs" href="#starry-gallery-资源管理系统" title="starry-gallery-资源管理系统"><span class="octicon octicon-link"></span></a>Starry-gallery 资源管理系统</h3><p>Code: <a href="https://github.com/nekuata/starry-gallery" target="_blank">https://github.com/nekuata/starry-gallery</a></p><blockquote>
+</ul><h3 id="starry-gallery-资源管理系统" style=""><a class="anchor hidden-xs" href="#starry-gallery-资源管理系统" title="starry-gallery-资源管理系统"><span class="octicon octicon-link"></span></a>Starry-gallery 资源管理系统</h3><p>Code: <a href="https://github.com/aimkiray/starry-gallery" target="_blank">https://github.com/aimkiray/starry-gallery</a></p><blockquote>
 <p>熟练掌握 SSM 框架后，本人开始尝试一些新技术，用于提高开发效率或提升系统性能。此项目是由 starry 博客系统的资源管理模块拆分重构而来，主要提供文件上传，管理，生成直链等功能，也可作为轻量级网盘使用。重构以 Spring boot 为主，辅以 Shiro 权限管理，HikariCP 数据库连接池，并尝试整合 Redis 实现缓存操作。项目处于 development 阶段，主要特点如下。</p>
 </blockquote><ul>
 <li>基于 Spring boot 快速开发</li>
 <li>使用 Redis 对首页图片进行缓存存储，提高响应速度</li>
 <li>引入 Shiro 权限管理框架，安全可靠</li>
 <li>实现完整的 RESTful API，基于 HTTP/JSON 传输数据</li>
-</ul><h2 id="技能"><a class="anchor hidden-xs" href="#技能" title="技能"><span class="octicon octicon-link"></span></a>技能</h2><ul>
+</ul><h2 id="技能" style=""><a class="anchor hidden-xs" href="#技能" title="技能"><span class="octicon octicon-link"></span></a>技能</h2><ul>
 <li><strong>Java</strong>：熟悉Java语法，编码规范，见名知意；了解 Util 包下常用工具类，了解常用集合框架的原理并能熟练使用；了解 Java 的泛类和反射机制，以此写过 Service 父类实现通用 CRUD；熟悉 I/O 流和异常处理，了解多线程和同步机制；会用 Java 实现经典算法（面向 Google）</li>
 <li><strong>网页</strong>：熟悉 HTML5 常用标签和属性；熟悉 CSS 常用属性语法，熟练使用原生 CSS 定位元素，了解 CSS3 动画</li>
 <li><strong>JavaScript</strong>：了解 ES5，熟悉原生 DOM 操作；熟悉类型转换，比如 Object 类型和 JSON 字符串互转；用过原生 Ajax 实现文件上传；<s>精通 Node.js 的 Hello World 写法</s>（正式版见PDF）</li>
@@ -103,13 +103,13 @@
 <li><strong>版本管理</strong>：Git/SVN</li>
 <li><strong>系统</strong>：超过3年 Linux 使用经验</li>
 <li><strong>其他</strong>：<s>擅长修电脑</s></li>
-</ul><h2 id="获奖情况"><a class="anchor hidden-xs" href="#获奖情况" title="获奖情况"><span class="octicon octicon-link"></span></a>获奖情况</h2><ul>
+</ul><h2 id="获奖情况" style=""><a class="anchor hidden-xs" href="#获奖情况" title="获奖情况"><span class="octicon octicon-link"></span></a>获奖情况</h2><ul>
 <li>2014-2015 学年电气电子工程分院三等奖学金</li>
 <li>2015-2016 学年电气电子工程分院三等奖学金</li>
 <li>2015 年全国大学生数学建模竞赛省三等奖</li>
 <li>申请专利 *1（<a href="https://github.com/nekuata/resume/blob/master/patent/patent.pdf" target="_blank">一种可调节式 LED 灯</a>）</li>
 <li>发表论文 *1（一种 PWM 调光 LED 照明电路设计）</li>
-</ul><h2 id="自我评价"><a class="anchor hidden-xs" href="#自我评价" title="自我评价"><span class="octicon octicon-link"></span></a>自我评价</h2><ul>
+</ul><h2 id="自我评价" style=""><a class="anchor hidden-xs" href="#自我评价" title="自我评价"><span class="octicon octicon-link"></span></a>自我评价</h2><ul>
 <li>乐于自学，边学边用，面向 Google 编程，擅长搜寻并独立解决问题</li>
 <li>喜欢学习研究新技术，并能迅速运用到项目中</li>
 <li>工作积极负责</li>
@@ -122,12 +122,12 @@
                 <i class="fa fa-bars"></i>
             </a>
             <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-                <div class="toc"><ul class="nav"><li class=""><a href="#联系方式">联系方式</a></li><li class=""><a href="#个人信息">个人信息</a></li><li class=""><a href="#项目经历">项目经历</a><ul class="nav"><li class=""><a href="#starry-博客系统">Starry 博客系统</a></li><li class=""><a href="#sgroup-订单管理系统">Sgroup 订单管理系统</a></li><li><a href="#starry-gallery-资源管理系统">Starry-gallery 资源管理系统</a></li></ul></li><li><a href="#技能">技能</a></li><li><a href="#获奖情况">获奖情况</a></li><li><a href="#自我评价">自我评价</a></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+                <div class="toc"><ul class="nav"><li class=""><a href="#联系方式">联系方式</a></li><li class=""><a href="#个人信息">个人信息</a></li><li><a href="#项目经历">项目经历</a><ul class="nav"><li><a href="#starry-博客系统">Starry 博客系统</a></li><li><a href="#sgroup-订单管理系统">Sgroup 订单管理系统</a></li><li><a href="#starry-gallery-资源管理系统">Starry-gallery 资源管理系统</a></li></ul></li><li><a href="#技能">技能</a></li><li><a href="#获奖情况">获奖情况</a></li><li><a href="#自我评价">自我评价</a></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
             </ul>
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
-        <div class="toc"><ul class="nav"><li class=""><a href="#联系方式">联系方式</a></li><li class=""><a href="#个人信息">个人信息</a></li><li class=""><a href="#项目经历">项目经历</a><ul class="nav"><li class=""><a href="#starry-博客系统">Starry 博客系统</a></li><li class=""><a href="#sgroup-订单管理系统">Sgroup 订单管理系统</a></li><li><a href="#starry-gallery-资源管理系统">Starry-gallery 资源管理系统</a></li></ul></li><li><a href="#技能">技能</a></li><li><a href="#获奖情况">获奖情况</a></li><li><a href="#自我评价">自我评价</a></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+        <div class="toc"><ul class="nav"><li class=""><a href="#联系方式">联系方式</a></li><li class=""><a href="#个人信息">个人信息</a></li><li><a href="#项目经历">项目经历</a><ul class="nav"><li><a href="#starry-博客系统">Starry 博客系统</a></li><li><a href="#sgroup-订单管理系统">Sgroup 订单管理系统</a></li><li><a href="#starry-gallery-资源管理系统">Starry-gallery 资源管理系统</a></li></ul></li><li><a href="#技能">技能</a></li><li><a href="#获奖情况">获奖情况</a></li><li><a href="#自我评价">自我评价</a></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>

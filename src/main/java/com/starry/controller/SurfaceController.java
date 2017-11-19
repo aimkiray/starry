@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Controller
-public class IndexController extends BaseController {
+public class SurfaceController extends BaseController {
 
     @Resource
     private PostService postService;

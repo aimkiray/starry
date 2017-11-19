@@ -42,7 +42,7 @@
                                 ${(post.postDate?string("yyyy-MM-dd"))!"none"}
                                 &nbsp;|&nbsp;
                                 <a class="text-link"
-                                   href="###">${post.user.userName}</a>
+                                   href="###">${post.user.nickName}</a>
                                 &nbsp;|&nbsp;
                                 <#list (post.tags) as tag>
                                 <a class="text-link"

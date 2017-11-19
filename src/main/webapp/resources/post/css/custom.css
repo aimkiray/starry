@@ -580,15 +580,11 @@ figcaption {
     }
 
     .content-wrapper {
-        padding: 15px;
-    }
-
-    .white-wrapper {
-        padding: 14px;
+        padding: 5px;
     }
 
     .menu-button {
-        padding: 15px;
+        padding: 5px;
     }
 
     .white-bg-heading {
@@ -596,7 +592,7 @@ figcaption {
     }
 
     .content-column {
-        padding-left: 10px;
+        /*padding-left: 10px;*/
     }
 
     .blog-page-image {
@@ -622,12 +618,12 @@ figcaption {
     .navigation-bar {
         padding-top: 10px;
         padding-right: 10px;
-        padding-left: 10px;
+        /*padding-left: 10px;*/
     }
 
     .nav-link {
         display: inline-block;
-        margin: 0px 6px;
+        /*margin: 0px 6px;*/
     }
 
     .grey-rule {
@@ -641,7 +637,7 @@ figcaption {
 
     .post-wrapper {
         margin-bottom: 20px;
-        margin-left: 0px;
+        /*margin-left: 0px;*/
     }
 
     .blog-image {
@@ -650,11 +646,11 @@ figcaption {
     }
 
     .post-content {
-        padding: 15px;
+        padding: 5px;
     }
 
     .post-text-content {
-        padding: 15px;
+        padding: 5px;
     }
 
     .button-wrapper {
@@ -663,13 +659,13 @@ figcaption {
 
     .content-wrapper {
         width: 100%;
-        margin-left: 0px;
-        padding: 20px 10px;
+        /*margin-left: 0px;*/
+        /*padding: 20px 10px;*/
     }
 
     .blog-title {
-        font-size: 27px;
-        line-height: 36px;
+        /*font-size: 27px;*/
+        /*line-height: 36px;*/
     }
 
     .white-wrapper {
@@ -683,7 +679,7 @@ figcaption {
 
     .sidebar-on-mobile {
         display: block;
-        padding-top: 0px;
+        /*padding-top: 0px;*/
     }
 
     .hidden-small {
@@ -693,8 +689,8 @@ figcaption {
 
 @media (max-width: 479px) {
     h1 {
-        font-size: 32px;
-        line-height: 36px;
+        /*font-size: 32px;
+        line-height: 36px;*/
     }
 
     .blog-image {
@@ -702,12 +698,12 @@ figcaption {
     }
 
     .blog-title {
-        font-size: 26px;
-        line-height: 32px;
+        /*font-size: 26px;
+        line-height: 32px;*/
     }
 
     .white-wrapper {
-        padding: 15px;
+        padding: 5px;
     }
 
     .blog-page-image {
@@ -719,7 +715,7 @@ figcaption {
     }
     .sidebar-on-mobile {
         display: block;
-        padding-top: 0px;
+        /*padding-top: 0px;*/
     }
     .button-wrapper {
         text-align: center;
