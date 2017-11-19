@@ -54,6 +54,7 @@
             <div class="etc-login-form">
                 <p>忘记密码？<a href="${root}/user/forgot/page">点我~</a></p>
                 <p>新用户？<a href="${root}/user/register/page">用户注册</a></p>
+                <p>user: test | key: 1234</p>
             </div>
         </form>
     </div>
