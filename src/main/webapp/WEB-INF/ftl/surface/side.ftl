@@ -28,12 +28,9 @@
             <i class="fa fa-qq fa-2x"></i>
         </a>
     </div>
-    <#--<span class="copyright-text">
-        Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">by-nc-sa</a>.
-        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-    </span>-->
+    <#--版权信息-->
     <p class="copyright-text">
-        licensed by <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="CC" style="border-width:0;opacity: 0.6" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>.
+        licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="cc" style="border-width:0;opacity: 0.6" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
         <br/>
         site design/powered ☆
         <a target="_blank" href="https://github.com/aimkiray/starry"

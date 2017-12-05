@@ -35,7 +35,7 @@
             </div>
 
         <#--首页文章区域-->
-            <div class="content-column col col-lg-7">
+            <div class="content-column col-12 col-lg-7">
                 <div class="list-group">
 
                 <#list posts as post>

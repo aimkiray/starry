@@ -1,22 +1,22 @@
 # starry 食用指南
 
-作为一个~~轻量级~~小巧的博客系统，本项目采用Spring+Spring MVC+MyBatis构建。
+作为一个~~轻量级~~小巧的博客系统，本项目采用 Spring+Spring MVC+MyBatis 构建。
 
-> Q: SSM轻量级？吾阅诗书甚少，汝勿欺我。
+> Q: SSM 轻量级？吾阅诗书甚少，汝勿欺我。
 
-> A: 捂脸(\*/ω＼\*)，找工作需要嘛！所谓轻量是指对Java程序员而言。PS. 隔壁sgroup第一个项目没用任何框架，初学者可以拿去参考。
+> A: 捂脸 (\*/ω＼\*)，找工作需要嘛！所谓轻量是指对 Java 程序员而言。PS. 隔壁 sgroup 第一个项目没用任何框架，初学者可以拿去参考。
 
 > Q: 那你这个意义何在？
 
-> A: 可以魔改，有详细食用说明。本项目的                          优点之一就是代码超规范（见名知意，参考alibaba的那本手册），注释超详细（覆盖率超过90%），RESTful风格API，二次开发也超轻松。
+> A: 可以魔改，有详细食用说明。本项目的优点之一就是代码超规范（见名知意，参考 alibaba 的那本手册），注释超详细（覆盖率超过 90%），RESTful 风格 API，二次开发也超轻松。
 
 ```
-PS. 不懂java也没关系，可以直接跳到食用说明，理论上没问题！（有问题发issue）
+PS. 不懂 java 也没关系，可以直接跳到食用说明，理论上没问题！（有问题发 issue）
 ```
 
-本项目基于maven的标准目录结构，使用maven构建；框架是Spring，MVC框架是Spring MVC，数据库是MariaDB，持久化是MyBatis，权限管理是自制的，如下所示：
+本项目基于 maven 的标准目录结构，使用 maven 构建；框架是 Spring，MVC 框架是 Spring MVC，数据库是 MariaDB，持久化是 MyBatis，权限管理是自制的，如下所示：
 
-TODO 正在用Spring Boot写一个图床工具，搞定之后再来考虑是否改Spring Boot。
+TODO 正在用 Spring Boot 写一个图床工具，搞定之后再来考虑是否改 Spring Boot。
 
 ```shell=
 src
@@ -42,9 +42,9 @@ src
     └─webapp
 ```
 
-本项目采用MVC架构，前端部分同时使用JSP和Freemarker，目录结构如下：
+本项目采用 MVC 架构，前端部分同时使用 JSP 和 Freemarker，目录结构如下：
 
-TODO 后续考虑将JSP全部改成Freemarker，以配合Spring Boot和RESTful API实现前后端分离。
+TODO 后续考虑将 JSP 全部改成 Freemarker，以配合 Spring Boot 和 RESTful API 实现前后端分离。
 
 ```shell=
 webapp
@@ -111,9 +111,9 @@ CPU： 1 核
 
 硬盘： 40 GB
 
-操作系统： Ubuntu 16.04 64位
+操作系统： Ubuntu 16.04 64 位
 
-### 1.1. 安装openjdk
+### 1.1. 安装 openjdk
 
 更新软件列表：
 
@@ -121,7 +121,7 @@ CPU： 1 核
 root@akari:~# apt update
 ```
 
-安装openjdk-8-jdk：
+安装 openjdk-8-jdk：
 
 ```shell=
 root@akari:~# apt install openjdk-8-jdk -y
@@ -133,22 +133,22 @@ root@akari:~# apt install openjdk-8-jdk -y
 root@akari:~# java -version
 ```
 
-### 1.2. 安装Git
+### 1.2. 安装 Git
 
 ```shell=
 root@akari:~# apt install git -y
 ```
 
-检查Git是否安装成功；输入如下命令，安装成功返回版本号。
+检查 Git 是否安装成功；输入如下命令，安装成功返回版本号。
 
 ```shell=
 root@akari:~# git --version
 git version 2.7.4
 ```
 
-### 1.3. 配置maven
+### 1.3. 配置 maven
 
-先下载最新版[maven](https://maven.apache.org/download.cgi)，右键Binary tar.gz archive获取下载地址，输入如下命令下载maven：
+先下载最新版 [maven](https://maven.apache.org/download.cgi)，右键 Binary tar.gz archive 获取下载地址，输入如下命令下载 maven：
 
 ```shell=
 root@akari:~# cd ~
@@ -180,7 +180,7 @@ export PATH=${PATH}:${MAVEN_HOME}/bin
 root@akari:~# source /etc/profile
 ```
 
-验证maven配置，成功则返回版本号：
+验证 maven 配置，成功则返回版本号：
 
 ```shell=
 root@akari:~# mvn -v
@@ -192,9 +192,9 @@ Default locale: en_US, platform encoding: UTF-8
 OS name: "linux", version: "4.4.0-47-generic", arch: "amd64", family: "unix"
 ```
 
-### 1.4. 配置Tomcat
+### 1.4. 配置 Tomcat
 
-在这儿获取最新版[tomcat](http://tomcat.apache.org/download-90.cgi)下载地址（core版本的tar.gz），如下：
+在这儿获取最新版 [tomcat](http://tomcat.apache.org/download-90.cgi) 下载地址（core 版本的 tar.gz），如下：
 
 ```shell=
 root@akari:~# cd ~
@@ -205,7 +205,7 @@ root@akari:~# tar -zxvf apache-tomcat-9.0.1.tar.gz
 root@akari:~# mv apache-tomcat-9.0.1 apache-tomcat
 ```
 
-启动Tomcat：
+启动 Tomcat：
 
 ```shell=
 root@akari:~# sh apache-tomcat/bin/startup.sh
@@ -216,11 +216,11 @@ Using JRE_HOME:        /usr
 Using CLASSPATH:       ~/apache-tomcat-9.0.1/bin/bootstrap.jar:~/apache-tomcat-9.0.1/bin/tomcat-juli.jar
 Tomcat started.
 ```
-### 1.5. 安装MariaDB数据库
+### 1.5. 安装 MariaDB 数据库
 
-MariaDB是MySQL源代码的一个分支，在意识到Oracle会对MySQL许可做什么后分离了出来（有闭源的潜在风险）。作者Michael Widenius Monty也是MySQL创办者。MariaDB目的是完全兼容MySQL，也包括一些新特性优于MySQL。
+MariaDB 是 MySQL 源代码的一个分支，在意识到 Oracle 会对 MySQL 许可做什么后分离了出来（有闭源的潜在风险）。作者 Michael Widenius Monty 也是 MySQL 创办者。MariaDB 目的是完全兼容 MySQL，也包括一些新特性优于 MySQL。
 
-直接apt安装：
+直接 apt 安装：
 
 ```shell=
 root@akari:~# apt install mariadb-server -y
@@ -228,20 +228,20 @@ root@akari:~# apt install mariadb-server -y
 
 ## 2. 快速开始
 
-首先clone本项目（注意路径，之后要用到）：
+首先 clone 本项目（注意路径，之后要用到）：
 
 ```shell=
 root@akari:~# cd ~
 root@akari:~# git clone https://github.com/nekuata/starry.git
 ```
 
-接着配置数据库，配置root密码：
+接着配置数据库，配置 root 密码：
 
 ```shell=
 root@akari:~# mysql_secure_installation
 ```
 
-然后使用root用户登入数据库，导入本项目的表结构：
+然后使用 root 用户登入数据库，导入本项目的表结构：
 
 ```shell=
 # 登录数据库
@@ -250,18 +250,18 @@ root@akari:~/starry/src/main# mysql -u root -p
 MariaDB [(none)]> source ~/starry/src/main/notebook/starry.sql
 ```
 
-新建一个用户，赋予表sinitial的所有权限：
+新建一个用户，赋予表 sinitial 的所有权限：
 
 ```shell=
 MariaDB [(none)]> CREATE USER 'starry'@'localhost' IDENTIFIED BY 'starry12138';
 MariaDB [(none)]> GRANT ALL PRIVILEGES ON `sinitial`.* TO 'starry'@'localhost' WITH GRANT OPTION;
 MariaDB [(none)]> FLUSH PRIVILEGES;
-# 退出mariadb
+# 退出 mariadb
 MariaDB [(none)]> exit
 ```
-> 其中\`sinitial\`.*是刚才导入的表名，starry是默认用户名，starry12138是默认密码，为了安全起见最好改成自己的。
+> 其中 \`sinitial\`.* 是刚才导入的表名，starry 是默认用户名，starry12138 是默认密码，为了安全起见最好改成自己的。
 
-使用maven下载依赖包并打包：
+使用 maven 下载依赖包并打包：
 
 ```shell=
 root@akari:~# cd ~/starry
@@ -272,9 +272,9 @@ root@akari:~/starry# mvn install
 
 ——————————————————start—————————————————————
 
-生成Druid数据库密钥
+生成 Druid 数据库密钥
 
-本项目采用Druid数据库连接池，把数据库密码直接写在配置中，有安全问题。Druid为此提供一种数据库密码加密的手段ConfigFilter，首先找到Druid的jar包：
+本项目采用 Druid 数据库连接池，把数据库密码直接写在配置中，有安全问题。Druid 为此提供一种数据库密码加密的手段 ConfigFilter，首先找到 Druid 的 jar 包：
 
 ```shell=
 root@akari:~# cd ~/.m2/repository/com/alibaba/druid/1.1.2
@@ -292,50 +292,55 @@ publicKey:MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALzE1JOGzGw5IN1OkhuRKx2/G9AeAgjqkJ/+5C
 password:gNfnXJUtBokb9yuIGxw0a5FtRlM5+yuhJ+QM/sL9S1bps/zqAd2daBePWGNqdWirsZQtXbBg0sBVMaLX2ELzYw==
 ```
 
-> 其中starry12138是刚才新建mariadb用户的密码
+> 其中 starry12138 是刚才新建 mariadb 用户的密码
 
-修改Druid配置文件：
+修改 Druid 配置文件：
 
 ```shell=
 root@akari:~# vim ~/starry/src/main/resources/spring/druid.properties
 ```
-输入`i`开启编辑模式，在这里填入数据库用户名和上面生成的密钥：
+输入 `i` 开启编辑模式，在这里填入数据库用户名和上面生成的密钥：
 ```shell=
 jdbc_username = starry
 jdbc_password = gNfnXJUtBokb9yuIGxw0a5FtRlM5+yuhJ+QM/sL9S1bps/zqAd2daBePWGNqdWirsZQtXbBg0sBVMaLX2ELzYw==
 jdbc_publicKey = MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALzE1JOGzGw5IN1OkhuRKx2/G9AeAgjqkJ/+5C1lcmYCcgOrRZq37y9wxT/0u6rd6XaBIrHmwaSaJ0CtOxzP3wcCAwEAAQ==
 ```
-点击esc，输入`:wq`保存退出。
+点击 esc，输入 `:wq` 保存退出。
 
-——————————————————end—————————————————————
-
-再次使用maven打包：
+再次使用 maven 打包：
 
 ```shell=
 root@akari:~# cd ~/starry
 root@akari:~/starry# mvn install
 ```
 
-完成后，把打好的war包重命名，丢到Tomcat服务器里：
+——————————————————end—————————————————————
+
+完成后，把打好的 war 包重命名，丢到 Tomcat 服务器里：
 
 ```shell=
-# 进入war包目录
+# 进入 war 包目录
 root@akari:~/starry# cd ~/starry/target
 # 改名
 root@akari:~/starry/target# mv starry.war ROOT.war
-# 关闭tomcat
+# 关闭 tomcat
 root@akari:~/starry/target# sh ~/apache-tomcat/bin/shutdown.sh
 # 删除旧包
 root@akari:~/starry/target# rm -rf ~/apache-tomcat/webapps/ROOT
 # 添加新包
 root@akari:~/starry/target# mv ROOT.war ~/apache-tomcat/webapps/
-# 启动tomcat
+# 启动 tomcat
 root@akari:~/starry/target# sh ~/apache-tomcat/bin/startup.sh
 ```
 大功告成！
 
-现在地址栏输入`http://你的ip地址:8080`try it~
+现在地址栏输入 `http:// 你的 ip 地址:8080`try it~
 
+PS. 关于更改 tomcat 端口
+
+- root 用户：`vim ~/apache-tomcat/conf/server.xml`，搜索8080将其改为80，保存，重启 tomcat 即可。
+
+- 非 root 用户：试试 iptables 的端口转发功能。`sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8080`
 
 ## 3. 自动化部署
 
@@ -369,9 +374,9 @@ To Be Continue...
 - [jquery](https://github.com/jquery/jquery)
 - [showdown](https://github.com/showdownjs/showdown)
 
-> PS. 不完全统计，排名不分先后，大小写依据Official项目名
+> PS. 不完全统计，排名不分先后，大小写依据 Official 项目名
 
-附：Windows系统配置要求如下：
+附：Windows 系统配置要求如下：
 
 <table>
 	<thead>
@@ -385,10 +390,10 @@ To Be Continue...
 		<tr>
 			<th scope="row">操作系统</th>
 			<td>
-			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Windows® 7 / Windows® 8 / Windows® 10 64位系统 (或最新版本的 Service Pack)</span></div>
+			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Windows® 7 / Windows® 8 / Windows® 10 64 位系统 (或最新版本的 Service Pack)</span></div>
 			</td>
 			<td>
-			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Windows® 7 / Windows® 8 / Windows® 10 64位系统(最新版本的Service Pack)</span></div>
+			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Windows® 7 / Windows® 8 / Windows® 10 64 位系统 (最新版本的 Service Pack)</span></div>
 			</td>
 		</tr>
 		<tr>
@@ -396,10 +401,10 @@ To Be Continue...
 			<div class="centered">处理器</div>
 			</th>
 			<td>
-			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Intel® Core™ i3或是 AMD Phenom™ X3 8650</span></div>
+			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Intel® Core™ i3 或是 AMD Phenom™ X3 8650</span></div>
 			</td>
 			<td>
-			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Intel® Core™ i9-7980XE或 AMD Ryzen™ ThreadRipper 1950X 处理器及以上</span></div>
+			<div class="centered"><span lang="EN-US" style="font-size: 9pt; line-height: 107%; font-family: Arial, sans-serif;">Intel® Core™ i9-7980XE 或 AMD Ryzen™ ThreadRipper 1950X 处理器及以上</span></div>
 			</td>
 		</tr>
 		<tr>

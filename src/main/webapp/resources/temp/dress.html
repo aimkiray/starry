@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>不存在的</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <a id="notice" href="javascript:void(0)" onclick="show_question()">
+        if ("顶级*".equals(you.getCallOneself()) System.out.println("Don't point!");
+    </a>
+    <div id="dress" style="display: none">
+        <div id="question" class="col-lg-6">
+            <span>Q：怎样减少 BUG？</span>
+            <br/>
+            <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="button" onclick="show_dress()">Sure</button>
+                    </span>
+                <input id="get_input" type="text" class="form-control" placeholder="" aria-label="">
+            </div>
+        </div>
+        <div id="answer" style="display: none;">
+            <span>给大佬递女装👇</span>
+            <br/>
+            <img style="max-width: 100%;height: auto" src="http://ozevind8t.bkt.clouddn.com/temp/image/DSC_0047.JPG"
+                 alt="初音限定款">
+            <br/>
+            <span>初音限定款（咱只是传教用的</span>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    function show_question() {
+        $("#notice").hide();
+        $("#dress").show(100);
+    }
+
+    function show_dress() {
+        var answer = $("#get_input").val();
+        if (answer === "女装" || answer === "穿女装") {
+            $("#question").hide();
+            $("#answer").show(100);
+        }
+    }
+</script>
+</html>

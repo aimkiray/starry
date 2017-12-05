@@ -9,7 +9,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
-
 public class BaseController {
 
     @InitBinder

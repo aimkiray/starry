@@ -1,106 +1,90 @@
 body {
     background-color: #f0f0f0;
-    font-family: "Source Han Serif SC", sans-serif;
+    font-family: "PingFang SC","Source Han Serif SC","Microsoft YaHei",Lato,sans-serif;
     color: #333;
     font-size: 14px;
+    line-height: 150%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
     line-height: 135%;
+    font-family: "PingFang SC","Source Han Serif SC","Microsoft YaHei",Lato,sans-serif
 }
 
 h1 {
-    margin-top: 0px;
-    margin-bottom: 15px;
-    font-size: 35px;
-    line-height: 40px;
-    font-weight: 400;
+    font-size: 22px
+}
+
+@media (max-width: 991px) {
+    h1 {
+        font-size:18px
+    }
 }
 
 h2 {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    font-size: 25px;
-    line-height: 30px;
-    font-weight: 400;
+    font-size: 20px
+}
+
+@media (max-width: 991px) {
+    h2 {
+        font-size:16px
+    }
 }
 
 h3 {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    font-size: 21px;
-    line-height: 30px;
-    font-weight: 400;
+    font-size: 18px
+}
+
+@media (max-width: 991px) {
+    h3 {
+        font-size:14px
+    }
 }
 
 h4 {
-    margin-top: 0px;
-    margin-bottom: 15px;
-    font-size: 18px;
-    line-height: 22px;
-    font-weight: 400;
+    font-size: 16px
+}
+
+@media (max-width: 991px) {
+    h4 {
+        font-size:12px
+    }
 }
 
 h5 {
-    margin-bottom: 20px;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-size: 14px
+}
+
+@media (max-width: 991px) {
+    h5 {
+        font-size:10px
+    }
 }
 
 h6 {
-    margin-top: 0px;
-    margin-bottom: 15px;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 700;
+    font-size: 12px
 }
 
-p {
-    margin-top: 0px;
-    margin-bottom: 20px;
-    font-family: "Source Han Serif SC", sans-serif;
-    line-height: 160%;
+@media (max-width: 991px) {
+    h6 {
+        font-size:8px
+    }
 }
 
 a {
-    color: #24a7ff;
-    text-decoration: underline;
+    color: #555;
+    text-decoration: none;
+    outline: 0;
+    word-wrap: break-word
 }
 
-ul {
-    margin-top: 0px;
-    margin-bottom: 20px;
-    padding-left: 40px;
-}
-
-ol {
-    margin-top: 0px;
-    margin-bottom: 10px;
-    padding-left: 40px;
-    font-family: "Source Han Serif SC", sans-serif;
-}
-
-img {
-    display: inline-block;
-    max-width: 100%;
-}
-
-blockquote {
-    margin-bottom: 10px;
-    padding: 10px 20px;
-    border-left: 5px solid #e2e2e2;
-    font-size: 16px;
-    line-height: 135%;
-}
-
-figure {
-    margin-bottom: 20px;
-}
-
-figcaption {
-    margin-top: 5px;
-    color: #aaa;
-    font-size: 13px;
-    text-align: center;
+a:hover {
+    color: #222;
+    text-decoration: none;
+    border-bottom-color: #222
 }
 
 .text-link {
@@ -110,8 +94,7 @@ figcaption {
 .button {
     display: inline-block;
     padding: 11px 20px;
-    /*margin: 0 0 20px;*/
-    border-radius: 0px;
+    border-radius: 0;
     background-color: #fc7d64;
     box-shadow: 0 0 6px 1px pink;
     -webkit-transition: background-color 200ms ease;
@@ -256,11 +239,11 @@ figcaption {
     display: block;
     margin-top: 5px;
     margin-bottom: 5px;
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 0;
+    padding-left: 0;
     -webkit-transition: color 200ms ease;
     transition: color 200ms ease;
-    font-family: "Source Han Serif SC", sans-serif;
+    font-family: "PingFang SC","Source Han Serif SC","Microsoft YaHei",Lato,sans-serif;
     color: #aaa;
     font-size: 12px;
     font-weight: 700;
@@ -297,6 +280,7 @@ figcaption {
 }
 
 .copyright-text {
+    font-family: "Source Han Serif SC", sans-serif;
     margin-bottom: 0px;
     color: #aaa;
     font-size: 14px;
@@ -314,19 +298,13 @@ figcaption {
     padding: 15px;
 }
 
-.top-post-wrapper {
-    margin-bottom: 30px;
-}
-
 .blog-image {
     display: block;
     height: 180px;
     margin-right: 20px;
     border-radius: 3px;
-    /*background-image: url("");*/
-    background-position: 50% 50%;
     background-size: cover;
-    background-repeat: no-repeat;
+    background: no-repeat 50% 50%;
     -webkit-transition: opacity 200ms ease;
     transition: opacity 200ms ease;
 }
@@ -337,12 +315,10 @@ figcaption {
 
 .post-content {
     padding: 15px;
-    /*background-color: #faebd7;*/
 }
 
 .post-text-content {
     padding: 15px;
-    /*background-color: #F4F4F4;*/
 }
 
 .top-post-content {
@@ -431,7 +407,7 @@ figcaption {
     margin-left: 8px;
     -webkit-transition: color 200ms ease;
     transition: color 200ms ease;
-    font-family: "Source Han Serif SC", sans-serif;
+    font-family: "PingFang SC","Source Han Serif SC","Microsoft YaHei",Lato,sans-serif;
     color: #aaa;
     font-size: 14px;
     line-height: 22%;
@@ -512,15 +488,12 @@ figcaption {
     height: 290px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    /*background-image: url("");*/
-    background-position: 50% 50%;
     background-size: cover;
-    background-repeat: no-repeat;
+    background: no-repeat 50% 50%;
 }
 
 .sidebar-on-mobile {
     display: none;
-    padding-top: 40px;
 }
 
 .details-wrapper {
@@ -530,14 +503,14 @@ figcaption {
 
 .paragraph {
     margin-top: 10px;
-    margin-bottom: 0px;
-    /*line-height: 138%;*/
+    margin-bottom: 0;
 }
 
 .title-link {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     direction: ltr;
     font-size: 25px;
+    line-height: 135%;
     font-weight: bold;
     color: #1F375B;
     text-decoration: none;
@@ -545,11 +518,8 @@ figcaption {
 }
 
 .text-block {
+    font-family: Consolas, "Source Han Serif SC", sans-serif;
     margin-top: 10px;
-}
-
-.custom-row {
-    font-family: "Source Han Serif SC", monospace;
 }
 
 @media (max-width: 991px) {
@@ -573,6 +543,7 @@ figcaption {
 
     .post-wrapper {
         margin-bottom: 20px;
+        padding: 10px;
     }
 
     .blog-image {
@@ -580,11 +551,11 @@ figcaption {
     }
 
     .content-wrapper {
-        padding: 5px;
+        padding: 10px;
     }
 
     .menu-button {
-        padding: 5px;
+        padding: 10px;
     }
 
     .white-bg-heading {
@@ -592,38 +563,49 @@ figcaption {
     }
 
     .content-column {
-        /*padding-left: 10px;*/
+        padding: 10px;
     }
 
     .blog-page-image {
         height: 240px;
     }
+
     .hidden-small {
         display: none;
     }
+
     .sidebar-on-mobile {
         display: block;
-        padding-top: 0px;
     }
+
     .button-wrapper {
         text-align: center;
     }
+
     .white-wrapper {
         margin-top: 20px;
         padding: 34px;
     }
+
+    .circle-profile {
+        display: none;
+    }
 }
 
 @media (max-width: 767px) {
+    .circle-profile {
+        display: none;
+    }
+
     .navigation-bar {
         padding-top: 10px;
         padding-right: 10px;
-        /*padding-left: 10px;*/
+        padding-left: 0;
     }
 
     .nav-link {
         display: inline-block;
-        /*margin: 0px 6px;*/
+        margin: 0;
     }
 
     .grey-rule {
@@ -632,16 +614,31 @@ figcaption {
     }
 
     .copyright-text {
-        margin-bottom: 0px;
+        margin-bottom: 0;
+    }
+
+    .content-column {
+        padding: 0;
     }
 
     .post-wrapper {
-        margin-bottom: 20px;
-        /*margin-left: 0px;*/
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        margin-bottom: 10px;
+        padding: 10px 5px;
+    }
+
+    .white-wrapper {
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        margin: 10px 0;
+        padding: 10px 5px;
     }
 
     .blog-image {
-        margin-right: 0px;
+        margin-right: 0;
         margin-bottom: 20px;
     }
 
@@ -659,18 +656,8 @@ figcaption {
 
     .content-wrapper {
         width: 100%;
-        /*margin-left: 0px;*/
-        /*padding: 20px 10px;*/
-    }
-
-    .blog-title {
-        /*font-size: 27px;*/
-        /*line-height: 36px;*/
-    }
-
-    .white-wrapper {
-        margin-top: 20px;
-        padding: 34px;
+        margin-left: 0;
+        padding: 0;
     }
 
     .blog-page-image {
@@ -679,7 +666,6 @@ figcaption {
 
     .sidebar-on-mobile {
         display: block;
-        /*padding-top: 0px;*/
     }
 
     .hidden-small {
@@ -688,22 +674,12 @@ figcaption {
 }
 
 @media (max-width: 479px) {
-    h1 {
-        /*font-size: 32px;
-        line-height: 36px;*/
+    .circle-profile {
+        display: block;
     }
 
     .blog-image {
         height: 190px;
-    }
-
-    .blog-title {
-        /*font-size: 26px;
-        line-height: 32px;*/
-    }
-
-    .white-wrapper {
-        padding: 5px;
     }
 
     .blog-page-image {
@@ -715,7 +691,6 @@ figcaption {
     }
     .sidebar-on-mobile {
         display: block;
-        /*padding-top: 0px;*/
     }
     .button-wrapper {
         text-align: center;

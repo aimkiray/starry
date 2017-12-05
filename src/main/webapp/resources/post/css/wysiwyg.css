@@ -3,8 +3,8 @@
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     font-family: "Source Han Serif SC", "Microsoft Yahei", Arial, Helvetica, AppleGothic, sans-serif;
-    font-size: 16px;
-    line-height: 1.6
+    font-size: 14px;
+    line-height: 150%;
 }
 
 .wysiwyg a {
