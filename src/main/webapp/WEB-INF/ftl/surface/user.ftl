@@ -17,6 +17,8 @@
     <link href="${root}/resources/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <#--markdown css-->
     <link href="${root}/resources/post/css/wysiwyg.css" rel="stylesheet" type="text/css">
+<#--highlight-->
+    <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
 
     <link href="${root}/resources/post/css/custom.css" rel="stylesheet" type="text/css">
 
@@ -24,6 +26,8 @@
     <script src="${root}/resources/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
 <#--markdown2html-->
     <script src="https://cdn.bootcss.com/markdown-it/8.4.0/markdown-it.min.js"></script>
+<#--highlight-->
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 </head>
 
 <body>
