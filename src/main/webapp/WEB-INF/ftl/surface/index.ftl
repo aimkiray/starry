@@ -86,8 +86,8 @@
 </body>
 <#--jquery-->
 <script src="${root}/resources/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
-<#--markdown2html，使用showdown-->
-<script src="${root}/resources/showdown/showdown.js" type="text/javascript"></script>
+<#--markdown2html-->
+<script src="https://cdn.bootcss.com/markdown.js/0.6.0-beta1/markdown.min.js"></script>
 
 <script src="${root}/resources/post/js/custom.js" type="text/javascript"></script>
 </html>
