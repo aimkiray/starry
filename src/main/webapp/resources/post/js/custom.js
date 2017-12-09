@@ -12,8 +12,10 @@ function markdownHtml() {
         var postId = $(this).val();
         // 获取markdown格式的文章
         var rawPost = $("#rawPost"+postId).text();
+        // 调用markdown-it
+        var md = window.markdownit();
         // 开始转换
-        var htmlPost = markdown.toHTML(rawPost);
+        var htmlPost = md.render(rawPost);
         // 展示文章
         $("#htmlPost"+postId).html(htmlPost);
     });
