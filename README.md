@@ -1,6 +1,6 @@
 # starry 食用指南
 
-作为一个~~轻量级~~小巧的博客系统，本项目采用 Spring+Spring MVC+MyBatis 构建。
+作为一个~~轻量级~~小巧的博客系统，本项目采用 Spring + Spring MVC + MyBatis 构建。
 
 > Q: SSM 轻量级？吾阅诗书甚少，汝勿欺我。
 
@@ -372,7 +372,7 @@ To Be Continue...
 - [tomcat](https://github.com/apache/tomcat)
 - [maven](https://github.com/apache/maven)
 - [jquery](https://github.com/jquery/jquery)
-- [showdown](https://github.com/showdownjs/showdown)
+- [markdown-js](https://github.com/evilstreak/markdown-js)
 
 > PS. 不完全统计，排名不分先后，大小写依据 Official 项目名
 
