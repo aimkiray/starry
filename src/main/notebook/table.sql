@@ -33,13 +33,13 @@ CREATE TABLE IF NOT EXISTS `sl_permission` (
 -- 导出  表 sinitial.sl_post 结构
 CREATE TABLE IF NOT EXISTS `sl_post` (
   `post_id` int(11) NOT NULL AUTO_INCREMENT,
-  `post_title` varchar(30) DEFAULT NULL,
+  `post_title` varchar(100) DEFAULT NULL,
   `post_status` varchar(30) DEFAULT NULL,
   `post_author` int(11) DEFAULT NULL,
   `post_content` longtext DEFAULT NULL,
   `post_mime_type` varchar(30) DEFAULT NULL,
   `post_date` datetime DEFAULT NULL,
-  `post_type` varchar(6666) DEFAULT 'NULL',
+  `post_type` varchar(6666) DEFAULT NULL,
   PRIMARY KEY (`post_id`),
   UNIQUE KEY `sl_post_post_id_uindex` (`post_id`),
   KEY `sl_post_sl_user_user_id_fk` (`post_author`),

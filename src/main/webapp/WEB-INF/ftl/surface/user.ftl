@@ -16,7 +16,7 @@
 <#--awesome-->
     <link href="${root}/resources/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <#--markdown css-->
-    <link href="${root}/resources/post/css/wysiwyg.css" rel="stylesheet" type="text/css">
+    <link href="${root}/resources/post/css/github-markdown.css" rel="stylesheet" type="text/css">
 <#--highlight-->
     <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
 
@@ -73,7 +73,7 @@
                             </div>
                         </div>
 
-                        <div class="post-text-content wysiwyg">
+                        <div class="post-text-content markdown-body">
                         <#--markdown格式原始文章-->
                             <div id="rawPost${post.postId}" style="display: none">${post.postType}</div>
                         <#--文章显示区域-->
