@@ -274,7 +274,7 @@ root@akari:~/starry# mvn install
 
 生成 Druid 数据库密钥
 
-本项目采用 Druid 数据库连接池，把数据库密码直接写在配置中，有安全问题。Druid 为此提供一种数据库密码加密的手段 ConfigFilter，首先找到 Druid 的 jar 包：
+本项目采用 Druid 数据库连接池，数据库明文密码直接写在配置里。Druid 为此提供一种数据库密码加密的手段 ConfigFilter，首先找到 Druid 的 jar 包：
 
 ```shell=
 root@akari:~# cd ~/.m2/repository/com/alibaba/druid/1.1.2
