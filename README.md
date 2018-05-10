@@ -139,7 +139,7 @@ root@akari:~# java -version
 root@akari:~# apt install git -y
 ```
 
-检查 Git 是否安装成功；输入如下命令，安装成功返回版本号。
+检查 Git 是否安装成功：
 
 ```shell=
 root@akari:~# git --version
@@ -180,7 +180,7 @@ export PATH=${PATH}:${MAVEN_HOME}/bin
 root@akari:~# source /etc/profile
 ```
 
-验证 maven 配置，成功则返回版本号：
+验证 maven 配置：
 
 ```shell=
 root@akari:~# mvn -v
